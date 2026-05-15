@@ -47,7 +47,16 @@ FELIJO.rank_to_chips = function(n)
     else return tostring(math.floor(n))
     end
 end
-			
+
+FELIJO.getIndex = function(table, value)
+    for index, v in ipairs(table) do
+        if v == value then
+            return index
+        end
+    end
+    return nil
+end
+
 
 --[[
 Explode a card with sound and destroy it.

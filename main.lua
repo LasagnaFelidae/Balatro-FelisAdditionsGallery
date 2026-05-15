@@ -77,6 +77,7 @@ assert(SMODS.load_file("./modules/content/tarots.lua"))()
 --┃  ┣┳┛┃ ┃┗━┓┗━┓┃┃┃┃ ┃ ┃┃--
 --┗━╸╹┗╸┗━┛┗━┛┗━┛╹ ╹┗━┛╺┻┛--
 ----------------------------
+assert(SMODS.load_file("./modules/content/crossmod/mydreamjournal.lua"))()
 if FELIJO.is_mod_loaded("TOGAPack") then
     assert(SMODS.load_file("./modules/content/crossmod/togastuff.lua"))()
 end
