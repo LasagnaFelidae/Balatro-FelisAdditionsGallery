@@ -141,6 +141,36 @@ SMODS.Atlas {
     py = 301
 }
 
+SMODS.Atlas {
+    key = "lover_tieredEnhancements",
+    path = "crossmod/mylove/tiered/enh.png",
+    px = 71,
+    py = 95
+}
+SMODS.Atlas {
+    key = "lover_t2Tarots",
+    path = "crossmod/mylove/tiered/t2Tarots.png",
+    px = 71,
+    py = 95
+}
+SMODS.Atlas {
+    key = "lover_t3Tarots",
+    path = "crossmod/mylove/tiered/t3Tarots.png",
+    px = 71,
+    py = 95
+}
+SMODS.Atlas {
+    key = "lover_t4Tarots",
+    path = "crossmod/mylove/tiered/t4Tarots.png",
+    px = 71,
+    py = 95
+}
+SMODS.Atlas {
+    key = "lover_tarots",
+    path = "crossmod/mylove/tarot/ascended.png",
+    px = 71,
+    py = 95
+}
 --[[
 SMODS.Atlas {
     key = "blindPlacehold",
