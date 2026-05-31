@@ -157,7 +157,7 @@ FELIJO.T2Enhancement {
 		if context.main_scoring and context.cardarea == G.play then
             local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
 			return {
-				chips = math.max(0.7,(card.base.id * card.ability.extra.chips) * modifier)
+				chips = math.max(0.7,(card.ability.extra.chips) * modifier)
 			}
 		end
 	end,
@@ -179,7 +179,7 @@ FELIJO.T3Enhancement {
 		if context.main_scoring and context.cardarea == G.play then
             local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
 			return {
-				chips = math.max(0.8,(card.base.id * card.ability.extra.chips) * modifier)
+				chips = math.max(0.8,(card.ability.extra.chips) * modifier)
 			}
 		end
 	end,
@@ -199,7 +199,7 @@ FELIJO.T4Enhancement {
 		if context.main_scoring and context.cardarea == G.play then
             local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
 			return {
-				chips = math.max(1,(card.base.id * card.ability.extra.chips) * modifier)
+				chips = math.max(1,(card.ability.extra.chips) * modifier)
 			}
 		end
 	end,
@@ -222,7 +222,7 @@ FELIJO.T2Enhancement {
 		if context.main_scoring and context.cardarea == G.play then
             local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
 			return {
-				mult = math.max(1,(card.base.id * card.ability.extra.mult) * modifier)
+				mult = math.max(1,(card.ability.extra.mult) * modifier)
 			}
 		end
 	end,
@@ -244,7 +244,7 @@ FELIJO.T3Enhancement {
 		if context.main_scoring and context.cardarea == G.play then
             local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
 			return {
-				mult = math.max(1,(card.base.id * card.ability.extra.mult) * modifier)
+				mult = math.max(1,(card.ability.extra.mult) * modifier)
 			}
 		end
 	end,
@@ -266,7 +266,7 @@ FELIJO.T4Enhancement {
 		if context.main_scoring and context.cardarea == G.play then
             local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
 			return {
-				mult = math.max(1,(card.base.id * card.ability.extra.mult) * modifier)
+				mult = math.max(1,(card.ability.extra.mult) * modifier)
 			}
 		end
 	end,
@@ -294,7 +294,7 @@ FELIJO.T2Enhancement {
             return { remove = true }
 		elseif context.main_scoring and context.cardarea == G.play then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
-			return {xmult = math.max(0.7,(card.base.id * card.ability.extra.xmult) * modifier)}
+			return {xmult = math.max(0.7,(card.ability.extra.xmult) * modifier)}
 		end
     end,
     m_misprint_original = "m_felijo_glass_t2",
@@ -320,7 +320,7 @@ FELIJO.T3Enhancement {
             return { remove = true }
 		elseif context.main_scoring and context.cardarea == G.play then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
-			return {xmult = math.max(0.7,(card.base.id * card.ability.extra.xmult) * modifier)}
+			return {xmult = math.max(0.7,(card.ability.extra.xmult) * modifier)}
 		end
     end,
     m_misprint_original = "m_felijo_glass_t3",
@@ -346,7 +346,7 @@ FELIJO.T4Enhancement {
             return { remove = true }
 		elseif context.main_scoring and context.cardarea == G.play then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
-			return {xmult = math.max(0.7,(card.base.id * card.ability.extra.xmult) * modifier)}
+			return {xmult = math.max(0.7,(card.ability.extra.xmult) * modifier)}
 		end
     end,
     m_misprint_original = "m_felijo_glass_t4",
@@ -367,7 +367,7 @@ FELIJO.T2Enhancement {
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.hand then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
-			return {xmult = math.max(0.7,(card.base.id * card.ability.extra.xmult) * modifier)}
+			return {xmult = math.max(0.7,(card.ability.extra.xmult) * modifier)}
 		end
     end,
     m_misprint_original = "m_felijo_steel_t2",
@@ -387,7 +387,7 @@ FELIJO.T2Enhancement {
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.hand then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
-			return {xmult = math.max(0.7,(card.base.id * card.ability.extra.xmult) * modifier)}
+			return {xmult = math.max(0.7,(card.ability.extra.xmult) * modifier)}
 		end
     end,
     m_misprint_original = "m_felijo_steel_t3",
@@ -407,7 +407,7 @@ FELIJO.T2Enhancement {
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.hand then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
-			return {xmult = math.max(0.7,(card.base.id * card.ability.extra.xmult) * modifier)}
+			return {xmult = math.max(0.7,(card.ability.extra.xmult) * modifier)}
 		end
     end,
     m_misprint_original = "m_felijo_steel_t4",
@@ -432,7 +432,7 @@ FELIJO.T2Enhancement {
 	calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
-			return {chips = math.max(0.7,(card.base.id * card.ability.extra.bonus) * modifier)}
+			return {chips = math.max(0.7,(card.ability.extra.bonus) * modifier)}
 		end
     end,
     m_misprint_original = "m_felijo_stone_t2",
@@ -456,8 +456,8 @@ FELIJO.T3Enhancement {
         if context.main_scoring and context.cardarea == G.play then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
 			return {
-				chips = math.max(0.7,(card.base.id * card.ability.extra.bonus) * modifier),
-				mult = math.max(0.7,(card.base.id * card.ability.extra.mult) * modifier)
+				chips = math.max(0.7,(card.ability.extra.bonus) * modifier),
+				mult = math.max(0.7,(card.ability.extra.mult) * modifier)
 			}
 		end
     end,
@@ -482,8 +482,8 @@ FELIJO.T4Enhancement {
         if context.main_scoring and context.cardarea == G.play then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
 			return {
-				chips = math.max(0.7,(card.base.id * card.ability.extra.bonus) * modifier),
-				mult = math.max(0.7,(card.base.id * card.ability.extra.mult) * modifier)
+				chips = math.max(0.7,(card.ability.extra.bonus) * modifier),
+				mult = math.max(0.7,(card.ability.extra.mult) * modifier)
 			}
 		end
     end,
@@ -505,11 +505,11 @@ FELIJO.T2Enhancement {
 	calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.hand then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
-			return {dollars = math.max(0.7,(card.base.id * card.ability.extra.h_dollars) * modifier)}
+			return {dollars = math.max(0.7,(card.ability.extra.h_dollars) * modifier)}
 		end
 		if context.main_scoring and context.cardarea == G.play then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
-			return {dollars = math.max(0.7,(card.base.id * card.ability.extra.p_dollars) * modifier)}
+			return {dollars = math.max(0.7,(card.ability.extra.p_dollars) * modifier)}
 		end
     end,
     m_misprint_original = "m_felijo_gold_t2",
@@ -528,11 +528,11 @@ FELIJO.T3Enhancement {
 	calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.hand then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
-			return {dollars = math.max(0.7,(card.base.id * card.ability.extra.h_dollars) * modifier)}
+			return {dollars = math.max(0.7,(card.ability.extra.h_dollars) * modifier)}
 		end
 		if context.main_scoring and context.cardarea == G.play then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
-			return {dollars = math.max(0.7,(card.base.id * card.ability.extra.p_dollars) * modifier)}
+			return {dollars = math.max(0.7,(card.ability.extra.p_dollars) * modifier)}
 		end
     end,
     m_misprint_original = "m_felijo_gold_t3",
@@ -551,11 +551,11 @@ FELIJO.T4Enhancement {
 	calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.hand then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
-			return {dollars = math.max(0.7,(card.base.id * card.ability.extra.h_dollars) * modifier)}
+			return {dollars = math.max(0.7,(card.ability.extra.h_dollars) * modifier)}
 		end
 		if context.main_scoring and context.cardarea == G.play then
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
-			return {dollars = math.max(0.7,(card.base.id * card.ability.extra.p_dollars) * modifier)}
+			return {dollars = math.max(0.7,(card.ability.extra.p_dollars) * modifier)}
 		end
     end,
     m_misprint_original = "m_felijo_gold_t4",
@@ -585,15 +585,15 @@ FELIJO.T2Enhancement {
             local ret = {}
             if SMODS.pseudorandom_probability(card, 'felijo_lucky_mult', 1, card.ability.extra.mult_odds) then
                 card.lucky_trigger = true
-                ret.mult = math.max(0.7,(card.base.id * card.ability.extra.mult) * modifier)
+                ret.mult = math.max(0.7,(card.ability.extra.mult) * modifier)
             end
 			if SMODS.pseudorandom_probability(card, 'felijo_lucky_chips', 1, card.ability.extra.mult_odds) then
                 card.lucky_trigger = true
-                ret.chips = math.max(0.7,(card.base.id * card.ability.extra.chips) * modifier)
+                ret.chips = math.max(0.7,(card.ability.extra.chips) * modifier)
             end
             if SMODS.pseudorandom_probability(card, 'felijo_lucky_money', 1, card.ability.extra.dollars_odds) then
                 card.lucky_trigger = true
-                ret.dollars = math.max(0.7,(card.base.id * card.ability.extra.dollars) * modifier)
+                ret.dollars = math.max(0.7,(card.ability.extra.dollars) * modifier)
             end
             return ret
         end
@@ -623,15 +623,15 @@ FELIJO.T3Enhancement {
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
             if SMODS.pseudorandom_probability(card, 'felijo_lucky_mult', 1, card.ability.extra.mult_odds) then
                 card.lucky_trigger = true
-                ret.mult = math.max(0.7,(card.base.id * card.ability.extra.mult) * modifier)
+                ret.mult = math.max(0.7,(card.ability.extra.mult) * modifier)
             end
 			if SMODS.pseudorandom_probability(card, 'felijo_lucky_chips', 1, card.ability.extra.mult_odds) then
                 card.lucky_trigger = true
-                ret.chips = math.max(0.7,(card.base.id * card.ability.extra.chips) * modifier)
+                ret.chips = math.max(0.7,(card.ability.extra.chips) * modifier)
             end
             if SMODS.pseudorandom_probability(card, 'felijo_lucky_money', 1, card.ability.extra.dollars_odds) then
                 card.lucky_trigger = true
-                ret.dollars = math.max(0.7,(card.base.id * card.ability.extra.dollars) * modifier)
+                ret.dollars = math.max(0.7,(card.ability.extra.dollars) * modifier)
             end
             return ret
         end
@@ -661,15 +661,15 @@ FELIJO.T4Enhancement {
 			local modifier = pseudorandom(pseudoseed("sayasukakamu"), card.ability.mod.min, card.ability.mod.max)
             if SMODS.pseudorandom_probability(card, 'felijo_lucky_mult', 1, card.ability.extra.mult_odds) then
                 card.lucky_trigger = true
-                ret.mult = math.max(0.7,(card.base.id * card.ability.extra.mult) * modifier)
+                ret.mult = math.max(0.7,(card.ability.extra.mult) * modifier)
             end
 			if SMODS.pseudorandom_probability(card, 'felijo_lucky_chips', 1, card.ability.extra.mult_odds) then
                 card.lucky_trigger = true
-                ret.chips = math.max(0.7,(card.base.id * card.ability.extra.chips) * modifier)
+                ret.chips = math.max(0.7,(card.ability.extra.chips) * modifier)
             end
             if SMODS.pseudorandom_probability(card, 'felijo_lucky_money', 1, card.ability.extra.dollars_odds) then
                 card.lucky_trigger = true
-                ret.dollars = math.max(0.7,(card.base.id * card.ability.extra.dollars) * modifier)
+                ret.dollars = math.max(0.7,(card.ability.extra.dollars) * modifier)
             end
             return ret
         end

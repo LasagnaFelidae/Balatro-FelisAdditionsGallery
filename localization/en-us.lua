@@ -353,6 +353,22 @@ return {
                     "{C:red}+#1#{} Mult",
                 },
             },
+            j_felijo_lucky_feli = {
+                name = "Lucky Feli",
+                text = {
+                    "{X:red,C:white}X#1#{} Mult for every {C:gold,f:felijo_m6x11plus-feli}1€",
+                    "donated to my {C:planet}Ko-Fi{} page",
+                    "{C:inactive}(Currently {X:red,C:white}X#2#{C:inactive} for {C:gold,f:felijo_m6x11plus-feli}#3#€{C:inactive})"
+                },
+            },
+            j_felijo_unlovable = {
+                name = "Unlovable",
+                text = {
+                    "{C:green}#1# in #2#{} chance to gift",
+                    "you a {C:attention}randomly tiered",
+                    "{C:tarot}#3#{}."
+                },
+            },
 			j_felijo_lgd_jokerpp_a = {
                 name = {
 					"{C:gold,s:0.5}Ascended",
@@ -455,7 +471,7 @@ return {
             felijo_immutable = {
                 name = "Immutable Chances",
 				text= {
-					"All {C:green}probabilites",
+					"Listed {C:green}probabilities",
 					"{C:red}cannot{} be modified",
 				}
             },

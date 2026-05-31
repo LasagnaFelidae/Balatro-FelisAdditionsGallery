@@ -63,6 +63,44 @@ FELIJO.campfire_table = {
 	["m_felijo_enh_sup"]      = { next = "m_felijo_enh_sup_t2",    break_chance = 0.10 },
     ["m_felijo_enh_sup_t2"]   = { next = "m_felijo_enh_sup_t3",    break_chance = 0.30 },
     ["m_felijo_enh_sup_t3"]   = { next = "m_felijo_enh_sup_t4",    break_chance = 0.60 },
+    ----
+    --Bad Director
+    ----
+    ["m_bd_misprintwild"]               = { next = "m_felijo_wild_t2_mp",   break_chance = 0.10 },
+    ["m_felijo_wild_t2_mp"]     = { next = "m_felijo_wild_t3_mp",   break_chance = 0.30 },
+    ["m_felijo_wild_t3_mp"]     = { next = "m_felijo_wild_t4_mp",   break_chance = 0.60 }, 
+
+    ["m_bd_misprintbonus"]               = { next = "m_felijo_bonus_t2_mp",   break_chance = 0.10 },
+    ["m_felijo_bonus_t2_mp"]     = { next = "m_felijo_bonus_t3_mp",   break_chance = 0.30 },
+    ["m_felijo_bonus_t3_mp"]     = { next = "m_felijo_bonus_t4_mp",   break_chance = 0.60 }, 
+
+    ["m_bd_misprintmult"]                = { next = "m_felijo_mult_t2_mp",    break_chance = 0.10 },
+    ["m_felijo_mult_t2_mp"]      = { next = "m_felijo_mult_t3_mp",    break_chance = 0.30 },
+    ["m_felijo_mult_t3_mp"]      = { next = "m_felijo_mult_t4_mp",    break_chance = 0.60 },
+
+    ["m_bd_misprintluckycard"]               = { next = "m_felijo_lucky_t2_mp",   break_chance = 0.10 },
+    ["m_felijo_lucky_t2_mp"]     = { next = "m_felijo_lucky_t3_mp",   break_chance = 0.30 },
+    ["m_felijo_lucky_t3_mp"]     = { next = "m_felijo_lucky_t4_mp",   break_chance = 0.60 },
+
+    ["m_bd_misprintglass"]               = { next = "m_felijo_glass_t2_mp",   break_chance = 0.10 },
+    ["m_felijo_glass_t2_mp"]     = { next = "m_felijo_glass_t3_mp",   break_chance = 0.30 },
+    ["m_felijo_glass_t3_mp"]     = { next = "m_felijo_glass_t4_mp",   break_chance = 0.60 },
+
+    ["m_bd_misprintsteel"]               = { next = "m_felijo_steel_t2_mp",   break_chance = 0.10 },
+    ["m_felijo_steel_t2_mp"]     = { next = "m_felijo_steel_t3_mp",   break_chance = 0.30 },
+    ["m_felijo_steel_t3_mp"]     = { next = "m_felijo_steel_t4_mp",   break_chance = 0.60 },
+
+    ["m_bd_misprintstone"]               = { next = "m_felijo_stone_t2_mp",   break_chance = 0.10 },
+    ["m_felijo_stone_t2_mp"]     = { next = "m_felijo_stone_t3_mp",   break_chance = 0.30 },
+    ["m_felijo_stone_t3_mp"]     = { next = "m_felijo_stone_t4_mp",   break_chance = 0.60 },
+
+    ["m_bd_misprintgold"]                = { next = "m_felijo_gold_t2_mp",    break_chance = 0.10 },
+    ["m_felijo_gold_t2_mp"]      = { next = "m_felijo_gold_t3_mp",    break_chance = 0.30 },
+    ["m_felijo_gold_t3_mp"]      = { next = "m_felijo_gold_t4_mp",    break_chance = 0.60 },
+	
+	["m_felijo_enh_sup_mp"]       = { next = "m_felijo_enh_sup_t2_mp",    break_chance = 0.10 },
+    ["m_felijo_enh_sup_t2_mp"]   = { next = "m_felijo_enh_sup_t3_mp",    break_chance = 0.30 },
+    ["m_felijo_enh_sup_t3_mp"]   = { next = "m_felijo_enh_sup_t4_mp",    break_chance = 0.60 },
 }
 
 FELIJO.prospectorTable = {

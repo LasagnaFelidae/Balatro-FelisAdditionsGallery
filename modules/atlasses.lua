@@ -16,6 +16,18 @@ SMODS.Atlas {
     px = 71,
     py = 95
 }
+SMODS.Atlas {
+    key = "luckyfeliJoker",
+    path = "luckyfeli.png",
+    px = 71,
+    py = 95
+}
+SMODS.Atlas {
+    key = "bodyandblood",
+    path = "body and blood.png",
+    px = 71,
+    py = 95
+}
 
 SMODS.Atlas {
     key = "a_spaceshuttle",

@@ -94,7 +94,7 @@ FELIJO.removeTotemSigils = function()
             for _, sigil_data in ipairs(FELIJO.totem_sigil_table) do
                 local sticker_key = sigil_data.key
                 if card.ability[sticker_key] then
-                    card:remove_sticker(sticker_key, true)
+                    card:remove_sticker(sticker_key)
                 end
             end
         end

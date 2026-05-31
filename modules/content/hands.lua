@@ -57,11 +57,15 @@ SMODS.PokerHand {
 
     evaluate = function(parts, hand)
         if not next(parts._2) then return {} end
-        local cards = parts._2[1]
-        for i, card in ipairs(cards) do
-            if not (FELIJO.get_card_tier(card) >= 2) then return {} end
+        local eligible_cards = {}
+
+        for i, card in ipairs(hand) do
+            if #eligible_cards <= 2 and FELIJO.get_card_tier(card) >= 2 then
+                eligible_cards[#eligible_cards + 1] = card
+            end
         end
-        return { cards }
+        
+        if #eligible_cards == 2 then return{eligible_cards} else return {} end
     end,
 }
 
@@ -411,11 +415,15 @@ SMODS.PokerHand {
 
     evaluate = function(parts, hand)
         if not next(parts._2) then return {} end
-        local cards = parts._2[1]
-        for i, card in ipairs(cards) do
-            if not (FELIJO.get_card_tier(card) >= 3) then return {} end
+        local eligible_cards = {}
+
+        for i, card in ipairs(hand) do
+            if #eligible_cards <= 2 and FELIJO.get_card_tier(card) >= 3 then
+                eligible_cards[#eligible_cards + 1] = card
+            end
         end
-        return { cards }
+        
+        if #eligible_cards == 2 then return{eligible_cards} else return {} end
     end,
 }
 
@@ -760,11 +768,15 @@ SMODS.PokerHand {
 
     evaluate = function(parts, hand)
         if not next(parts._2) then return {} end
-        local cards = parts._2[1]
-        for i, card in ipairs(cards) do
-            if not (FELIJO.get_card_tier(card) >= 4) then return {} end
+        local eligible_cards = {}
+
+        for i, card in ipairs(hand) do
+            if #eligible_cards <= 2 and FELIJO.get_card_tier(card) >= 4 then
+                eligible_cards[#eligible_cards + 1] = card
+            end
         end
-        return { cards }
+        
+        if #eligible_cards == 2 then return{eligible_cards} else return {} end
     end,
 }
 
