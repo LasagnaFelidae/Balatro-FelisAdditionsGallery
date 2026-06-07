@@ -214,7 +214,7 @@ return {
 				},
 			},
 			c_felijo_ttm_hd_bd_misprint = {
-				name = "the {E:bd_glitched}Mis{}printTotem H{E:bd_glitched}ead{} of",
+				name = "the {E:bd_glitching}Mis{}printTotem H{E:bd_glitching}ead{} of",
 				text = {
 					"Combine with a {C:felijo_ttm}Totem{}",
 					"to apply its effects on",

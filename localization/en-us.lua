@@ -656,6 +656,28 @@ return {
 						"{C:phanta_zodiac}Zodiacs{} count as {C:tarot}Tarots"
 				}
 			},
+            felijo_washmashine_crossmod	= {
+				name = "Washmachine. Ability",
+				text= {
+						"{C:attention}Flash Cards{} give an",
+                        "additional {X:mult,C:white}X1.5{} Mult"
+				}
+			},
+            felijo_morefluff_crossmod	= {
+				name = "MoreFluff Ability",
+				text= {
+						"When playing a {C:attention}Three of a Kind{},",
+                        "get a {C:colourcard}Colour{} card",
+                        "{C:inactive}(Must have room)"
+				}
+			},
+            felijo_zeroerror_crossmod	= {
+				name = "0 ERROR Ability",
+				text= {
+						"{C:common}Brights{} count as",
+                        "{C:enhanced}Wild Cards",
+				}
+			},
 			felijo_bld_explode	= {
 				name = "Explode",
 				text= {

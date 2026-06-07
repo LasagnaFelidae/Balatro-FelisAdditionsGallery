@@ -210,6 +210,70 @@ return {
 					}
 				},
 			},
+			j_felijo_ins_gabby = {
+				name = {
+				"{B:1,V:2,f:felijo_Feli5x8}Gabby{}",
+				},
+				text = {
+					{
+					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
+					},
+					{
+					"{C:dark_edition}Negative{} {C:attention}Jokers{}",
+					"and {C:attention}Consumables{}",
+					"give {X:mult,C:white}X#3#{} Mult",
+					}
+				},
+			},
+			j_felijo_ins_notmar = {
+				name = {
+				"{B:1,V:2,f:felijo_Feli5x8}notmario{}",
+				},
+				text = {
+					{
+					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
+					},
+					{
+					"Playing a {C:attention}Three of a Kind",
+					"grants {X:mult,C:white}X#4#{} Mult and",
+					"retriggers scored cards",
+					"#3# more times.",
+					}
+				},
+			},
+			j_felijo_ins_missingnum = {
+				name = {
+				"{B:1,V:2,f:felijo_Feli5x8}MissingNÞ{}",
+				},
+				text = {
+					{
+					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
+					},
+					{
+					"Each played {C:enhanced}Wild Card{}",
+					"grants {X:blind,C:white}X#3#{} Blind Size",
+					}
+				},
+			},
+			j_felijo_ins_missingnum_alt = {
+				name = {
+				"{B:1,V:2,f:felijo_Feli5x8}MissingNÞ{}",
+				},
+				text = {
+					{
+					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
+					},
+					{
+					"Each played {C:enhanced}Wild Card{}",
+					"grants {X:blind,C:white}X#3#{} Blind Size",
+					},
+					{
+					"Create an {C:elemental}Elemental Card{}",
+					"after beating a {C:blind}boss blind",
+					"{C:inactive}(Must have room)"
+					}
+				},
+			},
 			j_felijo_ins_ghost_gc = {
 				name = {
 				"{B:1,V:2,f:felijo_Feli5x8}Ghost{}",
