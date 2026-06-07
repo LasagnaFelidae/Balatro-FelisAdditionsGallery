@@ -43,18 +43,27 @@ for _, data in ipairs(FELIJO.tribe_table) do
 		can_use = function(self, card)
 			return G.jokers and #G.jokers.cards < G.jokers.config.card_limit
 		end,
+		loc_vars = function(self,info_queue,card)
+			if data.key == "Misprint" then
+				info_queue[#info_queue+1] = G.P_CENTERS["e_bd_misprinted"]
+			end
+		end,
 		set_badges = function(self, card, badges)
-			badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+			
 			if data.key == "Banana" or data.key == "Printer" then
 				badges[#badges+1] = create_badge(localize('k_felijo_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
 			end
+			if data.key == "Misprint" then
+				badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+			end
+			badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 		end,
 		use = function(self, card, area, copier)
 			local pool = {}
-			if (data.key == "Banana" or data.key == "Printer") then
+			if (data.key == "Banana" or data.key == "Printer" or data.key == "Misprint") then
 				if data.key == "Banana" then
 					pool = get_current_pool("BananaPool")
-				else
+				elseif data.key == "Printer" then
 					G.E_MANAGER:add_event(Event({
 						trigger = 'after',
 						delay = 0.4,
@@ -65,23 +74,37 @@ for _, data in ipairs(FELIJO.tribe_table) do
 							return true
 						end
 					}))
+				elseif data.key == "Misprint" then
+					G.E_MANAGER:add_event(Event({
+						trigger = 'after',
+						delay = 0.4,
+						func = function()
+							play_sound('timpani')
+							SMODS.add_card{set = "Joker", edition="e_bd_misprinted"}
+							card:juice_up(0.3, 0.5)
+							return true
+						end
+					}))
 				end
 			else
 				pool = FELIJO.pool_merge({"Inscryption",data.key})
 			end
-			if data.key ~= "Printer" then
+			if (data.key ~= "Printer" and data.key ~= "Misprint") then
 				G.E_MANAGER:add_event(Event({
 					trigger = 'after',
 					delay = 0.4,
 					func = function()
 						play_sound('timpani')
 						rf = pseudorandom_element(pool, pseudoseed(data.key))
+						
 						local iterations = 1
 						while rf == 'UNAVAILABLE' do
 							iterations = iterations + 1
 							rf = pseudorandom_element(pool, pseudoseed(data.key)..iterations)
 						end
 						SMODS.add_card{set = "Joker", key = rf}
+
+						
 						card:juice_up(0.3, 0.5)
 						return true
 					end

@@ -103,11 +103,19 @@ FELIJO.campfire_table = {
     ["m_felijo_enh_sup_t3_mp"]   = { next = "m_felijo_enh_sup_t4_mp",    break_chance = 0.60 },
 }
 
+
 FELIJO.prospectorTable = {
 	{key = "m_gold",   				weight = 8},
 	{key = "m_felijo_gold_t2",   	weight = 1},
 	{key = "m_felijo_gold_t3",   	weight = 0.02},
 	{key = "m_felijo_gold_t4",   	weight = 0.001}
+}
+
+FELIJO.prospectorTableMP = {
+	{key = "m_bd_misprintgold",   		weight = 8},
+	{key = "m_felijo_gold_t2_mp",   	weight = 1},
+	{key = "m_felijo_gold_t3_mp",   	weight = 0.02},
+	{key = "m_felijo_gold_t4_mp",   	weight = 0.001}
 }
 
 FELIJO.trapperTable = {
@@ -278,6 +286,16 @@ if FELIJO.is_mod_loaded("RevosVault") then
         totem_key = "ttm_hd_crv_banana", 
         tribe_card_key = "trb_crv_banana", 
         totem_x=11, 
+        cost=7
+    })
+end
+if FELIJO.is_mod_loaded("baddirector") then
+    FELIJO.add_tribe({
+        key = "Misprint", 
+        weight = 1.0, 
+        totem_key = "ttm_hd_bd_misprint", 
+        tribe_card_key = "trb_bd_misprint", 
+        totem_x=12, 
         cost=7
     })
 end

@@ -1,5 +1,5 @@
 FELIJO.Reptile = SMODS.Joker:extend{
-    atlas = 'felijo_insReptile',
+	atlas = 'felijo_insReptile',
 	pools = {
 		["FelisJokeria"]=true,
 		["Inscryption"] = true, 
@@ -17,64 +17,64 @@ FELIJO.Reptile = SMODS.Joker:extend{
 
 
 FELIJO.Reptile { -- Common Geck
-    pos = { x = 3, y = 0 },
-    key = "felijo_ins_geck",
-    rarity = 1,
-    cost = 0,
+	pos = { x = 3, y = 0 },
+	key = "felijo_ins_geck",
+	rarity = 1,
+	cost = 0,
 	blueprint_compat = true,
 	eternal_compat = true,
 	pronouns = "he_him",
 	config = { extra = { chips = 1, mult = 1,}},
 	attributes = {"chips", "mult",},
-    loc_vars = function(self, info_queue, card)
+	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.chips, card.ability.extra.mult, colours = { HEX('F0C590'), HEX('351A09') } } } 
-    end,
-    calculate = function(self, card, context)
+	end,
+	calculate = function(self, card, context)
 		if context.joker_main then
 			return {
 				mult = card.ability.extra.mult,
 				chips = card.ability.extra.chips
 			}
-        end
+		end
 	end,
 }
 
 FELIJO.Reptile { -- common Rattler
-    pos = { x = 4, y = 0 },
-    key = "felijo_ins_rattler",
-    rarity = 1,
-    cost = 4,
+	pos = { x = 4, y = 0 },
+	key = "felijo_ins_rattler",
+	rarity = 1,
+	cost = 4,
 	blueprint_compat = true,
 	eternal_compat = true,
 	pronouns = "he_him",
 	config = { extra = { chips = 3, mult = 1,}},
 	attributes = {"chips", "mult",},
-    loc_vars = function(self, info_queue, card)
+	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.chips, card.ability.extra.mult, colours = { HEX('F0C590'), HEX('351A09') } } } 
-    end,
-    calculate = function(self, card, context)
+	end,
+	calculate = function(self, card, context)
 		if context.joker_main then
 			return {
 				mult = card.ability.extra.mult,
 				chips = card.ability.extra.chips
 			}
-        end
+		end
 	end,
 }
 
 FELIJO.Reptile { -- Uncommon Adder
-    pos = { x = 1, y = 0 },
-    key = "felijo_ins_adder",
-    rarity = 2,
-    cost = 6,
+	pos = { x = 1, y = 0 },
+	key = "felijo_ins_adder",
+	rarity = 2,
+	cost = 6,
 	blueprint_compat = true,
 	eternal_compat = true,
 	pronouns = "he_him",
 	config = { extra = { chips = 1, mult = 1,}},
 	attributes = {"chips", "mult", "boss_blind",},
-    loc_vars = function(self, info_queue, card)
+	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.chips, card.ability.extra.mult, colours = { HEX('F0C590'), HEX('351A09') } } } 
-    end,
+	end,
 	remove_from_deck = function(self,card,from_debuff)
 		if from_debuff == true then
 			G.E_MANAGER:add_event(Event({
@@ -92,62 +92,62 @@ FELIJO.Reptile { -- Uncommon Adder
 				end
 			}))
 		end
-
+		
 	end,
-    calculate = function(self, card, context)
+	calculate = function(self, card, context)
 		if context.joker_main then
 			return {
 				mult = card.ability.extra.mult,
 				chips = card.ability.extra.chips
 			}
-        end
+		end
 	end,
 }
 
 FELIJO.Reptile { -- uncommon River Snapper
-    pos = { x = 6, y = 0 },
-    key = "felijo_ins_riversnapper",
-    rarity = 1,
-    cost = 4,
+	pos = { x = 6, y = 0 },
+	key = "felijo_ins_riversnapper",
+	rarity = 1,
+	cost = 4,
 	blueprint_compat = true,
 	eternal_compat = true,
 	pronouns = "he_him",
 	attributes = {"chips", "mult",},
 	config = { extra = { chips = 1, mult = 6,}},
-    loc_vars = function(self, info_queue, card)
+	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.chips, card.ability.extra.mult, colours = { HEX('F0C590'), HEX('351A09') } } } 
-    end,
-    calculate = function(self, card, context)
+	end,
+	calculate = function(self, card, context)
 		if context.joker_main then
 			return {
 				mult = card.ability.extra.mult,
 				chips = card.ability.extra.chips
 			}
-        end
+		end
 	end,
-}
+	}
 
-FELIJO.Reptile { -- uncommon Skink
-    pos = { x = 5, y = 0 },
-    key = "felijo_ins_skink",
-    rarity = 1,
-    cost = 4,
+	FELIJO.Reptile { -- uncommon Skink
+	pos = { x = 5, y = 0 },
+	key = "felijo_ins_skink",
+	rarity = 1,
+	cost = 4,
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = false,
 	pronouns = "he_him",
 	attributes = {"chips", "mult", "joker"},
 	config = { extra = { chips = 1, mult = 2,}},
-    loc_vars = function(self, info_queue, card)
+	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue+1] = {key = 'felijo_sgl_tail', set = 'Other'}
 		return { vars = { card.ability.extra.chips, card.ability.extra.mult, colours = { HEX('F0C590'), HEX('351A09') } } } 
-    end,
-    calculate = function(self, card, context)
+	end,
+	calculate = function(self, card, context)
 		if ((not card.ability.felijo_copied == true and not card.ability.akyrs_self_destructs == true and not card.ability.eternal == true and not card.ability.felijo_tailed == true)
 		and	((context.joker_type_destroyed and context.card == card ))) and not context.retrigger_joker then 
 			
 			FELIJO.createTail(card)
-
+			
 			
 			return {no_retrigger = true}
 		end
@@ -170,37 +170,37 @@ FELIJO.Reptile { -- uncommon Skink
 
 
 FELIJO.Reptile { -- Rare Ouro
-    pos = { x = 0, y = 0 },
-    key = "felijo_ins_ouro",
-    rarity = 3,
-    cost = 8,
+	pos = { x = 0, y = 0 },
+	key = "felijo_ins_ouro",
+	rarity = 3,
+	cost = 8,
 	pronouns = "he_him",
 	attributes = {"xchips", "xmult", "on_sell"},
 	config = { extra = { xchips = 1, xmult = 1, gain = 0.2}, sell = {curr = 0, limit = 2} },
-    loc_vars = function(self, info_queue, card)
+	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.xchips, card.ability.extra.xmult, card.ability.extra.gain, card.ability.sell.curr, card.ability.sell.limit, colours = { HEX('F0C590'), HEX('351A09') } } } 
-    end,
-    calculate = function(self, card, context)
+	end,
+	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint and not context.retrigger_joker then
-            card.ability.sell.curr = card.ability.sell.curr + 1
+			card.ability.sell.curr = card.ability.sell.curr + 1
 			card:set_cost()
-            if card.ability.sell.curr == card.ability.sell.limit then
-                local eval = function(card) return not card.REMOVED end
-                juice_card_until(card, eval, true)
-            end
-            return {
-                message = (card.ability.sell.curr < card.ability.sell.limit) and
-                    (card.ability.sell.curr .. '/' .. card.ability.sell.limit) or
-                    localize('k_active_ex'),
-                colour = G.C.FILTER, 
+			if card.ability.sell.curr == card.ability.sell.limit then
+				local eval = function(card) return not card.REMOVED end
+				juice_card_until(card, eval, true)
+			end
+			return {
+				message = (card.ability.sell.curr < card.ability.sell.limit) and
+				(card.ability.sell.curr .. '/' .. card.ability.sell.limit) or
+				localize('k_active_ex'),
+				colour = G.C.FILTER, 
 				no_retrigger = true
-            }
-        end
-        if ((not card.ability.felijo_copied == true and not card.ability.akyrs_self_destructs == true )
+			}
+		end
+		if ((not card.ability.felijo_copied == true and not card.ability.akyrs_self_destructs == true )
 		and	((context.selling_self and (card.ability.sell.curr >= card.ability.sell.limit)) -- sacrifice by sale
 		or (context.joker_type_destroyed and context.card == card and #G.jokers.cards <= G.jokers.config.card_limit))) and not context.retrigger_joker then -- sacrifice by dagger
-			card.ability.extra_slots_used = -1
 			
+			card.ability.extra_slots_used = -1
 			local ouroboros = SMODS.add_card { 
 				key = "j_felijo_ins_ouro", 
 				key_append = "felijo_ouro", 
@@ -208,7 +208,7 @@ FELIJO.Reptile { -- Rare Ouro
 				no_edition = true,
 				stickers = nil,
 			}
-				
+			
 			ouroboros.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.gain
 			ouroboros.ability.extra.xchips = card.ability.extra.xmult + card.ability.extra.gain
 			ouroboros.ability.extra_slots_used = 0
@@ -233,8 +233,8 @@ FELIJO.Reptile { -- Rare Ouro
 				xmult = card.ability.extra.xmult,
 				xchips = card.ability.extra.xchips
 			}
-        end
+		end
 	end,
-    blueprint_compat = true,
+	blueprint_compat = true,
 	eternal_compat = false,
 }

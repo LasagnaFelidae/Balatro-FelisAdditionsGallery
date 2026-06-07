@@ -181,6 +181,10 @@ FELIJO.getCardTribes = function(card)
 
     local tribes = {}
 
+    -- BadDirector XMOD
+    if (card.edition and card.edition.key == "e_bd_misprinted") or card.config.center.key == "j_misprint" then
+        table.insert(tribes, "Misprint")
+    end
     -- Menthol XMOD
     if card.ability and card.ability.minty_cat_ears then
         table.insert(tribes, "Feline")

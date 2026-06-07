@@ -73,6 +73,13 @@ return {
                     "in printers?",
                 },
             },
+            j_felijo_ins_tail_misp = {
+                name = "{B:1,V:2,f:felijo_Feli5x8}gling TailWrig",
+                text = {
+					"{C:mult}+#1#{} Mult",
+					"A dripping, {E:bd_glitched}useless{} bit of {E:bd_glitched}tail{}.",
+                },
+            },
 			
 
         }

@@ -1,6 +1,55 @@
 ---ily
 return {
     descriptions = {
+        felijo_ritual_mp = {
+			c_felijo_rit_campfire_mp = {
+				name = "ireCampf",
+				text = {
+					"Upgrade {C:attention}#1#{} selected card\'s",
+					"{C:enhanced}enhancement{} to the {C:attention}next tier{}",
+                    "Fixed {C:green}1 in 3{} chance to",
+                    "{C:dark_edition}misprint the {C:enhanced}enhancement{}",
+					"Has a {C:red}#3#%{} chance to",
+					"{C:red}destroy{} the card instead",
+					"{C:inactive,s:0.8}(Chance scales with {C:enhanced,s:0.8}Enhancement {C:inactive,s:0.8}Tier)",
+				},
+			},
+			c_felijo_rit_trader_mp = {
+				name = "derThe Tra",
+				text = {
+					"Trade up to {C:attention}#1#{} ",
+					"{C:felijo_ins_gld}Pelt Cards{} for {X:gold,C:white}$X#4# ~ $X#5#{}",
+					"{C:green}#2# in #3#{} chance to give",
+					"double the {C:felijo_ins_gld}Pelt{} value"
+				},
+			},
+			c_felijo_rit_prospector_mp = {
+				name = "ctorThe Prospe",
+				text = {
+					"Enhance up to {C:attention}#1#{} selected cards",
+					"to a random tiered {C:gold}old CardG",
+					"Fixed {C:green}1 in 3{} chance to",
+					"turn it into a {C:dark_edition}Misprinted",
+                    "{C:felijo_ins_gld}Gold Nugget{} instead"
+				},
+			},
+			c_felijo_rit_goobert_mp = {
+				name = "ertGoob",
+				text = {
+					"Create a {C:dark_edition}Misprinted {C:felijo_goobert}Painted{} copy",
+					"of {C:attention}#1#{} selected joker.",
+					"{C:inactive}(Must have room)",
+					"{s:0.8,C:inactive}\"I will {s:0.8,C:inactive,E:bd_glitching}paint! {s:0.8,C:inactive}Just like {s:0.8,C:inactive,E:bd_glitching}The Master!{s:0.8,C:inactive}\"",
+				},
+			},
+			c_felijo_rit_trapper_mp = {
+				name = "pperThe Tra",
+				text = {
+					"Enhance up to {C:attention}#1#{} selected cards",
+					"to a random {C:dark_edition}Misprinted {C:felijo_ins_gld}Pelt Card",
+				},
+			},
+		},
          Enhanced = {
             m_felijo_wild_t2_mp = {
                 name = "ild CardW [II]",
@@ -526,11 +575,14 @@ return {
             k_felijo_tier2_tarot_mp = "rotTa [II]",
 			k_felijo_tier3_tarot_mp = "rotTa [III]",
 			k_felijo_tier4_tarot_mp = "rotTa [IV]",
+            b_felijo_ritual_mp_cards = "ual CardsRit",
+            k_felijo_ritual_mp = "ualRit",
         },
         labels = {
             felijo_tier2_tarot_mp = "rotTa [II]",
 			felijo_tier3_tarot_mp = "rotTa [III]",
 			felijo_tier4_tarot_mp = "rotTa [IV]",
+            felijo_ritual_mp = "ualRit",
         },
     }
 }

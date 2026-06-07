@@ -542,6 +542,17 @@ return {
 					},
                 },
             },
+            j_felijo_plushtrap = {
+                name = "plushtrap",
+                text = {
+					{
+                    "{C:red}+#1#{} Mult",
+					},
+					{
+					"current status : {C:attention}#2#{}",
+					},
+                },
+            },
 			
 			
 		-- LETTERJOKERS
@@ -629,6 +640,20 @@ return {
 						"{C:felijo_ins}Jimbo's Photograph{}",
 						"in this run grants",
 						"an additional {X:mult,C:white}X2{} Mult",
+				}
+			},
+            felijo_ghostcards_crossmod	= {
+				name = "GhostCards Ability",
+				text= {
+						"A card is {C:felijo_pink}Haunted{}",
+                        "if it has the {C:dark_edition}GhostCards",
+                        "alternative texture"
+				}
+			},
+            felijo_phanta_crossmod	= {
+				name = "Phanta Ability",
+				text= {
+						"{C:phanta_zodiac}Zodiacs{} count as {C:tarot}Tarots"
 				}
 			},
 			felijo_bld_explode	= {
@@ -1041,6 +1066,13 @@ return {
 					"{C:felijo_trb}Printer{} card"
 				},
 			},
+            c_felijo_trb_bd_misprint = {
+				name = "Misprint",
+				text = {
+					"Get {C:attention}1{} random",
+					"{C:felijo_trb}Misprint{} card"
+				},
+			},
 		},
 
 		felijo_tier2_planet = {
@@ -1423,6 +1455,8 @@ return {
 			k_felijo_bs = "Blindside",
 			k_felijo_synthb = "SynthB",
             k_felijo_bd = "Bad Director",
+            k_felijo_ghostcards = "GhostCards",
+            k_felijo_phanta = "Phanta",
 			----------------
 			--J.CATEGORIES--
 			----------------

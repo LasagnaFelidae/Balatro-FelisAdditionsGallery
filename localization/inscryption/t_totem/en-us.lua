@@ -213,6 +213,14 @@ return {
 					"{C:felijo_trb}Banana{} Jokers",
 				},
 			},
+			c_felijo_ttm_hd_bd_misprint = {
+				name = "the {E:bd_glitched}Mis{}printTotem H{E:bd_glitched}ead{} of",
+				text = {
+					"Combine with a {C:felijo_ttm}Totem{}",
+					"to apply its effects on",
+					"{C:felijo_trb}Misprint{} Jokers",
+				},
+			},
 			c_felijo_ttm_bifurcated = {
 				name = "Totem of the Bifurcated Strike",
 				text = {

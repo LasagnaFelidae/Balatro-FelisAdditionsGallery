@@ -1,4 +1,4 @@
-local CardAreaold = CardArea.emplace
+local cardarea_emplace_ref = CardArea.emplace
 function CardArea:emplace(card, location, stay_flipped)
     if self == G.consumeables and (card.ability.set == "felijo_totem_parts") then
 		card:remove_from_area()
@@ -17,14 +17,14 @@ function CardArea:emplace(card, location, stay_flipped)
         G.E_MANAGER:add_event(Event({
             trigger = 'immediate',
             func = function()
-                CardAreaold(self, card, location, stay_flipped)
+                cardarea_emplace_ref(self, card, location, stay_flipped)
                 return true
             end
         }))
         return
     end
 
-	CardAreaold(self, card, location, stay_flipped)
+	cardarea_emplace_ref(self, card, location, stay_flipped)
 end
 
 local check_for_buy_space_old = G.FUNCS.check_for_buy_space

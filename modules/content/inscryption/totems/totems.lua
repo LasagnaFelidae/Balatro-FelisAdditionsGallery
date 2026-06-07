@@ -166,10 +166,13 @@ FELIJO.Consumable = SMODS.Consumable:extend{
 		return (G.GAME.felijo_totems_enabled) or false
 	end,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
         if card.ability.is_totem_head and (card.ability.tribe == "Banana" or card.ability.tribe == "Printer") then
             badges[#badges+1] = create_badge(localize('k_felijo_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
         end
+        if card.ability.is_totem_head and (card.ability.tribe == "Misprint") then
+            badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+        end
+        badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
 	select_card = G.felijo_totems,
 }
@@ -227,6 +230,11 @@ for _, data in ipairs(FELIJO.totem_sigil_table) do
 			local sigil = card.ability.totem_sigil
 			local display = tribe_name and tribe_name or localize('k_none')
 			local colour = tribe_name and G.C.FILTER or G.C.UI.TEXT_INACTIVE
+
+            if tribe_name == "Misprint" then
+				info_queue[#info_queue+1] = G.P_CENTERS["e_bd_misprinted"]
+			end
+            
 
 			if card.ability.totem_sigil then
 				local retvars = retvars_lookup[sigil] or {}
@@ -318,6 +326,11 @@ for _, data in ipairs(FELIJO.tribe_table) do
         atlas = "insTotems",
         pos = {x = data.totem_x, y = 0},
         cost = data.cost,
+        loc_vars = function (self, info_queue, card)
+            if data.key == "Misprint" then
+				info_queue[#info_queue+1] = G.P_CENTERS["e_bd_misprinted"]
+			end
+        end,
         can_use = function(self, card)
 
         end,

@@ -1,7 +1,10 @@
-FELIJO.T2 = SMODS.Consumable:extend{
+FELIJO.T2MP = SMODS.Consumable:extend{
     in_pool = function (self, args)
        return true
     end,
+    set_badges = function(self, card, badges)
+		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+	end,
     hidden = true,
 	soul_set = "Tarot",
 	soul_rate = 0.003,
@@ -9,10 +12,13 @@ FELIJO.T2 = SMODS.Consumable:extend{
     discovered = false,
 	unlocked = true,
 }
-FELIJO.T3 = SMODS.Consumable:extend{
+FELIJO.T3MP = SMODS.Consumable:extend{
     in_pool = function (self, args)
        return true
     end,
+    set_badges = function(self, card, badges)
+		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+	end,
     hidden = true,
     discovered = false,
 	unlocked = true,
@@ -20,10 +26,13 @@ FELIJO.T3 = SMODS.Consumable:extend{
 	soul_rate = 0.0005,
     can_repeat_soul = true,
 }
-FELIJO.T4 = SMODS.Consumable:extend{
+FELIJO.T4MP = SMODS.Consumable:extend{
     in_pool = function (self, args)
        return true
     end,
+    set_badges = function(self, card, badges)
+		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+	end,
     hidden = true,
     discovered = false,
 	unlocked = true,
@@ -132,7 +141,7 @@ SMODS.Consumable {
 }
 
 --[[
-FELIJO.T2 {
+FELIJO.T2MP {
     key = 'fool',
     set = 'vremade_tarot_mp',
     pos = { x = 0, y = 0 },
@@ -192,7 +201,7 @@ FELIJO.T2 {
     end
 }
 ]]--
-FELIJO.T2 {
+FELIJO.T2MP {
     key = 't2_magician_mp',
     set = 'felijo_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
@@ -209,7 +218,7 @@ FELIJO.T2 {
     misprint_original = "c_felijo_t2_magician"
 }
 
-FELIJO.T2 {
+FELIJO.T2MP {
     key = 't2_empress_mp',
     set = 'felijo_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
@@ -227,7 +236,7 @@ FELIJO.T2 {
 
 }
 
-FELIJO.T2 {
+FELIJO.T2MP {
     key = 't2_heirophant_mp',
     set = 'felijo_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
@@ -243,7 +252,7 @@ FELIJO.T2 {
     end,
     misprint_original = "c_felijo_t2_heirophant"
 }
-FELIJO.T2 {
+FELIJO.T2MP {
     key = 't2_lovers_mp',
     set = 'felijo_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
@@ -260,7 +269,7 @@ FELIJO.T2 {
     misprint_original = "c_felijo_t2_lovers"
 }
 
-FELIJO.T2 {
+FELIJO.T2MP {
     key = 't2_chariot_mp',
     set = 'felijo_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
@@ -276,7 +285,7 @@ FELIJO.T2 {
     end,
     misprint_original = "c_felijo_t2_chariot"
 }
-FELIJO.T2 {
+FELIJO.T2MP {
     key = 't2_justice_mp',
     set = 'felijo_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
@@ -292,7 +301,7 @@ FELIJO.T2 {
     end,
     misprint_original = "c_felijo_t2_justice"
 }
-FELIJO.T2 {
+FELIJO.T2MP {
     key = 't2_devil_mp',
     set = 'felijo_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
@@ -309,7 +318,7 @@ FELIJO.T2 {
     misprint_original = "c_felijo_t2_devil"
 }
 
-FELIJO.T2 {
+FELIJO.T2MP {
     key = 't2_tower_mp',
     set = 'felijo_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
@@ -326,7 +335,7 @@ FELIJO.T2 {
     misprint_original = "c_felijo_t2_tower"
 }
 
-FELIJO.T2 {
+FELIJO.T2MP {
     key = 't2_ascended_mp',
     set = 'felijo_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
@@ -345,7 +354,7 @@ FELIJO.T2 {
 }
 ----
 
-FELIJO.T3 {
+FELIJO.T3MP {
     key = 't3_magician_mp',
     set = 'felijo_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
@@ -362,7 +371,7 @@ FELIJO.T3 {
     misprint_original = "c_felijo_t3_magician"
 }
 
-FELIJO.T3 {
+FELIJO.T3MP {
     key = 't3_empress_mp',
     set = 'felijo_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
@@ -380,7 +389,7 @@ FELIJO.T3 {
 
 }
 
-FELIJO.T3 {
+FELIJO.T3MP {
     key = 't3_heirophant_mp',
     set = 'felijo_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
@@ -396,7 +405,7 @@ FELIJO.T3 {
     end,
     misprint_original = "c_felijo_t3_heirophant"
 }
-FELIJO.T3 {
+FELIJO.T3MP {
     key = 't3_lovers_mp',
     set = 'felijo_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
@@ -412,7 +421,7 @@ FELIJO.T3 {
     end,
     misprint_original = "c_felijo_t3_lovers"
 }
-FELIJO.T3 {
+FELIJO.T3MP {
     key = 't3_chariot_mp',
     set = 'felijo_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
@@ -428,7 +437,7 @@ FELIJO.T3 {
     end,
     misprint_original = "c_felijo_t3_chariot"
 }
-FELIJO.T3 {
+FELIJO.T3MP {
     key = 't3_justice_mp',
     set = 'felijo_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
@@ -444,7 +453,7 @@ FELIJO.T3 {
     end,
     misprint_original = "c_felijo_t3_justice"
 }
-FELIJO.T3 {
+FELIJO.T3MP {
     key = 't3_devil_mp',
     set = 'felijo_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
@@ -460,7 +469,7 @@ FELIJO.T3 {
     end,
     misprint_original = "c_felijo_t3_devil"
 }
-FELIJO.T3 {
+FELIJO.T3MP {
     key = 't3_tower_mp',
     set = 'felijo_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
@@ -477,7 +486,7 @@ FELIJO.T3 {
     misprint_original = "c_felijo_t3_tower"
 }
 
-FELIJO.T3 {
+FELIJO.T3MP {
     key = 't3_ascended_mp',
     set = 'felijo_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
@@ -497,7 +506,7 @@ FELIJO.T3 {
 ---
 
 
-FELIJO.T4 {
+FELIJO.T4MP {
     key = 't4_magician_mp',
     set = 'felijo_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
@@ -514,7 +523,7 @@ FELIJO.T4 {
     misprint_original = "c_felijo_t4_magician"
 }
 
-FELIJO.T4 {
+FELIJO.T4MP {
     key = 't4_empress_mp',
     set = 'felijo_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
@@ -532,7 +541,7 @@ FELIJO.T4 {
 
 }
 
-FELIJO.T4 {
+FELIJO.T4MP {
     key = 't4_heirophant_mp',
     set = 'felijo_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
@@ -548,7 +557,7 @@ FELIJO.T4 {
     end,
     misprint_original = "c_felijo_t4_heirophant"
 }
-FELIJO.T4 {
+FELIJO.T4MP {
     key = 't4_lovers_mp',
     set = 'felijo_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
@@ -564,7 +573,7 @@ FELIJO.T4 {
     end,
     misprint_original = "c_felijo_t4_lovers"
 }
-FELIJO.T4 {
+FELIJO.T4MP {
     key = 't4_chariot_mp',
     set = 'felijo_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
@@ -580,7 +589,7 @@ FELIJO.T4 {
     end,
     misprint_original = "c_felijo_t4_chariot"
 }
-FELIJO.T4 {
+FELIJO.T4MP {
     key = 't4_justice_mp',
     set = 'felijo_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
@@ -597,7 +606,7 @@ FELIJO.T4 {
     end,
     misprint_original = "c_felijo_t4_justice"
 }
-FELIJO.T4 {
+FELIJO.T4MP {
     key = 't4_devil_mp',
     set = 'felijo_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
@@ -614,7 +623,7 @@ FELIJO.T4 {
     misprint_original = "c_felijo_t4_devil"
 }
 
-FELIJO.T4 {
+FELIJO.T4MP {
     key = 't4_tower_mp',
     set = 'felijo_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
@@ -632,7 +641,7 @@ FELIJO.T4 {
     misprint_original = "c_felijo_t4_tower"
 }
 
-FELIJO.T4 {
+FELIJO.T4MP {
     key = 't4_ascended_mp',
     set = 'felijo_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',

@@ -178,6 +178,12 @@ SMODS.Atlas {
     py = 95
 }
 SMODS.Atlas {
+    key = "insRitual_mp",
+    path = "crossmod/mylove/inscryption/rituals.png",
+    px = 71,
+    py = 95
+}
+SMODS.Atlas {
     key = "lover_tarots",
     path = "crossmod/mylove/tarot/ascended.png",
     px = 71,

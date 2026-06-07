@@ -34,14 +34,27 @@ SMODS.Booster {
         G.booster_pack_sparkles:fade(1, 0)
     end,
     create_card = function(self, card, i)
-        return {
-            set = "felijo_ritual",
-            area = G.pack_cards,
-            skip_materialize = true,
-            soulable = false,
-            key_append =
-            "felijo_ritual_p"
-        }
+       local _card
+        if BadDirector and pseudorandom('misprint') > 0.9 then
+            _card = {
+                set = "felijo_ritual_mp",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append =
+                "felijo_ritual_p_mp"
+            }
+        else
+            _card = {
+                set = "felijo_ritual",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append =
+                "felijo_ritual_p"
+            }
+        end
+        return _card
     end,
 }
 SMODS.Booster {
@@ -80,14 +93,27 @@ SMODS.Booster {
         G.booster_pack_sparkles:fade(1, 0)
     end,
     create_card = function(self, card, i)
-        return {
-            set = "felijo_ritual",
-            area = G.pack_cards,
-            skip_materialize = true,
-            soulable = false,
-            key_append =
-            "felijo_ritual_p"
-        }
+       local _card
+        if BadDirector and pseudorandom('misprint') > 0.9 then
+            _card = {
+                set = "felijo_ritual_mp",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append =
+                "felijo_ritual_p_mp"
+            }
+        else
+            _card = {
+                set = "felijo_ritual",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append =
+                "felijo_ritual_p"
+            }
+        end
+        return _card
     end,
 }
 SMODS.Booster {
@@ -126,14 +152,27 @@ SMODS.Booster {
         G.booster_pack_sparkles:fade(1, 0)
     end,
     create_card = function(self, card, i)
-        return {
-            set = "felijo_ritual",
-            area = G.pack_cards,
-            skip_materialize = true,
-            soulable = false,
-            key_append =
-            "felijo_ritual_p"
-        }
+       local _card
+        if BadDirector and pseudorandom('misprint') > 0.9 then
+            _card = {
+                set = "felijo_ritual_mp",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append =
+                "felijo_ritual_p_mp"
+            }
+        else
+            _card = {
+                set = "felijo_ritual",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append =
+                "felijo_ritual_p"
+            }
+        end
+        return _card
     end,
 }
 SMODS.Booster {
@@ -172,14 +211,27 @@ SMODS.Booster {
         G.booster_pack_sparkles:fade(1, 0)
     end,
     create_card = function(self, card, i)
-        return {
-            set = "felijo_ritual",
-            area = G.pack_cards,
-            skip_materialize = true,
-            soulable = true,
-            key_append =
-            "felijo_ritual_p"
-        }
+       local _card
+        if BadDirector and pseudorandom('misprint') > 0.9 then
+            _card = {
+                set = "felijo_ritual_mp",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append =
+                "felijo_ritual_p_mp"
+            }
+        else
+            _card = {
+                set = "felijo_ritual",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append =
+                "felijo_ritual_p"
+            }
+        end
+        return _card
     end,
 }
 SMODS.Booster {
@@ -218,14 +270,27 @@ SMODS.Booster {
         G.booster_pack_sparkles:fade(1, 0)
     end,
     create_card = function(self, card, i)
-        return {
-            set = "felijo_ritual",
-            area = G.pack_cards,
-            skip_materialize = true,
-            soulable = true,
-            key_append =
-            "felijo_ritual_p"
-        }
+       local _card
+        if BadDirector and pseudorandom('misprint') > 0.9 then
+            _card = {
+                set = "felijo_ritual_mp",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append =
+                "felijo_ritual_p_mp"
+            }
+        else
+            _card = {
+                set = "felijo_ritual",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append =
+                "felijo_ritual_p"
+            }
+        end
+        return _card
     end,
 }
 SMODS.Booster {
@@ -264,13 +329,26 @@ SMODS.Booster {
         G.booster_pack_sparkles:fade(1, 0)
     end,
     create_card = function(self, card, i)
-        return {
-            set = "felijo_ritual",
-            area = G.pack_cards,
-            skip_materialize = true,
-            soulable = true,
-            key_append =
-            "felijo_ritual_p"
-        }
+       local _card
+        if BadDirector and pseudorandom('misprint') > 0.9 then
+            _card = {
+                set = "felijo_ritual_mp",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append =
+                "felijo_ritual_p_mp"
+            }
+        else
+            _card = {
+                set = "felijo_ritual",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append =
+                "felijo_ritual_p"
+            }
+        end
+        return _card
     end,
 }

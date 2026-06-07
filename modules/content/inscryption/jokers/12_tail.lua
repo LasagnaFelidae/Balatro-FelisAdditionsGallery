@@ -40,6 +40,7 @@ SMODS.Joker { -- Common, loose tail
 				{key = "Tentacle", 	x=4,	akey = "_ten"},
 				{key = "Banana", 	x=8,	akey = "_ban"},
 				{key = "Printer", 	x=9,	akey = "_pri"},
+				{key = "Misprint", 	x=10,	akey = "_misp"},
 			}
 			for _, _tribe in ipairs(tailtable) do
 				if _tribe.akey == card.ability.key_app then

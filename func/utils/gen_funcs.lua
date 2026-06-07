@@ -147,6 +147,7 @@ function FELIJO.createTail(card)
 		{key = "Tentacle", 	x=4,	akey = "_ten"},
 		{key = "Banana", 	x=8,	akey = "_ban"},
 		{key = "Printer", 	x=9,	akey = "_pri"},
+		{key = "Misprint", 	x=10,	akey = "_misp"},
 	}
 	local tail_x = 0
 	local keyapp = nil

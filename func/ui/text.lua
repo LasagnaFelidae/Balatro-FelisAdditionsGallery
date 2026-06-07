@@ -33,6 +33,25 @@ SMODS.Gradient({
     },
     cycle = 2,
 })
+SMODS.Gradient({
+    key = "rit_mp",
+    colours ={
+        HEX('8FAA86'),
+        HEX('BACAB4'),
+
+    },
+    cycle = 2,
+})
+
+SMODS.Gradient({
+    key = "chipsmult",
+    colours = {
+        G.C.CHIPS,
+        G.C.MULT,
+    },
+    cycle = 2,
+})
+
 
 
 
