@@ -11,9 +11,10 @@ return {
 					"{X:chips,C:white}x#3#{} Chips, {C:mult}+#2#{} Mult",
 					},
 					{
-                    "Gets stronger the leftmost it",
-					"is in the {C:attention}Joker{} area and",
-					"the more jokers there are"
+                    "Gives {C:chips}xChips relative to",
+					"how leftmost it is",
+					"in the {C:attention}Joker{} area and",
+					"how many {C:attention}Jokers{} there are"
 					}
                 }
 		    },

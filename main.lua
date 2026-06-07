@@ -65,10 +65,14 @@ end
 
 assert(SMODS.load_file("./modules/content/challenges.lua"))()
 assert(SMODS.load_file("./modules/content/enhancements.lua"))()
-assert(SMODS.load_file("./modules/content/legendaries.lua"))()
-assert(SMODS.load_file("./modules/content/stockmarket.lua"))()
+assert(SMODS.load_file("./modules/content/0_luckyfeli.lua"))()
 assert(SMODS.load_file("./modules/content/jokers.lua"))()
-assert(SMODS.load_file("./modules/content/luckyfeli.lua"))()
+
+local jkr = SMODS.NFS.getDirectoryItems(SMODS.current_mod.path .. "modules/content/jokers")
+for _, file in ipairs(jkr) do
+    assert(SMODS.load_file("modules/content/jokers/" .. file))()
+end
+
 assert(SMODS.load_file("./modules/content/stickers.lua"))()
 --assert(SMODS.load_file("./modules/content/hands.lua"))()
 --assert(SMODS.load_file("./modules/content/planet.lua"))()
@@ -80,8 +84,8 @@ assert(SMODS.load_file("./modules/content/tarots.lua"))()
 ----------------------------
 assert(SMODS.load_file("./modules/content/crossmod/mydreamjournal.lua"))()
 if FELIJO.is_mod_loaded("TOGAPack") then
-    assert(SMODS.load_file("./modules/content/crossmod/togastuff.lua"))()
     assert(SMODS.load_file("./modules/content/crossmod/sounds.togastuff.lua"))()
+    assert(SMODS.load_file("./modules/content/crossmod/togastuff.lua"))()
 end
 if FELIJO.is_mod_loaded("RevosVault") then
     assert(SMODS.load_file("./modules/content/crossmod/revo.lua"))()
@@ -97,8 +101,9 @@ if FELIJO.is_mod_loaded("synthb") then
 end
 
 if FELIJO.is_mod_loaded("baddirector") then
-    assert(SMODS.load_file("./modules/content/crossmod/nxkoo.lua"))()
-    assert(SMODS.load_file("./modules/content/crossmod/tarots.nxkoo.lua"))()
+    assert(SMODS.load_file("./modules/content/crossmod/loverboy/enh.nxkoo.lua"))()
+    assert(SMODS.load_file("./modules/content/crossmod/loverboy/rit.nxkoo.lua"))()
+    assert(SMODS.load_file("./modules/content/crossmod/loverboy/tarots.nxkoo.lua"))()
 end
 --[[
 ▄▄▄▄  ▄▄▄▄▄ ▄▄▄▄  ▄▄    ▄▄▄▄▄ ▄▄ ▄▄ 
@@ -172,7 +177,6 @@ assert(SMODS.load_file("./modules/content/inscryption/tags.lua"))()
 assert(SMODS.load_file("./modules/content/inscryption/pelts.lua"))()
 --assert(SMODS.load_file("./modules/content/inscryption/blinds.lua"))()
 assert(SMODS.load_file("./modules/content/inscryption/vouchers.lua"))()
-
 
 
 

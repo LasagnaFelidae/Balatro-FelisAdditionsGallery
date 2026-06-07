@@ -65,6 +65,71 @@ SMODS.Joker { -- Uncommon Aiko
 	end
 }
 
+SMODS.Joker { -- Uncommon Ghost
+	atlas = 'insDeathcard',
+	pos = { x = 4, y = 1 },
+	pools = {
+		["FelisJokeria"]=true,
+		["Inscryption"] = true, 
+		["Beast"] = true,
+		["Other"] = true, 
+		["Deathcard"] = true,
+	},
+	key = "felijo_ins_ghost",
+	pronouns = "she_her",
+	unlocked = true,
+
+	attributes = {"consumable", "tarot", "chips", "mult", "xmult", "xblindsize"},
+	rarity = 2,
+	cost = 8,
+	config = { extra = { mult = 1, chips = 12, xmult = 1.1, xblindsize = 0.9 } },
+	set_badges = function(self, card, badges)
+		badges[#badges+1] = create_badge(localize('k_felijo_phanta'), HEX('4d1575'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_felijo_ghostcards'), HEX('d66ea9'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	end,
+	loc_vars = function(self, info_queue, card)
+		local _key = self.key
+		if FELIJO.is_mod_loaded("GhostCards") and FELIJO.is_mod_loaded("malverk") then
+			info_queue[#info_queue+1] = {key = 'felijo_ghostcards_crossmod', set = 'Other'}
+			_key = self.key .. "_gc"
+		end
+
+		return { key = _key, vars = { card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.xmult, card.ability.extra.xblindsize, colours = { HEX('F0C590'), HEX('351A09') } } }
+	end,
+	calculate = function(self, card, context)
+		if context.joker_main then
+			if FELIJO.is_mod_loaded("GhostCards") and FELIJO.is_mod_loaded("malverk") then
+				local haunt_count = 0
+				for _, j in ipairs(G.jokers.cards) do
+					if j ~= card and j.config.center.atlas and string.find(j.config.center.atlas, "alt_tex_ghostcards_") then
+						haunt_count = haunt_count + 1
+						SMODS.calculate_effect(
+						{xblindsize = card.ability.extra.xblindsize, juice_card = j, message_card = j},
+						card
+						)
+					end
+				end
+			end
+			local t_count = 0
+			for _, t in ipairs(G.consumeables.cards) do
+				if t.ability.set == "Tarot" or t.ability.set == "phanta_Zodiac" then
+					t_count = t_count + 1
+					SMODS.calculate_effect(
+						{xmult = card.ability.extra.xmult, juice_card = t, message_card = t},
+						card
+						)
+				end
+			end
+			return {
+				chips = card.ability.extra.chips,
+				mult = card.ability.extra.mult,
+			}
+		end
+	end,
+	blueprint_compat = true,
+}
+
 
 
 SMODS.Joker { -- Uncommon Lily
@@ -223,41 +288,6 @@ blueprint_compat = true,
 }
 
 
-SMODS.Joker{  -- uncommon nxkoo
-	atlas = 'insDeathcard',
-	pos = { x = 5, y = 0 },
-	pools = {
-		["FelisJokeria"]= true, 
-		["Inscryption"] = true, 
-		["Beast"] = true,
-		["Human"] = true, 
-		["Deathcard"] = true 
-	},
-	key = "felijo_ins_nxkoo",
-	pronouns = "she_they",
-	attributes = {"chips", "mult", "joker_slot"},
-	rarity = 2,
-	cost = 8,
-	blueprint_compat = true,
-	eternal_compat = true,
-	perishable_compat = true,
-	unlocked = true,
-	discovered = false,
-	config = { extra = {chips = 6, mult = 7,} },
-	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
-	end,
-	loc_vars = function(self, info_queue, card)
-		return { vars = {card.ability.extra.chips, card.ability.extra.mult, G.jokers and math.max(1, #G.jokers.cards + (#SMODS.find_card("j_lusty_joker", true)*0.5)) or 1, colours = { HEX('F0C590'), HEX('351A09')} } }
-	end,
-	calculate = function(self, card, context)
-		if context.joker_main then
-			return {
-				xmult = math.max(1, #G.jokers.cards + (#SMODS.find_card("j_lusty_joker", true)*0.5))
-			}
-		end
-	end
-}
 
 SMODS.Joker { -- Uncommon Tatsu
 	atlas = 'insDeathcard',
@@ -423,6 +453,44 @@ calculate = function(self, card, context)
 	end
 end,
 blueprint_compat = true,
+}
+
+
+SMODS.Joker{  -- uncommon nxkoo
+	atlas = 'insDeathcard',
+	pos = { x = 5, y = 0 },
+	pools = {
+		["FelisJokeria"]= true, 
+		["Inscryption"] = true, 
+		["Beast"] = true,
+		["Human"] = true, 
+		["Canine"] = true,
+		["Deathcard"] = true 
+	},
+	key = "felijo_ins_nxkoo",
+	pronouns = "she_they",
+	attributes = {"chips", "mult", "joker_slot"},
+	rarity = 3,
+	cost = 8,
+	blueprint_compat = true,
+	eternal_compat = true,
+	perishable_compat = true,
+	unlocked = true,
+	discovered = false,
+	config = { extra = {chips = 6, mult = 7,} },
+	set_badges = function(self, card, badges)
+		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	end,
+	loc_vars = function(self, info_queue, card)
+		return { vars = {card.ability.extra.chips, card.ability.extra.mult, G.jokers and math.max(1, #G.jokers.cards + (#SMODS.find_card("j_lusty_joker", true)*0.5)) or 1, colours = { HEX('F0C590'), HEX('351A09')} } }
+	end,
+	calculate = function(self, card, context)
+		if context.joker_main then
+			return {
+				xmult = math.max(1, #G.jokers.cards + (#SMODS.find_card("j_lusty_joker", true)*0.5))
+			}
+		end
+	end
 }
 
 SMODS.Joker { -- Rare Revo
@@ -638,3 +706,7 @@ calculate = function(self, card, context)
 end,
 blueprint_compat = true,
 }
+
+
+
+

@@ -196,6 +196,38 @@ return {
 					}
 				},
 			},
+			j_felijo_ins_ghost = {
+				name = {
+				"{B:1,V:2,f:felijo_Feli5x8}Ghost{}",
+				},
+				text = {
+					{
+					"{C:chips}+#2#{} Chips, {C:mult}+#1#{} Mult",
+					},
+					{
+					"Held {C:tarot}Tarots{} give",
+					"{X:mult,C:white}X#3#{} Mult",
+					}
+				},
+			},
+			j_felijo_ins_ghost_gc = {
+				name = {
+				"{B:1,V:2,f:felijo_Feli5x8}Ghost{}",
+				},
+				text = {
+					{
+					"{C:chips}+#2#{} Chips, {C:mult}+#1#{} Mult",
+					},
+					{
+					"Held {C:tarot}Tarots{} give",
+					"{X:mult,C:white}X#3#{} Mult",
+					},
+					{
+					"{C:felijo_pink}Haunted{} {C:attention}Jokers{} give",
+					"{X:blind,C:white}X#4#{} Blind Size",
+					}
+				},
+			},
 		},
 	},
 }
