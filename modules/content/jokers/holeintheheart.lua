@@ -20,6 +20,15 @@ FELIJO.LoverJoker = SMODS.Joker:extend {
 			end
 		end
 		return false
+	end,
+	set_sprites = function(self, card, front)
+		if FELIJO.config["directors_cut"] == false and card.config.center.discovered and card.children and card.children.center then
+			card.children.center:set_sprite_pos({
+				x = card.children.center.sprite_pos.x,
+				y = 1
+			})
+		end
+
 	end
 }
 

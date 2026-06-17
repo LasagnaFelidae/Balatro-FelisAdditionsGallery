@@ -1469,6 +1469,11 @@ return {
         },
 		dictionary={
             --------------
+            ---CONFIG-----
+            --------------
+            cfg_felijo_directors_cut = "Director\'s Cut",
+            cfg_felijo_directors_cut_desc = "View the mod as Feli intended. [TW: SH, Gore, Blood]",
+            --------------
             ---QUESTS-----
             --------------
             k_quest1_line1 = "LOADSAMONEY!!!",

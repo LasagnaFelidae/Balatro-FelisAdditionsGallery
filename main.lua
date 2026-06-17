@@ -2,10 +2,20 @@ FELIJO = SMODS.current_mod
 FELIJO.optional_features = {post_trigger = true,quantum_enhancements = true,}
 G.GAME = G.GAME and G.GAME or {}
 
----fuck off wankers
-if FELIJO.is_mod_loaded("Gradelatro") then
-    error("Gradelatro is known to break and is not supported.")
+FELIJO.config_tab = function()
+    return {n = G.UIT.ROOT, config = {r = 0.1, minw = 8, minh = 6, align = "tl", padding = 0.2, colour = G.C.BLACK}, nodes = {
+        create_toggle({
+            label = localize("cfg_felijo_directors_cut"),
+            ref_table = FELIJO.config,
+            ref_value = 'directors_cut',
+        }),
+        {n = G.UIT.C, config = { align = "cl", padding = 0 }, nodes = {
+				{n = G.UIT.T, config = { text = localize('cfg_felijo_directors_cut_desc'), scale = 0.25, colour = G.C.UI.TEXT_LIGHT }},
+			}},
+    }}
 end
+
+
 -----------------------------
 --┏━╸╻ ╻┏┓╻┏━╸╺┳╸╻┏━┓┏┓╻┏━┓--
 --┣╸ ┃ ┃┃┗┫┃   ┃ ┃┃ ┃┃┗┫┗━┓--
@@ -26,7 +36,10 @@ for _, file in ipairs(ui) do
     assert(SMODS.load_file("func/ui/" .. file))()
 end
 
-
+---fuck off wankers
+if FELIJO.is_mod_loaded("Gradelatro") then
+    error("Gradelatro is known to break and is not supported.")
+end
 
 assert(SMODS.load_file("./func/pools.lua"))()
 
