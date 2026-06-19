@@ -84,7 +84,7 @@ FELIJO.GarfieldJoker { --2, 0, biting the bolster
 	end,
 	blueprint_compat = true,
 	in_pool = function(self,args)
-		for i, playing_card in ipools(G.playing_cards) do
+		for i, playing_card in ipairs(G.playing_cards) do
 			if FELIJO.glass_list[playing_card.config.center.key] then
 				return true
 			end
@@ -171,7 +171,7 @@ FELIJO.GarfieldJoker { -- Busy Boy
 	end,
 	blueprint_compat = true,
 	in_pool = function(self,args)
-		for i, cons in ipools(G.consumeables.cards) do
+		for i, cons in ipairs(G.consumeables.cards) do
 			if FELIJO.tower_list[cons.config.center.key] then
 				return true
 			end
@@ -217,7 +217,7 @@ FELIJO.GarfieldJoker { -- Recipe for Success - Oven of out hot eat the food
 	end,
 	blueprint_compat = true,
 	in_pool = function(self,args)
-		for i, jkr in ipools(G.jokers.cards) do
+		for i, jkr in ipairs(G.jokers.cards) do
 			if (jkr.config.center.pools or {}).Food or jkr:has_attribute('food') then
 				return true
 			end

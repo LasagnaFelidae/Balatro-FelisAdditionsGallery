@@ -17,7 +17,34 @@ return {
                     "{C:felijo_pink}Wildcards{}",
                     },
                     {
-                    "{C:inactive}(Currently {V:1}#3#{C:inactive})"
+                    "{C:inactive}(Uses left: {V:1}#3#{C:inactive})"
+
+                    },
+
+                }
+            },
+
+            j_felijo_akyrs_fisher = {
+                name = {
+                    "The Fisher",
+                    "{C:felijo_inactive,s:0.5}Leslie Stone"
+                },
+                text = { 
+                    {
+                    "Enables the {C:purple}Pronoun Palace",
+                    "word dictionary"
+                    },
+                    {
+                    "Up to {C:attention}#1#{} times per ante,",
+                    "when used, {C:attention}fish",
+                    "for a random tile",
+                    },
+                    {
+                    "Tile can be {C:felijo_ttm}Wooden{},",
+                    "{C:felijo_pink}Crit{} or {C:red}Bleed"
+                    },
+                    {
+                    "{C:inactive}(Uses left: {V:1}#2#{C:inactive})"
 
                     },
 

@@ -1472,10 +1472,12 @@ return {
         achievement_names={
             ach_felijo_j_o_permit = "J/O Permit",
             ach_felijo_red_letter = "Red Letter",
+            ach_felijo_corkline = "Corkline",
         },
         achievement_descriptions={
-            ach_felijo_j_o_permit = {"Spell a slur of your choice", "(The Lexicographer is required)"},
-            ach_felijo_red_letter = {"Win a run with The Lexicographer", "(Letters must be enabled)"}
+            ach_felijo_j_o_permit = {"Spell a slur of your choice", "(Pronoun Palace dictionary must be enabled)"},
+            ach_felijo_red_letter = {"Win a run with The Lexicographer", "(Letters must be enabled)"},
+            ach_felijo_corkline = {"Win a run with The Fisher", "(Letters must be enabled)"},
         },
 		dictionary={
             --------------

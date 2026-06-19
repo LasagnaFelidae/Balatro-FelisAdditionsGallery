@@ -22,3 +22,17 @@ SMODS.Achievement{
         end
     end
 }
+
+SMODS.Achievement{
+    key = "corkline",
+    hidden_name = false,
+    hidden_text = false,
+    bypass_all_unlocked = true,
+    unlock_condition = function (self, args)
+        if args and (args.type == "win") then
+            if next(SMODS.find_card("j_felijo_akyrs_fisher")) then
+                return true
+            end
+        end
+    end
+}

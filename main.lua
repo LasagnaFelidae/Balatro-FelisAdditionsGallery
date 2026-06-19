@@ -88,6 +88,11 @@ SMODS.current_mod.reset_game_globals = function(run_start)
 	end
 end
 
+local pp = SMODS.NFS.getDirectoryItems(SMODS.current_mod.path .. "modules/content/pronounpalace")
+for _, file in ipairs(pp) do
+    assert(SMODS.load_file("modules/content/pronounpalace/" .. file))()
+end
+
 assert(SMODS.load_file("./modules/content/challenges.lua"))()
 assert(SMODS.load_file("./modules/content/enhancements.lua"))()
 assert(SMODS.load_file("./modules/content/0_luckyfeli.lua"))()
@@ -97,6 +102,8 @@ local jkr = SMODS.NFS.getDirectoryItems(SMODS.current_mod.path .. "modules/conte
 for _, file in ipairs(jkr) do
     assert(SMODS.load_file("modules/content/jokers/" .. file))()
 end
+
+
 
 assert(SMODS.load_file("./modules/content/stickers.lua"))()
 --assert(SMODS.load_file("./modules/content/hands.lua"))()

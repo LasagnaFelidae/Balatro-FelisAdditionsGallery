@@ -70,10 +70,10 @@ Parameters:
 function FELIJO.explodeCard(card, sound, bypass_eternal)
 	if not card then return end
 	bypass_eternal = bypass_eternal or false
-	sound = (sound == "delete" or sound == "explosion") and sound or "explosion"
+	sound = (sound == "delete" or sound == "explosion" or sound == "bomb" or sound == "explode") and sound or "explosion"
 	if sound == "delete" then
 		play_sound("felijo_rbx_delete")
-	elseif sound == "explosion" then
+	elseif sound == "explosion" or sound == "bomb" or sound == "explode" then
 		play_sound("felijo_rbx_explosion")
 	end
     playEffect("explosion",card.tilt_var.mx,card.tilt_var.my)

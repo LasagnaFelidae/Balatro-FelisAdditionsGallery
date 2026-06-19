@@ -207,8 +207,14 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas({
-    key = "pronounpalace",
+    key = "pronounJokers",
     path = "crossmod/aikoshen/pronounpalace.png",
+    px = 71,
+    py = 95
+})
+SMODS.Atlas({
+    key = "pronounEnhancements",
+    path = "enhancements/pronounpalace.png",
     px = 71,
     py = 95
 })
