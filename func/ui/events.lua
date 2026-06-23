@@ -5,7 +5,7 @@ function love.draw()
     drawhook()
 
     function loadThatFuckingImage(fn)
-        local full_path = (FELIJO.path 
+        local full_path = (FelisAG.path 
         .. "gifs/" .. fn)
         local file_data = assert(NFS.newFileData(full_path),("Epic fail"))
         local tempimagedata = assert(love.image.newImageData(file_data),("Epic fail 2"))
@@ -14,7 +14,7 @@ function love.draw()
     end
 
     function loadThatFuckingImageSpritesheet(fn,px,py,subimg,orientation)
-        local full_path = (FELIJO.path 
+        local full_path = (FelisAG.path 
         .. "gifs/" .. fn)
         local file_data = assert(NFS.newFileData(full_path),("Epic fail"))
         local tempimagedata = assert(love.image.newImageData(file_data),("Epic fail 2"))
@@ -50,10 +50,10 @@ function love.draw()
             --print("G.effectmanager[i].name".. G.effectmanager[i][1].name)
             if G.effectmanager[i] ~= nil then
                 if G.effectmanager[i][1].name == "explosion" then
-                    if FELIJO.imageexplosion == nil then FELIJO.imageexplosion = loadThatFuckingImage("explosiongif.png") end
-                    if FELIJO.imageexplosionsprite == nil then FELIJO.imageexplosionsprite = loadThatFuckingImageSpritesheet("explosiongif.png",384,384,14,0) end
-                    imagetodraw = FELIJO.imageexplosion
-                    quadtodraw = FELIJO.imageexplosionsprite
+                    if FelisAG.imageexplosion == nil then FelisAG.imageexplosion = loadThatFuckingImage("explosiongif.png") end
+                    if FelisAG.imageexplosionsprite == nil then FelisAG.imageexplosionsprite = loadThatFuckingImageSpritesheet("explosiongif.png",384,384,14,0) end
+                    imagetodraw = FelisAG.imageexplosion
+                    quadtodraw = FelisAG.imageexplosionsprite
                     _imgindex = G.effectmanager[i][1].frame
                     _xpos = G.effectmanager[i][1].xpos-(384/2)
                     _ypos = G.effectmanager[i][1].ypos-(384/2)
@@ -104,14 +104,14 @@ function Game:update(dt)
     upd(self, dt)
 
     -- tick based events
-    if FELIJO.ticks == nil then FELIJO.ticks = 0 end
-    if FELIJO.dtcounter == nil then FELIJO.dtcounter = 0 end
-    FELIJO.dtcounter = FELIJO.dtcounter+dt
-    FELIJO.dt = dt
+    if FelisAG.ticks == nil then FelisAG.ticks = 0 end
+    if FelisAG.dtcounter == nil then FelisAG.dtcounter = 0 end
+    FelisAG.dtcounter = FelisAG.dtcounter+dt
+    FelisAG.dt = dt
 
-    while FELIJO.dtcounter >= 0.010 do
-        FELIJO.ticks = FELIJO.ticks + 1
-        FELIJO.dtcounter = FELIJO.dtcounter - 0.010
+    while FelisAG.dtcounter >= 0.010 do
+        FelisAG.ticks = FelisAG.ticks + 1
+        FelisAG.dtcounter = FelisAG.dtcounter - 0.010
 		
 		if #G.effectmanager > 0 then decrementingTickEvent("G.effectmanager",0) end
 

@@ -1,8 +1,8 @@
 ---ily
 return {
     descriptions = {
-        felijo_ritual_mp = {
-			c_felijo_rit_campfire_mp = {
+        feli_fag_ritual_mp = {
+			c_feli_fag_rit_campfire_mp = {
 				name = "ireCampf",
 				text = {
 					"Upgrade {C:attention}#1#{} selected card\'s",
@@ -14,44 +14,44 @@ return {
 					"{C:inactive,s:0.8}(Chance scales with {C:enhanced,s:0.8}Enhancement {C:inactive,s:0.8}Tier)",
 				},
 			},
-			c_felijo_rit_trader_mp = {
+			c_feli_fag_rit_trader_mp = {
 				name = "derThe Tra",
 				text = {
 					"Trade up to {C:attention}#1#{} ",
-					"{C:felijo_ins_gld}Pelt Cards{} for {X:gold,C:white}$X#4# ~ $X#5#{}",
+					"{C:feli_fag_ins_gld}Pelt Cards{} for {X:gold,C:white}$X#4# ~ $X#5#{}",
 					"{C:green}#2# in #3#{} chance to give",
-					"double the {C:felijo_ins_gld}Pelt{} value"
+					"double the {C:feli_fag_ins_gld}Pelt{} value"
 				},
 			},
-			c_felijo_rit_prospector_mp = {
+			c_feli_fag_rit_prospector_mp = {
 				name = "ctorThe Prospe",
 				text = {
 					"Enhance up to {C:attention}#1#{} selected cards",
 					"to a random tiered {C:gold}old CardG",
 					"Fixed {C:green}1 in 3{} chance to",
 					"turn it into a {C:dark_edition}Misprinted",
-                    "{C:felijo_ins_gld}Gold Nugget{} instead"
+                    "{C:feli_fag_ins_gld}Gold Nugget{} instead"
 				},
 			},
-			c_felijo_rit_goobert_mp = {
+			c_feli_fag_rit_goobert_mp = {
 				name = "ertGoob",
 				text = {
-					"Create a {C:dark_edition}Misprinted {C:felijo_goobert}Painted{} copy",
+					"Create a {C:dark_edition}Misprinted {C:feli_fag_goobert}Painted{} copy",
 					"of {C:attention}#1#{} selected joker.",
 					"{C:inactive}(Must have room)",
 					"{s:0.8,C:inactive}\"I will {s:0.8,C:inactive,E:bd_glitching}paint! {s:0.8,C:inactive}Just like {s:0.8,C:inactive,E:bd_glitching}The Master!{s:0.8,C:inactive}\"",
 				},
 			},
-			c_felijo_rit_trapper_mp = {
+			c_feli_fag_rit_trapper_mp = {
 				name = "pperThe Tra",
 				text = {
 					"Enhance up to {C:attention}#1#{} selected cards",
-					"to a random {C:dark_edition}Misprinted {C:felijo_ins_gld}Pelt Card",
+					"to a random {C:dark_edition}Misprinted {C:feli_fag_ins_gld}Pelt Card",
 				},
 			},
 		},
          Enhanced = {
-            m_felijo_wild_t2_mp = {
+            m_feli_fag_wild_t2_mp = {
                 name = "ild CardW [II]",
                 text = {
                     "Can be used",
@@ -61,7 +61,7 @@ return {
                     "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
                 },
             },
-			m_felijo_wild_t3_mp = {
+			m_feli_fag_wild_t3_mp = {
                 name = "ild CardW [III]",
                 text = {
                     "Can be used",
@@ -72,7 +72,7 @@ return {
                     "multiplied by {X:planet,C:white}X#3# ~ X#4#{}",
                 },
             },
-			m_felijo_wild_t4_mp = {
+			m_feli_fag_wild_t4_mp = {
                 name = "ild CardW [IV]",
                 text = {
                     "Can be used",
@@ -84,28 +84,28 @@ return {
                 },
             },
 
-			m_felijo_bonus_t2_mp = {
+			m_feli_fag_bonus_t2_mp = {
                 name = "nus CardBo [II]",
                 text = {
                     "{C:chips}+#1#{} extra chips",
                     "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
                 },
             },
-			m_felijo_bonus_t3_mp = {
+			m_feli_fag_bonus_t3_mp = {
                 name = "nus CardBo [III]",
                 text = {
                     "{C:chips}+#1#{} extra chips",
                     "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
                 },
             },
-			m_felijo_bonus_t4_mp = {
+			m_feli_fag_bonus_t4_mp = {
                 name = "nus CardBo [IV]",
                 text = {
                     "{C:chips}+#1#{} extra chips",
                     "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
                 },
             },
-            m_felijo_glass_t2_mp = {
+            m_feli_fag_glass_t2_mp = {
                 name = "ass CardGl [II]",
                 text = {
                     "{X:mult,C:white}X#1#{} Mult",
@@ -114,7 +114,7 @@ return {
                     "multiplied by {X:planet,C:white}X#4# ~ X#5#{}",
                 },
             },
-			m_felijo_glass_t3_mp = {
+			m_feli_fag_glass_t3_mp = {
                 name = "ass CardGl [III]",
                 text = {
                     "{X:mult,C:white} X#1# {} Mult",
@@ -123,7 +123,7 @@ return {
                     "multiplied by {X:planet,C:white}X#4# ~ X#5#{}",
                 },
             },
-			m_felijo_glass_t4_mp = {
+			m_feli_fag_glass_t4_mp = {
                 name = "ass CardGl [IV]",
                 text = {
                     "{X:mult,C:white} X#1# {} Mult",
@@ -132,7 +132,7 @@ return {
                     "multiplied by {X:planet,C:white}X#4# ~ X#5#{}",
                 },
             },
-            m_felijo_gold_t2_mp = {
+            m_feli_fag_gold_t2_mp = {
                 name = "old CardG [II]",
                 text = {
 					{
@@ -148,7 +148,7 @@ return {
 					}
 				}
             },
-			m_felijo_gold_t3_mp = {
+			m_feli_fag_gold_t3_mp = {
                 name = "old CardG [III]",
                 text = {
 					{
@@ -164,7 +164,7 @@ return {
 					}
 				}
             },
-			m_felijo_gold_t4_mp = {
+			m_feli_fag_gold_t4_mp = {
                 name = "old CardG [IV]",
                 text = {
 					{
@@ -180,7 +180,7 @@ return {
 					}
 				}
             },
-            m_felijo_lucky_t2_mp = {
+            m_feli_fag_lucky_t2_mp = {
                 name = "cky CardLu [II]",
                 text = {
                     "{C:green}#1# in #4#{} chance",
@@ -192,7 +192,7 @@ return {
                     "multiplied by {X:planet,C:white}X#10# ~ X#11#{}",
                 },
             },
-			m_felijo_lucky_t3_mp = {
+			m_feli_fag_lucky_t3_mp = {
                 name = "cky CardLu [III]",
                 text = {
                     "{C:green}#1# in #4#{} chance",
@@ -204,7 +204,7 @@ return {
                     "multiplied by {X:planet,C:white}X#10# ~ X#11#{}",
                 },
             },
-			m_felijo_lucky_t4_mp = {
+			m_feli_fag_lucky_t4_mp = {
                 name = "cky CardLu [IV]",
                 text = {
                     "{C:green}#1# in #4#{} chance",
@@ -216,28 +216,28 @@ return {
                     "multiplied by {X:planet,C:white}X#10# ~ X#11#{}",
                 },
             },
-            m_felijo_mult_t2_mp = {
+            m_feli_fag_mult_t2_mp = {
                 name = "ult CardM [II]",
                 text = {
                     "{C:mult}+#1#{} Mult",
                     "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
                 },
             },
-			m_felijo_mult_t3_mp = {
+			m_feli_fag_mult_t3_mp = {
                 name = "ult CardM [III]",
                 text = {
                     "{C:mult}+#1#{} Mult",
                     "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
                 },
             },
-			m_felijo_mult_t4_mp = {
+			m_feli_fag_mult_t4_mp = {
                 name = "ult CardM [IV]",
                 text = {
                     "{C:mult}+#1#{} Mult",
                     "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
                 },
             },
-            m_felijo_steel_t2_mp = {
+            m_feli_fag_steel_t2_mp = {
                 name = "eel CardSt [II]",
                 text = {
                     "{X:mult,C:white} X#1# {} Mult",
@@ -246,7 +246,7 @@ return {
                     "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
                 },
             },
-			m_felijo_steel_t3_mp = {
+			m_feli_fag_steel_t3_mp = {
                 name = "eel CardSt [III]",
                 text = {
                     "{X:mult,C:white} X#1# {} Mult,",
@@ -255,7 +255,7 @@ return {
                     "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
                 },
             },
-			m_felijo_steel_t4_mp = {
+			m_feli_fag_steel_t4_mp = {
                 name = "eel CardSt [IV]",
                 text = {
                     "{X:mult,C:white} X#1# {} Mult,",
@@ -264,7 +264,7 @@ return {
                     "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
                 },
             },
-            m_felijo_stone_t2_mp = {
+            m_feli_fag_stone_t2_mp = {
                 name = "tone CardS [II]",
                 text = {
                     "{C:chips}+#1#{} Chips",
@@ -272,7 +272,7 @@ return {
                     "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
                 },
             },
-			m_felijo_stone_t3_mp = {
+			m_feli_fag_stone_t3_mp = {
                 name = "tone CardS [III]",
                 text = {
                     "{C:chips}+#1#{} Chips,",
@@ -281,7 +281,7 @@ return {
                     "{s:0.8,C:inactive}(All multiplied by {s:0.8,X:planet,C:white}X#3# ~ X#4#{C:inactive,s:0.8})",
                 },
             },
-			m_felijo_stone_t4_mp = {
+			m_feli_fag_stone_t4_mp = {
                 name = "tone CardS [IV]",
                 text = {
                     "{C:chips}+#1#{} Chips,",
@@ -290,7 +290,7 @@ return {
                     "{s:0.8,C:inactive}(All multiplied by {s:0.8,X:planet,C:white}X#3# ~ X#4#{C:inactive,s:0.8})",
                 },
             },
-			m_felijo_enh_sup_mp = {
+			m_feli_fag_enh_sup_mp = {
 				name = "rior CardSupe",
 				text = {
 					{
@@ -301,7 +301,7 @@ return {
 				},
 			
 			},
-			m_felijo_enh_sup_t2_mp = {
+			m_feli_fag_enh_sup_t2_mp = {
                 name = "rior CardSupe [II]",
                 text = {
 					{
@@ -311,7 +311,7 @@ return {
 					},
 				},
             },
-			m_felijo_enh_sup_t3_mp = {
+			m_feli_fag_enh_sup_t3_mp = {
                 name = "rior CardSupe [III]",
                 text = {
 					{
@@ -321,7 +321,7 @@ return {
 					},
 				},
             },
-			m_felijo_enh_sup_t4_mp = {
+			m_feli_fag_enh_sup_t4_mp = {
                 name = "rior CardSupe [IV]",
                 text = {
 					{
@@ -335,7 +335,7 @@ return {
 
 		},
         mistarot = {
-			c_felijo_ascended_mp = {
+			c_feli_fag_ascended_mp = {
                 name = "ndedThe Asce",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -344,8 +344,8 @@ return {
                 },
             },
 		},
-		felijo_tier2_tarot_mp = {
-			c_felijo_t2_ascended_mp = {
+		feli_fag_tier2_tarot_mp = {
+			c_feli_fag_t2_ascended_mp = {
                 name = "ndedThe Asce [II]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -353,7 +353,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t2_chariot_mp = {
+			c_feli_fag_t2_chariot_mp = {
                 name = "riot The Cha [II]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -361,7 +361,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t2_devil_mp = {
+			c_feli_fag_t2_devil_mp = {
                 name = "vilThe De [II]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -369,7 +369,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-            c_felijo_t2_empress_mp = {
+            c_feli_fag_t2_empress_mp = {
                 name = "pressThe Em [II]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -377,7 +377,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-			c_felijo_t2_heirophant_mp = {
+			c_feli_fag_t2_heirophant_mp = {
                 name = "ophantThe Hier [II]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -385,7 +385,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-            c_felijo_t2_lovers_mp = {
+            c_feli_fag_t2_lovers_mp = {
                 name = "ersThe Lov [II]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -393,7 +393,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-			c_felijo_t2_justice_mp = {
+			c_feli_fag_t2_justice_mp = {
                 name = "iceJust [II]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -401,7 +401,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t2_tower_mp = {
+			c_feli_fag_t2_tower_mp = {
                 name = "erThe Tow [II]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -409,7 +409,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t2_magician_mp = {
+			c_feli_fag_t2_magician_mp = {
                 name = "icianThe Mag [II]",
                 text = {
                     "Enhances {C:attention}#1#{}",
@@ -418,8 +418,8 @@ return {
                 },
             },
 		},
-		felijo_tier3_tarot_mp = {
-			c_felijo_t3_ascended_mp = {
+		feli_fag_tier3_tarot_mp = {
+			c_feli_fag_t3_ascended_mp = {
                 name = "ndedThe Asce [III]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -427,7 +427,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t3_chariot_mp = {
+			c_feli_fag_t3_chariot_mp = {
                 name = "riot The Cha [III]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -435,7 +435,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t3_devil_mp = {
+			c_feli_fag_t3_devil_mp = {
                 name = "vilThe De [III]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -443,7 +443,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-            c_felijo_t3_empress_mp = {
+            c_feli_fag_t3_empress_mp = {
                 name = "pressThe Em [III]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -451,7 +451,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-			c_felijo_t3_heirophant_mp = {
+			c_feli_fag_t3_heirophant_mp = {
                 name = "ophantThe Hier [III]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -459,7 +459,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-            c_felijo_t3_lovers_mp = {
+            c_feli_fag_t3_lovers_mp = {
                 name = "ersThe Lov [III]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -467,7 +467,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-			c_felijo_t3_justice_mp = {
+			c_feli_fag_t3_justice_mp = {
                 name = "iceJust [III]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -475,7 +475,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t3_tower_mp = {
+			c_feli_fag_t3_tower_mp = {
                 name = "erThe Tow [III]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -483,7 +483,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t3_magician_mp = {
+			c_feli_fag_t3_magician_mp = {
                 name = "icianThe Mag [III]",
                 text = {
                     "Enhances {C:attention}#1#{}",
@@ -492,8 +492,8 @@ return {
                 },
             },
 		},
-		felijo_tier4_tarot_mp = {
-			c_felijo_t4_ascended_mp = {
+		feli_fag_tier4_tarot_mp = {
+			c_feli_fag_t4_ascended_mp = {
                 name = "ndedThe Asce [IV]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -501,7 +501,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t4_chariot_mp = {
+			c_feli_fag_t4_chariot_mp = {
                 name = "riot The Cha [IV]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -509,7 +509,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t4_devil_mp = {
+			c_feli_fag_t4_devil_mp = {
                 name = "vilThe De [IV]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -517,7 +517,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-            c_felijo_t4_empress_mp = {
+            c_feli_fag_t4_empress_mp = {
                 name = "pressThe Em [IV]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -525,7 +525,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-			c_felijo_t4_heirophant_mp = {
+			c_feli_fag_t4_heirophant_mp = {
                 name = "ophantThe Hier [IV]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -533,7 +533,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-            c_felijo_t4_lovers_mp = {
+            c_feli_fag_t4_lovers_mp = {
                 name = "ersThe Lov [IV]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -541,7 +541,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-			c_felijo_t4_justice_mp = {
+			c_feli_fag_t4_justice_mp = {
                 name = "iceJust [IV]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -549,7 +549,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t4_tower_mp = {
+			c_feli_fag_t4_tower_mp = {
                 name = "erThe Tow [IV]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -557,7 +557,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t4_magician_mp = {
+			c_feli_fag_t4_magician_mp = {
                 name = "icianThe Mag [IV]",
                 text = {
                     "Enhances {C:attention}#1#{}",
@@ -569,20 +569,20 @@ return {
     },
     misc = {
         dictionary = {
-            b_felijo_tier2_tarot_mp_cards = "ot CardsTar [II]",
-			b_felijo_tier3_tarot_mp_cards = "ot CardsTar [III]",
-			b_felijo_tier4_tarot_mp_cards = "ot CardsTar [IV]",
-            k_felijo_tier2_tarot_mp = "rotTa [II]",
-			k_felijo_tier3_tarot_mp = "rotTa [III]",
-			k_felijo_tier4_tarot_mp = "rotTa [IV]",
-            b_felijo_ritual_mp_cards = "ual CardsRit",
-            k_felijo_ritual_mp = "ualRit",
+            b_feli_fag_tier2_tarot_mp_cards = "ot CardsTar [II]",
+			b_feli_fag_tier3_tarot_mp_cards = "ot CardsTar [III]",
+			b_feli_fag_tier4_tarot_mp_cards = "ot CardsTar [IV]",
+            k_feli_fag_tier2_tarot_mp = "rotTa [II]",
+			k_feli_fag_tier3_tarot_mp = "rotTa [III]",
+			k_feli_fag_tier4_tarot_mp = "rotTa [IV]",
+            b_feli_fag_ritual_mp_cards = "ual CardsRit",
+            k_feli_fag_ritual_mp = "ualRit",
         },
         labels = {
-            felijo_tier2_tarot_mp = "rotTa [II]",
-			felijo_tier3_tarot_mp = "rotTa [III]",
-			felijo_tier4_tarot_mp = "rotTa [IV]",
-            felijo_ritual_mp = "ualRit",
+            feli_fag_tier2_tarot_mp = "rotTa [II]",
+			feli_fag_tier3_tarot_mp = "rotTa [III]",
+			feli_fag_tier4_tarot_mp = "rotTa [IV]",
+            feli_fag_ritual_mp = "ualRit",
         },
     }
 }

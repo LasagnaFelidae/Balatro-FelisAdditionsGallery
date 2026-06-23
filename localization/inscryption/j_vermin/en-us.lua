@@ -1,16 +1,16 @@
 return {
     descriptions ={
         Joker = {
-            j_felijo_ins_squirrel = {
-                name = "{B:1,V:2,f:felijo_Feli5x8}Squirrel",
+            j_feli_fag_ins_squirrel = {
+                name = "{B:1,V:2,f:feli_fag_Feli5x8}Squirrel",
                 text = {
 					{
 					"{C:mult}+#1#{} Mult",
 					},
                 },
             },
-			j_felijo_ins_squirrelball = {
-                name = "{B:1,V:2,f:felijo_Feli5x8}Squirrel Ball",
+			j_feli_fag_ins_squirrelball = {
+                name = "{B:1,V:2,f:feli_fag_Feli5x8}Squirrel Ball",
                 text = {
 					{
 					"{C:mult}+#1#{} Mult",
@@ -27,8 +27,8 @@ return {
                 },
             },
 
-            j_felijo_ins_packrat = {
-                name = "{B:1,V:2,f:felijo_Feli5x8}Pack Rat",
+            j_feli_fag_ins_packrat = {
+                name = "{B:1,V:2,f:feli_fag_Feli5x8}Pack Rat",
                 text = {
                     {
                         "{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",

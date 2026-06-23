@@ -1,4 +1,4 @@
-FELIJO.garf_words = {
+FelisAG.garf_words = {
     ["garfield"] = true,
     ["arbuckle"] = true,
     ["arbuckles"] = true,
@@ -141,8 +141,8 @@ FELIJO.garf_words = {
     ["meow"] = true,
 }
 
-FELIJO.lexicographer_slurs = {
-    ["arse"] = true,
+FelisAG.lexicographer_slurs = { -- ok so apparently i grabbed the least worse of the slur lists because oh my the amount of racial slurs in there
+    ["arse"] = true, 
     ["arsehead"] = true,
     ["arseheads"] = true,
     ["arsehole"] = true,
@@ -189,6 +189,7 @@ FELIJO.lexicographer_slurs = {
     ["dyke"] = true,
     ["dykes"] = true,
     ["faggots"] = true,
+    ["faggotry"] = true,
     ["fags"] = true,
     ["faggot"] = true,
     ["fag"] = true,
@@ -246,3 +247,5 @@ FELIJO.lexicographer_slurs = {
     ["wanking"] = true,
     ["wanks"] = true,
 }
+
+

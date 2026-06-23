@@ -1,6 +1,6 @@
 superior_enabled = false
 
-if FELIJO.is_mod_loaded("RevosVault") and SMODS.Mods["RevosVault"].config then
+if FelisAG.is_mod_loaded("RevosVault") and SMODS.Mods["RevosVault"].config then
 	superior_enabled = SMODS.Mods["RevosVault"].config.superior_enabled or false
 	else
 	superior_enabled = false
@@ -20,7 +20,7 @@ SMODS.Enhancement {
 	always_scores = false,
 	weight = 0,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
 	end,
 	
 	
@@ -54,7 +54,7 @@ SMODS.Enhancement {
 	always_scores = false,
 	weight = 0,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
 	end,
 	
 	
@@ -88,7 +88,7 @@ SMODS.Enhancement {
 	always_scores = false,
 	weight = 0,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
 	end,
 	
 	

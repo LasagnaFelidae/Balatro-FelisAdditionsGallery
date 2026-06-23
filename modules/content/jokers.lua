@@ -69,13 +69,13 @@ SMODS.Joker {
 ]]
 
 SMODS.Joker {
-	atlas = 'felijo_a_spaceshuttle',
+	atlas = 'feli_fag_a_spaceshuttle',
 	pos = { x = 0, y = 0},
 	soul_pos = {
 		x = 0, y = 1,
 	},
 	pools = {["FelisJokeria"] = true,},
-	key = "felijo_rocket",
+	key = "feli_fag_rocket",
 	rarity = 1,
 	cost = 8,
     pronouns = "it_its",
@@ -99,13 +99,13 @@ SMODS.Joker {
 		local key = self.key
 		if card.ability.extra.ascended == true then
 			key = self.key .. "_a"
-			info_queue[#info_queue+1] = {key = 'felijo_bld_explode', set = 'Other'}
+			info_queue[#info_queue+1] = {key = 'feli_fag_bld_explode', set = 'Other'}
 		end
 		return { vars = {card.ability.extra.mult, card.ability.extra.mult_mod, math.min(5,((card.ability.extra.max_c + 1 ) - card.ability.extra.count)), }, key = key }
 	end,
 	calculate = function(self, card, context)
 		if context.before then
-			local mph = FELIJO.get_most_played_hand()
+			local mph = FelisAG.get_most_played_hand()
 			if card.ability.extra.ascended == true then
 				local reset = true
 				local play_more_than = (G.GAME.hands[context.scoring_name].played or 0)
@@ -116,7 +116,7 @@ SMODS.Joker {
 					end
 				end
 				if reset then
-					FELIJO.explodeCard(card, "explosion")
+					FelisAG.explodeCard(card, "explosion")
 					return {
 						message = localize('k_reset'),
 						colour = G.C.RED,
@@ -134,10 +134,10 @@ SMODS.Joker {
 			end
 			if context.scoring_hand ~= mph and card.ability.extra.count < card.ability.extra.max_c then
 				card.ability.extra.count = card.ability.extra.count + 1
-                play_sound('felijo_space_shuttle_cd_'..((card.ability.extra.max_c - card.ability.extra.count) + 1), 1)
+                play_sound('feli_fag_space_shuttle_cd_'..((card.ability.extra.max_c - card.ability.extra.count) + 1), 1)
                 card.ability.extra.set = false
 			elseif card.ability.extra.ascended == false and card.ability.extra.count >= card.ability.extra.max_c then
-				play_sound('felijo_space_shuttle_blastoff', 1)
+				play_sound('feli_fag_space_shuttle_blastoff', 1)
 				card.ability.extra.ascended = true
 				card.children.center:set_sprite_pos({x=0, y=2})
 				card.children.floating_sprite:set_sprite_pos({ x = 0, y = 3})
@@ -164,7 +164,7 @@ SMODS.Joker {
 		x = 0, y = 1,
 	},
 	pools = {["FelisJokeria"] = true,},
-	key = "felijo_mypenis",
+	key = "feli_fag_mypenis",
 	rarity = 1,
 	cost = 8,
     pronouns = "it_its",

@@ -1,6 +1,6 @@
 
 
-FELIJO.BlindsideBlind({
+FelisAG.BlindsideBlind({
     key = 'bld_pin',
     atlas = 'blindsideBlinds',
     pos = {x = 0, y = 0},
@@ -34,14 +34,14 @@ FELIJO.BlindsideBlind({
         if context.cardarea == G.play and context.after and card.ability.extra.blow == true and #context.scoring_hand < 4 then
             G.E_MANAGER:add_event(Event({
 					func = function()
-                        FELIJO.explodeCard(card,"delete")
+                        FelisAG.explodeCard(card,"delete")
                     return true
 				end
 			}))
         end
     end,
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue+1] = {key = 'felijo_bld_explode', set = 'Other'}
+        info_queue[#info_queue+1] = {key = 'feli_fag_bld_explode', set = 'Other'}
         return {
             vars = {
                 card.ability.extra.x_score, card.ability.extra.score

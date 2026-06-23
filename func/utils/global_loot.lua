@@ -7,7 +7,7 @@ Params:
 Returns:
   string: tribe table length
 ]]--
-FELIJO.add_tribe = function(tribe)
+FelisAG.add_tribe = function(tribe)
 	local data = {
 		key = tribe.key,
 		weight = tribe.weight or 1,
@@ -21,192 +21,192 @@ FELIJO.add_tribe = function(tribe)
 		error("add_tribe: Missing required fields (key, totem_key, tribe_card_key)")
 	end
 
-	table.insert(FELIJO.tribe_table, data)
+	table.insert(FelisAG.tribe_table, data)
 	print("[FELI'S JOKERIA] Tribe "..tribe.key.." added successfully")
-	return #FELIJO.tribe_table
+	return #FelisAG.tribe_table
 end
 --
-FELIJO.campfire_table = {
-    ["m_wild"]               = { next = "m_felijo_wild_t2",   break_chance = 0.10 },
-    ["m_felijo_wild_t2"]     = { next = "m_felijo_wild_t3",   break_chance = 0.30 },
-    ["m_felijo_wild_t3"]     = { next = "m_felijo_wild_t4",   break_chance = 0.60 }, 
+FelisAG.campfire_table = {
+    ["m_wild"]               = { next = "m_feli_fag_wild_t2",   break_chance = 0.10 },
+    ["m_feli_fag_wild_t2"]     = { next = "m_feli_fag_wild_t3",   break_chance = 0.30 },
+    ["m_feli_fag_wild_t3"]     = { next = "m_feli_fag_wild_t4",   break_chance = 0.60 }, 
 
-    ["m_bonus"]               = { next = "m_felijo_bonus_t2",   break_chance = 0.10 },
-    ["m_felijo_bonus_t2"]     = { next = "m_felijo_bonus_t3",   break_chance = 0.30 },
-    ["m_felijo_bonus_t3"]     = { next = "m_felijo_bonus_t4",   break_chance = 0.60 }, 
+    ["m_bonus"]               = { next = "m_feli_fag_bonus_t2",   break_chance = 0.10 },
+    ["m_feli_fag_bonus_t2"]     = { next = "m_feli_fag_bonus_t3",   break_chance = 0.30 },
+    ["m_feli_fag_bonus_t3"]     = { next = "m_feli_fag_bonus_t4",   break_chance = 0.60 }, 
 
-    ["m_mult"]                = { next = "m_felijo_mult_t2",    break_chance = 0.10 },
-    ["m_felijo_mult_t2"]      = { next = "m_felijo_mult_t3",    break_chance = 0.30 },
-    ["m_felijo_mult_t3"]      = { next = "m_felijo_mult_t4",    break_chance = 0.60 },
+    ["m_mult"]                = { next = "m_feli_fag_mult_t2",    break_chance = 0.10 },
+    ["m_feli_fag_mult_t2"]      = { next = "m_feli_fag_mult_t3",    break_chance = 0.30 },
+    ["m_feli_fag_mult_t3"]      = { next = "m_feli_fag_mult_t4",    break_chance = 0.60 },
 
-    ["m_lucky"]               = { next = "m_felijo_lucky_t2",   break_chance = 0.10 },
-    ["m_felijo_lucky_t2"]     = { next = "m_felijo_lucky_t3",   break_chance = 0.30 },
-    ["m_felijo_lucky_t3"]     = { next = "m_felijo_lucky_t4",   break_chance = 0.60 },
+    ["m_lucky"]               = { next = "m_feli_fag_lucky_t2",   break_chance = 0.10 },
+    ["m_feli_fag_lucky_t2"]     = { next = "m_feli_fag_lucky_t3",   break_chance = 0.30 },
+    ["m_feli_fag_lucky_t3"]     = { next = "m_feli_fag_lucky_t4",   break_chance = 0.60 },
 
-    ["m_glass"]               = { next = "m_felijo_glass_t2",   break_chance = 0.10 },
-    ["m_felijo_glass_t2"]     = { next = "m_felijo_glass_t3",   break_chance = 0.30 },
-    ["m_felijo_glass_t3"]     = { next = "m_felijo_glass_t4",   break_chance = 0.60 },
+    ["m_glass"]               = { next = "m_feli_fag_glass_t2",   break_chance = 0.10 },
+    ["m_feli_fag_glass_t2"]     = { next = "m_feli_fag_glass_t3",   break_chance = 0.30 },
+    ["m_feli_fag_glass_t3"]     = { next = "m_feli_fag_glass_t4",   break_chance = 0.60 },
 
-    ["m_steel"]               = { next = "m_felijo_steel_t2",   break_chance = 0.10 },
-    ["m_felijo_steel_t2"]     = { next = "m_felijo_steel_t3",   break_chance = 0.30 },
-    ["m_felijo_steel_t3"]     = { next = "m_felijo_steel_t4",   break_chance = 0.60 },
+    ["m_steel"]               = { next = "m_feli_fag_steel_t2",   break_chance = 0.10 },
+    ["m_feli_fag_steel_t2"]     = { next = "m_feli_fag_steel_t3",   break_chance = 0.30 },
+    ["m_feli_fag_steel_t3"]     = { next = "m_feli_fag_steel_t4",   break_chance = 0.60 },
 
-    ["m_stone"]               = { next = "m_felijo_stone_t2",   break_chance = 0.10 },
-    ["m_felijo_stone_t2"]     = { next = "m_felijo_stone_t3",   break_chance = 0.30 },
-    ["m_felijo_stone_t3"]     = { next = "m_felijo_stone_t4",   break_chance = 0.60 },
+    ["m_stone"]               = { next = "m_feli_fag_stone_t2",   break_chance = 0.10 },
+    ["m_feli_fag_stone_t2"]     = { next = "m_feli_fag_stone_t3",   break_chance = 0.30 },
+    ["m_feli_fag_stone_t3"]     = { next = "m_feli_fag_stone_t4",   break_chance = 0.60 },
 
-    ["m_gold"]                = { next = "m_felijo_gold_t2",    break_chance = 0.10 },
-    ["m_felijo_gold_t2"]      = { next = "m_felijo_gold_t3",    break_chance = 0.30 },
-    ["m_felijo_gold_t3"]      = { next = "m_felijo_gold_t4",    break_chance = 0.60 },
+    ["m_gold"]                = { next = "m_feli_fag_gold_t2",    break_chance = 0.10 },
+    ["m_feli_fag_gold_t2"]      = { next = "m_feli_fag_gold_t3",    break_chance = 0.30 },
+    ["m_feli_fag_gold_t3"]      = { next = "m_feli_fag_gold_t4",    break_chance = 0.60 },
 	
-	["m_crv_superiore"]       = { next = "m_felijo_enh_sup_t2",    break_chance = 0.10 },
-	["m_felijo_enh_sup"]      = { next = "m_felijo_enh_sup_t2",    break_chance = 0.10 },
-    ["m_felijo_enh_sup_t2"]   = { next = "m_felijo_enh_sup_t3",    break_chance = 0.30 },
-    ["m_felijo_enh_sup_t3"]   = { next = "m_felijo_enh_sup_t4",    break_chance = 0.60 },
+	["m_crv_superiore"]       = { next = "m_feli_fag_enh_sup_t2",    break_chance = 0.10 },
+	["m_feli_fag_enh_sup"]      = { next = "m_feli_fag_enh_sup_t2",    break_chance = 0.10 },
+    ["m_feli_fag_enh_sup_t2"]   = { next = "m_feli_fag_enh_sup_t3",    break_chance = 0.30 },
+    ["m_feli_fag_enh_sup_t3"]   = { next = "m_feli_fag_enh_sup_t4",    break_chance = 0.60 },
     ----
     --Bad Director
     ----
-    ["m_bd_misprintwild"]               = { next = "m_felijo_wild_t2_mp",   break_chance = 0.10 },
-    ["m_felijo_wild_t2_mp"]     = { next = "m_felijo_wild_t3_mp",   break_chance = 0.30 },
-    ["m_felijo_wild_t3_mp"]     = { next = "m_felijo_wild_t4_mp",   break_chance = 0.60 }, 
+    ["m_bd_misprintwild"]               = { next = "m_feli_fag_wild_t2_mp",   break_chance = 0.10 },
+    ["m_feli_fag_wild_t2_mp"]     = { next = "m_feli_fag_wild_t3_mp",   break_chance = 0.30 },
+    ["m_feli_fag_wild_t3_mp"]     = { next = "m_feli_fag_wild_t4_mp",   break_chance = 0.60 }, 
 
-    ["m_bd_misprintbonus"]               = { next = "m_felijo_bonus_t2_mp",   break_chance = 0.10 },
-    ["m_felijo_bonus_t2_mp"]     = { next = "m_felijo_bonus_t3_mp",   break_chance = 0.30 },
-    ["m_felijo_bonus_t3_mp"]     = { next = "m_felijo_bonus_t4_mp",   break_chance = 0.60 }, 
+    ["m_bd_misprintbonus"]               = { next = "m_feli_fag_bonus_t2_mp",   break_chance = 0.10 },
+    ["m_feli_fag_bonus_t2_mp"]     = { next = "m_feli_fag_bonus_t3_mp",   break_chance = 0.30 },
+    ["m_feli_fag_bonus_t3_mp"]     = { next = "m_feli_fag_bonus_t4_mp",   break_chance = 0.60 }, 
 
-    ["m_bd_misprintmult"]                = { next = "m_felijo_mult_t2_mp",    break_chance = 0.10 },
-    ["m_felijo_mult_t2_mp"]      = { next = "m_felijo_mult_t3_mp",    break_chance = 0.30 },
-    ["m_felijo_mult_t3_mp"]      = { next = "m_felijo_mult_t4_mp",    break_chance = 0.60 },
+    ["m_bd_misprintmult"]                = { next = "m_feli_fag_mult_t2_mp",    break_chance = 0.10 },
+    ["m_feli_fag_mult_t2_mp"]      = { next = "m_feli_fag_mult_t3_mp",    break_chance = 0.30 },
+    ["m_feli_fag_mult_t3_mp"]      = { next = "m_feli_fag_mult_t4_mp",    break_chance = 0.60 },
 
-    ["m_bd_misprintluckycard"]               = { next = "m_felijo_lucky_t2_mp",   break_chance = 0.10 },
-    ["m_felijo_lucky_t2_mp"]     = { next = "m_felijo_lucky_t3_mp",   break_chance = 0.30 },
-    ["m_felijo_lucky_t3_mp"]     = { next = "m_felijo_lucky_t4_mp",   break_chance = 0.60 },
+    ["m_bd_misprintluckycard"]               = { next = "m_feli_fag_lucky_t2_mp",   break_chance = 0.10 },
+    ["m_feli_fag_lucky_t2_mp"]     = { next = "m_feli_fag_lucky_t3_mp",   break_chance = 0.30 },
+    ["m_feli_fag_lucky_t3_mp"]     = { next = "m_feli_fag_lucky_t4_mp",   break_chance = 0.60 },
 
-    ["m_bd_misprintglass"]               = { next = "m_felijo_glass_t2_mp",   break_chance = 0.10 },
-    ["m_felijo_glass_t2_mp"]     = { next = "m_felijo_glass_t3_mp",   break_chance = 0.30 },
-    ["m_felijo_glass_t3_mp"]     = { next = "m_felijo_glass_t4_mp",   break_chance = 0.60 },
+    ["m_bd_misprintglass"]               = { next = "m_feli_fag_glass_t2_mp",   break_chance = 0.10 },
+    ["m_feli_fag_glass_t2_mp"]     = { next = "m_feli_fag_glass_t3_mp",   break_chance = 0.30 },
+    ["m_feli_fag_glass_t3_mp"]     = { next = "m_feli_fag_glass_t4_mp",   break_chance = 0.60 },
 
-    ["m_bd_misprintsteel"]               = { next = "m_felijo_steel_t2_mp",   break_chance = 0.10 },
-    ["m_felijo_steel_t2_mp"]     = { next = "m_felijo_steel_t3_mp",   break_chance = 0.30 },
-    ["m_felijo_steel_t3_mp"]     = { next = "m_felijo_steel_t4_mp",   break_chance = 0.60 },
+    ["m_bd_misprintsteel"]               = { next = "m_feli_fag_steel_t2_mp",   break_chance = 0.10 },
+    ["m_feli_fag_steel_t2_mp"]     = { next = "m_feli_fag_steel_t3_mp",   break_chance = 0.30 },
+    ["m_feli_fag_steel_t3_mp"]     = { next = "m_feli_fag_steel_t4_mp",   break_chance = 0.60 },
 
-    ["m_bd_misprintstone"]               = { next = "m_felijo_stone_t2_mp",   break_chance = 0.10 },
-    ["m_felijo_stone_t2_mp"]     = { next = "m_felijo_stone_t3_mp",   break_chance = 0.30 },
-    ["m_felijo_stone_t3_mp"]     = { next = "m_felijo_stone_t4_mp",   break_chance = 0.60 },
+    ["m_bd_misprintstone"]               = { next = "m_feli_fag_stone_t2_mp",   break_chance = 0.10 },
+    ["m_feli_fag_stone_t2_mp"]     = { next = "m_feli_fag_stone_t3_mp",   break_chance = 0.30 },
+    ["m_feli_fag_stone_t3_mp"]     = { next = "m_feli_fag_stone_t4_mp",   break_chance = 0.60 },
 
-    ["m_bd_misprintgold"]                = { next = "m_felijo_gold_t2_mp",    break_chance = 0.10 },
-    ["m_felijo_gold_t2_mp"]      = { next = "m_felijo_gold_t3_mp",    break_chance = 0.30 },
-    ["m_felijo_gold_t3_mp"]      = { next = "m_felijo_gold_t4_mp",    break_chance = 0.60 },
+    ["m_bd_misprintgold"]                = { next = "m_feli_fag_gold_t2_mp",    break_chance = 0.10 },
+    ["m_feli_fag_gold_t2_mp"]      = { next = "m_feli_fag_gold_t3_mp",    break_chance = 0.30 },
+    ["m_feli_fag_gold_t3_mp"]      = { next = "m_feli_fag_gold_t4_mp",    break_chance = 0.60 },
 	
-	["m_felijo_enh_sup_mp"]       = { next = "m_felijo_enh_sup_t2_mp",    break_chance = 0.10 },
-    ["m_felijo_enh_sup_t2_mp"]   = { next = "m_felijo_enh_sup_t3_mp",    break_chance = 0.30 },
-    ["m_felijo_enh_sup_t3_mp"]   = { next = "m_felijo_enh_sup_t4_mp",    break_chance = 0.60 },
+	["m_feli_fag_enh_sup_mp"]       = { next = "m_feli_fag_enh_sup_t2_mp",    break_chance = 0.10 },
+    ["m_feli_fag_enh_sup_t2_mp"]   = { next = "m_feli_fag_enh_sup_t3_mp",    break_chance = 0.30 },
+    ["m_feli_fag_enh_sup_t3_mp"]   = { next = "m_feli_fag_enh_sup_t4_mp",    break_chance = 0.60 },
 }
 
 
-FELIJO.prospectorTable = {
+FelisAG.prospectorTable = {
 	{key = "m_gold",   				weight = 8},
-	{key = "m_felijo_gold_t2",   	weight = 1},
-	{key = "m_felijo_gold_t3",   	weight = 0.02},
-	{key = "m_felijo_gold_t4",   	weight = 0.001}
+	{key = "m_feli_fag_gold_t2",   	weight = 1},
+	{key = "m_feli_fag_gold_t3",   	weight = 0.02},
+	{key = "m_feli_fag_gold_t4",   	weight = 0.001}
 }
 
-FELIJO.prospectorTableMP = {
+FelisAG.prospectorTableMP = {
 	{key = "m_bd_misprintgold",   		weight = 8},
-	{key = "m_felijo_gold_t2_mp",   	weight = 1},
-	{key = "m_felijo_gold_t3_mp",   	weight = 0.02},
-	{key = "m_felijo_gold_t4_mp",   	weight = 0.001}
+	{key = "m_feli_fag_gold_t2_mp",   	weight = 1},
+	{key = "m_feli_fag_gold_t3_mp",   	weight = 0.02},
+	{key = "m_feli_fag_gold_t4_mp",   	weight = 0.001}
 }
 
-FELIJO.trapperTable = {
-	{key = "m_felijo_plt_bny",   		weight = 1.000,		modifier=0.000  ,price = 1},
-	{key = "m_felijo_plt_wlf",   		weight = 0.200,	    modifier=0.050  ,price = 2},
-	{key = "m_felijo_plt_gold",   		weight = 0.010,	    modifier=0.100  ,price = 3},
-	{key = "m_felijo_plt_olddata",   	weight = 0.001,     modifier=0.050  ,price = 5},
-	{key = "m_felijo_trn_goldn",   		weight = 0.000, 	modifier=0.000  ,price = 3}
+FelisAG.trapperTable = {
+	{key = "m_feli_fag_plt_bny",   		weight = 1.000,		modifier=0.000  ,price = 1},
+	{key = "m_feli_fag_plt_wlf",   		weight = 0.200,	    modifier=0.050  ,price = 2},
+	{key = "m_feli_fag_plt_gold",   		weight = 0.010,	    modifier=0.100  ,price = 3},
+	{key = "m_feli_fag_plt_olddata",   	weight = 0.001,     modifier=0.050  ,price = 5},
+	{key = "m_feli_fag_trn_goldn",   		weight = 0.000, 	modifier=0.000  ,price = 3}
 }
 
-FELIJO.enhancement_tiers = {
+FelisAG.enhancement_tiers = {
     {key = "m_wild", tier = 1},
-	{key = "m_felijo_wild_t2", tier = 2},
-	{key = "m_felijo_wild_t3", tier = 3},
-    {key = "m_felijo_wild_t4", tier = 4},
+	{key = "m_feli_fag_wild_t2", tier = 2},
+	{key = "m_feli_fag_wild_t3", tier = 3},
+    {key = "m_feli_fag_wild_t4", tier = 4},
 
 	{key = "m_bonus", tier = 1},
-	{key = "m_felijo_bonus_t2", tier = 2},
-	{key = "m_felijo_bonus_t3", tier = 3},
-    {key = "m_felijo_bonus_t4", tier = 4},
+	{key = "m_feli_fag_bonus_t2", tier = 2},
+	{key = "m_feli_fag_bonus_t3", tier = 3},
+    {key = "m_feli_fag_bonus_t4", tier = 4},
 
     {key = "m_crv_tier1card", tier = 2},
     {key = "m_crv_tier2card", tier = 3},
     {key = "m_crv_tier3card", tier = 4},
 
 	{key = "m_mult", tier = 1},
-	{key = "m_felijo_mult_t2", tier = 2},
-	{key = "m_felijo_mult_t3", tier = 3},
-    {key = "m_felijo_mult_t4", tier = 4},
+	{key = "m_feli_fag_mult_t2", tier = 2},
+	{key = "m_feli_fag_mult_t3", tier = 3},
+    {key = "m_feli_fag_mult_t4", tier = 4},
     
     {key = "m_crv_xmultcard", tier = 2},
 
 	{key = "m_lucky", tier = 1},
-	{key = "m_felijo_lucky_t2", tier = 2},
-	{key = "m_felijo_lucky_t3", tier = 3},
-    {key = "m_felijo_lucky_t4", tier = 4},
+	{key = "m_feli_fag_lucky_t2", tier = 2},
+	{key = "m_feli_fag_lucky_t3", tier = 3},
+    {key = "m_feli_fag_lucky_t4", tier = 4},
 
     {key = "m_crv_blessedcard", tier = 2},
 
 	{key = "m_glass", tier = 1},
-	{key = "m_felijo_glass_t2", tier = 2},
-	{key = "m_felijo_glass_t3", tier = 3},
-    {key = "m_felijo_glass_t4", tier = 4},
+	{key = "m_feli_fag_glass_t2", tier = 2},
+	{key = "m_feli_fag_glass_t3", tier = 3},
+    {key = "m_feli_fag_glass_t4", tier = 4},
 
     {key = "m_crv_bulletproofcard", tier = 2},
     {key = "m_crv_mega", tier = 3},
 
 	{key = "m_steel", tier = 1},
-	{key = "m_felijo_steel_t2", tier = 2},
-	{key = "m_felijo_steel_t3", tier = 3},
-    {key = "m_felijo_steel_t4", tier = 4},
+	{key = "m_feli_fag_steel_t2", tier = 2},
+	{key = "m_feli_fag_steel_t3", tier = 3},
+    {key = "m_feli_fag_steel_t4", tier = 4},
 
     {key = "m_crv_diamondcard", tier = 2},
 
 
 
 	{key = "m_stone", tier = 1},
-	{key = "m_felijo_stone_t2", tier = 2},
-	{key = "m_felijo_stone_t3", tier = 3},
-    {key = "m_felijo_stone_t4", tier = 4},
+	{key = "m_feli_fag_stone_t2", tier = 2},
+	{key = "m_feli_fag_stone_t3", tier = 3},
+    {key = "m_feli_fag_stone_t4", tier = 4},
 
 
 	{key = "m_gold", tier = 1},
-	{key = "m_felijo_gold_t2", tier = 2},
-	{key = "m_felijo_gold_t3", tier = 3},
-    {key = "m_felijo_gold_t4", tier = 4},
+	{key = "m_feli_fag_gold_t2", tier = 2},
+	{key = "m_feli_fag_gold_t3", tier = 3},
+    {key = "m_feli_fag_gold_t4", tier = 4},
 
     {key = "m_crv_rhodium", tier = 2},
 
 
 	{key = "m_crv_superiore", tier = 1},
-	{key = "m_felijo_enh_sup", tier = 1},
-	{key = "m_felijo_enh_sup_t2", tier = 2},
-	{key = "m_felijo_enh_sup_t3", tier = 3},
-    {key = "m_felijo_enh_sup_t4", tier = 4},
+	{key = "m_feli_fag_enh_sup", tier = 1},
+	{key = "m_feli_fag_enh_sup_t2", tier = 2},
+	{key = "m_feli_fag_enh_sup_t3", tier = 3},
+    {key = "m_feli_fag_enh_sup_t4", tier = 4},
 
 
 
 }
 
 
-FELIJO.consumeables_table = {
+FelisAG.consumeables_table = {
     {key = "Tarot",                 weight = 1.00},
-	{key = "felijo_tier2_tarot",    weight = 0.30},
-	{key = "felijo_tier3_tarot",    weight = 0.10},
-	{key = "felijo_tier4_tarot",    weight = 0.03},
+	{key = "feli_fag_tier2_tarot",    weight = 0.30},
+	{key = "feli_fag_tier3_tarot",    weight = 0.10},
+	{key = "feli_fag_tier4_tarot",    weight = 0.03},
     {key = "Planet",                weight = 1.00},
     {key = "Spectral",              weight = 0.20},
-    {key = "felijo_ritual",         weight = 0.80},
+    {key = "feli_fag_ritual",         weight = 0.80},
 }
-FELIJO.JoyousTribes = {
+FelisAG.JoyousTribes = {
     Insect  = { Insect = true },
     Reptile = { Dragon = true, Wyrm = true, Dinosaur = true, SeaSerpent = true, Reptile = true },
     Human   = { Warrior = true, Spellcaster = true, Zombie = true, BeastWarrior = true, Cyberse = true },
@@ -214,7 +214,7 @@ FELIJO.JoyousTribes = {
     Other   = { CreatorGod = true, Fairy = true, Zombie = true, Beast = true, BeastWarrior = true, DivineBeast = true },
     Avian   = { WingedBeast = true, Fairy = true, Dragon = true },
 }
-FELIJO.PoolTribes = {
+FelisAG.PoolTribes = {
 	Feline = { "Kitty", "Cat" , "kity", },
     Canine = { "Dog", "Puppy" , },
     Avian  = { "Birb", "Bird" , },
@@ -228,7 +228,7 @@ FELIJO.PoolTribes = {
     Vermin = {"Squirrel"},
 }
 
-FELIJO.tribe_table = {
+FelisAG.tribe_table = {
 	{key = "Avian", 	weight = 1.0,	totem_key = "ttm_hd_avian",		tribe_card_key = "trb_avian",		totem_x=6,		cost = 4,	},
 	{key = "Canine", 	weight = 1.0,	totem_key = "ttm_hd_canine",	tribe_card_key = "trb_canine",		totem_x=9,		cost = 4,	},
 	{key = "Feline", 	weight = 1.0,	totem_key = "ttm_hd_feline",	tribe_card_key = "trb_feline",		totem_x=3,		cost = 4,	},
@@ -241,8 +241,8 @@ FELIJO.tribe_table = {
 	{key = "Human", 	weight = 0.6,	totem_key = "ttm_hd_human",		tribe_card_key = "trb_human",		totem_x=2,		cost = 8,	},
 }
 
-if FELIJO.is_mod_loaded("RevosVault") then
-    FELIJO.add_tribe({
+if FelisAG.is_mod_loaded("RevosVault") then
+    FelisAG.add_tribe({
         key = "Printer", 
         weight = 1.0, 
         totem_key = "ttm_hd_crv_printer", 
@@ -250,7 +250,7 @@ if FELIJO.is_mod_loaded("RevosVault") then
         totem_x=10, 
         cost=8
     })
-    FELIJO.add_tribe({
+    FelisAG.add_tribe({
         key = "Banana", 
         weight = 1.0, 
         totem_key = "ttm_hd_crv_banana", 
@@ -259,8 +259,8 @@ if FELIJO.is_mod_loaded("RevosVault") then
         cost=7
     })
 end
-if FELIJO.is_mod_loaded("baddirector") then
-    FELIJO.add_tribe({
+if FelisAG.is_mod_loaded("baddirector") then
+    FelisAG.add_tribe({
         key = "Misprint", 
         weight = 1.0, 
         totem_key = "ttm_hd_bd_misprint", 
@@ -270,37 +270,37 @@ if FELIJO.is_mod_loaded("baddirector") then
     })
 end
 
-FELIJO.totem_sigil_table = {
-    {key = "felijo_ttm_sgl_bifurcated",   weight = 1.0,		totem_key="ttm_bifurcated",		totem_x=0,		cost = 6,	},
-    {key = "felijo_ttm_sgl_undying",      weight = 0.6,		totem_key="ttm_undying",		totem_x=3,		cost = 8,	},
-    {key = "felijo_ttm_sgl_swap",         weight = 1.0,		totem_key="ttm_swap",			totem_x=2,		cost = 4,	},
-    {key = "felijo_ttm_sgl_midas",        weight = 1.0,		totem_key="ttm_midas",			totem_x=1,		cost = 5,	},
-    {key = "felijo_ttm_sgl_cardbearer",   weight = 1.0,		totem_key="ttm_cardbearer",		totem_x=8,		cost = 4,	},
-    {key = "felijo_ttm_sgl_giftbearer",   weight = 1.0,		totem_key="ttm_giftbearer",		totem_x=4,		cost = 4,	},
-    {key = "felijo_ttm_sgl_leader",       weight = 1.0,		totem_key="ttm_leader",			totem_x=9,		cost = 4,	}, 
-    {key = "felijo_ttm_sgl_omnistrike",   weight = 0.8,		totem_key="ttm_omnistrike",		totem_x=5,		cost = 6,	},   
-    {key = "felijo_ttm_sgl_repulsive",    weight = 0.8,		totem_key="ttm_repulsive",		totem_x=6,		cost = 6,	},
-    {key = "felijo_ttm_sgl_stinky",       weight = 1.0,		totem_key="ttm_stinky",			totem_x=7,		cost = 4,	},
+FelisAG.totem_sigil_table = {
+    {key = "feli_fag_ttm_sgl_bifurcated",   weight = 1.0,		totem_key="ttm_bifurcated",		totem_x=0,		cost = 6,	},
+    {key = "feli_fag_ttm_sgl_undying",      weight = 0.6,		totem_key="ttm_undying",		totem_x=3,		cost = 8,	},
+    {key = "feli_fag_ttm_sgl_swap",         weight = 1.0,		totem_key="ttm_swap",			totem_x=2,		cost = 4,	},
+    {key = "feli_fag_ttm_sgl_midas",        weight = 1.0,		totem_key="ttm_midas",			totem_x=1,		cost = 5,	},
+    {key = "feli_fag_ttm_sgl_cardbearer",   weight = 1.0,		totem_key="ttm_cardbearer",		totem_x=8,		cost = 4,	},
+    {key = "feli_fag_ttm_sgl_giftbearer",   weight = 1.0,		totem_key="ttm_giftbearer",		totem_x=4,		cost = 4,	},
+    {key = "feli_fag_ttm_sgl_leader",       weight = 1.0,		totem_key="ttm_leader",			totem_x=9,		cost = 4,	}, 
+    {key = "feli_fag_ttm_sgl_omnistrike",   weight = 0.8,		totem_key="ttm_omnistrike",		totem_x=5,		cost = 6,	},   
+    {key = "feli_fag_ttm_sgl_repulsive",    weight = 0.8,		totem_key="ttm_repulsive",		totem_x=6,		cost = 6,	},
+    {key = "feli_fag_ttm_sgl_stinky",       weight = 1.0,		totem_key="ttm_stinky",			totem_x=7,		cost = 4,	},
 }
 
-FELIJO.superior_enhancement = "m_felijo_enh_sup"
+FelisAG.superior_enhancement = "m_feli_fag_enh_sup"
 
-if FELIJO.is_mod_loaded("RevosVault") and SMODS.Mods["RevosVault"].config and SMODS.Mods["RevosVault"].config.superior_enabled == true then
-	FELIJO.superior_enhancement = "m_crv_superiore"
+if FelisAG.is_mod_loaded("RevosVault") and SMODS.Mods["RevosVault"].config and SMODS.Mods["RevosVault"].config.superior_enabled == true then
+	FelisAG.superior_enhancement = "m_crv_superiore"
 else
-	FELIJO.superior_enhancement = "m_felijo_enh_sup"
+	FelisAG.superior_enhancement = "m_feli_fag_enh_sup"
 end
 
-FELIJO.superior_tiers = {
-    {"m_felijo_enh_sup_t4", 1},
-    {"m_felijo_enh_sup_t3", 2},
-    {"m_felijo_enh_sup_t2", 4},
-    {FELIJO.superior_enhancement, 13},
+FelisAG.superior_tiers = {
+    {"m_feli_fag_enh_sup_t4", 1},
+    {"m_feli_fag_enh_sup_t3", 2},
+    {"m_feli_fag_enh_sup_t2", 4},
+    {FelisAG.superior_enhancement, 13},
 }
 
-if FELIJO.is_mod_loaded("baddirector") then
-    table.insert(FELIJO.superior_tiers, {"m_felijo_enh_sup_t4_mp", 0.4})
-    table.insert(FELIJO.superior_tiers, {"m_felijo_enh_sup_t3_mp", 0.8})
-    table.insert(FELIJO.superior_tiers, {"m_felijo_enh_sup_t2_mp", 1.8})
-    table.insert(FELIJO.superior_tiers, {"m_felijo_enh_sup_mp", 7})
+if FelisAG.is_mod_loaded("baddirector") then
+    table.insert(FelisAG.superior_tiers, {"m_feli_fag_enh_sup_t4_mp", 0.4})
+    table.insert(FelisAG.superior_tiers, {"m_feli_fag_enh_sup_t3_mp", 0.8})
+    table.insert(FelisAG.superior_tiers, {"m_feli_fag_enh_sup_t2_mp", 1.8})
+    table.insert(FelisAG.superior_tiers, {"m_feli_fag_enh_sup_mp", 7})
 end

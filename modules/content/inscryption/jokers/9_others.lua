@@ -9,7 +9,7 @@ SMODS.Joker {  --Bell Tentacle
 		["Other"] = true,  
 		["Tentacle"] = true,  
 	},
-    key = "felijo_ins_tentacle_bell",
+    key = "feli_fag_ins_tentacle_bell",
 	unlocked = true,
 	discovered = false,	
     rarity = 2,
@@ -18,7 +18,7 @@ SMODS.Joker {  --Bell Tentacle
     config = { extra = {xchips = 1, mult = 1, }},
 	attributes = {"xchips", "mult","joker_slot"},
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
     loc_vars = function(self, info_queue, center)
 		local pos = 1
@@ -74,7 +74,7 @@ SMODS.Joker {  --Hand Tentacle
 		["Other"] = true,  
 		["Tentacle"] = true,  
 	},
-    key = "felijo_ins_tentacle_hand",
+    key = "feli_fag_ins_tentacle_hand",
 	attributes = {"xchips", "mult","hand_size"},
 	unlocked = true,
 	discovered = false,	
@@ -83,7 +83,7 @@ SMODS.Joker {  --Hand Tentacle
 	blueprint_compat = true,
     config = { extra = {xchips = 0.25, mult = 1, }},
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
     loc_vars = function(self, info_queue, center)
 		local hand = G.hand and #G.hand.cards or 0
@@ -109,7 +109,7 @@ SMODS.Joker {  --Consumable Tentacle
 		["Other"] = true,  
 		["Tentacle"] = true,  
 	},
-    key = "felijo_ins_tentacle_cons",
+    key = "feli_fag_ins_tentacle_cons",
 	attributes = {"xchips", "mult","consumeable_slot"},
 	unlocked = true,
 	discovered = false,	
@@ -118,7 +118,7 @@ SMODS.Joker {  --Consumable Tentacle
 	blueprint_compat = true,
     config = { extra = {xchips = 1, mult = 1, }},
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
     loc_vars = function(self, info_queue, center)
 		local consumeables = G.consumeables and #G.consumeables.cards or 0
@@ -145,7 +145,7 @@ SMODS.Joker { --Edition Tentacle
 		["Other"] = true,  
 		["Tentacle"] = true,  
 	},
-    key = "felijo_ins_tentacle_edi",
+    key = "feli_fag_ins_tentacle_edi",
 	unlocked = true,
 	discovered = false,	
     rarity = 2,
@@ -154,7 +154,7 @@ SMODS.Joker { --Edition Tentacle
 	attributes = {"xchips", "mult","editions"},
     config = { extra = {xchips = 0.5, mult = 1, }},
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
     loc_vars = function(self, info_queue, center)
 		local edcount = 0
@@ -194,7 +194,7 @@ SMODS.Joker {  --Enhancement Tentacle
 		["Other"] = true,  
 		["Tentacle"] = true,  
 	},
-    key = "felijo_ins_tentacle_enh",
+    key = "feli_fag_ins_tentacle_enh",
 	unlocked = true,
 	discovered = false,	
     rarity = 2,
@@ -203,7 +203,7 @@ SMODS.Joker {  --Enhancement Tentacle
 	attributes = {"xchips", "mult", "enhancements"},
     config = { extra = {xchips = 0.2, mult = 1, }},
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
     loc_vars = function(self, info_queue, center)
 		local enhcount = 0
@@ -244,7 +244,7 @@ SMODS.Joker {  --Glitched Card
 		["Other"] = true,  
 		["Tentacle"] = true,  
 	},
-    key = "felijo_ins_glitched",
+    key = "feli_fag_ins_glitched",
 	unlocked = true,
 	discovered = false,	
     rarity = 2,
@@ -253,7 +253,7 @@ SMODS.Joker {  --Glitched Card
 	attributes = {"joker"},
     config = {},
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
 	loc_vars = function(self, info_queue, center)
 		
@@ -264,7 +264,7 @@ SMODS.Joker {  --Glitched Card
 		G.E_MANAGER:add_event(Event({
 				func = function()
 					card:juice_up(0.3, 0.5)
-					card:add_sticker("felijo_stk_glitched", true)
+					card:add_sticker("feli_fag_stk_glitched", true)
 					return true
 			end
 		}))

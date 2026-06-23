@@ -8,7 +8,7 @@ SMODS.Challenge {
         }
     },
     jokers = {
-        { id = 'j_felijo_ins_myco', eternal = true},
+        { id = 'j_feli_fag_ins_myco', eternal = true},
 		{ id = 'j_jolly', eternal = true},
     },
 	consumeables = {
@@ -38,7 +38,7 @@ SMODS.Challenge {
 			{ id = 'tag_top_up' },
 		},
 		banned_other = {
-			{ id = 'felijo_sgl_trifurcated', type = 'sticker' },
+			{ id = 'feli_fag_sgl_trifurcated', type = 'sticker' },
 			{ id = 'bl_final_heart', type = 'blind' },
             { id = 'bl_final_leaf',  type = 'blind' },
             { id = 'bl_final_acorn', type = 'blind' },
@@ -117,7 +117,7 @@ SMODS.Challenge {
         }
     },
     jokers = {
-        { id = 'j_felijo_stock_exchange', eternal = true},
+        { id = 'j_feli_fag_stock_exchange', eternal = true},
 		{ id = 'j_bull', eternal = true},
 		{ id = 'j_bootstraps', eternal = true},
     },
@@ -134,8 +134,8 @@ SMODS.Challenge {
 			{ id = 'c_immolate'},
 			{ id = 'v_seed_money' },
 			{ id = 'v_money_tree' },
-			{ id = 'v_felijo_beartrap' },
-			{ id = 'v_felijo_peltmarket' },
+			{ id = 'v_feli_fag_beartrap' },
+			{ id = 'v_feli_fag_peltmarket' },
 			{ id = 'j_to_the_moon' },
             { id = 'j_rocket' },
             { id = 'j_mail' },
@@ -150,7 +150,7 @@ SMODS.Challenge {
 			{ id = 'j_credit_card' },
 			{ id = 'j_gift' },
 			{ id = 'j_ticket' },
-			{ id = 'c_felijo_ttm_midas'},
+			{ id = 'c_feli_fag_ttm_midas'},
 			
 		},
 		banned_tags = {
@@ -160,8 +160,8 @@ SMODS.Challenge {
 			{ id = 'tag_investment' },
 		},
 		banned_other = {
-			{ id = 'felijo_sgl_trifurcated', type = 'sticker' },
-			{ id = 'felijo_sgl_bifurcated', type = 'sticker' },
+			{ id = 'feli_fag_sgl_trifurcated', type = 'sticker' },
+			{ id = 'feli_fag_sgl_bifurcated', type = 'sticker' },
 			{ id = 'bl_tooth', type = 'blind' },
 			{ id = 'bl_final_leaf',  type = 'blind' },
 		},
@@ -237,7 +237,7 @@ SMODS.Challenge {
         }
     },
     jokers = {
-        { id = 'j_felijo_stock_exchange', eternal = true},
+        { id = 'j_feli_fag_stock_exchange', eternal = true},
 		{ id = 'j_bull', eternal = true},
 		{ id = 'j_bootstraps', eternal = true},
 		{ id = 'j_oops', eternal = true},
@@ -256,8 +256,8 @@ SMODS.Challenge {
 			{ id = 'c_immolate'},
 			{ id = 'v_seed_money' },
 			{ id = 'v_money_tree' },
-			{ id = 'v_felijo_beartrap' },
-			{ id = 'v_felijo_peltmarket' },
+			{ id = 'v_feli_fag_beartrap' },
+			{ id = 'v_feli_fag_peltmarket' },
 			{ id = 'j_to_the_moon' },
             { id = 'j_rocket' },
             { id = 'j_mail' },
@@ -272,7 +272,7 @@ SMODS.Challenge {
 			{ id = 'j_credit_card' },
 			{ id = 'j_gift' },
 			{ id = 'j_ticket' },
-			{ id = 'c_felijo_ttm_midas'},
+			{ id = 'c_feli_fag_ttm_midas'},
 			
 		},
 		banned_tags = {
@@ -282,8 +282,8 @@ SMODS.Challenge {
 			{ id = 'tag_investment' },
 		},
 		banned_other = {
-			{ id = 'felijo_sgl_trifurcated', type = 'sticker' },
-			{ id = 'felijo_sgl_bifurcated', type = 'sticker' },
+			{ id = 'feli_fag_sgl_trifurcated', type = 'sticker' },
+			{ id = 'feli_fag_sgl_bifurcated', type = 'sticker' },
 			{ id = 'bl_tooth', type = 'blind' },
 			{ id = 'bl_final_leaf',  type = 'blind' },
 		},
@@ -354,8 +354,8 @@ SMODS.Challenge {
         { id = 'j_marble', eternal = true },
     },
 	consumeables = {
-		{ id = 'c_felijo_rit_campfire'},
-		{ id = 'c_felijo_rit_campfire'},
+		{ id = 'c_feli_fag_rit_campfire'},
+		{ id = 'c_feli_fag_rit_campfire'},
 	},
     deck = {
         type = 'Challenge Deck',
@@ -364,17 +364,17 @@ SMODS.Challenge {
             { s = 'D', r = 'A' },
             { s = 'H', r = 'A' },
             { s = 'S', r = 'A' },
-            { s = 'C', r = 'K', e = 'm_felijo_stone_t3' },
-            { s = 'D', r = 'K', e = 'm_felijo_stone_t4' },
-            { s = 'H', r = 'K', e = 'm_felijo_stone_t2' },
+            { s = 'C', r = 'K', e = 'm_feli_fag_stone_t3' },
+            { s = 'D', r = 'K', e = 'm_feli_fag_stone_t4' },
+            { s = 'H', r = 'K', e = 'm_feli_fag_stone_t2' },
             { s = 'S', r = 'K', e = 'm_stone' },
-            { s = 'C', r = 'Q', e = 'm_felijo_stone_t3' },
-            { s = 'D', r = 'Q', e = 'm_felijo_stone_t4' },
-            { s = 'H', r = 'Q', e = 'm_felijo_stone_t2' },
+            { s = 'C', r = 'Q', e = 'm_feli_fag_stone_t3' },
+            { s = 'D', r = 'Q', e = 'm_feli_fag_stone_t4' },
+            { s = 'H', r = 'Q', e = 'm_feli_fag_stone_t2' },
             { s = 'S', r = 'Q', e = 'm_stone' },
-            { s = 'C', r = 'J', e = 'm_felijo_stone_t3' },
-            { s = 'D', r = 'J', e = 'm_felijo_stone_t4' },
-            { s = 'H', r = 'J', e = 'm_felijo_stone_t2' },
+            { s = 'C', r = 'J', e = 'm_feli_fag_stone_t3' },
+            { s = 'D', r = 'J', e = 'm_feli_fag_stone_t4' },
+            { s = 'H', r = 'J', e = 'm_feli_fag_stone_t2' },
             { s = 'S', r = 'J', e = 'm_stone' },
             { s = 'C', r = 'T' },
             { s = 'D', r = 'T' },

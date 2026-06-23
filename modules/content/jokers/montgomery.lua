@@ -2,7 +2,7 @@ SMODS.Joker {
 	atlas = 'fleamarket',
 	pos = { x = 0, y = 0 },
 	pools = {["FelisJokeria"] = true, ["Human"] = true, ["Meme"] = true, },
-	key = "felijo_fleamarket",
+	key = "feli_fag_fleamarket",
 	rarity = 2,
 	cost = 8,
 	config = {

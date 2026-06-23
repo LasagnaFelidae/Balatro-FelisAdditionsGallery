@@ -1,10 +1,10 @@
 return {
     descriptions = {
 		Joker = {
-            j_felijo_akyrs_lexicographer = {
+            j_feli_fag_akyrs_lexicographer = {
                 name = {
                     "The Lexicographer",
-                    "{C:felijo_inactive,s:0.5}Wryn Nguyen"
+                    "{C:feli_fag_inactive,s:0.5}Wryn Nguyen"
                 },
                 text = { 
                     {
@@ -14,7 +14,7 @@ return {
                     {
                     "Once per ante, when used,",
                     "adds {C:attention}#1# {C:red,E:2}#2#{}",
-                    "{C:felijo_pink}Wildcards{}",
+                    "{C:feli_fag_pink}Wildcards{}",
                     },
                     {
                     "{C:inactive}(Uses left: {V:1}#3#{C:inactive})"
@@ -24,10 +24,10 @@ return {
                 }
             },
 
-            j_felijo_akyrs_fisher = {
+            j_feli_fag_akyrs_fisher = {
                 name = {
                     "The Fisher",
-                    "{C:felijo_inactive,s:0.5}Leslie Stone"
+                    "{C:feli_fag_inactive,s:0.5}Leslie Stone"
                 },
                 text = { 
                     {
@@ -37,11 +37,12 @@ return {
                     {
                     "Up to {C:attention}#1#{} times per ante,",
                     "when used, {C:attention}fish",
-                    "for a random tile",
+                    "for a random {C:enhanced}Enhanced",
+                    "blank {C:blue}Letter card"
                     },
                     {
-                    "Tile can be {C:felijo_ttm}Wooden{},",
-                    "{C:felijo_pink}Crit{} or {C:red}Bleed"
+                    "Card can be {C:feli_fag_ttm}Wooden{},",
+                    "{C:feli_fag_pink}Crit{} or {C:red}Bleed"
                     },
                     {
                     "{C:inactive}(Uses left: {V:1}#2#{C:inactive})"
@@ -50,7 +51,7 @@ return {
 
                 }
             },
-			j_felijo_ltr_dbl = {
+			j_feli_fag_ltr_dbl = {
                 name = "Double Letter Tile",
                 text = { 
                     "{C:green}#3# in #4#{} chance to retrigger",
@@ -58,7 +59,7 @@ return {
                     "{s:0.7,C:inactive}(Caps at #2# sets of retriggers){}"
                 }
             },
-			j_felijo_ltr_tpl = {
+			j_feli_fag_ltr_tpl = {
                 name = "Triple Letter Tile",
                 text = { 
                     "{C:green}#3# in #4#{} chance to retrigger",
@@ -66,7 +67,7 @@ return {
                     "{s:0.7,C:inactive}(Caps at #2# sets of retriggers){}"
                 }
             },
-			j_felijo_ltr_qdl = {
+			j_feli_fag_ltr_qdl = {
                 name = "Quad Letter Tile",
                 text = { 
                     "{C:green}#3# in #4#{} chance to retrigger",
@@ -74,7 +75,7 @@ return {
                     "{s:0.7,C:inactive}(Caps at #2# sets of retriggers){}"
                 }
             },
-			j_felijo_ltr_dbw = {
+			j_feli_fag_ltr_dbw = {
                 name = "Double Word Tile",
                 text = { 
                     "{C:green}#3# in #4#{} chance to",
@@ -82,7 +83,7 @@ return {
                     "{s:0.7,C:inactive}(Hand needs to be 4 cards or more){}"
                 }
             },
-			j_felijo_ltr_tpw = {
+			j_feli_fag_ltr_tpw = {
                 name = "Triple Word Tile",
                 text = { 
                     "{C:green}#3# in #4#{} chance to",
@@ -90,7 +91,7 @@ return {
                     "{s:0.7,C:inactive}(Hand needs to be 6 cards or more){}"
                 }
             },
-			j_felijo_ltr_qdw = {
+			j_feli_fag_ltr_qdw = {
                 name = "Quad Word Tile",
                 text = { 
                     "{C:green}#3# in #4#{} chance to",
@@ -98,7 +99,7 @@ return {
                     "{s:0.7,C:inactive}(Hand needs to be 8 cards or more){}"
                 }
             },
-			j_felijo_ltr_cleanslate = {
+			j_feli_fag_ltr_cleanslate = {
                 name = "Clean Slate",
                 text = { 
                     "{C:chips}+#1#{} Chips and {C:money}$#2#{}",
@@ -106,7 +107,7 @@ return {
 					"{C:attention}played{} and {C:attention}scored"
                 }
             },
-			j_felijo_lgd_feli = {
+			j_feli_fag_lgd_feli = {
 				name = "{C:money,E:1,S:2}Feli{}",
 				text = {
 					{
@@ -124,10 +125,10 @@ return {
 			},			
 		},
         Other = {
-			felijo_akyrs_wildcard	= {
+			feli_fag_akyrs_wildcard	= {
 				name = "Wildcard (Aikoyori's Shenanigans)",
 				text= {
-					"A {C:felijo_pink}Wildcard",
+					"A {C:feli_fag_pink}Wildcard",
                     "is a {C:blue}letter{} that can be used",
                     "as {C:attention}any character"
 				}

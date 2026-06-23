@@ -1,5 +1,5 @@
 SMODS.Joker {
-	atlas = 'feliJoker',
+	atlas = 'feli_fagker',
 	pos = { x = 0, y = 0 },
 	soul_pos = {
 		x = 1, y = 0, draw = function (card, scale_mod, rotate_mod)
@@ -8,14 +8,14 @@ SMODS.Joker {
 		end
 	},
 	pools = {["FelisJokeria"] = true, ["Feline"] = true,  ["Letter"] = true, },
-	key = "felijo_lgd_feli",
+	key = "feli_fag_lgd_feli",
 	rarity = 4,
 	cost = 20,
 	config = {
 		extra = { chips = 5, odds = 6},
 	},	
 	loc_vars = function(self, info_queue, card)
-		local numerator, denumerator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'felijo_lgd_feli')
+		local numerator, denumerator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'feli_fag_lgd_feli')
 		return { vars = { card.ability.extra.chips, numerator, denumerator} }
 	end,
 	calculate = function(self, card, context)
@@ -24,12 +24,12 @@ SMODS.Joker {
 				local word = G.GAME.aiko_current_word    
 				if not word then return {} end
 				word = string.lower(word)			
-				if FELIJO.garf_words[word] then	
-					if SMODS.pseudorandom_probability(card, 'felijo_lgd_feli', 1, card.ability.extra.odds) then
+				if FelisAG.garf_words[word] then	
+					if SMODS.pseudorandom_probability(card, 'feli_fag_lgd_feli', 1, card.ability.extra.odds) then
 						return {
 							chips = card.ability.extra.chips * #word * G.GAME.hands[context.scoring_name].played,
 							level_up = true,
-							message = localize('k_felijo_lvl_succ')
+							message = localize('k_feli_fag_lvl_succ')
 						}
 					else
 						return {

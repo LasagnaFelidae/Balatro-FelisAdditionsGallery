@@ -1,5 +1,5 @@
-FELIJO.Vermin = SMODS.Joker:extend{
-    atlas = 'felijo_insVermin',
+FelisAG.Vermin = SMODS.Joker:extend{
+    atlas = 'feli_fag_insVermin',
 	pools = {
 		["FelisJokeria"]=true,
 		["Inscryption"] = true, 
@@ -9,14 +9,14 @@ FELIJO.Vermin = SMODS.Joker:extend{
 	unlocked = true,
 	discovered = false,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
 }
 
 
-FELIJO.Vermin { -- common River Snapper
+FelisAG.Vermin { -- common River Snapper
     pos = { x = 0, y = 0 },
-    key = "felijo_ins_squirrel",
+    key = "feli_fag_ins_squirrel",
     rarity = 1,
     cost = 1,
 	blueprint_compat = true,
@@ -37,9 +37,9 @@ FELIJO.Vermin { -- common River Snapper
 	end,
 }
 
-FELIJO.Vermin { -- common Squirrel Ball
+FelisAG.Vermin { -- common Squirrel Ball
     pos = { x = 1, y = 0 },
-    key = "felijo_ins_squirrelball",
+    key = "feli_fag_ins_squirrelball",
     rarity = 1,
     cost = 3,
 	blueprint_compat = true,
@@ -48,11 +48,11 @@ FELIJO.Vermin { -- common Squirrel Ball
 	attributes = {"mult","position","generation"},
 	config = { extra = { mult = 1, max = 3}, immutable = { index = 0, squirrels = 0, squirreled = false}},
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = G.P_CENTERS["j_felijo_ins_squirrel"]
+        info_queue[#info_queue + 1] = G.P_CENTERS["j_feli_fag_ins_squirrel"]
         if G.jokers and G.jokers.cards then
             card.ability.immutable.squirrels = 0
             for i, v in ipairs(G.jokers.cards) do
-                if v.config.center.key == "j_felijo_ins_squirrel" then
+                if v.config.center.key == "j_feli_fag_ins_squirrel" then
                     card.ability.immutable.squirrels = card.ability.immutable.squirrels + 1
                 end
             end
@@ -61,7 +61,7 @@ FELIJO.Vermin { -- common Squirrel Ball
     end,
     add_to_deck = function (self, card, from_debuff)
         if card.area and card.area.cards then
-            local pos = FELIJO.getIndex(card.area.cards,card)
+            local pos = FelisAG.getIndex(card.area.cards,card)
             card.ability.immutable.index = pos
         end
     end,
@@ -69,7 +69,7 @@ FELIJO.Vermin { -- common Squirrel Ball
         if context.before then
             card.ability.immutable.squirrels = 0
             for i, v in ipairs(G.jokers.cards) do
-                if v.config.center.key == "j_felijo_ins_squirrel" then
+                if v.config.center.key == "j_feli_fag_ins_squirrel" then
                     card.ability.immutable.squirrels = card.ability.immutable.squirrels + 1
                 end
             end
@@ -77,7 +77,7 @@ FELIJO.Vermin { -- common Squirrel Ball
                 return {
                     func = function ()
                         local target = pseudorandom("target",1,#card.area.cards) 
-                        local pos = FELIJO.getIndex(card.area.cards,card)
+                        local pos = FelisAG.getIndex(card.area.cards,card)
                         local it = 0
                         while target == pos do
                             target = pseudorandom("target"..it,1,#card.area.cards)
@@ -91,10 +91,10 @@ FELIJO.Vermin { -- common Squirrel Ball
                             SMODS.destroy_cards(card)
                             roll = pseudorandom("squirrelball",0,math.floor(card.ability.extra.max))
                             for i = 0, roll do
-                                SMODS.add_card({key = "j_felijo_ins_squirrel", area = G.jokers})
+                                SMODS.add_card({key = "j_feli_fag_ins_squirrel", area = G.jokers})
                             end
                         end
-                        SMODS.add_card({key = "j_felijo_ins_squirrel", area = G.jokers})
+                        SMODS.add_card({key = "j_feli_fag_ins_squirrel", area = G.jokers})
                         card.ability.immutable.squirreled = true
                     end
                 }
@@ -109,9 +109,9 @@ FELIJO.Vermin { -- common Squirrel Ball
 	end,
 }
 
-FELIJO.Vermin { -- Rare Pack Rat
+FelisAG.Vermin { -- Rare Pack Rat
     pos = { x = 4, y = 0 },
-    key = "felijo_ins_packrat",
+    key = "feli_fag_ins_packrat",
     rarity = 3,
     cost = 8,
 	blueprint_compat = false,
@@ -120,11 +120,11 @@ FELIJO.Vermin { -- Rare Pack Rat
 	attributes = {"mult","chips","generation"},
 	config = { extra = { mult = 2, chips = 2}},
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = G.P_CENTERS["p_felijo_pack_rat"]
+        info_queue[#info_queue + 1] = G.P_CENTERS["p_feli_fag_pack_rat"]
 		return { vars = { card.ability.extra.chips, card.ability.extra.mult,  colours = { HEX('F0C590'), HEX('351A09') } } } 
     end,
     remove_from_deck = function(self,card, from_debuff)
-        add_tag(Tag("tag_felijo_packrat_gift", false, 'Small')) 
+        add_tag(Tag("tag_feli_fag_packrat_gift", false, 'Small')) 
     end,
     calculate = function(self, card, context)
 

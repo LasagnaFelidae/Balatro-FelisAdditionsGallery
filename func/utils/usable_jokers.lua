@@ -1,23 +1,23 @@
 ---@diagnostic disable: duplicate-set-field
--- Taken from felijo
+-- Taken from feli_fag
 
-G.FUNCS.felijo_can_use_joker = function(e)
+G.FUNCS.feli_fag_can_use_joker = function(e)
     local center = e.config.ref_table.config.center
     local card = e.config.ref_table
-    card._felijo_use_key = localize("b_use")
+    card._feli_fag_use_key = localize("b_use")
     if
         center.can_use and center:can_use(e.config.ref_table) and not e.config.ref_table.debuff
         and G.STATE ~= G.STATES.HAND_PLAYED and G.STATE ~= G.STATES.DRAW_TO_HAND and G.STATE ~= G.STATES.PLAY_TAROT
         and not (((G.play and #G.play.cards > 0) or (G.CONTROLLER.locked) or (G.GAME.STOP_USE and G.GAME.STOP_USE > 0)))
     then
         e.config.colour = G.C.ORANGE
-        e.config.button = "felijo_use_joker"
+        e.config.button = "feli_fag_use_joker"
     else
         e.config.colour = G.C.UI.BACKGROUND_INACTIVE
         e.config.button = nil
     end
 end
-G.FUNCS.felijo_use_joker = function(e)
+G.FUNCS.feli_fag_use_joker = function(e)
     local int = G.TAROT_INTERRUPT
     G.TAROT_INTERRUPT = true
     local center = e.config.ref_table.config.center
@@ -31,7 +31,7 @@ end
 local G_UIDEF_use_and_sell_buttons_ref = G.UIDEF.use_and_sell_buttons
 function G.UIDEF.use_and_sell_buttons(card)
 	local abc = G_UIDEF_use_and_sell_buttons_ref(card)
-	if card.area == G.felijo_character_area then
+	if card.area == G.feli_fag_character_area then
 		return {
 			-- TODO: make this smaller
 			n=G.UIT.ROOT, config = {padding = 0, colour = G.C.CLEAR}, nodes={
@@ -71,7 +71,7 @@ function G.UIDEF.use_and_sell_buttons(card)
 				}},
 		}}
 		local transition = {n=G.UIT.C, config={align = "cr"}, nodes={
-			{n=G.UIT.C, config={ref_table = card, align = "cm",padding = 0.1, r=0.08, minw = 1.25, minh = 0.8, hover = true, shadow = true, colour = G.C.UI.BACKGROUND_INACTIVE, button = 'felijo_use_joker', func = "felijo_can_use_joker", handy_insta_action = 'use'}, nodes={
+			{n=G.UIT.C, config={ref_table = card, align = "cm",padding = 0.1, r=0.08, minw = 1.25, minh = 0.8, hover = true, shadow = true, colour = G.C.UI.BACKGROUND_INACTIVE, button = 'feli_fag_use_joker', func = "feli_fag_can_use_joker", handy_insta_action = 'use'}, nodes={
 				{n=G.UIT.B, config = {w=0.1,h=0.6}},
 				{n=G.UIT.C, config={align = "cm"}, nodes={
 					{n=G.UIT.R, config={align = "cm", maxw = 1.25}, nodes={

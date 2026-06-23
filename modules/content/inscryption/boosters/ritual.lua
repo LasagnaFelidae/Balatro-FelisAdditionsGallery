@@ -1,12 +1,12 @@
 SMODS.Booster {
     key = "ritual_normal_1",
     weight = 0.7,
-    kind = 'felijo_ritual_p', -- You can also use Spectral if you want it to belong to the vanilla kind
+    kind = 'feli_fag_ritual_p', -- You can also use Spectral if you want it to belong to the vanilla kind
 	atlas = "insRitualBoost",
     cost = 4,
     pos = { x = 0, y = 0 },
     config = { extra = 3, choose = 1 },
-    group_key = "k_felijo_ritual_pack", -- Delete this if you're using `group_name` in `loc_txt`
+    group_key = "k_feli_fag_ritual_pack", -- Delete this if you're using `group_name` in `loc_txt`
     draw_hand = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
@@ -37,21 +37,21 @@ SMODS.Booster {
        local _card
         if BadDirector and pseudorandom('misprint') > 0.9 then
             _card = {
-                set = "felijo_ritual_mp",
+                set = "feli_fag_ritual_mp",
                 area = G.pack_cards,
                 skip_materialize = true,
                 soulable = true,
                 key_append =
-                "felijo_ritual_p_mp"
+                "feli_fag_ritual_p_mp"
             }
         else
             _card = {
-                set = "felijo_ritual",
+                set = "feli_fag_ritual",
                 area = G.pack_cards,
                 skip_materialize = true,
                 soulable = true,
                 key_append =
-                "felijo_ritual_p"
+                "feli_fag_ritual_p"
             }
         end
         return _card
@@ -60,12 +60,12 @@ SMODS.Booster {
 SMODS.Booster {
     key = "ritual_normal_2",
     weight = 0.7,
-    kind = 'felijo_ritual_p', -- You can also use Spectral if you want it to belong to the vanilla kind
+    kind = 'feli_fag_ritual_p', -- You can also use Spectral if you want it to belong to the vanilla kind
 	atlas = "insRitualBoost",
     cost = 4,
     pos = { x = 1, y = 0 },
     config = { extra = 3, choose = 1 },
-    group_key = "k_felijo_ritual_pack", -- Delete this if you're using `group_name` in `loc_txt`
+    group_key = "k_feli_fag_ritual_pack", -- Delete this if you're using `group_name` in `loc_txt`
     draw_hand = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
@@ -96,21 +96,21 @@ SMODS.Booster {
        local _card
         if BadDirector and pseudorandom('misprint') > 0.9 then
             _card = {
-                set = "felijo_ritual_mp",
+                set = "feli_fag_ritual_mp",
                 area = G.pack_cards,
                 skip_materialize = true,
                 soulable = true,
                 key_append =
-                "felijo_ritual_p_mp"
+                "feli_fag_ritual_p_mp"
             }
         else
             _card = {
-                set = "felijo_ritual",
+                set = "feli_fag_ritual",
                 area = G.pack_cards,
                 skip_materialize = true,
                 soulable = true,
                 key_append =
-                "felijo_ritual_p"
+                "feli_fag_ritual_p"
             }
         end
         return _card
@@ -119,12 +119,12 @@ SMODS.Booster {
 SMODS.Booster {
     key = "ritual_jumbo_1",
     weight = 0.35,
-    kind = 'felijo_ritual_p', -- You can also use Spectral if you want it to belong to the vanilla kind
+    kind = 'feli_fag_ritual_p', -- You can also use Spectral if you want it to belong to the vanilla kind
 	atlas = "insRitualBoost",
     cost = 6,
     pos = { x = 2, y = 0 },
     config = { extra = 4, choose = 1 },
-    group_key = "k_felijo_ritual_pack", -- Delete this if you're using `group_name` in `loc_txt`
+    group_key = "k_feli_fag_ritual_pack", -- Delete this if you're using `group_name` in `loc_txt`
     draw_hand = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
@@ -155,21 +155,21 @@ SMODS.Booster {
        local _card
         if BadDirector and pseudorandom('misprint') > 0.9 then
             _card = {
-                set = "felijo_ritual_mp",
+                set = "feli_fag_ritual_mp",
                 area = G.pack_cards,
                 skip_materialize = true,
                 soulable = true,
                 key_append =
-                "felijo_ritual_p_mp"
+                "feli_fag_ritual_p_mp"
             }
         else
             _card = {
-                set = "felijo_ritual",
+                set = "feli_fag_ritual",
                 area = G.pack_cards,
                 skip_materialize = true,
                 soulable = true,
                 key_append =
-                "felijo_ritual_p"
+                "feli_fag_ritual_p"
             }
         end
         return _card
@@ -178,12 +178,12 @@ SMODS.Booster {
 SMODS.Booster {
     key = "ritual_jumbo_2",
     weight = 0.35,
-    kind = 'felijo_ritual_p', -- You can also use Spectral if you want it to belong to the vanilla kind
+    kind = 'feli_fag_ritual_p', -- You can also use Spectral if you want it to belong to the vanilla kind
 	atlas = "insRitualBoost",
     cost = 6,
     pos = { x = 3, y = 0 },
     config = { extra = 4, choose = 1 },
-    group_key = "k_felijo_ritual_pack", -- Delete this if you're using `group_name` in `loc_txt`
+    group_key = "k_feli_fag_ritual_pack", -- Delete this if you're using `group_name` in `loc_txt`
     draw_hand = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
@@ -214,21 +214,21 @@ SMODS.Booster {
        local _card
         if BadDirector and pseudorandom('misprint') > 0.9 then
             _card = {
-                set = "felijo_ritual_mp",
+                set = "feli_fag_ritual_mp",
                 area = G.pack_cards,
                 skip_materialize = true,
                 soulable = true,
                 key_append =
-                "felijo_ritual_p_mp"
+                "feli_fag_ritual_p_mp"
             }
         else
             _card = {
-                set = "felijo_ritual",
+                set = "feli_fag_ritual",
                 area = G.pack_cards,
                 skip_materialize = true,
                 soulable = true,
                 key_append =
-                "felijo_ritual_p"
+                "feli_fag_ritual_p"
             }
         end
         return _card
@@ -237,12 +237,12 @@ SMODS.Booster {
 SMODS.Booster {
     key = "ritual_mega_1",
     weight = 0.1,
-    kind = 'felijo_ritual_p', -- You can also use Spectral if you want it to belong to the vanilla kind
+    kind = 'feli_fag_ritual_p', -- You can also use Spectral if you want it to belong to the vanilla kind
 	atlas = "insRitualBoost",
     cost = 8,
     pos = { x = 0, y = 1 },
     config = { extra = 5, choose = 2 },
-    group_key = "k_felijo_ritual_pack", -- Delete this if you're using `group_name` in `loc_txt`
+    group_key = "k_feli_fag_ritual_pack", -- Delete this if you're using `group_name` in `loc_txt`
     draw_hand = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
@@ -273,21 +273,21 @@ SMODS.Booster {
        local _card
         if BadDirector and pseudorandom('misprint') > 0.9 then
             _card = {
-                set = "felijo_ritual_mp",
+                set = "feli_fag_ritual_mp",
                 area = G.pack_cards,
                 skip_materialize = true,
                 soulable = true,
                 key_append =
-                "felijo_ritual_p_mp"
+                "feli_fag_ritual_p_mp"
             }
         else
             _card = {
-                set = "felijo_ritual",
+                set = "feli_fag_ritual",
                 area = G.pack_cards,
                 skip_materialize = true,
                 soulable = true,
                 key_append =
-                "felijo_ritual_p"
+                "feli_fag_ritual_p"
             }
         end
         return _card
@@ -296,12 +296,12 @@ SMODS.Booster {
 SMODS.Booster {
     key = "ritual_mega_2",
     weight = 0.1,
-    kind = 'felijo_ritual_p', -- You can also use Spectral if you want it to belong to the vanilla kind
+    kind = 'feli_fag_ritual_p', -- You can also use Spectral if you want it to belong to the vanilla kind
     cost = 8,
 	atlas = "insRitualBoost",
     pos = { x = 1, y = 1 },
     config = { extra = 5, choose = 2 },
-    group_key = "k_felijo_ritual_pack", -- Delete this if you're using `group_name` in `loc_txt`
+    group_key = "k_feli_fag_ritual_pack", -- Delete this if you're using `group_name` in `loc_txt`
     draw_hand = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
@@ -332,21 +332,21 @@ SMODS.Booster {
        local _card
         if BadDirector and pseudorandom('misprint') > 0.9 then
             _card = {
-                set = "felijo_ritual_mp",
+                set = "feli_fag_ritual_mp",
                 area = G.pack_cards,
                 skip_materialize = true,
                 soulable = true,
                 key_append =
-                "felijo_ritual_p_mp"
+                "feli_fag_ritual_p_mp"
             }
         else
             _card = {
-                set = "felijo_ritual",
+                set = "feli_fag_ritual",
                 area = G.pack_cards,
                 skip_materialize = true,
                 soulable = true,
                 key_append =
-                "felijo_ritual_p"
+                "feli_fag_ritual_p"
             }
         end
         return _card

@@ -1,47 +1,47 @@
 return {
     descriptions = {
 		Back={
-            b_felijo_ttm_deck = {
+            b_feli_fag_ttm_deck = {
                 name = 'Totem Deck',
                 text = 
                 { 
-                    'Start with {C:felijo_ttm}Totems{} enabled and',
-					'{C:felijo_ins,T:v_felijo_totemmerchant}Totem Merchant{} redeemed.',
+                    'Start with {C:feli_fag_ttm}Totems{} enabled and',
+					'{C:feli_fag_ins,T:v_feli_fag_totemmerchant}Totem Merchant{} redeemed.',
 					"{C:inactive}(Only one totem can be active at a time)"
                 },
             },
 		},
 		Sleeve = {
-            sleeve_felijo_ttm_deck = {
+            sleeve_feli_fag_ttm_deck = {
                 name = "Totem Sleeve",
                 text = 
 				{ 
-                    'Start with {C:felijo_ttm}Totems{} enabled and',
-					'{C:felijo_ins,T:v_felijo_totemmerchant}Totem Merchant{} redeemed',
+                    'Start with {C:feli_fag_ttm}Totems{} enabled and',
+					'{C:feli_fag_ins,T:v_feli_fag_totemmerchant}Totem Merchant{} redeemed',
 					"{C:inactive}(Only one totem can be active at a time)"
                 },
             },
-            sleeve_felijo_ttm_deck_alt = {
+            sleeve_feli_fag_ttm_deck_alt = {
                 name = "Totem Sleeve",
                 text = { 
                     "Start with",
-                    "{C:white,X:felijo_ttm}+1{} Totem Area Size and",
-					'{C:felijo_ins,T:v_felijo_totemtycoon}Totem Tycoon{} redeemed',
+                    "{C:white,X:feli_fag_ttm}+1{} Totem Area Size and",
+					'{C:feli_fag_ins,T:v_feli_fag_totemtycoon}Totem Tycoon{} redeemed',
              	},
             },
-			sleeve_felijo_ttm_deck_crv = {
+			sleeve_feli_fag_ttm_deck_crv = {
                 name = "Totem Sleeve",
                 text = { 
-                    "Start with {C:felijo_ttm}Totems{} enabled,",
-                    "a {C:felijo_ttm,T:c_felijo_ttm_hd_crv_printer}Totem Head of the Printer{}",
-					'and {C:felijo_ins,T:v_felijo_totemmerchant}Totem Merchant{} redeemed',
+                    "Start with {C:feli_fag_ttm}Totems{} enabled,",
+                    "a {C:feli_fag_ttm,T:c_feli_fag_ttm_hd_crv_printer}Totem Head of the Printer{}",
+					'and {C:feli_fag_ins,T:v_feli_fag_totemmerchant}Totem Merchant{} redeemed',
              	},
             },
 		},
 		
 		Enhanced = {
 			----------
-			m_felijo_bld_pin = {
+			m_feli_fag_bld_pin = {
                 name = "The Pin",
                 text = {
                     {
@@ -58,7 +58,7 @@ return {
 			-------------------
 			---BLINDSIDE END---
 			-------------------
-			m_felijo_scoretest_t2 = {
+			m_feli_fag_scoretest_t2 = {
                 name = "scoretest",
                 text = {
                     "Score: {C:chips}#1#{} (+#2#)",
@@ -72,7 +72,7 @@ return {
 					
                 },
             },
-            m_felijo_wild_t2 = {
+            m_feli_fag_wild_t2 = {
                 name = "Wild Card [II]",
                 text = {
                     "Can be used",
@@ -80,7 +80,7 @@ return {
                     "Can't be debuffed",
                 },
             },
-			m_felijo_wild_t3 = {
+			m_feli_fag_wild_t3 = {
                 name = "Wild Card [III]",
                 text = {
                     "Can be used",
@@ -89,7 +89,7 @@ return {
                     "Retriggers {C:attention}#1#{} time",
                 },
             },
-			m_felijo_wild_t4 = {
+			m_feli_fag_wild_t4 = {
                 name = "Wild Card [IV]",
                 text = {
                     "Can be used",
@@ -99,25 +99,25 @@ return {
                 },
             },
 
-			m_felijo_bonus_t2 = {
+			m_feli_fag_bonus_t2 = {
                 name = "Bonus Card [II]",
                 text = {
                     "{C:chips}+#1#{} extra chips",
                 },
             },
-			m_felijo_bonus_t3 = {
+			m_feli_fag_bonus_t3 = {
                 name = "Bonus Card [III]",
                 text = {
                     "{C:chips}+#1#{} extra chips",
                 },
             },
-			m_felijo_bonus_t4 = {
+			m_feli_fag_bonus_t4 = {
                 name = "Bonus Card [IV]",
                 text = {
                     "{C:chips}+#1#{} extra chips",
                 },
             },
-            m_felijo_glass_t2 = {
+            m_feli_fag_glass_t2 = {
                 name = "Glass Card [II]",
                 text = {
                     "{X:mult,C:white}X#1#{} Mult",
@@ -125,7 +125,7 @@ return {
                     "destroy card",
                 },
             },
-			m_felijo_glass_t3 = {
+			m_feli_fag_glass_t3 = {
                 name = "Glass Card [III]",
                 text = {
                     "{X:mult,C:white} X#1# {} Mult",
@@ -133,7 +133,7 @@ return {
                     "destroy card",
                 },
             },
-			m_felijo_glass_t4 = {
+			m_feli_fag_glass_t4 = {
                 name = "Glass Card [IV]",
                 text = {
                     "{X:mult,C:white} X#1# {} Mult",
@@ -141,7 +141,7 @@ return {
                     "destroy card",
                 },
             },
-            m_felijo_gold_t2 = {
+            m_feli_fag_gold_t2 = {
                 name = "Gold Card [II]",
                 text = {
 					{
@@ -156,7 +156,7 @@ return {
 					}
 				}
             },
-			m_felijo_gold_t3 = {
+			m_feli_fag_gold_t3 = {
                 name = "Gold Card [III]",
                 text = {
 					{
@@ -171,7 +171,7 @@ return {
 					}
 				}
             },
-			m_felijo_gold_t4 = {
+			m_feli_fag_gold_t4 = {
                 name = "Gold Card [IV]",
                 text = {
 					{
@@ -186,7 +186,7 @@ return {
 					}
 				}
             },
-            m_felijo_lucky_t2 = {
+            m_feli_fag_lucky_t2 = {
                 name = "Lucky Card [II]",
                 text = {
                     "{C:green}#1# in #4#{} chance",
@@ -197,7 +197,7 @@ return {
                     "to win {C:money}$#5#",
                 },
             },
-			m_felijo_lucky_t3 = {
+			m_feli_fag_lucky_t3 = {
                 name = "Lucky Card [III]",
                 text = {
                     "{C:green}#1# in #4#{} chance",
@@ -208,7 +208,7 @@ return {
                     "to win {C:money}$#5#",
                 },
             },
-			m_felijo_lucky_t4 = {
+			m_feli_fag_lucky_t4 = {
                 name = "Lucky Card [IV]",
                 text = {
                     "{C:green}#1# in #4#{} chance",
@@ -219,25 +219,25 @@ return {
                     "to win {C:money}$#5#",
                 },
             },
-            m_felijo_mult_t2 = {
+            m_feli_fag_mult_t2 = {
                 name = "Mult Card [II]",
                 text = {
                     "{C:mult}+#1#{} Mult",
                 },
             },
-			m_felijo_mult_t3 = {
+			m_feli_fag_mult_t3 = {
                 name = "Mult Card [III]",
                 text = {
                     "{C:mult}+#1#{} Mult",
                 },
             },
-			m_felijo_mult_t4 = {
+			m_feli_fag_mult_t4 = {
                 name = "Mult Card [IV]",
                 text = {
                     "{C:mult}+#1#{} Mult",
                 },
             },
-            m_felijo_steel_t2 = {
+            m_feli_fag_steel_t2 = {
                 name = "Steel Card [II]",
                 text = {
                     "{X:mult,C:white} X#1# {} Mult",
@@ -245,7 +245,7 @@ return {
                     "stays in hand",
                 },
             },
-			m_felijo_steel_t3 = {
+			m_feli_fag_steel_t3 = {
                 name = "Steel Card [III]",
                 text = {
                     "{X:mult,C:white} X#1# {} Mult,",
@@ -253,7 +253,7 @@ return {
                     "stays in hand",
                 },
             },
-			m_felijo_steel_t4 = {
+			m_feli_fag_steel_t4 = {
                 name = "Steel Card [IV]",
                 text = {
                     "{X:mult,C:white} X#1# {} Mult,",
@@ -261,14 +261,14 @@ return {
                     "stays in hand",
                 },
             },
-            m_felijo_stone_t2 = {
+            m_feli_fag_stone_t2 = {
                 name = "Stone Card [II]",
                 text = {
                     "{C:chips}+#1#{} Chips",
                     "no rank or suit",
                 },
             },
-			m_felijo_stone_t3 = {
+			m_feli_fag_stone_t3 = {
                 name = "Stone Card [III]",
                 text = {
                     "{C:chips}+#1#{} Chips,",
@@ -276,7 +276,7 @@ return {
                     "no rank or suit",
                 },
             },
-			m_felijo_stone_t4 = {
+			m_feli_fag_stone_t4 = {
                 name = "Stone Card [IV]",
                 text = {
                     "{C:chips}+#1#{} Chips,",
@@ -284,7 +284,7 @@ return {
                     "no rank or suit",
                 },
             },
-			m_felijo_enh_sup = {
+			m_feli_fag_enh_sup = {
 				name = "Superior Card",
 				text = {
 					{
@@ -294,7 +294,7 @@ return {
 				},
 			
 			},
-			m_felijo_enh_sup_t2 = {
+			m_feli_fag_enh_sup_t2 = {
                 name = "Superior Card [II]",
                 text = {
 					{
@@ -303,7 +303,7 @@ return {
 					},
 				},
             },
-			m_felijo_enh_sup_t3 = {
+			m_feli_fag_enh_sup_t3 = {
                 name = "Superior Card [III]",
                 text = {
 					{
@@ -312,7 +312,7 @@ return {
 					},
 				},
             },
-			m_felijo_enh_sup_t4 = {
+			m_feli_fag_enh_sup_t4 = {
                 name = "Superior Card [IV]",
                 text = {
 					{
@@ -325,7 +325,7 @@ return {
 
 		},
 		Edition = {
-            e_felijo_subspace = {
+            e_feli_fag_subspace = {
                 name = "Subspaced",
                 text = {
                     "{X:blind,C:white}-#1#%{} Blind Size when Held",
@@ -333,7 +333,7 @@ return {
             },
 		},
 		Blind = {
-			bl_felijo_ins_trader = {
+			bl_feli_fag_ins_trader = {
 				name = "The Trader",
 				text = {
 					"One random joker",
@@ -347,21 +347,21 @@ return {
 		},
 		
         Joker = {
-			j_felijo_joker = {
+			j_feli_fag_joker = {
                 name = "Feli's Placeholderia",
                 text = {
                     "{C:red}+#1#{} Mult",
                 },
             },
-            j_felijo_lucky_feli = {
+            j_feli_fag_lucky_feli = {
                 name = "Lucky Feli",
                 text = {
-                    "{X:red,C:white}X#1#{} Mult for every {C:gold,f:felijo_m6x11plus-feli}1€",
+                    "{X:red,C:white}X#1#{} Mult for every {C:gold,f:feli_fag_m6x11plus-feli}1€",
                     "donated to my {C:planet}Ko-Fi{} page",
-                    "{C:inactive}(Currently {X:red,C:white}X#2#{C:inactive} for {C:gold,f:felijo_m6x11plus-feli}#3#€{C:inactive})"
+                    "{C:inactive}(Currently {X:red,C:white}X#2#{C:inactive} for {C:gold,f:feli_fag_m6x11plus-feli}#3#€{C:inactive})"
                 },
             },
-            j_felijo_unlovable = {
+            j_feli_fag_unlovable = {
                 name = "Biting the Bolster",
                 text = {
                     {
@@ -380,7 +380,7 @@ return {
                     },
                 },
             },
-            j_felijo_desperatemeasures = {
+            j_feli_fag_desperatemeasures = {
                 name = "Do Not Come Near",
                 text = {
                     {
@@ -396,7 +396,7 @@ return {
                     },
                 },
             },
-            j_felijo_truereligion = {
+            j_feli_fag_truereligion = {
                 name = "True Religion",
                 text = {
                     {
@@ -411,7 +411,7 @@ return {
                     },
                 },
             },
-            j_felijo_productoffear = {
+            j_feli_fag_productoffear = {
                 name = "Product of Fear",
                 text = {
                     {
@@ -427,7 +427,7 @@ return {
                     },
                 },
             },
-            j_felijo_grazingonfear = {
+            j_feli_fag_grazingonfear = {
                 name = "Grazing on Fear",
                 text = {
                     {
@@ -439,7 +439,7 @@ return {
                     },
                 },
             },
-            j_felijo_spearflowers = {
+            j_feli_fag_spearflowers = {
                 name = "Spear Flowers",
                 text = {
                     {
@@ -456,7 +456,7 @@ return {
                     },
                 },
             },
-            j_felijo_redcap = {
+            j_feli_fag_redcap = {
                 name = "Redcap",
                 text = {
                     {
@@ -473,7 +473,7 @@ return {
                     },
                 },
             },
-            j_felijo_holeintheheart = {
+            j_feli_fag_holeintheheart = {
                 name = "Hole in the Heart",
                 text = {
                     {
@@ -490,7 +490,7 @@ return {
                     },
                 },
             },
-            j_felijo_fleamarket = {
+            j_feli_fag_fleamarket = {
                 name = {
                     "{s:0.8}Flea Market",
                     "Montgomery",
@@ -504,7 +504,7 @@ return {
                     },
                 },
             },
-			j_felijo_lgd_jokerpp_a = {
+			j_feli_fag_lgd_jokerpp_a = {
                 name = {
 					"{C:gold,s:0.5}Ascended",
 					"{C:gold}Joker++",
@@ -520,14 +520,14 @@ return {
 					},
                 },
             },
-			j_felijo_rocket = {
+			j_feli_fag_rocket = {
                 name = "Space Shuttle",
                 text = {
                     "{C:red}+#1#{} Mult?",
                     "{C:inactive}(Blast off in: #3#)"
                 },
             },
-			j_felijo_rocket_a = {
+			j_feli_fag_rocket_a = {
                 name = "Space Shuttle",
                 text = {
 					{
@@ -542,7 +542,7 @@ return {
 					},
                 },
             },
-            j_felijo_plushtrap = {
+            j_feli_fag_plushtrap = {
                 name = "plushtrap",
                 text = {
 					{
@@ -553,7 +553,7 @@ return {
 					},
                 },
             },
-            j_felijo_mypenis = {
+            j_feli_fag_mypenis = {
                 name = "Testing sending text modifying through config",
                 text = {
 					{
@@ -569,7 +569,7 @@ return {
 		-- LETTERJOKERS
 		-- LETTERJOKERS
 			
-			j_felijo_stock_exchange = {
+			j_feli_fag_stock_exchange = {
 			  name = {
 			  "{C:diamonds}CATS{} Stock Exchange",
 			  "{C:diamonds,s:0.6}(Central Asset Trading Syndicate){}"
@@ -602,14 +602,14 @@ return {
 			},
         },
 		Other = {
-			felijo_explode	= {
+			feli_fag_explode	= {
 				name = "Explode",
 				text= {
 					"Card is removed",
 					"permanently from deck",
 				}
 			},
-            felijo_tiered = {
+            feli_fag_tiered = {
                 name = "Tiered Cards",
 				text= {
 					"{C:enhanced}Enhancements{}, {C:planet}consumables{}",
@@ -617,21 +617,21 @@ return {
 					"up to {C:gold}4 tiers{}",
 				}
             },
-			felijo_delete	= {
+			feli_fag_delete	= {
 				name = "Delete",
 				text= {
 					"Card is removed",
 					"permanently from deck",
 				}
 			},
-            felijo_immutable = {
+            feli_fag_immutable = {
                 name = "Immutable Chances",
 				text= {
 					"Listed {C:green}probabilities",
 					"{C:red}cannot{} be modified",
 				}
             },
-			felijo_stock_legend	= {
+			feli_fag_stock_legend	= {
 				name = "Legend",
 				text={
 					"{X:dark_edition,C:white}STOCK_(CHANGE%){}",
@@ -639,28 +639,28 @@ return {
 					"{X:inactive,C:white}OWNED_STOCK{} {X:gold,C:white}$TOTAL_VALUE{}"
 				}
 			},
-			felijo_leshy_crossmod	= {
+			feli_fag_leshy_crossmod	= {
 				name = "Revo's Vault Ability",
 				text= {
-						"{C:felijo_trb}Deathcards{} made using",
-						"{C:felijo_ins}Jimbo's Photograph{}",
+						"{C:feli_fag_trb}Deathcards{} made using",
+						"{C:feli_fag_ins}Jimbo's Photograph{}",
 						"are included",
 						"-",
 						"Redeeming",
-						"{C:felijo_ins}Jimbo's Photograph{}",
+						"{C:feli_fag_ins}Jimbo's Photograph{}",
 						"in this run grants",
 						"an additional {X:mult,C:white}X2{} Mult",
 				}
 			},
-            felijo_ghostcards_crossmod	= {
+            feli_fag_ghostcards_crossmod	= {
 				name = "GhostCards Ability",
 				text= {
-						"A card is {C:felijo_pink}Haunted{}",
+						"A card is {C:feli_fag_pink}Haunted{}",
                         "if it has the {C:dark_edition}GhostCards",
                         "alternative texture"
 				}
 			},
-            felijo_bd_nxkoo_crossmod	= {
+            feli_fag_bd_nxkoo_crossmod	= {
 				name = "BadDirector Ability",
 				text= {
 						"An additional {X:red,C:white}X1{} Mult",
@@ -668,20 +668,20 @@ return {
                         "or has the {C:dark_edition}Misprinted{} edition"
 				}
 			},
-            felijo_phanta_crossmod	= {
+            feli_fag_phanta_crossmod	= {
 				name = "Phanta Ability",
 				text= {
 						"{C:phanta_zodiac}Zodiacs{} count as {C:tarot}Tarots"
 				}
 			},
-            felijo_washmashine_crossmod	= {
+            feli_fag_washmashine_crossmod	= {
 				name = "Washmachine. Ability",
 				text= {
 						"{C:attention}Flash Cards{} give an",
                         "additional {X:mult,C:white}X1.5{} Mult"
 				}
 			},
-            felijo_morefluff_crossmod	= {
+            feli_fag_morefluff_crossmod	= {
 				name = "MoreFluff Ability",
 				text= {
 						"When playing a {C:attention}Three of a Kind{},",
@@ -689,14 +689,14 @@ return {
                         "{C:inactive}(Must have room)"
 				}
 			},
-            felijo_zeroerror_crossmod	= {
+            feli_fag_zeroerror_crossmod	= {
 				name = "0 ERROR Ability",
 				text= {
 						"{C:common}Brights{} count as",
                         "{C:enhanced}Wild Cards",
 				}
 			},
-			felijo_bld_explode	= {
+			feli_fag_bld_explode	= {
 				name = "Explode",
 				text= {
 					"Blind is removed",
@@ -704,7 +704,7 @@ return {
 				}
 			},
 			
-			p_felijo_tribe = {
+			p_feli_fag_tribe = {
                 name = "Tribe Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
@@ -716,22 +716,22 @@ return {
 			
 		
 			---- SIGILS
-			felijo_sgl_bifurcated = {
+			feli_fag_sgl_bifurcated = {
 				name = "Bifurcated Strike",
 				text = {"Retrigger card once"},
 			},
 
-			felijo_sgl_trifurcated = {
+			feli_fag_sgl_trifurcated = {
 				name = "Trifurcated Strike",
 				text = {"Retrigger card twice"},
 			},
 
-			felijo_sgl_brittle = {
+			feli_fag_sgl_brittle = {
 				name = "Brittle",
 				text = {"Breaks after being triggered or played"},
 			},
 			
-			felijo_sgl_tail = {
+			feli_fag_sgl_tail = {
 				name = "Loose Tail",
 				text = {
 					"When destroyed, clones itself",
@@ -741,14 +741,14 @@ return {
 			},
 
 			-- Visual
-			felijo_stk_stitched = {
+			feli_fag_stk_stitched = {
 				name = "Stitched Card",
 				text = {
 				"The card has been brutally stitched",
 				"together by {C:clubs,E:1}The Mycologists{}."
 				},
 			},
-            felijo_stk_glitched = {
+            feli_fag_stk_glitched = {
 				name = "Glitched Card",
 				text = {
 				"This joker randomly changes itself",
@@ -757,39 +757,39 @@ return {
 			},
 
 			-- Roblox
-			felijo_stk_subspace = {
+			feli_fag_stk_subspace = {
 				name = "Subspaced Card",
 				text = {
 				"The card has been tinted",
-				"{C:clubs,E:felijo_pink}pink{} by {C:clubs,E:felijo_pink}Subspace Tripmine{}.",
+				"{C:clubs,E:feli_fag_pink}pink{} by {C:clubs,E:feli_fag_pink}Subspace Tripmine{}.",
 				"{C:chips}+100{} chips when held."
 				},
 			},
-			felijo_copied = {
+			feli_fag_copied = {
 				name = "Copied Card",
 				text = {
 				"Disappears at the end of the round."
 				},
 			},
 			-- Other Stickers
-			felijo_stk_blunder = {
+			feli_fag_stk_blunder = {
 				name = "Blunder",
 				text = {
 				"{X:blind,C:white}X#1#{} Blind Req.",
 				"{C:mult}#2#{} Mult",
 				},
 			},
-			felijo_stk_goobert = {
+			feli_fag_stk_goobert = {
 				name = "Painted",
 				text = {
-				"{X:felijo_goobert,C:white}X#1#{} to all card values.",
+				"{X:feli_fag_goobert,C:white}X#1#{} to all card values.",
 				"{s:0.8,C:inactive}(Value is a random number",
 				"{s:0.8,C:inactive}between 0.9 and 2.5)"
 				},
 			},
 		},
 		Tarot = {
-			c_felijo_ascended = {
+			c_feli_fag_ascended = {
                 name = "The Ascended",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -798,8 +798,8 @@ return {
                 },
             },
 		},
-		felijo_tier2_tarot = {
-			c_felijo_t2_ascended = {
+		feli_fag_tier2_tarot = {
+			c_feli_fag_t2_ascended = {
                 name = "The Ascended [II]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -807,7 +807,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t2_chariot = {
+			c_feli_fag_t2_chariot = {
                 name = "The Chariot [II]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -815,7 +815,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t2_devil = {
+			c_feli_fag_t2_devil = {
                 name = "The Devil [II]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -823,7 +823,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-            c_felijo_t2_empress = {
+            c_feli_fag_t2_empress = {
                 name = "The Empress [II]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -831,7 +831,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-			c_felijo_t2_heirophant = {
+			c_feli_fag_t2_heirophant = {
                 name = "The Hierophant [II]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -839,7 +839,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-            c_felijo_t2_lovers = {
+            c_feli_fag_t2_lovers = {
                 name = "The Lovers [II]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -847,7 +847,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-			c_felijo_t2_justice = {
+			c_feli_fag_t2_justice = {
                 name = "Justice [II]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -855,7 +855,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t2_tower = {
+			c_feli_fag_t2_tower = {
                 name = "The Tower [II]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -863,7 +863,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t2_magician = {
+			c_feli_fag_t2_magician = {
                 name = "The Magician [II]",
                 text = {
                     "Enhances {C:attention}#1#{}",
@@ -872,8 +872,8 @@ return {
                 },
             },
 		},
-		felijo_tier3_tarot = {
-			c_felijo_t3_ascended = {
+		feli_fag_tier3_tarot = {
+			c_feli_fag_t3_ascended = {
                 name = "The Ascended [III]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -881,7 +881,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t3_chariot = {
+			c_feli_fag_t3_chariot = {
                 name = "The Chariot [III]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -889,7 +889,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t3_devil = {
+			c_feli_fag_t3_devil = {
                 name = "The Devil [III]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -897,7 +897,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-            c_felijo_t3_empress = {
+            c_feli_fag_t3_empress = {
                 name = "The Empress [III]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -905,7 +905,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-			c_felijo_t3_heirophant = {
+			c_feli_fag_t3_heirophant = {
                 name = "The Hierophant [III]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -913,7 +913,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-            c_felijo_t3_lovers = {
+            c_feli_fag_t3_lovers = {
                 name = "The Lovers [III]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -921,7 +921,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-			c_felijo_t3_justice = {
+			c_feli_fag_t3_justice = {
                 name = "Justice [III]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -929,7 +929,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t3_tower = {
+			c_feli_fag_t3_tower = {
                 name = "The Tower [III]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -937,7 +937,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t3_magician = {
+			c_feli_fag_t3_magician = {
                 name = "The Magician [III]",
                 text = {
                     "Enhances {C:attention}#1#{}",
@@ -946,8 +946,8 @@ return {
                 },
             },
 		},
-		felijo_tier4_tarot = {
-			c_felijo_t4_ascended = {
+		feli_fag_tier4_tarot = {
+			c_feli_fag_t4_ascended = {
                 name = "The Ascended [IV]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -955,7 +955,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t4_chariot = {
+			c_feli_fag_t4_chariot = {
                 name = "The Chariot [IV]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -963,7 +963,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t4_devil = {
+			c_feli_fag_t4_devil = {
                 name = "The Devil [IV]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -971,7 +971,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-            c_felijo_t4_empress = {
+            c_feli_fag_t4_empress = {
                 name = "The Empress [IV]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -979,7 +979,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-			c_felijo_t4_heirophant = {
+			c_feli_fag_t4_heirophant = {
                 name = "The Hierophant [IV]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -987,7 +987,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-            c_felijo_t4_lovers = {
+            c_feli_fag_t4_lovers = {
                 name = "The Lovers [IV]",
                 text = {
                     "Enhances {C:attention}#1#",
@@ -995,7 +995,7 @@ return {
                     "{C:attention}#2#s",
                 },
             },
-			c_felijo_t4_justice = {
+			c_feli_fag_t4_justice = {
                 name = "Justice [IV]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -1003,7 +1003,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t4_tower = {
+			c_feli_fag_t4_tower = {
                 name = "The Tower [IV]",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
@@ -1011,7 +1011,7 @@ return {
                     "{C:attention}#2#",
                 },
             },
-			c_felijo_t4_magician = {
+			c_feli_fag_t4_magician = {
                 name = "The Magician [IV]",
                 text = {
                     "Enhances {C:attention}#1#{}",
@@ -1021,102 +1021,102 @@ return {
             },
 		},
 		
-		felijo_tribe = {
-			c_felijo_trb_feline = {
+		feli_fag_tribe = {
+			c_feli_fag_trb_feline = {
 				name = "Feline",
 				text = {
 					"Get {C:attention}1{} random",
-					"{C:felijo_trb}Feline{} card"
+					"{C:feli_fag_trb}Feline{} card"
 				},
 			},
-			c_felijo_trb_canine = {
+			c_feli_fag_trb_canine = {
 				name = "Canine",
 				text = {
 					"Get {C:attention}1{} random",
-					"{C:felijo_trb}Canine{} card"
+					"{C:feli_fag_trb}Canine{} card"
 				},
 			},
-			c_felijo_trb_hooved = {
+			c_feli_fag_trb_hooved = {
 				name = "Hooved",
 				text = {
 					"Get {C:attention}1{} random",
-					"{C:felijo_trb}Hooved{} card"
+					"{C:feli_fag_trb}Hooved{} card"
 				},
 			},
-			c_felijo_trb_human = {
+			c_feli_fag_trb_human = {
 				name = "Human",
 				text = {
 					"Get {C:attention}1{} random",
-					"{C:felijo_trb}Human{} card"
+					"{C:feli_fag_trb}Human{} card"
 				},
 			},
-			c_felijo_trb_reptile = {
+			c_feli_fag_trb_reptile = {
 				name = "Reptile",
 				text = {
 					"Get {C:attention}1{} random",
-					"{C:felijo_trb}Reptile{} card"
+					"{C:feli_fag_trb}Reptile{} card"
 				},
 			},
-			c_felijo_trb_avian = {
+			c_feli_fag_trb_avian = {
 				name = "Avian",
 				text = {
 					"Get {C:attention}1{} random",
-					"{C:felijo_trb}Avian{} card"
+					"{C:feli_fag_trb}Avian{} card"
 				},
 			},
-			c_felijo_trb_insect = {
+			c_feli_fag_trb_insect = {
 				name = "Insect",
 				text = {
 					"Get {C:attention}1{} random",
-					"{C:felijo_trb}Insect{} card"
+					"{C:feli_fag_trb}Insect{} card"
 				},
 			},
-			c_felijo_trb_vermin = {
+			c_feli_fag_trb_vermin = {
 				name = "Vermin",
 				text = {
 					"Get {C:attention}1{} random",
-					"{C:felijo_trb}Vermin{} card"
+					"{C:feli_fag_trb}Vermin{} card"
 				},
 			},
-			c_felijo_trb_object = {
+			c_feli_fag_trb_object = {
 				name = "Object",
 				text = {
 					"Get {C:attention}1{} random",
-					"{C:felijo_trb}Object{} card"
+					"{C:feli_fag_trb}Object{} card"
 				},
 			},
-			c_felijo_trb_other = {
+			c_feli_fag_trb_other = {
 				name = "Other",
 				text = {
 					"Get {C:attention}1{} random",
-					"{C:felijo_trb}Other{} card"
+					"{C:feli_fag_trb}Other{} card"
 				},
 			},
-			c_felijo_trb_crv_banana = {
+			c_feli_fag_trb_crv_banana = {
 				name = "Banana",
 				text = {
 					"Get {C:attention}1{} random",
-					"{C:felijo_trb}Banana{} card"
+					"{C:feli_fag_trb}Banana{} card"
 				},
 			},
-			c_felijo_trb_crv_printer = {
+			c_feli_fag_trb_crv_printer = {
 				name = "Printer",
 				text = {
 					"Get {C:attention}1{} random",
-					"{C:felijo_trb}Printer{} card"
+					"{C:feli_fag_trb}Printer{} card"
 				},
 			},
-            c_felijo_trb_bd_misprint = {
+            c_feli_fag_trb_bd_misprint = {
 				name = "Misprint",
 				text = {
 					"Get {C:attention}1{} random",
-					"{C:felijo_trb}Misprint{} card"
+					"{C:feli_fag_trb}Misprint{} card"
 				},
 			},
 		},
 
-		felijo_tier2_planet = {
-            c_felijo_tier2_pluto = {
+		feli_fag_tier2_planet = {
+            c_feli_fag_tier2_pluto = {
                 name = "Pluto [II]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1125,7 +1125,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-            c_felijo_tier2_mercury = {
+            c_feli_fag_tier2_mercury = {
                 name = "Mercury [II]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1134,7 +1134,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier2_uranus = {
+			c_feli_fag_tier2_uranus = {
                 name = "Uranus [II]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1143,7 +1143,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier2_venus = {
+			c_feli_fag_tier2_venus = {
                 name = "Venus [II]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1152,7 +1152,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier2_saturn = {
+			c_feli_fag_tier2_saturn = {
                 name = "Saturn [II]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1161,7 +1161,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier2_jupiter = {
+			c_feli_fag_tier2_jupiter = {
                 name = "Jupiter [II]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1170,7 +1170,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier2_earth = {
+			c_feli_fag_tier2_earth = {
                 name = "Earth [II]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1179,7 +1179,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier2_mars = {
+			c_feli_fag_tier2_mars = {
                 name = "Mars [II]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1188,7 +1188,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier2_neptune = {
+			c_feli_fag_tier2_neptune = {
                 name = "Neptune [II]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1197,7 +1197,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier2_planetx = {
+			c_feli_fag_tier2_planetx = {
                 name = "Planet X [II]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1206,7 +1206,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier2_eris = {
+			c_feli_fag_tier2_eris = {
                 name = "Eris [II]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1215,7 +1215,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier2_ceres = {
+			c_feli_fag_tier2_ceres = {
                 name = "Ceres [II]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1225,8 +1225,8 @@ return {
                 },
             },
         },
-		felijo_tier3_planet = {
-			c_felijo_tier3_pluto = {
+		feli_fag_tier3_planet = {
+			c_feli_fag_tier3_pluto = {
                 name = "Pluto [III]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1235,7 +1235,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-            c_felijo_tier3_mercury = {
+            c_feli_fag_tier3_mercury = {
                 name = "Mercury [III]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1244,7 +1244,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier3_uranus = {
+			c_feli_fag_tier3_uranus = {
                 name = "Uranus [III]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1253,7 +1253,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier3_venus = {
+			c_feli_fag_tier3_venus = {
                 name = "Venus [III]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1262,7 +1262,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier3_saturn = {
+			c_feli_fag_tier3_saturn = {
                 name = "Saturn [III]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1271,7 +1271,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier3_jupiter = {
+			c_feli_fag_tier3_jupiter = {
                 name = "Jupiter [III]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1280,7 +1280,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier3_earth = {
+			c_feli_fag_tier3_earth = {
                 name = "Earth [III]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1289,7 +1289,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier3_mars = {
+			c_feli_fag_tier3_mars = {
                 name = "Mars [III]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1298,7 +1298,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier3_neptune = {
+			c_feli_fag_tier3_neptune = {
                 name = "Neptune [III]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1307,7 +1307,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier3_planetx = {
+			c_feli_fag_tier3_planetx = {
                 name = "Planet X [III]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1316,7 +1316,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier3_eris = {
+			c_feli_fag_tier3_eris = {
                 name = "Eris [III]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1325,7 +1325,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier3_ceres = {
+			c_feli_fag_tier3_ceres = {
                 name = "Ceres [III]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1335,8 +1335,8 @@ return {
                 },
             },
         },
-		felijo_tier4_planet = {
-            c_felijo_tier4_pluto = {
+		feli_fag_tier4_planet = {
+            c_feli_fag_tier4_pluto = {
                 name = "Pluto [IV]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1345,7 +1345,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-            c_felijo_tier4_mercury = {
+            c_feli_fag_tier4_mercury = {
                 name = "Mercury [IV]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1354,7 +1354,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier4_uranus = {
+			c_feli_fag_tier4_uranus = {
                 name = "Uranus [IV]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1363,7 +1363,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier4_venus = {
+			c_feli_fag_tier4_venus = {
                 name = "Venus [IV]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1372,7 +1372,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier4_saturn = {
+			c_feli_fag_tier4_saturn = {
                 name = "Saturn [IV]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1381,7 +1381,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier4_jupiter = {
+			c_feli_fag_tier4_jupiter = {
                 name = "Jupiter [IV]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1390,7 +1390,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier4_earth = {
+			c_feli_fag_tier4_earth = {
                 name = "Earth [IV]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1399,7 +1399,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier4_mars = {
+			c_feli_fag_tier4_mars = {
                 name = "Mars [IV]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1408,7 +1408,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier4_neptune = {
+			c_feli_fag_tier4_neptune = {
                 name = "Neptune [IV]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1417,7 +1417,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier4_planetx = {
+			c_feli_fag_tier4_planetx = {
                 name = "Planet X [IV]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1426,7 +1426,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier4_eris = {
+			c_feli_fag_tier4_eris = {
                 name = "Eris [IV]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1435,7 +1435,7 @@ return {
                     "{C:chips}+#5#{}/{C:chips}#7#{} Chips",
                 },
             },
-			c_felijo_tier4_ceres = {
+			c_feli_fag_tier4_ceres = {
                 name = "Ceres [IV]",
                 text = {
                     "({V:1}lvl.#1#{}/{V:2}#2#{}) Level up",
@@ -1448,7 +1448,7 @@ return {
 		
 
         --Partner = {
-        --    pnr_felijo_aikoyori = {
+        --    pnr_feli_fag_aikoyori = {
         --        
         --        name = "smol Aiko",
         --        text = {
@@ -1464,151 +1464,151 @@ return {
     },
     misc = {
 		challenge_names = {
-			c_felijo_ins_mycologist_1 = "The Mycologists' Challenge",
-			c_felijo_stock_1 = "Portfolio",
-			c_felijo_stock_2 = "Insider Trading",
-			c_felijo_medusa_1 = "Medusa II",
+			c_feli_fag_ins_mycologist_1 = "The Mycologists' Challenge",
+			c_feli_fag_stock_1 = "Portfolio",
+			c_feli_fag_stock_2 = "Insider Trading",
+			c_feli_fag_medusa_1 = "Medusa II",
 		},
         achievement_names={
-            ach_felijo_j_o_permit = "J/O Permit",
-            ach_felijo_red_letter = "Red Letter",
-            ach_felijo_corkline = "Corkline",
+            ach_feli_fag_j_o_permit = "J/O Permit",
+            ach_feli_fag_red_letter = "Red Letter",
+            ach_feli_fag_corkline = "Corkline",
         },
         achievement_descriptions={
-            ach_felijo_j_o_permit = {"Spell a slur of your choice", "(Pronoun Palace dictionary must be enabled)"},
-            ach_felijo_red_letter = {"Win a run with The Lexicographer", "(Letters must be enabled)"},
-            ach_felijo_corkline = {"Win a run with The Fisher", "(Letters must be enabled)"},
+            ach_feli_fag_j_o_permit = {"Spell a slur of your choice", "(Pronoun Palace dictionary must be enabled)"},
+            ach_feli_fag_red_letter = {"Win a run with The Lexicographer", "(Letters must be enabled)"},
+            ach_feli_fag_corkline = {"Win a run with The Fisher", "(Letters must be enabled)"},
         },
 		dictionary={
             --------------
             ---CONFIG-----
             --------------
-            cfg_felijo_directors_cut = "Director\'s Cut",
-            cfg_felijo_directors_cut_desc = "View the mod as Feli intended. [TW: SH, Gore, Blood]",
+            cfg_feli_fag_directors_cut = "Director\'s Cut",
+            cfg_feli_fag_directors_cut_desc = "View the mod as Feli intended. [TW: SH, Gore, Blood]",
             --------------
             ---QUESTS-----
             --------------
             k_quest1_line1 = "LOADSAMONEY!!!",
 			k_quest1_line2 = "Level up! {C:red}color!!!",
             --------------
-			k_felijo_cash_succ = "LOADSAMONEY!!!",
-			k_felijo_lvl_succ = "Level up!",
-			k_felijo_nope_succ = "Nope!",
-			k_felijo_lowered_succ = "Lowered!",
-			k_felijo_cloned = "Cloned!",
-			k_felijo_pelt = "Pelt Card",
-			k_felijo_olddata = "OLD_DATA",
-			k_felijo_terrain = "Terrain Card",
+			k_feli_fag_cash_succ = "LOADSAMONEY!!!",
+			k_feli_fag_lvl_succ = "Level up!",
+			k_feli_fag_nope_succ = "Nope!",
+			k_feli_fag_lowered_succ = "Lowered!",
+			k_feli_fag_cloned = "Cloned!",
+			k_feli_fag_pelt = "Pelt Card",
+			k_feli_fag_olddata = "OLD_DATA",
+			k_feli_fag_terrain = "Terrain Card",
 			----------------
 			---MOD BADGES---
 			----------------
 			---
 			--If i were you, i wouldn't try to copy this way of handling crossmod badges.
 
-			k_felijo_revo = "Revo's Vault",
-			k_felijo_toga = "TOGA's Stuff",
-			k_felijo_bs = "Blindside",
-			k_felijo_synthb = "SynthB",
-            k_felijo_bd = "Bad Director",
-            k_felijo_ghostcards = "GhostCards",
-            k_felijo_phanta = "Phanta",
-            k_felijo_aikoshen = "Aikoyori's Shenanigans",
+			k_feli_fag_revo = "Revo's Vault",
+			k_feli_fag_toga = "TOGA's Stuff",
+			k_feli_fag_bs = "Blindside",
+			k_feli_fag_synthb = "SynthB",
+            k_feli_fag_bd = "Bad Director",
+            k_feli_fag_ghostcards = "GhostCards",
+            k_feli_fag_phanta = "Phanta",
+            k_feli_fag_aikoshen = "Aikoyori's Shenanigans",
 			----------------
 			--J.CATEGORIES--
 			----------------
-			k_felijo_ins = "Inscryption",
-			k_felijo_rbx = "ROBLOX",
-            k_felijo_toga_malware = "Malware",
-            k_felijo_bnb = "Hole in the Heart",
-            k_felijo_garfield = "Garfield",
-            k_felijo_pronounpalace = "Pronoun Palace",
+			k_feli_fag_ins = "Inscryption",
+			k_feli_fag_rbx = "ROBLOX",
+            k_feli_fag_toga_malware = "Malware",
+            k_feli_fag_bnb = "Hole in the Heart",
+            k_feli_fag_garfield = "Garfield",
+            k_feli_fag_pronounpalace = "Pronoun Palace",
 			----------------
 			----------------
-			k_felijo_loic1 = "Charging...",
-			k_felijo_loic2 = "Ready!",
-			k_felijo_loic3 = "Beamed!",
-			k_felijo_loic4 = "Cooling down...",
-			k_felijo_loic5 = "Cooled down!",
+			k_feli_fag_loic1 = "Charging...",
+			k_feli_fag_loic2 = "Ready!",
+			k_feli_fag_loic3 = "Beamed!",
+			k_feli_fag_loic4 = "Cooling down...",
+			k_feli_fag_loic5 = "Cooled down!",
 			----------------
 			--CONSUMEABLES--
 			----------------
-			b_felijo_totem_parts_cards = "Totem Parts",
-			b_felijo_tribe_cards = "Tribe Cards",
-			k_felijo_tribe = "Tribe Card",
-			k_felijo_totem_parts = "Totem Part",
+			b_feli_fag_totem_parts_cards = "Totem Parts",
+			b_feli_fag_tribe_cards = "Tribe Cards",
+			k_feli_fag_tribe = "Tribe Card",
+			k_feli_fag_totem_parts = "Totem Part",
 			
-			b_felijo_tier2_tarot_cards = "Tarot Cards [II]",
-			b_felijo_tier3_tarot_cards = "Tarot Cards [III]",
-			b_felijo_tier4_tarot_cards = "Tarot Cards [IV]",
-			b_felijo_tier2_planet_cards = "Planet Cards [II]",
-			b_felijo_tier3_planet_cards = "Planet Cards [III]",
-			b_felijo_tier4_planet_cards = "Planet Cards [IV]",
-			k_felijo_tier2_tarot = "Tarot [II]",
-			k_felijo_tier3_tarot = "Tarot [III]",
-			k_felijo_tier4_tarot = "Tarot [IV]",
-			k_felijo_tier2_planet = "Planet [II]",
-			k_felijo_tier3_planet = "Planet [III]",
-			k_felijo_tier4_planet = "Planet [IV]",
+			b_feli_fag_tier2_tarot_cards = "Tarot Cards [II]",
+			b_feli_fag_tier3_tarot_cards = "Tarot Cards [III]",
+			b_feli_fag_tier4_tarot_cards = "Tarot Cards [IV]",
+			b_feli_fag_tier2_planet_cards = "Planet Cards [II]",
+			b_feli_fag_tier3_planet_cards = "Planet Cards [III]",
+			b_feli_fag_tier4_planet_cards = "Planet Cards [IV]",
+			k_feli_fag_tier2_tarot = "Tarot [II]",
+			k_feli_fag_tier3_tarot = "Tarot [III]",
+			k_feli_fag_tier4_tarot = "Tarot [IV]",
+			k_feli_fag_tier2_planet = "Planet [II]",
+			k_feli_fag_tier3_planet = "Planet [III]",
+			k_feli_fag_tier4_planet = "Planet [IV]",
 			---
-			k_felijo_combine_button = "COMBINE",
-			k_felijo_separate_button = "SEPARATE",
-			k_felijo_switch_button = "SWITCH",
-			k_felijo_tribe_pack = "Tribe Pack",
+			k_feli_fag_combine_button = "COMBINE",
+			k_feli_fag_separate_button = "SEPARATE",
+			k_feli_fag_switch_button = "SWITCH",
+			k_feli_fag_tribe_pack = "Tribe Pack",
 			
-			k_felijo_ttm_box = "Totem Box",
-			felijo_toggle_to_totems = "Show Totems",
-			felijo_toggle_to_jokers = "Show Jokers",
+			k_feli_fag_ttm_box = "Totem Box",
+			feli_fag_toggle_to_totems = "Show Totems",
+			feli_fag_toggle_to_jokers = "Show Jokers",
 			--------------
 			---PKR HANDS--
 			--------------
 
-			k_felijo_pair_t2_below = "Pair / Pair [II]",
-			k_felijo_pair_t3_below = "Pair / Pair [II - III]",
-			k_felijo_pair_t4_below = "Pair / Pair [II - IV]",
+			k_feli_fag_pair_t2_below = "Pair / Pair [II]",
+			k_feli_fag_pair_t3_below = "Pair / Pair [II - III]",
+			k_feli_fag_pair_t4_below = "Pair / Pair [II - IV]",
 
-			k_felijo_3oak_t2_below = "Three of a Kind / Three of a Kind [II]",
-			k_felijo_3oak_t3_below = "Three of a Kind / Three of a Kind [II - III]",
-			k_felijo_3oak_t4_below = "Three of a Kind / Three of a Kind [II - IV]",
+			k_feli_fag_3oak_t2_below = "Three of a Kind / Three of a Kind [II]",
+			k_feli_fag_3oak_t3_below = "Three of a Kind / Three of a Kind [II - III]",
+			k_feli_fag_3oak_t4_below = "Three of a Kind / Three of a Kind [II - IV]",
 
-			k_felijo_house_t2_below = "Full House / Full House [II]",
-			k_felijo_house_t3_below = "Full House / Full House [II - III]",
-			k_felijo_house_t4_below = "Full House / Full House [II - IV]",
+			k_feli_fag_house_t2_below = "Full House / Full House [II]",
+			k_feli_fag_house_t3_below = "Full House / Full House [II - III]",
+			k_feli_fag_house_t4_below = "Full House / Full House [II - IV]",
 
-			k_felijo_4oak_t2_below = "Four of a Kind / Four of a Kind [II]",
-			k_felijo_4oak_t3_below = "Four of a Kind / Four of a Kind [II - III]",
-			k_felijo_4oak_t4_below = "Four of a Kind / Four of a Kind [II - IV]",
+			k_feli_fag_4oak_t2_below = "Four of a Kind / Four of a Kind [II]",
+			k_feli_fag_4oak_t3_below = "Four of a Kind / Four of a Kind [II - III]",
+			k_feli_fag_4oak_t4_below = "Four of a Kind / Four of a Kind [II - IV]",
 
-			k_felijo_flush_t2_below = "Flush / Flush [II]",
-			k_felijo_flush_t3_below = "Flush / Flush [II - III]",
-			k_felijo_flush_t4_below = "Flush / Flush [II - IV]",
+			k_feli_fag_flush_t2_below = "Flush / Flush [II]",
+			k_feli_fag_flush_t3_below = "Flush / Flush [II - III]",
+			k_feli_fag_flush_t4_below = "Flush / Flush [II - IV]",
 
-			k_felijo_straight_t2_below = "Straight / Straight [II]",
-			k_felijo_straight_t3_below = "Straight / Straight [II - III]",
-			k_felijo_straight_t4_below = "Straight / Straight [II - IV]",
+			k_feli_fag_straight_t2_below = "Straight / Straight [II]",
+			k_feli_fag_straight_t3_below = "Straight / Straight [II - III]",
+			k_feli_fag_straight_t4_below = "Straight / Straight [II - IV]",
 
-			k_felijo_two_pair_t2_below = "Two Pair / Two Pair [II]",
-			k_felijo_two_pair_t3_below = "Two Pair / Two Pair [II - III]",
-			k_felijo_two_pair_t4_below = "Two Pair / Two Pair [II - IV]",
+			k_feli_fag_two_pair_t2_below = "Two Pair / Two Pair [II]",
+			k_feli_fag_two_pair_t3_below = "Two Pair / Two Pair [II - III]",
+			k_feli_fag_two_pair_t4_below = "Two Pair / Two Pair [II - IV]",
 
-			k_felijo_straight_flush_t2_below = "Straight Flush / Straight Flush [II]",
-			k_felijo_straight_flush_t3_below = "Straight Flush / Straight Flush [II - III]",
-			k_felijo_straight_flush_t4_below = "Straight Flush / Straight Flush [II - IV]",
+			k_feli_fag_straight_flush_t2_below = "Straight Flush / Straight Flush [II]",
+			k_feli_fag_straight_flush_t3_below = "Straight Flush / Straight Flush [II - III]",
+			k_feli_fag_straight_flush_t4_below = "Straight Flush / Straight Flush [II - IV]",
 
-			k_felijo_highcard_t2_below = "High Card / High Card [II]",
-			k_felijo_highcard_t3_below = "High Card / High Card [II - III]",
-			k_felijo_highcard_t4_below = "High Card / High Card [II - IV]",
+			k_feli_fag_highcard_t2_below = "High Card / High Card [II]",
+			k_feli_fag_highcard_t3_below = "High Card / High Card [II - III]",
+			k_feli_fag_highcard_t4_below = "High Card / High Card [II - IV]",
 
-			k_felijo_5oak_t2_below = "Five of a Kind / Five of a Kind [II]",
-			k_felijo_5oak_t3_below = "Five of a Kind / Five of a Kind [II - III]",
-			k_felijo_5oak_t4_below = "Five of a Kind / Five of a Kind [II - IV]",
+			k_feli_fag_5oak_t2_below = "Five of a Kind / Five of a Kind [II]",
+			k_feli_fag_5oak_t3_below = "Five of a Kind / Five of a Kind [II - III]",
+			k_feli_fag_5oak_t4_below = "Five of a Kind / Five of a Kind [II - IV]",
 
-			k_felijo_flushhouse_t2_below = "Flush House / Flush House [II]",
-			k_felijo_flushhouse_t3_below = "Flush House / Flush House [II - III]",
-			k_felijo_flushhouse_t4_below = "Flush House / Flush House [II - IV]",
+			k_feli_fag_flushhouse_t2_below = "Flush House / Flush House [II]",
+			k_feli_fag_flushhouse_t3_below = "Flush House / Flush House [II - III]",
+			k_feli_fag_flushhouse_t4_below = "Flush House / Flush House [II - IV]",
 
-			k_felijo_flushfive_t2_below = "Flush Five / Flush Five [II]",
-			k_felijo_flushfive_t3_below = "Flush Five / Flush Five [II - III]",
-			k_felijo_flushfive_t4_below = "Flush Five / Flush Five [II - IV]",
+			k_feli_fag_flushfive_t2_below = "Flush Five / Flush Five [II]",
+			k_feli_fag_flushfive_t3_below = "Flush Five / Flush Five [II - III]",
+			k_feli_fag_flushfive_t4_below = "Flush Five / Flush Five [II - IV]",
 
 			
 		},
@@ -1616,299 +1616,299 @@ return {
 			------------
 			---SIGILS---
 			------------
-			felijo_sgl_bifurcated = "Bifurcated Strike",
-			felijo_sgl_trifurcated = "Trifurcated Strike",
-			felijo_sgl_brittle = "Brittle",
-			felijo_sgl_tail = "Loose Tail",
+			feli_fag_sgl_bifurcated = "Bifurcated Strike",
+			feli_fag_sgl_trifurcated = "Trifurcated Strike",
+			feli_fag_sgl_brittle = "Brittle",
+			feli_fag_sgl_tail = "Loose Tail",
 			------------
 			---TTMSIG---
 			------------
-			felijo_ttm_sgl_undying = "Undying",
-			felijo_ttm_sgl_bifurcated = "Bifurcated Strike",
-			felijo_ttm_sgl_swap = "Swapper",
-			felijo_ttm_sgl_midas = "Midas Touch",
-			felijo_ttm_sgl_cardbearer = "Card Bearer",
-			felijo_ttm_sgl_giftbearer = "Gift Bearer",
-			felijo_ttm_sgl_stinky = "Stinky",
-			felijo_ttm_sgl_repulsive = "Repulsive",
-			felijo_ttm_sgl_omnistrike = "Omni Strike",
-			felijo_ttm_sgl_leader = "Leader",
+			feli_fag_ttm_sgl_undying = "Undying",
+			feli_fag_ttm_sgl_bifurcated = "Bifurcated Strike",
+			feli_fag_ttm_sgl_swap = "Swapper",
+			feli_fag_ttm_sgl_midas = "Midas Touch",
+			feli_fag_ttm_sgl_cardbearer = "Card Bearer",
+			feli_fag_ttm_sgl_giftbearer = "Gift Bearer",
+			feli_fag_ttm_sgl_stinky = "Stinky",
+			feli_fag_ttm_sgl_repulsive = "Repulsive",
+			feli_fag_ttm_sgl_omnistrike = "Omni Strike",
+			feli_fag_ttm_sgl_leader = "Leader",
 			-------------
 			---STICKER---
 			-------------
-			felijo_stk_stitched = "Stitched Card",
-			felijo_subspace = "Subspaced",
-			felijo_stk_blunder = "Blunder",
-			felijo_stk_goobert = "Painted",
-            felijo_stk_glitched = "Glitched Card",
+			feli_fag_stk_stitched = "Stitched Card",
+			feli_fag_subspace = "Subspaced",
+			feli_fag_stk_blunder = "Blunder",
+			feli_fag_stk_goobert = "Painted",
+            feli_fag_stk_glitched = "Glitched Card",
 			-------------
 			-------------
-			felijo_plt_gold = "Gold Pelt",
-			felijo_plt_wlf = "Wolf Pelt",
-			felijo_plt_bny = "Bunny Pelt",
-			felijo_plt_olddata = "OLD_DATA",
-			felijo_trn_goldn = "Gold Nugget",
-			felijo_enh_sup = "Superior",
-			felijo_totem_parts = "Totem Part",
-			felijo_tier2_tarot = "Tarot [II]",
-			felijo_tier3_tarot = "Tarot [III]",
-			felijo_tier4_tarot = "Tarot [IV]",
-			felijo_tier2_planet = "Planet [II]",
-			felijo_tier3_planet = "Planet [III]",
-			felijo_tier4_planet = "Planet [IV]",
+			feli_fag_plt_gold = "Gold Pelt",
+			feli_fag_plt_wlf = "Wolf Pelt",
+			feli_fag_plt_bny = "Bunny Pelt",
+			feli_fag_plt_olddata = "OLD_DATA",
+			feli_fag_trn_goldn = "Gold Nugget",
+			feli_fag_enh_sup = "Superior",
+			feli_fag_totem_parts = "Totem Part",
+			feli_fag_tier2_tarot = "Tarot [II]",
+			feli_fag_tier3_tarot = "Tarot [III]",
+			feli_fag_tier4_tarot = "Tarot [IV]",
+			feli_fag_tier2_planet = "Planet [II]",
+			feli_fag_tier3_planet = "Planet [III]",
+			feli_fag_tier4_planet = "Planet [IV]",
 			
 		},
 		poker_hand_descriptions = {
-			["felijo_tier2_highcard"] = {
+			["feli_fag_tier2_highcard"] = {
                 "If the played hand is not any of the above",
                 "hands, only the highest ranked card with",
 				"a Tier 2 enhancement scores",
             },
-            ["felijo_tier2_5oak"] = {
+            ["feli_fag_tier2_5oak"] = {
                 "5 cards with the same rank",
 				"and having Tier 2 enhancements",
                 "or higher",
             },
-            ["felijo_tier2_flush"] = {
+            ["feli_fag_tier2_flush"] = {
                 "5 cards that share the same suit",
 				"and having Tier 2 enhancements",
                 "or higher",
             },
-            ["felijo_tier2_flushfive"] = {
+            ["feli_fag_tier2_flushfive"] = {
                 "5 cards with the same rank and suit",
 				"and having Tier 2 enhancements",
                 "or higher",
             },
-            ["felijo_tier2_flushhouse"] = {
+            ["feli_fag_tier2_flushhouse"] = {
                 "A Three of a Kind and a Pair with",
                 "all cards sharing the same suit",
 				"and having Tier 2 enhancements",
                 "or higher",
             },
-            ["felijo_tier2_4oak"] = {
+            ["feli_fag_tier2_4oak"] = {
                 "4 cards with the same rank. They may",
                 "be played with 1 other unscored card",
 				"and having Tier 2 enhancements",
                 "or higher",
             },
-            ["felijo_tier2_house"] = {
+            ["feli_fag_tier2_house"] = {
                 "A Three of a Kind and a Pair",
                 "having Tier 2 enhancements",
                 "or higher",
             },
-            ["felijo_tier2_pair"] = {
+            ["feli_fag_tier2_pair"] = {
                 "2 cards that share the same rank. They may",
                 "be played with up to 3 other unscored cards",
 				"and having Tier 2 enhancements",
                 "or higher",
             },
-            ["felijo_tier2_royal"] = {
+            ["feli_fag_tier2_royal"] = {
                 "5 cards in a row (consecutive ranks) with",
                 "all cards sharing the same suit",
 				"and having Tier 2 enhancements",
                 "or higher",
             },
-            ["felijo_tier2_straight"] = {
+            ["feli_fag_tier2_straight"] = {
                 "5 cards in a row (consecutive ranks)",
 				"with Tier 2 enhancements",
                 "or higher",
             },
-            ["felijo_tier2_straight_flush"] = {
+            ["feli_fag_tier2_straight_flush"] = {
                 "5 cards in a row (consecutive ranks) with",
                 "all cards sharing the same suit",
 				"and having Tier 2 enhancements",
                 "or higher",
             },
-            ["felijo_tier2_3oak"] = {
+            ["feli_fag_tier2_3oak"] = {
                 "3 cards with the same rank. They may be",
                 "played with up to 2 other unscored cards",
 				"and having Tier 2 enhancements",
                 "or higher",
             },
-            ["felijo_tier2_two_pair"] = {
+            ["feli_fag_tier2_two_pair"] = {
                 "2 pairs of cards with different ranks, may",
                 "be played with 1 other unscored card",
 				"and having Tier 2 enhancements",
                 "or higher",
             },
-			["felijo_tier3_highcard"] = {
+			["feli_fag_tier3_highcard"] = {
                 "If the played hand is not any of the above",
                 "hands, only the highest ranked card with",
 				"a Tier 3 enhancement scores",
             },
-			["felijo_tier3_5oak"] = {
+			["feli_fag_tier3_5oak"] = {
                 "5 cards with the same rank",
 				"and having Tier 3 enhancements",
                 "or higher",
             },
-            ["felijo_tier3_flush"] = {
+            ["feli_fag_tier3_flush"] = {
                 "5 cards that share the same suit",
 				"and having Tier 3 enhancements",
                 "or higher",
             },
-            ["felijo_tier3_flushfive"] = {
+            ["feli_fag_tier3_flushfive"] = {
                 "5 cards with the same rank and suit",
 				"and having Tier 3 enhancements",
                 "or higher",
             },
-            ["felijo_tier3_flushhouse"] = {
+            ["feli_fag_tier3_flushhouse"] = {
                 "A Three of a Kind and a Pair with",
                 "all cards sharing the same suit",
 				"and having Tier 3 enhancements",
                 "or higher",
             },
-            ["felijo_tier3_4oak"] = {
+            ["feli_fag_tier3_4oak"] = {
                 "4 cards with the same rank. They may",
                 "be played with 1 other unscored card",
 				"and having Tier 3 enhancements",
                 "or higher",
             },
-            ["felijo_tier3_house"] = {
+            ["feli_fag_tier3_house"] = {
                 "A Three of a Kind and a Pair",
                 "having Tier 3 enhancements",
                 "or higher",
             },
-            ["felijo_tier3_pair"] = {
+            ["feli_fag_tier3_pair"] = {
                 "2 cards that share the same rank. They may",
                 "be played with up to 3 other unscored cards",
 				"and having Tier 3 enhancements",
                 "or higher",
             },
-            ["felijo_tier3_royal"] = {
+            ["feli_fag_tier3_royal"] = {
                 "5 cards in a row (consecutive ranks) with",
                 "all cards sharing the same suit",
 				"and having Tier 3 enhancements",
                 "or higher",
             },
-            ["felijo_tier3_straight"] = {
+            ["feli_fag_tier3_straight"] = {
                 "5 cards in a row (consecutive ranks)",
 				"with Tier 3 enhancements",
                 "or higher",
             },
-            ["felijo_tier3_straight_flush"] = {
+            ["feli_fag_tier3_straight_flush"] = {
                 "5 cards in a row (consecutive ranks) with",
                 "all cards sharing the same suit",
 				"and having Tier 3 enhancements",
                 "or higher",
             },
-            ["felijo_tier3_3oak"] = {
+            ["feli_fag_tier3_3oak"] = {
                 "3 cards with the same rank. They may be",
                 "played with up to 2 other unscored cards",
 				"and having Tier 3 enhancements",
                 "or higher",
             },
-            ["felijo_tier3_two_pair"] = {
+            ["feli_fag_tier3_two_pair"] = {
                 "2 pairs of cards with different ranks, may",
                 "be played with 1 other unscored card",
 				"and having Tier 3 enhancements",
                 "or higher",
             },
 
-			["felijo_tier4_highcard"] = {
+			["feli_fag_tier4_highcard"] = {
                 "If the played hand is not any of the above",
                 "hands, only the highest ranked card with",
 				"a Tier 4 enhancement scores",
             },
 
-			["felijo_tier4_5oak"] = {
+			["feli_fag_tier4_5oak"] = {
                 "5 cards with the same rank",
 				"and having Tier 4 enhancements",
             },
-            ["felijo_tier4_flush"] = {
+            ["feli_fag_tier4_flush"] = {
                 "5 cards that share the same suit",
 				"and having Tier 4 enhancements",
             },
-            ["felijo_tier4_flushfive"] = {
+            ["feli_fag_tier4_flushfive"] = {
                 "5 cards with the same rank and suit",
 				"and having Tier 4 enhancements",
             },
-            ["felijo_tier4_flushhouse"] = {
+            ["feli_fag_tier4_flushhouse"] = {
                 "A Three of a Kind and a Pair with",
                 "all cards sharing the same suit",
 				"and having Tier 4 enhancements",
             },
-            ["felijo_tier4_4oak"] = {
+            ["feli_fag_tier4_4oak"] = {
                 "4 cards with the same rank. They may",
                 "be played with 1 other unscored card",
 				"and having Tier 4 enhancements",
             },
-            ["felijo_tier4_house"] = {
+            ["feli_fag_tier4_house"] = {
                 "A Three of a Kind and a Pair",
                 "having Tier 4 enhancements",
 
             },
-            ["felijo_tier4_pair"] = {
+            ["feli_fag_tier4_pair"] = {
                 "2 cards that share the same rank. They may",
                 "be played with up to 3 other unscored cards",
 				"and having Tier 4 enhancements",
             },
-            ["felijo_tier4_royal"] = {
+            ["feli_fag_tier4_royal"] = {
                 "5 cards in a row (consecutive ranks) with",
                 "all cards sharing the same suit",
 				"and having Tier 4 enhancements",
             },
-            ["felijo_tier4_straight"] = {
+            ["feli_fag_tier4_straight"] = {
                 "5 cards in a row (consecutive ranks)",
 				"with Tier 4 enhancements",
             },
-            ["felijo_tier4_straight_flush"] = {
+            ["feli_fag_tier4_straight_flush"] = {
                 "5 cards in a row (consecutive ranks) with",
                 "all cards sharing the same suit",
 				"and having Tier 4 enhancements",
             },
-            ["felijo_tier4_3oak"] = {
+            ["feli_fag_tier4_3oak"] = {
                 "3 cards with the same rank. They may be",
                 "played with up to 2 other unscored cards",
 				"and having Tier 4 enhancements",
             },
-            ["felijo_tier4_two_pair"] = {
+            ["feli_fag_tier4_two_pair"] = {
                 "2 pairs of cards with different ranks, may",
                 "be played with 1 other unscored card",
 				"and having Tier 4 enhancements",
             },
         },
         poker_hands = {
-			["felijo_tier2_highcard"] = "High Card [II]",
-            ["felijo_tier2_5oak"] = "Five of a Kind [II]",
-            ["felijo_tier2_flush"] = "Flush [II]",
-            ["felijo_tier2_flushfive"] = "Flush Five [II]",
-            ["felijo_tier2_flushhouse"] = "Flush House [II]",
-            ["felijo_tier2_4oak"] = "Four of a Kind [II]",
-            ["felijo_tier2_house"] = "Full House [II]",
-            ["felijo_tier2_pair"] = "Pair [II]",
-            ["felijo_tier2_royal"] = "Royal Flush [II]",
-            ["felijo_tier2_straight"] = "Straight [II]",
-            ["felijo_tier2_straight_flush"] = "Straight Flush [II]",
-            ["felijo_tier2_3oak"] = "Three of a Kind [II]",
-            ["felijo_tier2_two_pair"] = "Two Pair [II]",
+			["feli_fag_tier2_highcard"] = "High Card [II]",
+            ["feli_fag_tier2_5oak"] = "Five of a Kind [II]",
+            ["feli_fag_tier2_flush"] = "Flush [II]",
+            ["feli_fag_tier2_flushfive"] = "Flush Five [II]",
+            ["feli_fag_tier2_flushhouse"] = "Flush House [II]",
+            ["feli_fag_tier2_4oak"] = "Four of a Kind [II]",
+            ["feli_fag_tier2_house"] = "Full House [II]",
+            ["feli_fag_tier2_pair"] = "Pair [II]",
+            ["feli_fag_tier2_royal"] = "Royal Flush [II]",
+            ["feli_fag_tier2_straight"] = "Straight [II]",
+            ["feli_fag_tier2_straight_flush"] = "Straight Flush [II]",
+            ["feli_fag_tier2_3oak"] = "Three of a Kind [II]",
+            ["feli_fag_tier2_two_pair"] = "Two Pair [II]",
 
-			["felijo_tier3_highcard"] = "High Card [III]",
-			["felijo_tier3_5oak"] = "Five of a Kind [III]",
-            ["felijo_tier3_flush"] = "Flush [III]",
-            ["felijo_tier3_flushfive"] = "Flush Five [III]",
-            ["felijo_tier3_flushhouse"] = "Flush House [III]",
-            ["felijo_tier3_4oak"] = "Four of a Kind [III]",
-            ["felijo_tier3_house"] = "Full House [III]",
-            ["felijo_tier3_pair"] = "Pair [III]",
-            ["felijo_tier3_royal"] = "Royal Flush [III]",
-            ["felijo_tier3_straight"] = "Straight [III]",
-            ["felijo_tier3_straight_flush"] = "Straight Flush [III]",
-            ["felijo_tier3_3oak"] = "Three of a Kind [III]",
-            ["felijo_tier3_two_pair"] = "Two Pair [III]",
+			["feli_fag_tier3_highcard"] = "High Card [III]",
+			["feli_fag_tier3_5oak"] = "Five of a Kind [III]",
+            ["feli_fag_tier3_flush"] = "Flush [III]",
+            ["feli_fag_tier3_flushfive"] = "Flush Five [III]",
+            ["feli_fag_tier3_flushhouse"] = "Flush House [III]",
+            ["feli_fag_tier3_4oak"] = "Four of a Kind [III]",
+            ["feli_fag_tier3_house"] = "Full House [III]",
+            ["feli_fag_tier3_pair"] = "Pair [III]",
+            ["feli_fag_tier3_royal"] = "Royal Flush [III]",
+            ["feli_fag_tier3_straight"] = "Straight [III]",
+            ["feli_fag_tier3_straight_flush"] = "Straight Flush [III]",
+            ["feli_fag_tier3_3oak"] = "Three of a Kind [III]",
+            ["feli_fag_tier3_two_pair"] = "Two Pair [III]",
 
-			["felijo_tier4_highcard"] = "High Card [IV]",
-			["felijo_tier4_5oak"] = "Five of a Kind [IV]",
-            ["felijo_tier4_flush"] = "Flush [IV]",
-            ["felijo_tier4_flushfive"] = "Flush Five [IV]",
-            ["felijo_tier4_flushhouse"] = "Flush House [IV]",
-            ["felijo_tier4_4oak"] = "Four of a Kind [IV]",
-            ["felijo_tier4_house"] = "Full House [IV]",
-            ["felijo_tier4_pair"] = "Pair [IV]",
-            ["felijo_tier4_royal"] = "Royal Flush [IV]",
-            ["felijo_tier4_straight"] = "Straight [IV]",
-            ["felijo_tier4_straight_flush"] = "Straight Flush [IV]",
-            ["felijo_tier4_3oak"] = "Three of a Kind [IV]",
-            ["felijo_tier4_two_pair"] = "Two Pair [IV]",
+			["feli_fag_tier4_highcard"] = "High Card [IV]",
+			["feli_fag_tier4_5oak"] = "Five of a Kind [IV]",
+            ["feli_fag_tier4_flush"] = "Flush [IV]",
+            ["feli_fag_tier4_flushfive"] = "Flush Five [IV]",
+            ["feli_fag_tier4_flushhouse"] = "Flush House [IV]",
+            ["feli_fag_tier4_4oak"] = "Four of a Kind [IV]",
+            ["feli_fag_tier4_house"] = "Full House [IV]",
+            ["feli_fag_tier4_pair"] = "Pair [IV]",
+            ["feli_fag_tier4_royal"] = "Royal Flush [IV]",
+            ["feli_fag_tier4_straight"] = "Straight [IV]",
+            ["feli_fag_tier4_straight_flush"] = "Straight Flush [IV]",
+            ["feli_fag_tier4_3oak"] = "Three of a Kind [IV]",
+            ["feli_fag_tier4_two_pair"] = "Two Pair [IV]",
         },
     },
 }

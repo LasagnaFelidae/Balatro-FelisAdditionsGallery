@@ -2,14 +2,14 @@ return {
     descriptions = {
         Blind = {
             
-            bl_felijo_pin = {
+            bl_feli_fag_pin = {
                 name = "The Pin",
                 text = {
                     "Hand must contain 4 cards or more",
                     "and no face cards or 10s."
                 }
             },
-            bl_felijo_pin_c = {
+            bl_feli_fag_pin_c = {
                 name = "The Pin",
                 text = {
                     "Hand must contain 4 cards or more ",
@@ -21,7 +21,7 @@ return {
             
         },
         Joker = {
-            j_felijo_toga_loic = {
+            j_feli_fag_toga_loic = {
                 name = "{B:1,V:2}Low-Orbit Ion Cannon",
                 text = {
                     {
@@ -40,7 +40,7 @@ return {
                 }
             },
             
-            j_felijo_bliss = {
+            j_feli_fag_bliss = {
                 name = "Bliss",
                 text = { 
                     "Gains {C:chips}+#1#{} Chips",
@@ -49,7 +49,7 @@ return {
                     "{C:inactive}(Currently {}{C:chips}+#3#{}{C:inactive} Chips.)"
                 }
             },
-            j_felijo_idiot = {
+            j_feli_fag_idiot = {
                 name = "Trojan.JS.YouAreAnIdiot",
                 text = { 
                     {
@@ -68,7 +68,7 @@ return {
                     
                 }
             },
-            j_felijo_idiot_alt = {
+            j_feli_fag_idiot_alt = {
                 name = "Trojan.JS.YouAreAnIdiot",
                 text = { 
                     {

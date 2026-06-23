@@ -12,7 +12,7 @@ SMODS.Joker {
 		["Food"] = true, 
 		["Gear"] = true,
 	},
-    key = "felijo_rbx_pizza",
+    key = "feli_fag_rbx_pizza",
     rarity = 1,
 	attribute = {"food", "chips", "scaling"},
     cost = 5,
@@ -25,7 +25,7 @@ SMODS.Joker {
 	config = { extra = { chips = 150, chips_mod = 10} },
 	
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
 	end,
 	
     loc_vars = function(self, info_queue, card)
@@ -33,7 +33,7 @@ SMODS.Joker {
 	end,
 	
 	add_to_deck = function(self, card, from_debuff)
-		play_sound('felijo_rbx_pizza_add', 1)	
+		play_sound('feli_fag_rbx_pizza_add', 1)	
 	end,
 	
     calculate = function(self, card, context)
@@ -44,7 +44,7 @@ SMODS.Joker {
                 card.ability.extra.chips = card.ability.extra.chips - card.ability.extra.chips_mod
                 return {
                     message = localize { type = 'variable', key = 'a_chips_minus', vars = { card.ability.extra.chips_mod } },
-					sound = "felijo_rbx_pizza_eat",
+					sound = "feli_fag_rbx_pizza_eat",
 					pitch = 1,
                     colour = G.C.CHIPS
                 }
@@ -68,7 +68,7 @@ SMODS.Joker {
 		["Food"] = true, 
 		["Gear"] = true,
 	},
-    key = "felijo_rbx_burrito",
+    key = "feli_fag_rbx_burrito",
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = false,
@@ -80,7 +80,7 @@ SMODS.Joker {
 	config = { extra = { mult = 18, mult_mod = 3} },
 	
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
 	end,
 	
     loc_vars = function(self, info_queue, card)
@@ -88,7 +88,7 @@ SMODS.Joker {
 	end,
 	
 	add_to_deck = function(self, card, from_debuff)
-		play_sound('felijo_rbx_burrito_add', 1)	
+		play_sound('feli_fag_rbx_burrito_add', 1)	
 	end,
 	
     calculate = function(self, card, context)
@@ -99,7 +99,7 @@ SMODS.Joker {
                 card.ability.extra.mult = card.ability.extra.mult - card.ability.extra.mult_mod
                 return {
                     message = localize { type = 'variable', key = 'a_mult_minus', vars = { card.ability.extra.mult_mod } },
-					sound = "felijo_rbx_burrito_eat",
+					sound = "feli_fag_rbx_burrito_eat",
 					pitch = 1,
                     colour = G.C.MULT
                 }
@@ -124,7 +124,7 @@ SMODS.Joker {
 		["Food"] = true, 
 		["Gear"] = true,
 	},
-    key = "felijo_rbx_turkey",
+    key = "feli_fag_rbx_turkey",
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = false,
@@ -136,7 +136,7 @@ SMODS.Joker {
 	config = { extra = { xmult = 2.5, xmult_mod = 0.25} },
 	
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
 	end,
 	
     loc_vars = function(self, info_queue, card)
@@ -144,7 +144,7 @@ SMODS.Joker {
 	end,
 	
 	add_to_deck = function(self, card, from_debuff)
-		play_sound('felijo_rbx_turkey_add', 1)	
+		play_sound('feli_fag_rbx_turkey_add', 1)	
 	end,
 	
     calculate = function(self, card, context)
@@ -155,7 +155,7 @@ SMODS.Joker {
                 card.ability.extra.xmult = card.ability.extra.xmult - card.ability.extra.xmult_mod
                 return {
                     message = localize { type = 'variable', key = 'a_mult_minus', vars = { card.ability.extra.xmult_mod } },
-					sound = "felijo_rbx_turkey_eat",
+					sound = "feli_fag_rbx_turkey_eat",
 					pitch = 1,
                     colour = G.C.MULT
                 }
@@ -180,7 +180,7 @@ SMODS.Joker {
 		["Food"] = true, 
 		["Gear"] = true,
 	},
-    key = "felijo_rbx_cheezburger",
+    key = "feli_fag_rbx_cheezburger",
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = false,
@@ -192,7 +192,7 @@ SMODS.Joker {
 	config = { extra = { xchips = 3, xchips_mod = 0.5} },
 	
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
 	end,
 	
     loc_vars = function(self, info_queue, card)
@@ -200,7 +200,7 @@ SMODS.Joker {
 	end,
 	
 	add_to_deck = function(self, card, from_debuff)
-		play_sound('felijo_rbx_cheezburger_add', 1)	
+		play_sound('feli_fag_rbx_cheezburger_add', 1)	
 	end,
 	
     calculate = function(self, card, context)
@@ -212,7 +212,7 @@ SMODS.Joker {
                 return {
                     message = localize { type = 'variable', key = 'a_chips_minus', vars = { card.ability.extra.xchips_mod } },
                     colour = G.C.CHIPS,
-					sound = "felijo_rbx_cheezburger_eat",
+					sound = "feli_fag_rbx_cheezburger_eat",
 					pitch = 1,
                 }
             end
@@ -236,7 +236,7 @@ SMODS.Joker {
 		["Food"] = true, 
 		["Gear"] = true,
 	},
-    key = "felijo_rbx_sandwich",
+    key = "feli_fag_rbx_sandwich",
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = false,
@@ -248,7 +248,7 @@ SMODS.Joker {
 	config = { extra = { chips = 70, chips_mod = 5} },
 	
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
 	end,
 	
     loc_vars = function(self, info_queue, card)
@@ -262,7 +262,7 @@ SMODS.Joker {
 	end,
 	
 	add_to_deck = function(self, card, from_debuff)
-		play_sound('felijo_rbx_sandwich_add', 1)	
+		play_sound('feli_fag_rbx_sandwich_add', 1)	
 	end,
 	
     calculate = function(self, card, context)
@@ -274,7 +274,7 @@ SMODS.Joker {
                 return {
                     message = localize { type = 'variable', key = 'a_chips_minus', vars = { card.ability.extra.chips_mod } },
                     colour = G.C.CHIPS,
-					sound = "felijo_rbx_sandwich_eat",
+					sound = "feli_fag_rbx_sandwich_eat",
 					pitch = 1,
                 }
             end
@@ -282,7 +282,7 @@ SMODS.Joker {
         if context.joker_main then
             return {
                 chips = card.ability.extra.chips * (math.max(1,
-                    (G.jokers.config.card_limit - #G.jokers.cards) + #SMODS.find_card("j_felijo_rbx_sandwich", true)))
+                    (G.jokers.config.card_limit - #G.jokers.cards) + #SMODS.find_card("j_feli_fag_rbx_sandwich", true)))
             }
         end
 	end,
@@ -299,7 +299,7 @@ SMODS.Joker {
 		["Food"] = true, 
 		["Gear"] = true,
 	},
-    key = "felijo_rbx_pumpkinpi",
+    key = "feli_fag_rbx_pumpkinpi",
 	blueprint_compat = false,
 	eternal_compat = false,
 	perishable_compat = false,
@@ -311,7 +311,7 @@ SMODS.Joker {
 	config = { extra = { h_size = 3, h_mod = 1, c_rounds = 0, m_rounds = 4} },
 	
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
 	end,
 	
     loc_vars = function(self, info_queue, card)
@@ -319,7 +319,7 @@ SMODS.Joker {
 	end,
 	
 	add_to_deck = function(self, card, from_debuff)
-		play_sound('felijo_rbx_sandwich_add', 1)
+		play_sound('feli_fag_rbx_sandwich_add', 1)
 		G.hand:change_size(card.ability.extra.h_size)
 	end,
 	
@@ -335,7 +335,7 @@ SMODS.Joker {
 					return {
 						message = "Empty!",
 						colour = G.C.FILTER,
-						sound = "felijo_rbx_pizza_eat",
+						sound = "feli_fag_rbx_pizza_eat",
 						pitch = 1,
 					}     
 				else
@@ -345,7 +345,7 @@ SMODS.Joker {
 					return {
 						message = "-"..card.ability.extra.h_mod.." hand size",
 						colour = G.C.RED,
-						sound = "felijo_rbx_pizza_eat",
+						sound = "feli_fag_rbx_pizza_eat",
 						pitch = 1,
 					}
 				end
@@ -367,7 +367,7 @@ SMODS.Joker {
 		["Food"] = true, 
 		["Gear"] = true,
 	},
-    key = "felijo_rbx_epic",
+    key = "feli_fag_rbx_epic",
 	blueprint_compat = false,
 	attribute = {"food", "scaling", "retrigger"},
     rarity = 3,
@@ -379,7 +379,7 @@ SMODS.Joker {
 	config = { extra = { repetitions = 1, rep_mod = 1} },
 	
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
 	end,
 	
     loc_vars = function(self, info_queue, card)
@@ -387,7 +387,7 @@ SMODS.Joker {
 	end,
 	
 	--[[add_to_deck = function(self, card, from_debuff)
-		play_sound('felijo_rbx_sandwich_add', 1)	
+		play_sound('feli_fag_rbx_sandwich_add', 1)	
 	end,]]
 	
     calculate = function(self, card, context)
@@ -396,7 +396,7 @@ SMODS.Joker {
                 return {
                     message = "+"..card.ability.extra.rep_mod.." retrigger",
                     colour = G.C.UI.TEXT_INACTIVE,
-					sound = "felijo_rbx_drink_use",
+					sound = "feli_fag_rbx_drink_use",
 					pitch = 1,
                 }
 		end
@@ -406,7 +406,7 @@ SMODS.Joker {
 				return {
                     message = "Empty!",
                     colour = G.C.FILTER,
-					sound = "felijo_rbx_drink_expire",
+					sound = "feli_fag_rbx_drink_expire",
 					pitch = 1,
                 }         
             end
@@ -433,7 +433,7 @@ SMODS.Joker {
 		["Gear"] = true,		
 
 	},
-    key = "felijo_rbx_bloxy",
+    key = "feli_fag_rbx_bloxy",
 	attribute = {"food", "scaling", "discard"},
 	blueprint_compat = false,
 	eternal_compat = false,
@@ -445,7 +445,7 @@ SMODS.Joker {
 	config = { extra = { d_size = 4, d_mod = 1} },
 	
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
 	end,
 	
     loc_vars = function(self, info_queue, card)
@@ -454,13 +454,13 @@ SMODS.Joker {
 	
 
 	add_to_deck = function(self, card, from_debuff)
-		play_sound('felijo_rbx_drink_add', 1)
+		play_sound('feli_fag_rbx_drink_add', 1)
 		ease_discard(card.ability.extra.d_size)
 	end,
 	
 	remove_from_deck = function(self, card, from_debuff)
 		ease_discard(-card.ability.extra.d_size)
-		play_sound("felijo_rbx_drink_expire", 1)
+		play_sound("feli_fag_rbx_drink_expire", 1)
 	end,
 	
     calculate = function(self, card, context)
@@ -470,7 +470,7 @@ SMODS.Joker {
 				return {
                     message = "Empty!",
                     colour = G.C.FILTER,
-					sound = "felijo_rbx_drink_expire",
+					sound = "feli_fag_rbx_drink_expire",
 					pitch = 1,
                 }     
 			else
@@ -478,7 +478,7 @@ SMODS.Joker {
                 return {
                     message = "-"..card.ability.extra.d_mod.." discard",
                     colour = G.C.RED,
-					sound = "felijo_rbx_drink_use",
+					sound = "feli_fag_rbx_drink_use",
 					pitch = 1,
                 }
 			end
@@ -497,7 +497,7 @@ SMODS.Joker {
 		["Food"] = true,
 		["Gear"] = true,
 	},
-    key = "felijo_rbx_brew",
+    key = "feli_fag_rbx_brew",
 	blueprint_compat = false,
 	eternal_compat = false,
 	perishable_compat = false,
@@ -509,7 +509,7 @@ SMODS.Joker {
 	config = { extra = { h_size = 4, h_mod = 1} },
 	
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
 	end,
 	
     loc_vars = function(self, info_queue, card)
@@ -519,14 +519,14 @@ SMODS.Joker {
 
 	add_to_deck = function(self, card, from_debuff)
 		G.hand.config.highlighted_limit = G.hand.config.highlighted_limit + card.ability.extra.h_size
-		play_sound('felijo_rbx_drink_add', 1)		
+		play_sound('feli_fag_rbx_drink_add', 1)		
 		SMODS.change_play_limit(card.ability.extra.h_size)
 		SMODS.change_discard_limit(card.ability.extra.h_size)
 	end,
 	
 	remove_from_deck = function(self, card, from_debuff)
 		G.hand.config.highlighted_limit = G.hand.config.highlighted_limit - card.ability.extra.h_size
-		play_sound("felijo_rbx_drink_expire", 1)
+		play_sound("feli_fag_rbx_drink_expire", 1)
 		SMODS.change_play_limit(-card.ability.extra.h_size)
 		SMODS.change_discard_limit(-card.ability.extra.h_size)
 	end,
@@ -538,7 +538,7 @@ SMODS.Joker {
 				return {
                     message = "Empty!",
                     colour = G.C.FILTER,
-					sound = "felijo_rbx_drink_expire",
+					sound = "feli_fag_rbx_drink_expire",
 					pitch = 1,
                 }     
 			else
@@ -549,7 +549,7 @@ SMODS.Joker {
                 return {
                     message = "-"..card.ability.extra.h_mod.." hand size",
                     colour = G.C.BLUE,
-					sound = "felijo_rbx_drink_use",
+					sound = "feli_fag_rbx_drink_use",
 					pitch = 1,
                 }
 			end
@@ -566,7 +566,7 @@ SMODS.Joker {
 		["FelisJokeria"] = true, 
 		["Roblox"] = true,
 	},
-    key = "felijo_rbx_vendingmachine",
+    key = "feli_fag_rbx_vendingmachine",
 	blueprint_compat = false,
 	eternal_compat = false,
 	perishable_compat = false,
@@ -578,7 +578,7 @@ SMODS.Joker {
 	config = { extra = { h_size = 4, h_mod = 1} },
 	
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
 	end,
 	
     loc_vars = function(self, info_queue, card)
@@ -587,31 +587,31 @@ SMODS.Joker {
 	
 
 	add_to_deck = function(self, card, from_debuff)
-		play_sound('felijo_rbx_vending_use', 1)		
+		play_sound('feli_fag_rbx_vending_use', 1)		
 	end,
 
 
     calculate = function(self, card, context)
 		if context.setting_blind and not context.blueprint and #G.jokers.cards < G.jokers.config.card_limit and not context.blueprint and not context.retrigger_joker then
 			if card.ability.extra.h_size - card.ability.extra.h_mod <= 0 then
-				rf = pseudorandom_element(FELIJO.pool_merge({"Roblox","Food"}), pseudoseed('vending'))
+				rf = pseudorandom_element(FelisAG.pool_merge({"Roblox","Food"}), pseudoseed('vending'))
 				SMODS.add_card{set = 'Joker', key = rf}
 				SMODS.destroy_cards(card, nil, nil, true)
 				return {
                     message = "Empty!",
                     colour = G.C.FILTER,
-					sound = "felijo_rbx_spawn_use",
+					sound = "feli_fag_rbx_spawn_use",
 					pitch = 1,
                 }     
 			else
 				card.ability.extra.h_size = card.ability.extra.h_size - card.ability.extra.h_mod
-				rf = pseudorandom_element(FELIJO.pool_merge({"Roblox","Food"}), pseudoseed('vending'))
+				rf = pseudorandom_element(FelisAG.pool_merge({"Roblox","Food"}), pseudoseed('vending'))
 				SMODS.add_card{ set = 'Joker', key = rf}
 					
                 return {
                     message = "Dispensed",
                     colour = G.C.MONEY,
-					sound = "felijo_rbx_vending_use",
+					sound = "feli_fag_rbx_vending_use",
 					pitch = 1,
                 }
 			end
@@ -629,7 +629,7 @@ SMODS.Joker {
 		["Roblox"] = true, 
 		["Building Tool"] = true, 
 	},
-    key = "felijo_rbx_copy",
+    key = "feli_fag_rbx_copy",
     rarity = 1,
     cost = 5,
 	attribute = {"joker",},
@@ -640,7 +640,7 @@ SMODS.Joker {
 	config = { extra = { chips = 150, chips_mod = 10} },
 	
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
 	end,
 	
     loc_vars = function(self, info_queue, card)
@@ -648,27 +648,27 @@ SMODS.Joker {
 	end,
 	
 	add_to_deck = function(self, card, from_debuff)
-		play_sound('felijo_rbx_tool_add', 1)	
+		play_sound('feli_fag_rbx_tool_add', 1)	
 	end,
 	
     calculate = function(self, card, context)
 		if context.setting_blind and not context.blueprint and not context.blueprint and not context.retrigger_joker then
 			local jokers = {}
 			for i = 1, #G.jokers.cards do
-				if G.jokers.cards[i] ~= card and G.jokers.cards[i].config.center.key ~= "j_felijo_rbx_copy" then
+				if G.jokers.cards[i] ~= card and G.jokers.cards[i].config.center.key ~= "j_feli_fag_rbx_copy" then
 					jokers[#jokers + 1] = G.jokers.cards[i]
 				end
 			end
 			if #jokers > 0 then
                 if #G.jokers.cards < G.jokers.config.card_limit then
-                    local chosen_joker = pseudorandom_element(jokers, 'j_felijo_rbx_copy')
+                    local chosen_joker = pseudorandom_element(jokers, 'j_feli_fag_rbx_copy')
                     local copied_joker = copy_card(chosen_joker, nil, nil, nil, chosen_joker.edition and chosen_joker.edition.negative)
 					
-					copied_joker.ability.felijo_copied = true
+					copied_joker.ability.feli_fag_copied = true
 					
                     if copied_joker.ability.invis_rounds then copied_joker.ability.invis_rounds = 0 end
                     if type(copied_joker.ability.extra) == "table" and copied_joker.ability.extra.invis_rounds then copied_joker.ability.extra.invis_rounds = 0 end
-                    play_sound('felijo_rbx_copy', 1)	
+                    play_sound('feli_fag_rbx_copy', 1)	
 					copied_joker:add_to_deck()
                     G.jokers:emplace(copied_joker)
                     return { message = localize('k_duplicated_ex') }
@@ -701,7 +701,7 @@ SMODS.Joker {
 		["Roblox"] = true, 
 		["Building Tool"] = true, 
 	},
-    key = "felijo_rbx_delete",
+    key = "feli_fag_rbx_delete",
     rarity = 2,
     cost = 6,
 	unlocked = true,
@@ -713,16 +713,16 @@ SMODS.Joker {
 	
 	set_badges = function(self, card, badges)
 		
-		badges[#badges+1] = create_badge(localize('k_felijo_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
 	end,
 	
     loc_vars = function(self, info_queue, card)
-		info_queue[#info_queue+1] = {key = 'felijo_delete', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_delete', set = 'Other'}
 		return { vars = { card.ability.extra.xmult, card.ability.extra.xmult_mod} }
 	end,
 	
 	add_to_deck = function(self, card, from_debuff)
-		play_sound('felijo_rbx_tool_add', 1)	
+		play_sound('feli_fag_rbx_tool_add', 1)	
 	end,
 	
     calculate = function(self, card, context)
@@ -733,18 +733,18 @@ SMODS.Joker {
 					jokers[#jokers + 1] = G.jokers.cards[i]
 				end
 			end
-			local roll = pseudorandom("felijo_rbx_delete"..G.GAME.round..G.GAME.pseudorandom.seed)
-			local j_delete = FELIJO.quick_pool_pick(delete_pool, roll)
+			local roll = pseudorandom("feli_fag_rbx_delete"..G.GAME.round..G.GAME.pseudorandom.seed)
+			local j_delete = FelisAG.quick_pool_pick(delete_pool, roll)
 			j_delete = (j_delete == 6) and #jokers or j_delete
 			local count = 0
 			if #jokers > 0 then
 				for i = 1, j_delete do
-					local _card = pseudorandom_element(jokers, pseudoseed("j_felijo_rbx_delete"))
+					local _card = pseudorandom_element(jokers, pseudoseed("j_feli_fag_rbx_delete"))
 					if _card then
-						if _card.config.center.key == "j_felijo_toga_idiot" then
-							FELIJO.explodeCard(_card, "delete", true)
+						if _card.config.center.key == "j_feli_fag_toga_idiot" then
+							FelisAG.explodeCard(_card, "delete", true)
 						else
-							FELIJO.explodeCard(_card, "delete", false)
+							FelisAG.explodeCard(_card, "delete", false)
 						end
 						count = count + 1
 					end
@@ -774,7 +774,7 @@ SMODS.Joker {
 		["Roblox"] = true, 
 		["Building Tool"] = true, 
 	},
-    key = "felijo_rbx_drag",
+    key = "feli_fag_rbx_drag",
 	attribute = {"chips",},
     rarity = 2,
     cost = 5,
@@ -785,7 +785,7 @@ SMODS.Joker {
 	config = { extra = { c_drag = 0, m_drag = 100, drag_mod = 100, toggle = 0} },
 	
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
 	end,
 	
     loc_vars = function(self, info_queue, card)
@@ -793,7 +793,7 @@ SMODS.Joker {
 	end,
 	
 	add_to_deck = function(self, card, from_debuff)
-		play_sound('felijo_rbx_tool_add', 1)	
+		play_sound('feli_fag_rbx_tool_add', 1)	
 	end,
 	
     calculate = function(self, card, context)
@@ -801,7 +801,7 @@ SMODS.Joker {
 			card.ability.extra.c_drag = card.ability.extra.c_drag + (math.abs(G.GAME.round_resets.ante) or 1)
 		elseif context.dragging and context.drag_target == card and card.ability.extra.c_drag >= card.ability.extra.m_drag and not context.blueprint and not context.retrigger_joker then
 			if card.ability.extra.toggle == 0 then
-				play_sound('felijo_rbx_spawn_add', 1)	
+				play_sound('feli_fag_rbx_spawn_add', 1)	
 				card.ability.extra.toggle = 1
 				card.ability.extra.c_drag = card.ability.extra.m_drag
 				return {
@@ -838,7 +838,7 @@ SMODS.Joker {
 		["Food"] = true, 
 		["Gear"] = true,
 	},
-    key = "felijo_rbx_subspace",
+    key = "feli_fag_rbx_subspace",
     rarity = 1,
     cost = 5,
 	unlocked = true,
@@ -848,7 +848,7 @@ SMODS.Joker {
 	config = { extra = { chips = 150, chips_mod = 10} },
 	
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_rbx'), HEX('00008b'), HEX('ffffff'), 1 )
 	end,
 	
     loc_vars = function(self, info_queue, card)
@@ -856,21 +856,21 @@ SMODS.Joker {
 	end,
 	
 	add_to_deck = function(self, card, from_debuff)
-		play_sound('felijo_rbx_pizza_add', 1)	
+		play_sound('feli_fag_rbx_pizza_add', 1)	
 	end,
 	
     calculate = function(self, card, context)
 		if context.after and not context.blueprint and not context.blueprint and not context.retrigger_joker then
             if card.ability.extra.chips - card.ability.extra.chips_mod <= 0 then
                 SMODS.destroy_cards(card, nil, nil, true)
-				FELIJO.subspaceExplode()
+				FelisAG.subspaceExplode()
 				
 				
             else
                 card.ability.extra.chips = card.ability.extra.chips - card.ability.extra.chips_mod
                 return {
                     message = localize { type = 'variable', key = 'a_chips_minus', vars = { card.ability.extra.chips_mod } },
-					sound = "felijo_rbx_pizza_eat",
+					sound = "feli_fag_rbx_pizza_eat",
 					pitch = 1,
                     colour = G.C.CHIPS
                 }

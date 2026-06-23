@@ -1,6 +1,6 @@
 --[[
 SMODS.calculate_effect({
-    felijo_h_score = card.ability.extra.h_score
+    feli_fag_h_score = card.ability.extra.h_score
 }, card)
 return {
     func = function ()
@@ -11,7 +11,7 @@ return {
 
 
 ]]
-FELIJO.T2Enhancement = SMODS.Enhancement:extend{
+FelisAG.T2Enhancement = SMODS.Enhancement:extend{
     discovered = true,
 	unlocked = true,
     in_pool = function (self, args)
@@ -19,7 +19,7 @@ FELIJO.T2Enhancement = SMODS.Enhancement:extend{
     end,
 	weight = 2
 }
-FELIJO.T3Enhancement = SMODS.Enhancement:extend{
+FelisAG.T3Enhancement = SMODS.Enhancement:extend{
     discovered = true,
 	unlocked = true,
     foobar_ignore = true,
@@ -28,7 +28,7 @@ FELIJO.T3Enhancement = SMODS.Enhancement:extend{
     end,
 	weight = 0.01
 }
-FELIJO.T4Enhancement = SMODS.Enhancement:extend{
+FelisAG.T4Enhancement = SMODS.Enhancement:extend{
     discovered = true,
 	unlocked = true,
     foobar_ignore = true,
@@ -38,7 +38,7 @@ FELIJO.T4Enhancement = SMODS.Enhancement:extend{
 	weight = 0.002
 }
 
-if not FELIJO.is_mod_loaded("RevosVault") then
+if not FelisAG.is_mod_loaded("RevosVault") then
     SMODS.Enhancement {
         key = 'enh_sup',
         atlas = 'tieredEnhancements',
@@ -50,7 +50,7 @@ if not FELIJO.is_mod_loaded("RevosVault") then
         always_scores = false,
         weight = 0,
         set_badges = function(self, card, badges)
-            badges[#badges+1] = create_badge(localize('k_felijo_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
+            badges[#badges+1] = create_badge(localize('k_feli_fag_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
         end,
         
         no_collection = superior_enabled,
@@ -74,7 +74,7 @@ if not FELIJO.is_mod_loaded("RevosVault") then
 end
 
 -- Wild
-FELIJO.T2Enhancement {
+FelisAG.T2Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'wild_t2',
     pos = { x = 1, y = 8 },
@@ -83,7 +83,7 @@ FELIJO.T2Enhancement {
     
 
 }
-FELIJO.T3Enhancement {
+FelisAG.T3Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'wild_t3',
     pos = { x = 2, y = 8 },
@@ -98,7 +98,7 @@ FELIJO.T3Enhancement {
         end
     end,
 }
-FELIJO.T4Enhancement {
+FelisAG.T4Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'wild_t4',
     pos = { x = 3, y = 8 },
@@ -115,7 +115,7 @@ FELIJO.T4Enhancement {
 
 }
 -- Bonus
-FELIJO.T2Enhancement {
+FelisAG.T2Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'bonus_t2',
     pos = { x = 1, y = 0 },
@@ -125,7 +125,7 @@ FELIJO.T2Enhancement {
     end,
 }
 
-FELIJO.T3Enhancement {
+FelisAG.T3Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'bonus_t3',
     pos = { x = 2, y = 0 },
@@ -135,7 +135,7 @@ FELIJO.T3Enhancement {
     end,
 }
 
-FELIJO.T4Enhancement {
+FelisAG.T4Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'bonus_t4',
 	weight = 0,
@@ -147,7 +147,7 @@ FELIJO.T4Enhancement {
 }
 
 -- Mult
-FELIJO.T2Enhancement {
+FelisAG.T2Enhancement {
     atlas = 'tieredEnhancements',
     key = 'mult_t2',
     pos = { x = 1, y = 1 },
@@ -157,7 +157,7 @@ FELIJO.T2Enhancement {
     end,
 }
 
-FELIJO.T3Enhancement {
+FelisAG.T3Enhancement {
     atlas = 'tieredEnhancements',
     key = 'mult_t3',
     pos = { x = 2, y = 1 },
@@ -167,7 +167,7 @@ FELIJO.T3Enhancement {
     end,
 }
 
-FELIJO.T4Enhancement {
+FelisAG.T4Enhancement {
     atlas = 'tieredEnhancements',
     key = 'mult_t4',
     pos = { x = 3, y = 1 },
@@ -179,57 +179,57 @@ FELIJO.T4Enhancement {
 
 
 -- Glass
-FELIJO.T2Enhancement {
+FelisAG.T2Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'glass_t2',
     pos = { x = 1, y = 3 },
     config = { Xmult = 2.5, extra = { odds = 4 } },
     shatters = true,
     loc_vars = function(self, info_queue, card)
-        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'felijo_glass')
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'feli_fag_glass')
         return { vars = { card.ability.Xmult, numerator, denominator } }
     end,
     calculate = function(self, card, context)
         if context.destroy_card and context.cardarea == G.play and context.destroy_card == card and
-            SMODS.pseudorandom_probability(card, 'felijo_glass', 1, card.ability.extra.odds) then
+            SMODS.pseudorandom_probability(card, 'feli_fag_glass', 1, card.ability.extra.odds) then
             card.glass_trigger = true -- SMODS addition
             return { remove = true }
         end
     end,
 }
 
-FELIJO.T3Enhancement {
+FelisAG.T3Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'glass_t3',
     pos = { x = 2, y = 3 },
     config = { Xmult = 3, extra = { odds = 6 } },
     shatters = true,
     loc_vars = function(self, info_queue, card)
-        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'felijo_glass')
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'feli_fag_glass')
         return { vars = { card.ability.Xmult, numerator, denominator } }
     end,
     calculate = function(self, card, context)
         if context.destroy_card and context.cardarea == G.play and context.destroy_card == card and
-            SMODS.pseudorandom_probability(card, 'felijo_glass', 1, card.ability.extra.odds) then
+            SMODS.pseudorandom_probability(card, 'feli_fag_glass', 1, card.ability.extra.odds) then
             card.glass_trigger = true -- SMODS addition
             return { remove = true }
         end
     end,
 }
 
-FELIJO.T4Enhancement {
+FelisAG.T4Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'glass_t4',
     pos = { x = 3, y = 3 },
     config = { Xmult = 5, extra = { odds = 8 } },
     shatters = true,
     loc_vars = function(self, info_queue, card)
-        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'felijo_glass')
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'feli_fag_glass')
         return { vars = { card.ability.Xmult, numerator, denominator } }
     end,
     calculate = function(self, card, context)
         if context.destroy_card and context.cardarea == G.play and context.destroy_card == card and
-            SMODS.pseudorandom_probability(card, 'felijo_glass', 1, card.ability.extra.odds) then
+            SMODS.pseudorandom_probability(card, 'feli_fag_glass', 1, card.ability.extra.odds) then
             card.glass_trigger = true
             return { remove = true }
         end
@@ -237,7 +237,7 @@ FELIJO.T4Enhancement {
 }
 
 -- Steel
-FELIJO.T2Enhancement {
+FelisAG.T2Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'steel_t2',
     pos = { x = 1, y = 4 },
@@ -247,7 +247,7 @@ FELIJO.T2Enhancement {
     end,
 }
 
-FELIJO.T3Enhancement {
+FelisAG.T3Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'steel_t3',
     pos = { x = 2, y = 4 },
@@ -257,7 +257,7 @@ FELIJO.T3Enhancement {
     end,
 }
 
-FELIJO.T4Enhancement {
+FelisAG.T4Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'steel_t4',
     pos = { x = 3, y = 4 },
@@ -268,7 +268,7 @@ FELIJO.T4Enhancement {
 }
 
 -- Stone
-FELIJO.T2Enhancement {
+FelisAG.T2Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'stone_t2',
     pos = { x = 1, y = 5 },
@@ -281,7 +281,7 @@ FELIJO.T2Enhancement {
         return { vars = { card.ability.bonus } }
     end,
 }
-FELIJO.T3Enhancement {
+FelisAG.T3Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'stone_t3',
     pos = { x = 2, y = 5 },
@@ -294,7 +294,7 @@ FELIJO.T3Enhancement {
         return { vars = { card.ability.bonus, card.ability.mult } }
     end,
 }
-FELIJO.T4Enhancement {
+FelisAG.T4Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'stone_t4',
     pos = { x = 3, y = 5 },
@@ -309,7 +309,7 @@ FELIJO.T4Enhancement {
 }
 
 -- Gold
-FELIJO.T2Enhancement {
+FelisAG.T2Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'gold_t2',
     pos = { x = 1, y = 6 },
@@ -318,7 +318,7 @@ FELIJO.T2Enhancement {
         return { vars = { card.ability.h_dollars, card.ability.p_dollars  } }
     end,
 }
-FELIJO.T3Enhancement {
+FelisAG.T3Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'gold_t3',
     pos = { x = 2, y = 6 },
@@ -327,7 +327,7 @@ FELIJO.T3Enhancement {
         return { vars = { card.ability.h_dollars, card.ability.p_dollars  } }
     end,
 }
-FELIJO.T4Enhancement {
+FelisAG.T4Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'gold_t4',
     pos = { x = 3, y = 6 },
@@ -338,32 +338,32 @@ FELIJO.T4Enhancement {
 }
 
 -- Lucky
-FELIJO.T2Enhancement {
+FelisAG.T2Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'lucky_t2',
     pos = { x = 1, y = 2 },
     config = { extra = { mult = 30, chips = 100, dollars = 30, mult_odds = 5, chips_odds = 5, dollars_odds = 15 } },
     loc_vars = function(self, info_queue, card)
         local mult_numerator, mult_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.mult_odds,
-            'felijo_lucky_mult')
+            'feli_fag_lucky_mult')
 		local chips_numerator, chips_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.chips_odds,
-            'felijo_lucky_chips')
+            'feli_fag_lucky_chips')
         local dollars_numerator, dollars_denominator = SMODS.get_probability_vars(card, 1,
-            card.ability.extra.dollars_odds, 'felijo_lucky_money')
+            card.ability.extra.dollars_odds, 'feli_fag_lucky_money')
         return { vars = { mult_numerator, dollars_numerator, card.ability.extra.mult, mult_denominator, card.ability.extra.dollars, dollars_denominator, chips_numerator, chips_denominator, card.ability.extra.chips} }
     end,
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play then
             local ret = {}
-            if SMODS.pseudorandom_probability(card, 'felijo_lucky_mult', 1, card.ability.extra.mult_odds) then
+            if SMODS.pseudorandom_probability(card, 'feli_fag_lucky_mult', 1, card.ability.extra.mult_odds) then
                 card.lucky_trigger = true
                 ret.mult = card.ability.extra.mult
             end
-			if SMODS.pseudorandom_probability(card, 'felijo_lucky_chips', 1, card.ability.extra.mult_odds) then
+			if SMODS.pseudorandom_probability(card, 'feli_fag_lucky_chips', 1, card.ability.extra.mult_odds) then
                 card.lucky_trigger = true
                 ret.chips = card.ability.extra.chips
             end
-            if SMODS.pseudorandom_probability(card, 'felijo_lucky_money', 1, card.ability.extra.dollars_odds) then
+            if SMODS.pseudorandom_probability(card, 'feli_fag_lucky_money', 1, card.ability.extra.dollars_odds) then
                 card.lucky_trigger = true
                 ret.dollars = card.ability.extra.dollars
             end
@@ -371,32 +371,32 @@ FELIJO.T2Enhancement {
         end
     end,
 }
-FELIJO.T3Enhancement {
+FelisAG.T3Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'lucky_t3',
     pos = { x = 2, y = 2 },
     config = { extra = { mult = 35, chips = 150, dollars = 35, mult_odds = 4, chips_odds = 4, dollars_odds = 12 } },
     loc_vars = function(self, info_queue, card)
         local mult_numerator, mult_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.mult_odds,
-            'felijo_lucky_mult')
+            'feli_fag_lucky_mult')
 		local chips_numerator, chips_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.chips_odds,
-            'felijo_lucky_chips')
+            'feli_fag_lucky_chips')
         local dollars_numerator, dollars_denominator = SMODS.get_probability_vars(card, 1,
-            card.ability.extra.dollars_odds, 'felijo_lucky_money')
+            card.ability.extra.dollars_odds, 'feli_fag_lucky_money')
         return { vars = { mult_numerator, dollars_numerator, card.ability.extra.mult, mult_denominator, card.ability.extra.dollars, dollars_denominator, chips_numerator, chips_denominator, card.ability.extra.chips} }
     end,
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play then
             local ret = {}
-            if SMODS.pseudorandom_probability(card, 'felijo_lucky_mult', 1, card.ability.extra.mult_odds) then
+            if SMODS.pseudorandom_probability(card, 'feli_fag_lucky_mult', 1, card.ability.extra.mult_odds) then
                 card.lucky_trigger = true
                 ret.mult = card.ability.extra.mult
             end
-			if SMODS.pseudorandom_probability(card, 'felijo_lucky_chips', 1, card.ability.extra.mult_odds) then
+			if SMODS.pseudorandom_probability(card, 'feli_fag_lucky_chips', 1, card.ability.extra.mult_odds) then
                 card.lucky_trigger = true
                 ret.chips = card.ability.extra.chips
             end
-            if SMODS.pseudorandom_probability(card, 'felijo_lucky_money', 1, card.ability.extra.dollars_odds) then
+            if SMODS.pseudorandom_probability(card, 'feli_fag_lucky_money', 1, card.ability.extra.dollars_odds) then
                 card.lucky_trigger = true
                 ret.dollars = card.ability.extra.dollars
             end
@@ -404,32 +404,32 @@ FELIJO.T3Enhancement {
         end
     end,
 }
-FELIJO.T4Enhancement {
+FelisAG.T4Enhancement {
 	atlas = 'tieredEnhancements',
     key = 'lucky_t4',
     pos = { x = 3, y = 2 },
     config = { extra = { mult = 40, chips = 250, dollars = 40, mult_odds = 4, chips_odds = 4, dollars_odds = 12 } },
     loc_vars = function(self, info_queue, card)
         local mult_numerator, mult_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.mult_odds,
-            'felijo_lucky_mult')
+            'feli_fag_lucky_mult')
 		local chips_numerator, chips_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.chips_odds,
-            'felijo_lucky_chips')
+            'feli_fag_lucky_chips')
         local dollars_numerator, dollars_denominator = SMODS.get_probability_vars(card, 1,
-            card.ability.extra.dollars_odds, 'felijo_lucky_money')
+            card.ability.extra.dollars_odds, 'feli_fag_lucky_money')
         return { vars = { mult_numerator, dollars_numerator, card.ability.extra.mult, mult_denominator, card.ability.extra.dollars, dollars_denominator, chips_numerator, chips_denominator, card.ability.extra.chips} }
     end,
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play then
             local ret = {}
-            if SMODS.pseudorandom_probability(card, 'felijo_lucky_mult', 1, card.ability.extra.mult_odds) then
+            if SMODS.pseudorandom_probability(card, 'feli_fag_lucky_mult', 1, card.ability.extra.mult_odds) then
                 card.lucky_trigger = true
                 ret.mult = card.ability.extra.mult
             end
-			if SMODS.pseudorandom_probability(card, 'felijo_lucky_chips', 1, card.ability.extra.mult_odds) then
+			if SMODS.pseudorandom_probability(card, 'feli_fag_lucky_chips', 1, card.ability.extra.mult_odds) then
                 card.lucky_trigger = true
                 ret.chips = card.ability.extra.chips
             end
-            if SMODS.pseudorandom_probability(card, 'felijo_lucky_money', 1, card.ability.extra.dollars_odds) then
+            if SMODS.pseudorandom_probability(card, 'feli_fag_lucky_money', 1, card.ability.extra.dollars_odds) then
                 card.lucky_trigger = true
                 ret.dollars = card.ability.extra.dollars
             end

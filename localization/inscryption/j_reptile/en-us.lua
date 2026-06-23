@@ -1,8 +1,8 @@
 return {
     descriptions ={
         Joker = {
-            j_felijo_ins_ouro = {
-                name = "{B:1,V:2,f:felijo_Feli5x8}Ouroboros",
+            j_feli_fag_ins_ouro = {
+                name = "{B:1,V:2,f:feli_fag_Feli5x8}Ouroboros",
                 text = {
 					{
 					"{X:chips,C:white}X#1#{} Chips, {X:mult,C:white}X#2#{} Mult",
@@ -18,8 +18,8 @@ return {
 					}
                 },
             },
-			j_felijo_ins_adder = {
-                name = "{B:1,V:2,f:felijo_Feli5x8}Adder",
+			j_feli_fag_ins_adder = {
+                name = "{B:1,V:2,f:feli_fag_Feli5x8}Adder",
                 text = {
 					{
 					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
@@ -30,38 +30,38 @@ return {
 					},
                 },
             },
-            j_felijo_ins_geck = {
-                name = "{B:1,V:2,f:felijo_Feli5x8}Geck",
+            j_feli_fag_ins_geck = {
+                name = "{B:1,V:2,f:feli_fag_Feli5x8}Geck",
                 text = {
 					{
 					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
 					},
                 },
             },
-            j_felijo_ins_rattler = {
-                name = "{B:1,V:2,f:felijo_Feli5x8}Rattler",
+            j_feli_fag_ins_rattler = {
+                name = "{B:1,V:2,f:feli_fag_Feli5x8}Rattler",
                 text = {
 					{
 					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
 					},
                 },
             },
-            j_felijo_ins_riversnapper = {
-                name = "{B:1,V:2,f:felijo_Feli5x8}River Snapper",
+            j_feli_fag_ins_riversnapper = {
+                name = "{B:1,V:2,f:feli_fag_Feli5x8}River Snapper",
                 text = {
 					{
 					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
 					},
                 },
             },
-            j_felijo_ins_skink = {
-                name = "{B:1,V:2,f:felijo_Feli5x8}Skink",
+            j_feli_fag_ins_skink = {
+                name = "{B:1,V:2,f:feli_fag_Feli5x8}Skink",
                 text = {
 					{
 					    "{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
 					},
                     {
-                        "Bears the {C:felijo_sgl}Loose Tail{}",
+                        "Bears the {C:feli_fag_sgl}Loose Tail{}",
                         "ability"
 
                     }

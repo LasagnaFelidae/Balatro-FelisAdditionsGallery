@@ -8,7 +8,7 @@ SMODS.Joker { -- Uncommon, Magpie
 		["Beast"] = true,		
 		["Avian"] = true,  
 	},
-    key = "felijo_ins_magpie",
+    key = "feli_fag_ins_magpie",
 	unlocked = true,
 	discovered = false,	
     rarity = 2,
@@ -16,7 +16,7 @@ SMODS.Joker { -- Uncommon, Magpie
 	blueprint_compat = true,
     config = { extra = {chips = 1, mult = 1, xchips = 0.02}, steam = { badges = 1 } },
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
     loc_vars = function(self, info_queue, center)
         return {vars = { center.ability.extra.chips, center.ability.extra.mult, center.ability.extra.xchips, (1 + center.ability.extra.xchips * center.ability.steam.badges), colours = { HEX('F0C590'), HEX('351A09')} }}

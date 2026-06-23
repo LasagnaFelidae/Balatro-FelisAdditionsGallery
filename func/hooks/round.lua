@@ -5,8 +5,8 @@ function end_round()
 		trigger = 'after',
 		delay = 0.2,
 		func = function()
-            if FELIJO.active_totem == nil then
-				FELIJO.removeTotemSigils()
+            if FelisAG.active_totem == nil then
+				FelisAG.removeTotemSigils()
 			end
 			return true
 		end

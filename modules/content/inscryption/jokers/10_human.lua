@@ -7,7 +7,7 @@ SMODS.Joker{  --rare Mycologists, The
 		["Inscryption"] = true, 
 		["Human"] = true 
 	},
-	key = "felijo_ins_myco",
+	key = "feli_fag_ins_myco",
 	pronouns = "they_them",
 	rarity = 3,
 	cost = 8,
@@ -19,7 +19,7 @@ SMODS.Joker{  --rare Mycologists, The
 	config = { extra = {} },
 	attributes = {"chips", "mult", "modify_card", "destroy_card"},
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
 	loc_vars = function(self, info_queue, card)
 		return { vars = {colours = { HEX('F0C590'), HEX('351A09'), HEX('998377'),HEX('7E9978')} } }
@@ -33,7 +33,7 @@ SMODS.Joker{  --rare Mycologists, The
 				local rank = c1:get_id()
 				
 				
-				local new_front_key = suit:sub(1,1) .. '_' .. FELIJO.number_to_pip(rank)
+				local new_front_key = suit:sub(1,1) .. '_' .. FelisAG.number_to_pip(rank)
 				local new_front = G.P_CARDS[new_front_key]
 				
 				local enhancements = {}
@@ -57,8 +57,8 @@ SMODS.Joker{  --rare Mycologists, The
 					center = new_center,
 				}, G.play, true, false, nil, true)
 				
-				merged_card.ability.perma_bonus = FELIJO.rank_to_chips(rank)
-				merged_card.ability.felijo_stk_stitched = true
+				merged_card.ability.perma_bonus = FelisAG.rank_to_chips(rank)
+				merged_card.ability.feli_fag_stk_stitched = true
 				if new_seal then
 					merged_card:set_seal(new_seal, true)
 				end

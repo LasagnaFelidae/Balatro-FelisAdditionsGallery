@@ -11,13 +11,13 @@ SMODS.Atlas {
 	py = 95,
 }
 SMODS.Atlas {
-    key = "feliJoker",
+    key = "feli_fagker",
     path = "feli.png",
     px = 71,
     py = 95
 }
 SMODS.Atlas {
-    key = "luckyfeliJoker",
+    key = "luckyfeli_fagker",
     path = "luckyfeli.png",
     px = 71,
     py = 95
@@ -147,7 +147,7 @@ SMODS.Atlas {
     py = 95
 }
 SMODS.Atlas {
-    key = "felijo_synthbAlbums",
+    key = "feli_fag_synthbAlbums",
     path = "crossmod/synthb/albums.png",
     px = 301,
     py = 301

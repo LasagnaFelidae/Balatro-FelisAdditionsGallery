@@ -7,32 +7,32 @@ SMODS.Voucher {
         return {}
     end,
     redeem = function (self, card) 
-        G.GAME.felijo_pelts_enabled  = true
+        G.GAME.feli_fag_pelts_enabled  = true
     end,
     unredeem = function (self, card) 
-        G.GAME.felijo_pelts_enabled  = false
+        G.GAME.feli_fag_pelts_enabled  = false
     end,
 }
 SMODS.Voucher {
     key = "peltmarket",
     atlas = 'insVouchers', pos = { x = 0, y = 1 } ,
-	requires = {'v_felijo_beartrap'},
+	requires = {'v_feli_fag_beartrap'},
     cost = 10,
     config = {extra = { peltchance = 2 }},
 	
 	in_pool = function(self,args)
-		return (G.GAME.felijo_pelts_enabled or next(SMODS.find_card("v_felijo_beartrap"))) or false
+		return (G.GAME.feli_fag_pelts_enabled or next(SMODS.find_card("v_feli_fag_beartrap"))) or false
 	end,
 		
     loc_vars = function (self, info_queue, card)
         return {vars = {card.ability.extra.peltchance}}
     end,
     redeem = function (self, card) 
-		G.GAME.felijo_peltchance = (G.GAME.felijo_peltchance or 1)*(card and card.ability.extra or self.config.extra).peltchance
-        G.GAME.felijo_pelts_sale  = true
+		G.GAME.feli_fag_peltchance = (G.GAME.feli_fag_peltchance or 1)*(card and card.ability.extra or self.config.extra).peltchance
+        G.GAME.feli_fag_pelts_sale  = true
     end,
     unredeem = function (self, args) 
-        G.GAME.felijo_pelts_sale  = false
+        G.GAME.feli_fag_pelts_sale  = false
     end,
 }
 SMODS.Voucher {
@@ -46,8 +46,8 @@ SMODS.Voucher {
     redeem = function(self)
 		G.E_MANAGER:add_event(Event({
 			func = function()
-				G.GAME.felijo_totem_parts_rate = (G.GAME.felijo_totem_parts_rate or 0) + 4
-                G.GAME.felijo_totems_enabled = true
+				G.GAME.feli_fag_totem_parts_rate = (G.GAME.feli_fag_totem_parts_rate or 0) + 4
+                G.GAME.feli_fag_totems_enabled = true
 				return true
 			end,
 		}))
@@ -55,7 +55,7 @@ SMODS.Voucher {
 	unredeem = function(self)
 		G.E_MANAGER:add_event(Event({
 			func = function()
-				G.GAME.felijo_totem_parts_rate = math.max(0, G.GAME.felijo_totem_parts_rate - 4)
+				G.GAME.feli_fag_totem_parts_rate = math.max(0, G.GAME.feli_fag_totem_parts_rate - 4)
 				return true
 			end,
 		}))
@@ -70,15 +70,15 @@ SMODS.Voucher {
     loc_vars = function (self, info_queue, card)
         return {}
     end,
-    requires = { 'v_felijo_totemmerchant' },
+    requires = { 'v_feli_fag_totemmerchant' },
     check_for_unlock = function(self, args)
-        return args.type == 'win_deck' and get_deck_win_stake('b_felijo_ttm_deck') and true
+        return args.type == 'win_deck' and get_deck_win_stake('b_feli_fag_ttm_deck') and true
     end,
     redeem = function(self)
 		G.E_MANAGER:add_event(Event({
 			func = function()
-				G.GAME.felijo_totem_parts_rate = (G.GAME.felijo_totem_parts_rate or 0) + 4
-                G.GAME.felijo_totems_enabled = true
+				G.GAME.feli_fag_totem_parts_rate = (G.GAME.feli_fag_totem_parts_rate or 0) + 4
+                G.GAME.feli_fag_totems_enabled = true
 				return true
 			end,
 		}))
@@ -86,7 +86,7 @@ SMODS.Voucher {
 	unredeem = function(self)
 		G.E_MANAGER:add_event(Event({
 			func = function()
-				G.GAME.felijo_totem_parts_rate = math.max(0, G.GAME.felijo_totem_parts_rate - 4)
+				G.GAME.feli_fag_totem_parts_rate = math.max(0, G.GAME.feli_fag_totem_parts_rate - 4)
                 return true
 			end,
 		}))

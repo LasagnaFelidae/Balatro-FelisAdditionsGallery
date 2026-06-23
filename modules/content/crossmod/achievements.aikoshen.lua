@@ -4,7 +4,7 @@ SMODS.Achievement{
     hidden_text = false,
     bypass_all_unlocked = true,
     unlock_condition = function (self, args)
-        if args and (args.type == "akyrs_spell_word" and FELIJO.lexicographer_slurs[args.lowercase_word]) then
+        if args and (args.type == "akyrs_spell_word" and FelisAG.lexicographer_slurs[args.lowercase_word]) then
             return true
         end
     end
@@ -16,7 +16,7 @@ SMODS.Achievement{
     bypass_all_unlocked = true,
     unlock_condition = function (self, args)
         if args and (args.type == "win") then
-            if next(SMODS.find_card("j_felijo_akyrs_lexicographer")) then
+            if next(SMODS.find_card("j_feli_fag_akyrs_lexicographer")) then
                 return true
             end
         end
@@ -30,7 +30,7 @@ SMODS.Achievement{
     bypass_all_unlocked = true,
     unlock_condition = function (self, args)
         if args and (args.type == "win") then
-            if next(SMODS.find_card("j_felijo_akyrs_fisher")) then
+            if next(SMODS.find_card("j_feli_fag_akyrs_fisher")) then
                 return true
             end
         end

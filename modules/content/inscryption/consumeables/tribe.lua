@@ -1,10 +1,10 @@
-FELIJO.Tribe = SMODS.Consumable:extend{
+FelisAG.Tribe = SMODS.Consumable:extend{
 	
 }
 
 SMODS.ConsumableType {
-	key = 'felijo_tribe',
-	default = 'c_felijo_trb_feline',
+	key = 'feli_fag_tribe',
+	default = 'c_feli_fag_trb_feline',
 	primary_colour = HEX('ffffff'),
 	secondary_colour = HEX('545454'),
 	collection_rows = { 5, 5 },
@@ -12,7 +12,7 @@ SMODS.ConsumableType {
 	discovered = false,
 	unlocked = true,
 	in_pool = function(self, args)
-		return (args and (args.source == "felijo_tribe" or args.source == "felijo_tribe_p") ) or false
+		return (args and (args.source == "feli_fag_tribe" or args.source == "feli_fag_tribe_p") ) or false
 	end,
 	loc_txt = {
 		undiscovered = {
@@ -27,16 +27,16 @@ SMODS.ConsumableType {
 	},
 }
 SMODS.UndiscoveredSprite{
-	key = 'felijo_tribe',
+	key = 'feli_fag_tribe',
 	atlas = "consUndis",
 	pos = {x=4, y=0}
 }
 
 
-for _, data in ipairs(FELIJO.tribe_table) do
-	FELIJO.Tribe {
-		key = "felijo_" .. data.tribe_card_key,
-		set = "felijo_tribe",
+for _, data in ipairs(FelisAG.tribe_table) do
+	FelisAG.Tribe {
+		key = "feli_fag_" .. data.tribe_card_key,
+		set = "feli_fag_tribe",
 		atlas = "insTribeC",
 		pos = {x = data.totem_x, y = 0},
 		cost = 10,
@@ -51,12 +51,12 @@ for _, data in ipairs(FELIJO.tribe_table) do
 		set_badges = function(self, card, badges)
 			
 			if data.key == "Banana" or data.key == "Printer" then
-				badges[#badges+1] = create_badge(localize('k_felijo_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
+				badges[#badges+1] = create_badge(localize('k_feli_fag_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
 			end
 			if data.key == "Misprint" then
-				badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+				badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 			end
-			badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+			badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 		end,
 		use = function(self, card, area, copier)
 			local pool = {}
@@ -87,7 +87,7 @@ for _, data in ipairs(FELIJO.tribe_table) do
 					}))
 				end
 			else
-				pool = FELIJO.pool_merge({"Inscryption",data.key})
+				pool = FelisAG.pool_merge({"Inscryption",data.key})
 			end
 			if (data.key ~= "Printer" and data.key ~= "Misprint") then
 				G.E_MANAGER:add_event(Event({

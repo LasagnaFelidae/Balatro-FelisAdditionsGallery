@@ -11,7 +11,7 @@ SMODS.Joker { -- Uncommon Aiko
 		["Human"] = true, 
 		["Deathcard"] = true 
 	},
-	key = "felijo_ins_aiko",
+	key = "feli_fag_ins_aiko",
 	pronouns = "any_all",
 	attributes = {"chips", "mult", "xchips", "scaling", "destroy_card", "sell_value"},
 	unlocked = true,
@@ -20,7 +20,7 @@ SMODS.Joker { -- Uncommon Aiko
 	cost = 8,
 	config = { extra = { xchips = 1, chips = 17, mult = 6, increment = 0.1,} },
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.xchips, card.ability.extra.chips , card.ability.extra.mult, card.ability.extra.increment*100, colours = { HEX('F0C590'), HEX('351A09')  } }}
@@ -75,7 +75,7 @@ SMODS.Joker { -- Uncommon Ghost
 		["Other"] = true, 
 		["Deathcard"] = true,
 	},
-	key = "felijo_ins_ghost",
+	key = "feli_fag_ins_ghost",
 	pronouns = "she_her",
 	unlocked = true,
 
@@ -84,14 +84,18 @@ SMODS.Joker { -- Uncommon Ghost
 	cost = 8,
 	config = { extra = { mult = 1, chips = 12, xmult = 1.1, xblindsize = 0.9 } },
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_phanta'), HEX('4d1575'), HEX('ffffff'), 1 )
-		badges[#badges+1] = create_badge(localize('k_felijo_ghostcards'), HEX('d66ea9'), HEX('ffffff'), 1 )
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		if FelisAG.is_mod_loaded("GSPhanta") then
+			badges[#badges+1] = create_badge(localize('k_feli_fag_phanta'), HEX('4d1575'), HEX('ffffff'), 1 )
+		end
+		if FelisAG.is_mod_loaded("GhostCards") and FelisAG.is_mod_loaded("malverk") then
+			badges[#badges+1] = create_badge(localize('k_feli_fag_ghostcards'), HEX('d66ea9'), HEX('ffffff'), 1 )
+		end
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
 	loc_vars = function(self, info_queue, card)
 		local _key = self.key
-		if FELIJO.is_mod_loaded("GhostCards") and FELIJO.is_mod_loaded("malverk") then
-			info_queue[#info_queue+1] = {key = 'felijo_ghostcards_crossmod', set = 'Other'}
+		if FelisAG.is_mod_loaded("GhostCards") and FelisAG.is_mod_loaded("malverk") then
+			info_queue[#info_queue+1] = {key = 'feli_fag_ghostcards_crossmod', set = 'Other'}
 			_key = self.key .. "_gc"
 		end
 		
@@ -99,7 +103,7 @@ SMODS.Joker { -- Uncommon Ghost
 	end,
 	calculate = function(self, card, context)
 		if context.joker_main then
-			if FELIJO.is_mod_loaded("GhostCards") and FELIJO.is_mod_loaded("malverk") then
+			if FelisAG.is_mod_loaded("GhostCards") and FelisAG.is_mod_loaded("malverk") then
 				local haunt_count = 0
 				for _, j in ipairs(G.jokers.cards) do
 					if j ~= card and j.config.center.atlas and string.find(j.config.center.atlas, "alt_tex_ghostcards_") then
@@ -142,7 +146,7 @@ SMODS.Joker { -- Uncommon Lily
 		["Feline"] = true, 
 		["Deathcard"] = true 
 	},
-	key = "felijo_ins_lilyfelli",
+	key = "feli_fag_ins_lilyfelli",
 	pronouns = "she_her",
 	unlocked = true,
 	discovered = false,
@@ -151,7 +155,7 @@ SMODS.Joker { -- Uncommon Lily
 	attributes = {"chips", "mult", "retrigger"},
 	config = { extra = {chips = 9, mult = 19, repetitions = 1, pronoun = "neutral"} },
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
 	loc_vars = function(self, info_queue, card)
 		if CardPronouns then		
@@ -240,7 +244,7 @@ pools = {
 	["Object"] = true,
 	["Deathcard"] = true,
 },
-key = "felijo_ins_luna",
+key = "feli_fag_ins_luna",
 attributes = {"chips", "mult", "joker"},
 pronouns = "she_her",
 unlocked = true,
@@ -249,7 +253,7 @@ rarity = 2,
 cost = 8,
 config = { extra = { creates = 1 , chips = 5, mult = 10} },
 set_badges = function(self, card, badges)
-	badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 end,
 loc_vars = function(self, info_queue, card)
 	return { vars = { card.ability.extra.debuff, card.ability.extra.chips, card.ability.extra.mult, colours = { HEX('F0C590'), HEX('351A09') } } }
@@ -296,7 +300,7 @@ SMODS.Joker { -- Uncommon MissingNum
 		["Feline"] = true, 
 		["Deathcard"] = true 
 	},
-	key = "felijo_ins_missingnum",
+	key = "feli_fag_ins_missingnum",
 	pronouns = "she_her",
 	unlocked = true,
 	discovered = false,
@@ -305,12 +309,12 @@ SMODS.Joker { -- Uncommon MissingNum
 	attributes = {"chips","mult","xmult","chance","enhancements","ace"},
 	config = { extra = {chips = 19,mult = 19, xblindsize = 0.9 ,} },
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
 	loc_vars = function(self, info_queue, card)
 		local _key = self.key
-		if FELIJO.is_mod_loaded("zeroError") then
-			info_queue[#info_queue+1] = {key = 'felijo_zeroerror_crossmod', set = 'Other'}
+		if FelisAG.is_mod_loaded("zeroError") then
+			info_queue[#info_queue+1] = {key = 'feli_fag_zeroerror_crossmod', set = 'Other'}
 			_key = self.key.."_alt"
 		end
 
@@ -318,7 +322,7 @@ SMODS.Joker { -- Uncommon MissingNum
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.main_eval and context.beat_boss and not context.game_over then
-			if FELIJO.is_mod_loaded("zeroError") and (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit) then
+			if FelisAG.is_mod_loaded("zeroError") and (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit) then
 				SMODS.add_card({set="Elemental"})
 				G.GAME.consumeable_buffer = 0
 			end
@@ -330,13 +334,13 @@ SMODS.Joker { -- Uncommon MissingNum
 			ret.chips = card.ability.extra.chips
 			local wilds = {
 					{["m_wild"] = true},
-					{["m_felijo_wild_t2"] = true},
-					{["m_felijo_wild_t3"] = true},
-					{["m_felijo_wild_t4"] = true},
+					{["m_feli_fag_wild_t2"] = true},
+					{["m_feli_fag_wild_t3"] = true},
+					{["m_feli_fag_wild_t4"] = true},
 					{["m_bd_misprintwild"] = true},
-					{["m_felijo_wild_t2_mp"] = true},
-					{["m_felijo_wild_t3_mp"] = true},
-					{["m_felijo_wild_t4_mp"] = true},
+					{["m_feli_fag_wild_t2_mp"] = true},
+					{["m_feli_fag_wild_t3_mp"] = true},
+					{["m_feli_fag_wild_t4_mp"] = true},
 			}
 			for _, t in ipairs(G.play.cards) do
 				if t:is_suit("Brights") or wilds[t.config.center.key] then
@@ -364,7 +368,7 @@ SMODS.Joker { -- Uncommon Notmario
 		["Object"] = true, 
 		["Deathcard"] = true 
 	},
-	key = "felijo_ins_notmar",
+	key = "feli_fag_ins_notmar",
 	pronouns = "she_they",
 	unlocked = true,
 	discovered = false,
@@ -373,11 +377,11 @@ SMODS.Joker { -- Uncommon Notmario
 	attributes = {"chips","mult","xmult","chance","enhancements","ace"},
 	config = { extra = {chips = 3,mult = 3, xmult = 3, retriggers = 2,} },
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
 	loc_vars = function(self, info_queue, card)
-		if FELIJO.is_mod_loaded("MoreFluff") then
-			info_queue[#info_queue+1] = {key = 'felijo_morefluff_crossmod', set = 'Other'}
+		if FelisAG.is_mod_loaded("MoreFluff") then
+			info_queue[#info_queue+1] = {key = 'feli_fag_morefluff_crossmod', set = 'Other'}
 		end
 		return { vars = { card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.retriggers, card.ability.extra.xmult, colours = { HEX('F0C590'), HEX('351A09') } } }
 	end,
@@ -393,7 +397,7 @@ SMODS.Joker { -- Uncommon Notmario
 		end
 
 		if context.joker_main then
-			if FELIJO.is_mod_loaded("MoreFluff") and (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit) then
+			if FelisAG.is_mod_loaded("MoreFluff") and (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit) then
 				SMODS.add_card({set="Colour"})
 				G.GAME.consumeable_buffer = 0
 			end
@@ -420,7 +424,7 @@ pools = {
 	["Human"] = true, 
 	["Deathcard"] = true 
 },
-key = "felijo_ins_tatsu",
+key = "feli_fag_ins_tatsu",
 pronouns = "any_all",
 unlocked = true,
 discovered = false,
@@ -429,14 +433,14 @@ cost = 7,
 attributes = {"mult","xmult","chance","enhancements","ace"},
 config = { extra = {mult = 20, xmult = 3,} },
 set_badges = function(self, card, badges)
-	badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 end,
 loc_vars = function(self, info_queue, card)
-	info_queue[#info_queue+1] = {key = 'felijo_tiered', set = 'Other'}
+	info_queue[#info_queue+1] = {key = 'feli_fag_tiered', set = 'Other'}
 	info_queue[#info_queue+1] = G.P_CENTERS.m_wild
-	info_queue[#info_queue+1] = G.P_CENTERS.m_felijo_wild_t2
-	info_queue[#info_queue+1] = G.P_CENTERS.m_felijo_wild_t3
-	info_queue[#info_queue+1] = G.P_CENTERS.m_felijo_wild_t4
+	info_queue[#info_queue+1] = G.P_CENTERS.m_feli_fag_wild_t2
+	info_queue[#info_queue+1] = G.P_CENTERS.m_feli_fag_wild_t3
+	info_queue[#info_queue+1] = G.P_CENTERS.m_feli_fag_wild_t4
 	return { vars = { card.ability.extra.mult, card.ability.extra.xmult, colours = { HEX('F0C590'), HEX('351A09') } } }
 end,
 calculate = function(self, card, context)
@@ -452,12 +456,12 @@ calculate = function(self, card, context)
 				context.other_card:set_ability("c_base")
 				SMODS.change_base(context.other_card,nil ,"Ace")
 			else
-				local wild = FELIJO.quick_pool_pick(
+				local wild = FelisAG.quick_pool_pick(
 				{
 					{"m_wild", 1},
-					{"m_felijo_wild_t2",0.2},
-					{"m_felijo_wild_t3",0.05},
-					{"m_felijo_wild_t4",0.001}
+					{"m_feli_fag_wild_t2",0.2},
+					{"m_feli_fag_wild_t3",0.05},
+					{"m_feli_fag_wild_t4",0.001}
 				}
 			)
 			context.other_card:set_ability(wild)
@@ -485,7 +489,7 @@ pools = {
 	["Human"] = true, 
 	["Deathcard"] = true 
 },
-key = "felijo_ins_toga",
+key = "feli_fag_ins_toga",
 pronouns = "he_him",
 attributes = {"chips", "mult", "tarot", "planet", "spectral", "generation"},
 rarity = 2,
@@ -497,7 +501,7 @@ unlocked = true,
 discovered = false,
 config = { extra = {chips = 20, mult = 2.6}, stage = { i = 0, max_i = 2} },
 set_badges = function(self, card, badges)
-	badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 end,
 loc_vars = function(self, info_queue, card)
 	return { vars = {card.ability.extra.chips, card.ability.extra.mult, card.ability.stage.i, card.ability.stage.max_i, colours = { HEX('F0C590'), HEX('351A09')} } }
@@ -510,7 +514,7 @@ calculate = function(self, card, context)
 		if card.ability.stage.i >= card.ability.stage.max_i then
 			card.ability.stage.max_i = card.ability.stage.max_i + 1
 			card.ability.stage.i = 0
-			local negative = pseudorandom("felijo_ins_toga2"..G.GAME.round..G.GAME.pseudorandom.seed,1,6)
+			local negative = pseudorandom("feli_fag_ins_toga2"..G.GAME.round..G.GAME.pseudorandom.seed,1,6)
 			if negative == 6 then
 				SMODS.add_card{ set = "Consumeables", edition = "e_negative" }
 			elseif #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
@@ -520,7 +524,7 @@ calculate = function(self, card, context)
 			else
 				card.ability.stage.max_i = card.ability.stage.max_i - 1
 				return {
-					message = localize('k_felijo_nope_succ'),
+					message = localize('k_feli_fag_nope_succ'),
 					colour = G.C.FILTER,
 					chips = card.ability.extra.chips,
 					mult = card.ability.extra.mult
@@ -546,7 +550,7 @@ pools = {
 	["Human"] = true, 
 	["Deathcard"] = true 
 },
-key = "felijo_ins_evgast",
+key = "feli_fag_ins_evgast",
 pronouns = "they_them",
 unlocked = true,
 discovered = false,
@@ -555,7 +559,7 @@ rarity = 3,
 cost = 8,
 config = { extra = { debuff = 0.10 , chips = 1, mult = 1} },
 set_badges = function(self, card, badges)
-	badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 end,
 loc_vars = function(self, info_queue, card)
 	return { vars = { (card.ability.extra.debuff)*100, card.ability.extra.chips, card.ability.extra.mult, colours = { HEX('F0C590'), HEX('351A09') } } }
@@ -589,7 +593,7 @@ pools = {
 	["Deathcard"] = true 
 	
 },
-key = "felijo_ins_gabby",
+key = "feli_fag_ins_gabby",
 pronouns = "she_her",
 unlocked = true,
 discovered = false,
@@ -598,12 +602,12 @@ rarity = 3,
 cost = 8,
 config = { extra = { chips = 5, mult = 5, xmult = 1.5}},
 set_badges = function(self, card, badges)
-	badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 end,
 
 loc_vars = function(self, info_queue, card)
 	if washmashine then
-		info_queue[#info_queue+1] = {key = 'felijo_washmashine_crossmod', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_washmashine_crossmod', set = 'Other'}
 	end
 	return { vars = { card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.xmult, colours = { HEX('F0C590'), HEX('351A09') } } }
 end,
@@ -657,7 +661,7 @@ pools = {
 	["Canine"] = true,
 	["Deathcard"] = true 
 },
-key = "felijo_ins_nxkoo",
+key = "feli_fag_ins_nxkoo",
 pronouns = "she_they",
 attributes = {"chips", "mult", "joker_slot"},
 rarity = 3,
@@ -669,21 +673,21 @@ unlocked = true,
 discovered = false,
 config = { extra = {chips = 6, mult = 7,} },
 set_badges = function(self, card, badges)
-	if BadDirector or FELIJO.is_mod_loaded("BadDirector") then
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+	if BadDirector or FelisAG.is_mod_loaded("BadDirector") then
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end
-	badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 end,
 loc_vars = function(self, info_queue, card)
-	if BadDirector or FELIJO.is_mod_loaded("BadDirector") then
-		info_queue[#info_queue+1] = {key = 'felijo_bd_nxkoo_crossmod', set = 'Other'}
+	if BadDirector or FelisAG.is_mod_loaded("BadDirector") then
+		info_queue[#info_queue+1] = {key = 'feli_fag_bd_nxkoo_crossmod', set = 'Other'}
 	end
 	return { vars = {card.ability.extra.chips, card.ability.extra.mult, G.jokers and math.max(1, #G.jokers.cards + (#SMODS.find_card("j_lusty_joker", true)*0.5)) or 1, colours = { HEX('F0C590'), HEX('351A09')} } }
 end,
 calculate = function(self, card, context)
 	if context.joker_main then
 		local ct = 0
-		if BadDirector or FELIJO.is_mod_loaded("BadDirector") then
+		if BadDirector or FelisAG.is_mod_loaded("BadDirector") then
 			for i, jokers in ipairs(G.jokers.cards) do
 				if jokers.config.center.key == "j_misprint" then ct = ct + 1 end
 				if jokers.edition and jokers.edition.key == "e_bd_misprinted" then ct = ct + 1 end
@@ -707,7 +711,7 @@ pools = {
 	["Deathcard"] = true 
 	
 },
-key = "felijo_ins_revo",
+key = "feli_fag_ins_revo",
 pronouns = "he_him",
 unlocked = true,
 discovered = false,
@@ -716,7 +720,7 @@ rarity = 3,
 cost = 8,
 config = { extra = { chips = 7, mult = 20, count = 0, max_c = 10,}, tg = {superior = false} },
 set_badges = function(self, card, badges)
-	badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 end,
 
 loc_vars = function(self, info_queue, card)
@@ -756,10 +760,10 @@ end,
 calculate = function(self, card, context)
 	local cloned = nil
 	if context.joker_main then
-		local new_card = FELIJO.copy_card(G.playing_cards[pseudorandom(pseudoseed('felijo_ins_revo'), 1, #G.playing_cards or 1)], nil, G.deck)
+		local new_card = FelisAG.copy_card(G.playing_cards[pseudorandom(pseudoseed('feli_fag_ins_revo'), 1, #G.playing_cards or 1)], nil, G.deck)
 		if card.ability.extra.count >= card.ability.extra.max_c then
-			local tier = pseudorandom("felijo_ins_revo"..G.GAME.round..G.GAME.pseudorandom.seed)
-			local roll = FELIJO.quick_pool_pick(FELIJO.superior_tiers, tier)
+			local tier = pseudorandom("feli_fag_ins_revo"..G.GAME.round..G.GAME.pseudorandom.seed)
+			local roll = FelisAG.quick_pool_pick(FelisAG.superior_tiers, tier)
 			new_card:set_ability(roll)
 		else
 			new_card:set_ability("c_base")
@@ -775,13 +779,13 @@ calculate = function(self, card, context)
 				return true
 			end
 		}))
-		cloned = localize('k_felijo_cloned')
+		cloned = localize('k_feli_fag_cloned')
 		
 		if card.ability.extra.count >= card.ability.extra.max_c and not card.ability.tg.superior == true then
 			card.ability.tg.superior = true
 			card:juice_up()
 			card.children.center:set_sprite_pos({x = 5, y = 2})
-			play_sound('felijo_revo_transform', 1)
+			play_sound('feli_fag_revo_transform', 1)
 		end
 		return {
 			mult = card.ability.extra.mult,
@@ -807,7 +811,7 @@ pools = {
 	["Deathcard"] = true,
 	["Object"] = true,
 },
-key = "felijo_ins_soulware",
+key = "feli_fag_ins_soulware",
 pronouns = "he_him",
 unlocked = true,
 
@@ -816,7 +820,7 @@ rarity = 3,
 cost = 8,
 config = { extra = { debuff = 0.10 , chips = 4, mult = 2, mod = 0.10, mod_add = 100} },
 set_badges = function(self, card, badges)
-	badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 end,
 loc_vars = function(self, info_queue, card)
 	return { vars = { card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.mod, card.ability.extra.mod_add, colours = { HEX('F0C590'), HEX('351A09') } } }
@@ -866,7 +870,7 @@ pools = {
 	["Human"] = true, 
 	["Deathcard"] = true,
 },
-key = "felijo_ins_leshy",
+key = "feli_fag_ins_leshy",
 pronouns = "he_him",
 unlocked = true,
 
@@ -875,11 +879,11 @@ rarity = 3,
 cost = 8,
 config = { extra = { xmult = 0.50, chips = 5 } },
 set_badges = function(self, card, badges)
-	badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 end,
 loc_vars = function(self, info_queue, card)
-	if FELIJO.is_mod_loaded("RevosVault") then
-		info_queue[#info_queue+1] = {key = 'felijo_leshy_crossmod', set = 'Other'}
+	if FelisAG.is_mod_loaded("RevosVault") then
+		info_queue[#info_queue+1] = {key = 'feli_fag_leshy_crossmod', set = 'Other'}
 	end
 	local l_count = 1
 	local l_deathcard_redeem = G.GAME.crv_deathcard_allowed and 2 or 0

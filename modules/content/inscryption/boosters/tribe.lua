@@ -1,12 +1,12 @@
 SMODS.Booster {
     key = "tribe_1",
     weight = 0.05,
-    kind = 'felijo_tribe_p', -- You can also use Spectral if you want it to belong to the vanilla kind
+    kind = 'feli_fag_tribe_p', -- You can also use Spectral if you want it to belong to the vanilla kind
     cost = 6,
 	atlas = "insRitualBoost",
     pos = { x = 2, y = 1 },
     config = { extra = 3, choose = 1 },
-    group_key = "k_felijo_tribe_pack", -- Delete this if you're using `group_name` in `loc_txt`
+    group_key = "k_feli_fag_tribe_pack", -- Delete this if you're using `group_name` in `loc_txt`
     draw_hand = false,
 	in_pool = function(self,args)
 		return false
@@ -38,12 +38,12 @@ SMODS.Booster {
     end,
     create_card = function(self, card, i)
         return {
-            set = "felijo_tribe",
+            set = "feli_fag_tribe",
             area = G.pack_cards,
             skip_materialize = true,
             soulable = true,
             key_append =
-            "felijo_tribe_p"
+            "feli_fag_tribe_p"
         }
     end,
 }
@@ -51,12 +51,12 @@ SMODS.Booster {
 SMODS.Booster {
     key = "tribe_2",
     weight = 0.05,
-    kind = 'felijo_tribe_p', -- You can also use Spectral if you want it to belong to the vanilla kind
+    kind = 'feli_fag_tribe_p', -- You can also use Spectral if you want it to belong to the vanilla kind
     cost = 6,
 	atlas = "insRitualBoost",
     pos = { x = 3, y = 1 },
     config = { extra = 3, choose = 1 },
-    group_key = "k_felijo_tribe_pack", -- Delete this if you're using `group_name` in `loc_txt`
+    group_key = "k_feli_fag_tribe_pack", -- Delete this if you're using `group_name` in `loc_txt`
     draw_hand = false,
 	in_pool = function(self,args)
 		return false
@@ -88,12 +88,12 @@ SMODS.Booster {
     end,
     create_card = function(self, card, i)
         return {
-            set = "felijo_tribe",
+            set = "feli_fag_tribe",
             area = G.pack_cards,
             skip_materialize = true,
             soulable = true,
             key_append =
-            "felijo_tribe_p"
+            "feli_fag_tribe_p"
         }
     end,
 }
@@ -101,16 +101,16 @@ SMODS.Booster {
 SMODS.Booster {
     key = "ttm_box_normal",
     weight = 0.5,
-    kind = 'felijo_ttm_box', -- You can also use Spectral if you want it to belong to the vanilla kind
+    kind = 'feli_fag_ttm_box', -- You can also use Spectral if you want it to belong to the vanilla kind
     cost = 8,
 	atlas = "insRitualBoost",
     pos = { x = 0, y = 2 },
     config = { extra = 4, choose = 1 },
-    group_key = "k_felijo_ttm_box", -- Delete this if you're using `group_name` in `loc_txt`
+    group_key = "k_feli_fag_ttm_box", -- Delete this if you're using `group_name` in `loc_txt`
     draw_hand = false,
-    select_card = "felijo_totems",
+    select_card = "feli_fag_totems",
 	in_pool = function(self,args)
-		return G.GAME.felijo_totems_enabled or false
+		return G.GAME.feli_fag_totems_enabled or false
 	end,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
@@ -138,12 +138,12 @@ SMODS.Booster {
     end,
     create_card = function(self, card, i)
         return {
-            set = "felijo_totem_parts",
+            set = "feli_fag_totem_parts",
             area = G.pack_cards,
             skip_materialize = true,
             soulable = true,
             no_edition=true,
-            key_append ="felijo_ttm_box"
+            key_append ="feli_fag_ttm_box"
         }
     end,
 }
@@ -151,16 +151,16 @@ SMODS.Booster {
 SMODS.Booster {
     key = "ttm_box_jumbo",
     weight = 0.5,
-    kind = 'felijo_ttm_box', -- You can also use Spectral if you want it to belong to the vanilla kind
+    kind = 'feli_fag_ttm_box', -- You can also use Spectral if you want it to belong to the vanilla kind
     cost = 10,
 	atlas = "insRitualBoost",
     pos = { x = 1, y = 2 },
     config = { extra = 6, choose = 2 },
-    group_key = "k_felijo_ttm_box", -- Delete this if you're using `group_name` in `loc_txt`
+    group_key = "k_feli_fag_ttm_box", -- Delete this if you're using `group_name` in `loc_txt`
     draw_hand = false,
-    select_card = "felijo_totems",
+    select_card = "feli_fag_totems",
 	in_pool = function(self,args)
-		return G.GAME.felijo_totems_enabled or false
+		return G.GAME.feli_fag_totems_enabled or false
 	end,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
@@ -188,12 +188,12 @@ SMODS.Booster {
     end,
     create_card = function(self, card, i)
         return {
-            set = "felijo_totem_parts",
+            set = "feli_fag_totem_parts",
             area = G.pack_cards,
             skip_materialize = true,
             soulable = true,
             no_edition=true,
-            key_append ="felijo_ttm_box"
+            key_append ="feli_fag_ttm_box"
         }
     end,
 }
@@ -201,12 +201,12 @@ SMODS.Booster {
 SMODS.Booster {
     key = "pack_rat",
     weight = 0,
-    kind = 'felijo_pack_rat',
+    kind = 'feli_fag_pack_rat',
     cost = 16,
     atlas = "insRitualBoost",
     pos = { x = 2, y = 2 },
     config = { extra = 10, choose = 5 },
-    group_key = "k_felijo_pack_rat",
+    group_key = "k_feli_fag_pack_rat",
     --no_collection = true,
     disable_shine = true,
     loc_vars = function(self, info_queue, card)
@@ -243,7 +243,7 @@ SMODS.Booster {
             area = G.pack_cards,
             skip_materialize = true,
             soulable = true,
-            key_append = "felijo_packrat"
+            key_append = "feli_fag_packrat"
         }
     end,
 }

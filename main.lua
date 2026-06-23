@@ -1,16 +1,16 @@
-FELIJO = SMODS.current_mod
-FELIJO.optional_features = {post_trigger = true,quantum_enhancements = true,}
+FelisAG = SMODS.current_mod
+FelisAG.optional_features = {post_trigger = true,quantum_enhancements = true,}
 G.GAME = G.GAME and G.GAME or {}
 
-FELIJO.config_tab = function()
+FelisAG.config_tab = function()
     return {n = G.UIT.ROOT, config = {r = 0.1, minw = 8, minh = 6, align = "tl", padding = 0.2, colour = G.C.BLACK}, nodes = {
         create_toggle({
-            label = localize("cfg_felijo_directors_cut"),
-            ref_table = FELIJO.config,
+            label = localize("cfg_feli_fag_directors_cut"),
+            ref_table = FelisAG.config,
             ref_value = 'directors_cut',
         }),
         {n = G.UIT.C, config = { align = "cl", padding = 0 }, nodes = {
-				{n = G.UIT.T, config = { text = localize('cfg_felijo_directors_cut_desc'), scale = 0.25, colour = G.C.UI.TEXT_LIGHT }},
+				{n = G.UIT.T, config = { text = localize('cfg_feli_fag_directors_cut_desc'), scale = 0.25, colour = G.C.UI.TEXT_LIGHT }},
 			}},
     }}
 end
@@ -44,7 +44,7 @@ for _, file in ipairs(ui) do
 end
 
 ---fuck off wankers
-if FELIJO.is_mod_loaded("Gradelatro") then
+if FelisAG.is_mod_loaded("Gradelatro") then
     error("Gradelatro is known to break and is not supported. ERR-4I-5L0P")
 end
 
@@ -73,12 +73,12 @@ assert(SMODS.load_file("./modules/fonts.lua"))()
 ▐▌▐█▌▐█▌.▐▌▐█.█▌▐█▄▄▌▐█•█▌▐█▌▐█  ▐▌
  ▀▀▀• ▀▀▀▀ ·▀  ▀ ▀▀▀ .▀  ▀▀▀▀ ▀  ▀ 
 ]]
-G.superior_enhancement = "m_felijo_enh_sup"
+G.superior_enhancement = "m_feli_fag_enh_sup"
 
-if FELIJO.is_mod_loaded("RevosVault") then
+if FelisAG.is_mod_loaded("RevosVault") then
 	G.superior_enhancement = "m_crv_superiore"
 else
-	G.superior_enhancement = "m_felijo_enh_sup"
+	G.superior_enhancement = "m_feli_fag_enh_sup"
 end
 
 
@@ -115,25 +115,25 @@ assert(SMODS.load_file("./modules/content/tarots.lua"))()
 --┗━╸╹┗╸┗━┛┗━┛┗━┛╹ ╹┗━┛╺┻┛--
 ----------------------------
 assert(SMODS.load_file("./modules/content/crossmod/mydreamjournal.lua"))()
-if FELIJO.is_mod_loaded("TOGAPack") then
+if FelisAG.is_mod_loaded("TOGAPack") then
     assert(SMODS.load_file("./modules/content/crossmod/sounds.togastuff.lua"))()
     assert(SMODS.load_file("./modules/content/crossmod/togastuff.lua"))()
 end
-if FELIJO.is_mod_loaded("RevosVault") then
+if FelisAG.is_mod_loaded("RevosVault") then
     assert(SMODS.load_file("./modules/content/crossmod/revo.lua"))()
 end
-if FELIJO.is_mod_loaded("aikoyorisshenanigans") then
+if FelisAG.is_mod_loaded("aikoyorisshenanigans") then
     assert(SMODS.load_file("./modules/content/crossmod/achievements.aikoshen.lua"))()
     assert(SMODS.load_file("./modules/content/crossmod/aikoshen.lua"))()
 end
-if FELIJO.is_mod_loaded("Blindside") then
+if FelisAG.is_mod_loaded("Blindside") then
     assert(SMODS.load_file("./modules/content/crossmod/blindside.lua"))()
 end
-if FELIJO.is_mod_loaded("synthb") then
+if FelisAG.is_mod_loaded("synthb") then
     assert(SMODS.load_file("./modules/content/crossmod/synthb.lua"))()
 end
 
-if FELIJO.is_mod_loaded("baddirector") then
+if FelisAG.is_mod_loaded("baddirector") then
     assert(SMODS.load_file("./modules/content/crossmod/loverboy/enh.nxkoo.lua"))()
     assert(SMODS.load_file("./modules/content/crossmod/loverboy/rit.nxkoo.lua"))()
     assert(SMODS.load_file("./modules/content/crossmod/loverboy/tarots.nxkoo.lua"))()

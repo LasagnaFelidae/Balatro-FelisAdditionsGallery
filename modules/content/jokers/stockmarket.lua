@@ -4,7 +4,7 @@ local G_UIDEF_use_and_sell_buttons_ref = G.UIDEF.use_and_sell_buttons
 function G.UIDEF.use_and_sell_buttons(card)
     local base = G_UIDEF_use_and_sell_buttons_ref(card)
 
-    if card.config.center.key == "j_felijo_stock_exchange" then
+    if card.config.center.key == "j_feli_fag_stock_exchange" then
 		if not card or not card.ability or not card.ability.stock then return end
         local stock = card.ability.stock
         local names = card.ability.stock.names or {"LTHNK","JIMBO","SPCTL","STRHT"}
@@ -281,7 +281,7 @@ SMODS.Joker {
     atlas = 'otherJokers',
     pos = { x = 0, y = 0 },
     pools = {["FelisJokeria"] = true, ["Money"] = true },
-    key = "felijo_stock_exchange",
+    key = "feli_fag_stock_exchange",
     rarity = 2,
     cost = 6,
 	in_pool = function (self, args)
@@ -308,7 +308,7 @@ SMODS.Joker {
 		},  
 	},
     loc_vars = function(self, info_queue, center)
-			info_queue[#info_queue+1] = {key = 'felijo_stock_legend', set = 'Other'}
+			info_queue[#info_queue+1] = {key = 'feli_fag_stock_legend', set = 'Other'}
 			if center.ability.stock.mode[center.ability.stock.mode_i] == "ALL" then
 			return { vars = {
 				center.ability.stock.names[1], center.ability.stock.stock[1], center.ability.stock.price[1],center.ability.stock.stock[1] * center.ability.stock.price[1],
@@ -556,7 +556,7 @@ SMODS.Joker {
 	updateStockPrices = function(self,card)
 		local s = card.ability.stock
 		for i = 1, #s.names do
-			local rdm = pseudorandom("felijo_stock"..G.GAME.round)
+			local rdm = pseudorandom("feli_fag_stock"..G.GAME.round)
 			local roundsMod = (G.GAME.round or 0) * 0.12
 			local totalVol = s.volatility[i] + roundsMod
 			local randomChange = (rdm * 2 - 1) * s.volatility[i]

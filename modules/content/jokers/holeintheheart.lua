@@ -1,15 +1,15 @@
 
-FELIJO.LoverJoker = SMODS.Joker:extend {
+FelisAG.LoverJoker = SMODS.Joker:extend {
 	in_pool = function(self)
 		local lovers =
 		{
 			"c_lovers",
-			"c_felijo_t2_lovers",
-			"c_felijo_t2_lovers_mp",
-			"c_felijo_t3_lovers",
-			"c_felijo_t3_lovers_mp",
-			"c_felijo_t4_lovers",
-			"c_felijo_t4_lovers_mp",
+			"c_feli_fag_t2_lovers",
+			"c_feli_fag_t2_lovers_mp",
+			"c_feli_fag_t3_lovers",
+			"c_feli_fag_t3_lovers_mp",
+			"c_feli_fag_t4_lovers",
+			"c_feli_fag_t4_lovers_mp",
 			"c_bd_loverprints",
 		}
 		for _, v in ipairs(G.consumeables.cards) do
@@ -22,7 +22,7 @@ FELIJO.LoverJoker = SMODS.Joker:extend {
 		return false
 	end,
 	set_sprites = function(self, card, front)
-		if FELIJO.config["directors_cut"] == false and card.config.center.discovered and card.children and card.children.center then
+		if FelisAG.config["directors_cut"] == false and card.config.center.discovered and card.children and card.children.center then
 			card.children.center:set_sprite_pos({
 				x = card.children.center.sprite_pos.x,
 				y = 1
@@ -32,44 +32,44 @@ FELIJO.LoverJoker = SMODS.Joker:extend {
 	end
 }
 
-FELIJO.LoverJoker { --2, 0, biting the bolster
+FelisAG.LoverJoker { --2, 0, biting the bolster
 	atlas = 'bodyandblood',
 	pos = { x = 2, y = 0 },
 	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
-	key = "felijo_unlovable",
+	key = "feli_fag_unlovable",
 	rarity = 2,
 	cost = 6,
 	config = {
 		imm = {n1 = 1, d1 = 3, n2 = 1, d2 = 30},
 	},	
 	loc_vars = function(self, info_queue, card)
-		info_queue[#info_queue+1] = {key = 'felijo_tiered', set = 'Other'}
-		info_queue[#info_queue+1] = {key = 'felijo_immutable', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_tiered', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_immutable', set = 'Other'}
 		info_queue[#info_queue+1] = G.P_CENTERS.c_lovers
 		return { vars = { card.ability.imm.n1, card.ability.imm.d1, localize { type = 'name_text', set = 'Tarot', key = "c_lovers" },card.ability.imm.n2, card.ability.imm.d2,} }
 	end,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bnb'), HEX('660000'), HEX('000000'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bnb'), HEX('660000'), HEX('000000'), 1 )
 	end,
 	calculate = function(self, card, context)
 		if context.press_play then
 			local immutable = card.ability.imm
-			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "felijo_unlovable2", true)
+			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "feli_fag_unlovable2", true)
 			if roll then
 				SMODS.destroy_cards(card,true)
 			end
 		end
 		if context.joker_main then
 			local immutable = card.ability.imm
-			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n1, immutable.d1, "felijo_unlovable", true)
+			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n1, immutable.d1, "feli_fag_unlovable", true)
 			local loverstable = 
 			{
 				{key = "c_lovers", weight = 1},
-				{key = "c_felijo_t2_lovers", weight = 0.4},
-				{key = "c_felijo_t3_lovers", weight = 0.2},
-				{key = "c_felijo_t4_lovers", weight = 0.005},
+				{key = "c_feli_fag_t2_lovers", weight = 0.4},
+				{key = "c_feli_fag_t3_lovers", weight = 0.2},
+				{key = "c_feli_fag_t4_lovers", weight = 0.005},
 			}
-			local loverscard = FELIJO.quick_pool_pick(loverstable, pseudorandom("bodyandblood"))
+			local loverscard = FelisAG.quick_pool_pick(loverstable, pseudorandom("bodyandblood"))
 			if roll then
 				SMODS.add_card({key=loverscard, edition="e_negative", area=G.consumeables})
 			else
@@ -80,11 +80,11 @@ FELIJO.LoverJoker { --2, 0, biting the bolster
 	blueprint_compat = true,
 }
 
-FELIJO.LoverJoker { --4, 0, do not come near
+FelisAG.LoverJoker { --4, 0, do not come near
 	atlas = 'bodyandblood',
 	pos = { x = 4, y = 0 },
 	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
-	key = "felijo_desperatemeasures",
+	key = "feli_fag_desperatemeasures",
 	rarity = 2,
 	cost = 6,
 	config = {
@@ -92,18 +92,18 @@ FELIJO.LoverJoker { --4, 0, do not come near
 		imm = {n2 = 1, d2 = 30},
 	},	
 	loc_vars = function(self, info_queue, card)
-		info_queue[#info_queue+1] = {key = 'felijo_tiered', set = 'Other'}
-		info_queue[#info_queue+1] = {key = 'felijo_immutable', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_tiered', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_immutable', set = 'Other'}
 		info_queue[#info_queue+1] = G.P_CENTERS.c_lovers
 		return { vars = { card.ability.extra.xmult, localize { type = 'name_text', set = 'Tarot', key = "c_lovers" },card.ability.imm.n2, card.ability.imm.d2,} }
 	end,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bnb'), HEX('660000'), HEX('000000'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bnb'), HEX('660000'), HEX('000000'), 1 )
 	end,
 	calculate = function(self, card, context)
 		if context.press_play then
 			local immutable = card.ability.imm
-			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "felijo_unlovable2", true)
+			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "feli_fag_unlovable2", true)
 			if roll then
 				SMODS.destroy_cards(card,true)
 			end
@@ -113,12 +113,12 @@ FELIJO.LoverJoker { --4, 0, do not come near
 			local lovers =
 			{
 				"c_lovers",
-				"c_felijo_t2_lovers",
-				"c_felijo_t2_lovers_mp",
-				"c_felijo_t3_lovers",
-				"c_felijo_t3_lovers_mp",
-				"c_felijo_t4_lovers",
-				"c_felijo_t4_lovers_mp",
+				"c_feli_fag_t2_lovers",
+				"c_feli_fag_t2_lovers_mp",
+				"c_feli_fag_t3_lovers",
+				"c_feli_fag_t3_lovers_mp",
+				"c_feli_fag_t4_lovers",
+				"c_feli_fag_t4_lovers_mp",
 				"c_bd_loverprints",
 			}
 			for _, v in ipairs(G.consumeables.cards) do
@@ -139,11 +139,11 @@ end,
 blueprint_compat = true,
 }
 
-FELIJO.LoverJoker { --3, 0, true religion
+FelisAG.LoverJoker { --3, 0, true religion
 	atlas = 'bodyandblood',
 	pos = { x = 3, y = 0 },
 	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
-	key = "felijo_truereligion",
+	key = "feli_fag_truereligion",
 	rarity = 2,
 	cost = 6,
 	config = {
@@ -151,18 +151,18 @@ FELIJO.LoverJoker { --3, 0, true religion
 		imm = {n2 = 1, d2 = 30},
 	},	
 	loc_vars = function(self, info_queue, card)
-		info_queue[#info_queue+1] = {key = 'felijo_tiered', set = 'Other'}
-		info_queue[#info_queue+1] = {key = 'felijo_immutable', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_tiered', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_immutable', set = 'Other'}
 		info_queue[#info_queue+1] = G.P_CENTERS.c_lovers
 		return { vars = { card.ability.extra.repetitions, localize { type = 'name_text', set = 'Tarot', key = "c_lovers" },card.ability.imm.n2, card.ability.imm.d2,} }
 	end,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bnb'), HEX('660000'), HEX('000000'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bnb'), HEX('660000'), HEX('000000'), 1 )
 	end,
 	calculate = function(self, card, context)
 		if context.press_play then
 			local immutable = card.ability.imm
-			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "felijo_unlovable2", true)
+			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "feli_fag_unlovable2", true)
 			if roll then
 				SMODS.destroy_cards(card,true)
 			end
@@ -171,12 +171,12 @@ FELIJO.LoverJoker { --3, 0, true religion
 			local lovers =
 			{
 				"c_lovers",
-				"c_felijo_t2_lovers",
-				"c_felijo_t2_lovers_mp",
-				"c_felijo_t3_lovers",
-				"c_felijo_t3_lovers_mp",
-				"c_felijo_t4_lovers",
-				"c_felijo_t4_lovers_mp",
+				"c_feli_fag_t2_lovers",
+				"c_feli_fag_t2_lovers_mp",
+				"c_feli_fag_t3_lovers",
+				"c_feli_fag_t3_lovers_mp",
+				"c_feli_fag_t4_lovers",
+				"c_feli_fag_t4_lovers_mp",
 				"c_bd_loverprints",
 			}
 			local count = 0
@@ -194,29 +194,29 @@ FELIJO.LoverJoker { --3, 0, true religion
 	end,
 	blueprint_compat = true,
 }
-FELIJO.LoverJoker { --0, 0, product of fear
+FelisAG.LoverJoker { --0, 0, product of fear
 	atlas = 'bodyandblood',
 	pos = { x = 0, y = 0 },
 	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
-	key = "felijo_productoffear",
+	key = "feli_fag_productoffear",
 	rarity = 2,
 	cost = 6,
 	config = {
 		imm = {n2 = 1, d2 = 30},
 	},	
 	loc_vars = function(self, info_queue, card)
-		info_queue[#info_queue+1] = {key = 'felijo_tiered', set = 'Other'}
-		info_queue[#info_queue+1] = {key = 'felijo_immutable', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_tiered', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_immutable', set = 'Other'}
 		info_queue[#info_queue+1] = G.P_CENTERS.c_lovers
 		return { vars = { localize { type = 'name_text', set = 'Tarot', key = "c_lovers" },card.ability.imm.n2, card.ability.imm.d2,} }
 	end,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bnb'), HEX('660000'), HEX('000000'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bnb'), HEX('660000'), HEX('000000'), 1 )
 	end,
 	calculate = function(self, card, context)
 		if context.press_play then
 			local immutable = card.ability.imm
-			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "felijo_unlovable2", true)
+			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "feli_fag_unlovable2", true)
 			if roll then
 				SMODS.destroy_cards(card,true)
 			end
@@ -225,11 +225,11 @@ FELIJO.LoverJoker { --0, 0, product of fear
 	blueprint_compat = true,
 }
 
-FELIJO.LoverJoker { -- 1, 0 Redcap, arm cut
+FelisAG.LoverJoker { -- 1, 0 Redcap, arm cut
 	atlas = 'bodyandblood',
 	pos = { x = 1, y = 0 },
 	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
-	key = "felijo_redcap",
+	key = "feli_fag_redcap",
 	rarity = 2,
 	cost = 6,
 	config = {
@@ -237,18 +237,18 @@ FELIJO.LoverJoker { -- 1, 0 Redcap, arm cut
 		imm = {n2 = 1, d2 = 30},
 	},	
 	loc_vars = function(self, info_queue, card)
-		info_queue[#info_queue+1] = {key = 'felijo_tiered', set = 'Other'}
-		info_queue[#info_queue+1] = {key = 'felijo_immutable', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_tiered', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_immutable', set = 'Other'}
 		info_queue[#info_queue+1] = G.P_CENTERS.c_lovers
 		return { vars = { card.ability.extra.xblindsize,card.ability.extra.mult,localize { type = 'name_text', set = 'Tarot', key = "c_lovers" },card.ability.imm.n2, card.ability.imm.d2,}, }
 	end,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bnb'), HEX('660000'), HEX('000000'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bnb'), HEX('660000'), HEX('000000'), 1 )
 	end,
 	calculate = function(self, card, context)
 		if context.press_play then
 			local immutable = card.ability.imm
-			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "felijo_unlovable2", true)
+			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "feli_fag_unlovable2", true)
 			if roll then
 				SMODS.destroy_cards(card,true)
 			end
@@ -258,12 +258,12 @@ FELIJO.LoverJoker { -- 1, 0 Redcap, arm cut
 			local lovers =
 			{
 				"c_lovers",
-				"c_felijo_t2_lovers",
-				"c_felijo_t2_lovers_mp",
-				"c_felijo_t3_lovers",
-				"c_felijo_t3_lovers_mp",
-				"c_felijo_t4_lovers",
-				"c_felijo_t4_lovers_mp",
+				"c_feli_fag_t2_lovers",
+				"c_feli_fag_t2_lovers_mp",
+				"c_feli_fag_t3_lovers",
+				"c_feli_fag_t3_lovers_mp",
+				"c_feli_fag_t4_lovers",
+				"c_feli_fag_t4_lovers_mp",
 				"c_bd_loverprints",
 			}
 			for _, v in ipairs(G.consumeables.cards) do
@@ -284,11 +284,11 @@ end,
 blueprint_compat = true,
 }
 
-FELIJO.LoverJoker { -- 7, 0 Spear Flowers
+FelisAG.LoverJoker { -- 7, 0 Spear Flowers
 	atlas = 'bodyandblood',
 	pos = { x = 7, y = 0 },
 	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
-	key = "felijo_spearflowers",
+	key = "feli_fag_spearflowers",
 	rarity = 2,
 	cost = 6,
 	config = {
@@ -296,18 +296,18 @@ FELIJO.LoverJoker { -- 7, 0 Spear Flowers
 		imm = {n2 = 1, d2 = 30},
 	},	
 	loc_vars = function(self, info_queue, card)
-		info_queue[#info_queue+1] = {key = 'felijo_tiered', set = 'Other'}
-		info_queue[#info_queue+1] = {key = 'felijo_immutable', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_tiered', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_immutable', set = 'Other'}
 		info_queue[#info_queue+1] = G.P_CENTERS.c_lovers
 		return { vars = { card.ability.extra.money,localize { type = 'name_text', set = 'Tarot', key = "c_lovers" },card.ability.imm.n2, card.ability.imm.d2,} }
 	end,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bnb'), HEX('660000'), HEX('000000'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bnb'), HEX('660000'), HEX('000000'), 1 )
 	end,
 	calculate = function(self, card, context)
 		if context.press_play then
 			local immutable = card.ability.imm
-			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "felijo_unlovable2", true)
+			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "feli_fag_unlovable2", true)
 			if roll then
 				SMODS.destroy_cards(card,true)
 			end
@@ -316,12 +316,12 @@ FELIJO.LoverJoker { -- 7, 0 Spear Flowers
 			local lovers =
 			{
 				"c_lovers",
-				"c_felijo_t2_lovers",
-				"c_felijo_t2_lovers_mp",
-				"c_felijo_t3_lovers",
-				"c_felijo_t3_lovers_mp",
-				"c_felijo_t4_lovers",
-				"c_felijo_t4_lovers_mp",
+				"c_feli_fag_t2_lovers",
+				"c_feli_fag_t2_lovers_mp",
+				"c_feli_fag_t3_lovers",
+				"c_feli_fag_t3_lovers_mp",
+				"c_feli_fag_t4_lovers",
+				"c_feli_fag_t4_lovers_mp",
 				"c_bd_loverprints",
 			}
 			for _, v in ipairs(G.consumeables.cards) do
@@ -346,11 +346,11 @@ FELIJO.LoverJoker { -- 7, 0 Spear Flowers
 	end,
 	blueprint_compat = true,
 }
-FELIJO.LoverJoker { -- 6, 0 Grazing On Fear
+FelisAG.LoverJoker { -- 6, 0 Grazing On Fear
 	atlas = 'bodyandblood',
 	pos = { x = 6, y = 0 },
 	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
-	key = "felijo_grazingonfear",
+	key = "feli_fag_grazingonfear",
 	rarity = 2,
 	cost = 6,
 	config = {
@@ -358,28 +358,28 @@ FELIJO.LoverJoker { -- 6, 0 Grazing On Fear
 		imm = {n2 = 1, d2 = 30},
 	},	
 	loc_vars = function(self, info_queue, card)
-		info_queue[#info_queue+1] = {key = 'felijo_tiered', set = 'Other'}
-		info_queue[#info_queue+1] = {key = 'felijo_immutable', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_tiered', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_immutable', set = 'Other'}
 		info_queue[#info_queue+1] = G.P_CENTERS.c_lovers
 		return { vars = { card.ability.extra.xblindsize, card.ability.imm.n2, card.ability.imm.d2,} }
 	end,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bnb'), HEX('660000'), HEX('000000'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bnb'), HEX('660000'), HEX('000000'), 1 )
 	end,
 	calculate = function(self, card, context)
 		if context.press_play then
 			local immutable = card.ability.imm
-			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "felijo_unlovable2", true)
+			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "feli_fag_unlovable2", true)
 			if roll then
 				local lovers =
 				{
 					"c_lovers",
-					"c_felijo_t2_lovers",
-					"c_felijo_t2_lovers_mp",
-					"c_felijo_t3_lovers",
-					"c_felijo_t3_lovers_mp",
-					"c_felijo_t4_lovers",
-					"c_felijo_t4_lovers_mp",
+					"c_feli_fag_t2_lovers",
+					"c_feli_fag_t2_lovers_mp",
+					"c_feli_fag_t3_lovers",
+					"c_feli_fag_t3_lovers_mp",
+					"c_feli_fag_t4_lovers",
+					"c_feli_fag_t4_lovers_mp",
 					"c_bd_loverprints",
 				}
 				for _, v in ipairs(G.consumeables.cards) do
@@ -395,11 +395,11 @@ FELIJO.LoverJoker { -- 6, 0 Grazing On Fear
 	end,
 	blueprint_compat = true,
 }
-FELIJO.LoverJoker { -- 5, 0 hole in the heart
+FelisAG.LoverJoker { -- 5, 0 hole in the heart
 	atlas = 'bodyandblood',
 	pos = { x = 5, y = 0 },
 	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
-	key = "felijo_holeintheheart",
+	key = "feli_fag_holeintheheart",
 	rarity = 2,
 	cost = 6,
 	config = {
@@ -407,18 +407,18 @@ FELIJO.LoverJoker { -- 5, 0 hole in the heart
 		imm = {n2 = 1, d2 = 30},
 	},	
 	loc_vars = function(self, info_queue, card)
-		info_queue[#info_queue+1] = {key = 'felijo_tiered', set = 'Other'}
-		info_queue[#info_queue+1] = {key = 'felijo_immutable', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_tiered', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_immutable', set = 'Other'}
 		info_queue[#info_queue+1] = G.P_CENTERS.c_lovers
 		return { vars = { card.ability.extra.chips, card.ability.extra.mult, localize { type = 'name_text', set = 'Tarot', key = "c_lovers" },card.ability.imm.n2, card.ability.imm.d2,} }
 	end,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bnb'), HEX('660000'), HEX('000000'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bnb'), HEX('660000'), HEX('000000'), 1 )
 	end,
 	calculate = function(self, card, context)
 		if context.press_play then
 			local immutable = card.ability.imm
-			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "felijo_unlovable2", true)
+			local roll = SMODS.pseudorandom_probability(card, "bodyandblood", immutable.n2, immutable.d2, "feli_fag_unlovable2", true)
 			if roll then
 				SMODS.destroy_cards(card,true)
 			end
@@ -427,12 +427,12 @@ FELIJO.LoverJoker { -- 5, 0 hole in the heart
 			local lovers =
 			{
 				"c_lovers",
-				"c_felijo_t2_lovers",
-				"c_felijo_t2_lovers_mp",
-				"c_felijo_t3_lovers",
-				"c_felijo_t3_lovers_mp",
-				"c_felijo_t4_lovers",
-				"c_felijo_t4_lovers_mp",
+				"c_feli_fag_t2_lovers",
+				"c_feli_fag_t2_lovers_mp",
+				"c_feli_fag_t3_lovers",
+				"c_feli_fag_t3_lovers_mp",
+				"c_feli_fag_t4_lovers",
+				"c_feli_fag_t4_lovers_mp",
 				"c_bd_loverprints",
 			}
 			for _, v in ipairs(G.consumeables.cards) do

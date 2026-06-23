@@ -1,4 +1,4 @@
-FELIJO.TotemSigil = SMODS.Sticker:extend{
+FelisAG.TotemSigil = SMODS.Sticker:extend{
     needs_enable_flag = true,
 	apply = function(self,card,val)
 		card.ability[self.key] = val
@@ -7,8 +7,8 @@ FELIJO.TotemSigil = SMODS.Sticker:extend{
 	no_collection =  true,
 }
 
-FELIJO.TotemSigil {
-    key = "felijo_ttm_sgl_undying",
+FelisAG.TotemSigil {
+    key = "feli_fag_ttm_sgl_undying",
 	atlas = "insTotemSigils",
     pos = {x = 0, y = 0},
     badge_colour = HEX('BD894B'),
@@ -33,7 +33,7 @@ FELIJO.TotemSigil {
 			}
 				
 			ouroboros.ability.extra_slots_used = 0
-			ouroboros.ability.felijo_ttm_sgl_undying = true
+			ouroboros.ability.feli_fag_ttm_sgl_undying = true
 			
 			if #G.jokers.cards < G.jokers.config.card_limit then
 				G.E_MANAGER:add_event(Event({
@@ -52,8 +52,8 @@ FELIJO.TotemSigil {
 	end
 }
 
-FELIJO.TotemSigil {
-    key = "felijo_ttm_sgl_swap",
+FelisAG.TotemSigil {
+    key = "feli_fag_ttm_sgl_swap",
     atlas = "insTotemSigils",
     pos = {x = 1, y = 0},
     badge_colour = HEX('BD894B'),
@@ -68,8 +68,8 @@ FELIJO.TotemSigil {
 	end
 }
 
-FELIJO.TotemSigil {
-    key = "felijo_ttm_sgl_bifurcated",
+FelisAG.TotemSigil {
+    key = "feli_fag_ttm_sgl_bifurcated",
     atlas = "insTotemSigils",
     pos = {x = 2, y = 0},
     badge_colour = HEX('BD894B'),
@@ -83,8 +83,8 @@ FELIJO.TotemSigil {
 	end
 }
 
-FELIJO.TotemSigil {
-    key = "felijo_ttm_sgl_midas",
+FelisAG.TotemSigil {
+    key = "feli_fag_ttm_sgl_midas",
 	atlas = "insTotemSigils",
 	config = { extra = { dollars = 1 } },
 	loc_vars = function(self, info_queue, card)
@@ -101,8 +101,8 @@ FELIJO.TotemSigil {
 	end
 }
 
-FELIJO.TotemSigil {
-    key = "felijo_ttm_sgl_cardbearer",
+FelisAG.TotemSigil {
+    key = "feli_fag_ttm_sgl_cardbearer",
     atlas = "insTotemSigils",
     pos = {x = 8, y = 0},
     badge_colour = HEX('BD894B'),
@@ -117,8 +117,8 @@ FELIJO.TotemSigil {
 	end
 }
 
-FELIJO.TotemSigil {
-    key = "felijo_ttm_sgl_omnistrike",
+FelisAG.TotemSigil {
+    key = "feli_fag_ttm_sgl_omnistrike",
     atlas = "insTotemSigils",
     pos = {x = 5, y = 0},
     badge_colour = HEX('BD894B'),
@@ -135,8 +135,8 @@ FELIJO.TotemSigil {
 }
 
 
-FELIJO.TotemSigil {
-    key = "felijo_ttm_sgl_repulsive",
+FelisAG.TotemSigil {
+    key = "feli_fag_ttm_sgl_repulsive",
     atlas = "insTotemSigils",
     pos = {x = 6, y = 0},
     badge_colour = HEX('BD894B'),
@@ -145,8 +145,8 @@ FELIJO.TotemSigil {
 	end
 }
 
-FELIJO.TotemSigil {
-    key = "felijo_ttm_sgl_stinky",
+FelisAG.TotemSigil {
+    key = "feli_fag_ttm_sgl_stinky",
 	atlas = "insTotemSigils",
 	config = { extra = { xbscore = 0.20 } },
 	loc_vars = function(self, info_queue, card)
@@ -167,8 +167,8 @@ FELIJO.TotemSigil {
 
 
 
-FELIJO.TotemSigil {
-    key = "felijo_ttm_sgl_giftbearer",
+FelisAG.TotemSigil {
+    key = "feli_fag_ttm_sgl_giftbearer",
     atlas = "insTotemSigils",
     pos = {x = 4, y = 0},
     badge_colour = HEX('BD894B'),
@@ -177,7 +177,7 @@ FELIJO.TotemSigil {
 		if ((context.joker_type_destroyed and context.card == card) or context.selling_self) 
 		then
 			local roll = pseudorandom("ihaveagiftforyou"..G.GAME.round..G.GAME.pseudorandom.seed)
-			local cons = FELIJO.quick_pool_pick(FELIJO.consumeables_table, roll)
+			local cons = FelisAG.quick_pool_pick(FelisAG.consumeables_table, roll)
 			G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
 			SMODS.add_card{ set = cons, no_edition = true }
 			G.GAME.consumeable_buffer = 0
@@ -185,8 +185,8 @@ FELIJO.TotemSigil {
 	end
 }
 
-FELIJO.TotemSigil {
-    key = "felijo_ttm_sgl_leader",
+FelisAG.TotemSigil {
+    key = "feli_fag_ttm_sgl_leader",
 	atlas = "insTotemSigils",
 	config = {extra = { mult = 0, mult_mod = 5}},
 	loc_vars = function(self, info_queue, card)

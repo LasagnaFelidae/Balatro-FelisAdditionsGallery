@@ -1,9 +1,9 @@
-FELIJO.T2MP = SMODS.Consumable:extend{
+FelisAG.T2MP = SMODS.Consumable:extend{
     in_pool = function (self, args)
        return true
     end,
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     hidden = true,
 	soul_set = "Tarot",
@@ -12,12 +12,12 @@ FELIJO.T2MP = SMODS.Consumable:extend{
     discovered = false,
 	unlocked = true,
 }
-FELIJO.T3MP = SMODS.Consumable:extend{
+FelisAG.T3MP = SMODS.Consumable:extend{
     in_pool = function (self, args)
        return true
     end,
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     hidden = true,
     discovered = false,
@@ -26,12 +26,12 @@ FELIJO.T3MP = SMODS.Consumable:extend{
 	soul_rate = 0.0005,
     can_repeat_soul = true,
 }
-FELIJO.T4MP = SMODS.Consumable:extend{
+FelisAG.T4MP = SMODS.Consumable:extend{
     in_pool = function (self, args)
        return true
     end,
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     hidden = true,
     discovered = false,
@@ -44,10 +44,10 @@ FELIJO.T4MP = SMODS.Consumable:extend{
 ----------------------------------------
 
 SMODS.ConsumableType {
-    key = 'felijo_tier2_tarot_mp',
-    default = 'c_felijo_tier2_magician_mp',
+    key = 'feli_fag_tier2_tarot_mp',
+    default = 'c_feli_fag_tier2_magician_mp',
     primary_colour = G.C.SET.Tarot,
-    secondary_colour = SMODS.Gradients.felijo_t2_mp,
+    secondary_colour = SMODS.Gradients.feli_fag_t2_mp,
     collection_rows = { 6, 6 },
     shop_rate = 0.3,
     loc_txt = {
@@ -64,16 +64,16 @@ SMODS.ConsumableType {
 }
 
 SMODS.UndiscoveredSprite{
-    key = 'felijo_tier2_tarot_mp',
+    key = 'feli_fag_tier2_tarot_mp',
     atlas = "t2Tarots_mp",
     pos = {x=9, y=2},
 }
 
 SMODS.ConsumableType {
-    key = 'felijo_tier3_tarot_mp',
-    default = 'c_felijo_tier3_magician_mp',
+    key = 'feli_fag_tier3_tarot_mp',
+    default = 'c_feli_fag_tier3_magician_mp',
     primary_colour = G.C.SET.Tarot,
-    secondary_colour = SMODS.Gradients.felijo_t3_mp,
+    secondary_colour = SMODS.Gradients.feli_fag_t3_mp,
     collection_rows = { 6, 6 },
     shop_rate = 0.2,
     loc_txt = {
@@ -89,16 +89,16 @@ SMODS.ConsumableType {
     },
 }
 SMODS.UndiscoveredSprite{
-    key = 'felijo_tier3_tarot_mp',
+    key = 'feli_fag_tier3_tarot_mp',
     atlas = "t3Tarots_mp",
     pos = {x=9, y=2},
 }
 
 SMODS.ConsumableType {
-    key = 'felijo_tier4_tarot_mp',
-    default = 'c_felijo_tier4_magician_mp',
+    key = 'feli_fag_tier4_tarot_mp',
+    default = 'c_feli_fag_tier4_magician_mp',
     primary_colour = G.C.SET.Tarot,
-    secondary_colour = SMODS.Gradients.felijo_t4_mp,
+    secondary_colour = SMODS.Gradients.feli_fag_t4_mp,
     collection_rows = { 6, 6 },
     shop_rate = 0.01,
     loc_txt = {
@@ -114,7 +114,7 @@ SMODS.ConsumableType {
     },
 }
 SMODS.UndiscoveredSprite{
-    key = 'felijo_tier4_tarot_mp',
+    key = 'feli_fag_tier4_tarot_mp',
     atlas = "t4Tarots_mp",
     pos = {x=9, y=2},
 }
@@ -128,26 +128,26 @@ SMODS.Consumable {
     discovered = false,
 	unlocked = true,
     pos = { x = 0, y = 0 },
-    config = { max_highlighted = 2, mod_conv = "m_felijo_enh_sup_mp" },
+    config = { max_highlighted = 2, mod_conv = "m_feli_fag_enh_sup_mp" },
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
-		badges[#badges+1] = create_badge(localize('k_felijo_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_ascended"
+    misprint_original = "c_feli_fag_ascended"
 }
 
 --[[
-FELIJO.T2MP {
+FelisAG.T2MP {
     key = 'fool',
     set = 'vremade_tarot_mp',
     pos = { x = 0, y = 0 },
     config = { max_clones = 2,},
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         local fool_c = G.GAME.last_tarot_planet and G.P_CENTERS[G.GAME.last_tarot_planet] or nil
@@ -201,461 +201,461 @@ FELIJO.T2MP {
     end
 }
 ]]--
-FELIJO.T2MP {
+FelisAG.T2MP {
     key = 't2_magician_mp',
-    set = 'felijo_tier2_tarot_mp',
+    set = 'feli_fag_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
 
     pos = { x = 1, y = 0 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_lucky_t2_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_lucky_t2_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t2_magician"
+    misprint_original = "c_feli_fag_t2_magician"
 }
 
-FELIJO.T2MP {
+FelisAG.T2MP {
     key = 't2_empress_mp',
-    set = 'felijo_tier2_tarot_mp',
+    set = 'feli_fag_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
 
     pos = { x = 3, y = 0 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_mult_t2_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_mult_t2_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t2_empress"
+    misprint_original = "c_feli_fag_t2_empress"
 
 }
 
-FELIJO.T2MP {
+FelisAG.T2MP {
     key = 't2_heirophant_mp',
-    set = 'felijo_tier2_tarot_mp',
+    set = 'feli_fag_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
 
     pos = { x = 5, y = 0 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_bonus_t2_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_bonus_t2_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t2_heirophant"
+    misprint_original = "c_feli_fag_t2_heirophant"
 }
-FELIJO.T2MP {
+FelisAG.T2MP {
     key = 't2_lovers_mp',
-    set = 'felijo_tier2_tarot_mp',
+    set = 'feli_fag_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
 
     pos = { x = 6, y = 0 },
-    config = { max_highlighted = 1, mod_conv = 'm_felijo_wild_t2_mp' },
+    config = { max_highlighted = 1, mod_conv = 'm_feli_fag_wild_t2_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t2_lovers"
+    misprint_original = "c_feli_fag_t2_lovers"
 }
 
-FELIJO.T2MP {
+FelisAG.T2MP {
     key = 't2_chariot_mp',
-    set = 'felijo_tier2_tarot_mp',
+    set = 'feli_fag_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
 
     pos = { x = 7, y = 0 },
-    config = { max_highlighted = 1, mod_conv = 'm_felijo_steel_t2_mp' },
+    config = { max_highlighted = 1, mod_conv = 'm_feli_fag_steel_t2_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t2_chariot"
+    misprint_original = "c_feli_fag_t2_chariot"
 }
-FELIJO.T2MP {
+FelisAG.T2MP {
     key = 't2_justice_mp',
-    set = 'felijo_tier2_tarot_mp',
+    set = 'feli_fag_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
 
     pos = { x = 8, y = 0 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_glass_t2_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_glass_t2_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t2_justice"
+    misprint_original = "c_feli_fag_t2_justice"
 }
-FELIJO.T2MP {
+FelisAG.T2MP {
     key = 't2_devil_mp',
-    set = 'felijo_tier2_tarot_mp',
+    set = 'feli_fag_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
 
     pos = { x = 5, y = 1 },
-    config = { max_highlighted = 1, mod_conv = 'm_felijo_gold_t2_mp' },
+    config = { max_highlighted = 1, mod_conv = 'm_feli_fag_gold_t2_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t2_devil"
+    misprint_original = "c_feli_fag_t2_devil"
 }
 
-FELIJO.T2MP {
+FelisAG.T2MP {
     key = 't2_tower_mp',
-    set = 'felijo_tier2_tarot_mp',
+    set = 'feli_fag_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
 
     pos = { x = 6, y = 1 },
-    config = { max_highlighted = 1, mod_conv = 'm_felijo_stone_t2_mp' },
+    config = { max_highlighted = 1, mod_conv = 'm_feli_fag_stone_t2_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t2_tower"
+    misprint_original = "c_feli_fag_t2_tower"
 }
 
-FELIJO.T2MP {
+FelisAG.T2MP {
     key = 't2_ascended_mp',
-    set = 'felijo_tier2_tarot_mp',
+    set = 'feli_fag_tier2_tarot_mp',
 	atlas = 't2Tarots_mp',
 
     pos = { x = 2, y = 2 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_enh_sup_t2_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_enh_sup_t2_mp' },
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
-		badges[#badges+1] = create_badge(localize('k_felijo_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t2_ascended"
+    misprint_original = "c_feli_fag_t2_ascended"
 }
 ----
 
-FELIJO.T3MP {
+FelisAG.T3MP {
     key = 't3_magician_mp',
-    set = 'felijo_tier3_tarot_mp',
+    set = 'feli_fag_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
 
     pos = { x = 1, y = 0 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_lucky_t3_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_lucky_t3_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t3_magician"
+    misprint_original = "c_feli_fag_t3_magician"
 }
 
-FELIJO.T3MP {
+FelisAG.T3MP {
     key = 't3_empress_mp',
-    set = 'felijo_tier3_tarot_mp',
+    set = 'feli_fag_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
 
     pos = { x = 3, y = 0 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_mult_t3_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_mult_t3_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t3_empress"
+    misprint_original = "c_feli_fag_t3_empress"
 
 }
 
-FELIJO.T3MP {
+FelisAG.T3MP {
     key = 't3_heirophant_mp',
-    set = 'felijo_tier3_tarot_mp',
+    set = 'feli_fag_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
 
     pos = { x = 5, y = 0 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_bonus_t3_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_bonus_t3_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t3_heirophant"
+    misprint_original = "c_feli_fag_t3_heirophant"
 }
-FELIJO.T3MP {
+FelisAG.T3MP {
     key = 't3_lovers_mp',
-    set = 'felijo_tier3_tarot_mp',
+    set = 'feli_fag_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
 
     pos = { x = 6, y = 0 },
-    config = { max_highlighted = 1, mod_conv = 'm_felijo_wild_t3_mp' },
+    config = { max_highlighted = 1, mod_conv = 'm_feli_fag_wild_t3_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t3_lovers"
+    misprint_original = "c_feli_fag_t3_lovers"
 }
-FELIJO.T3MP {
+FelisAG.T3MP {
     key = 't3_chariot_mp',
-    set = 'felijo_tier3_tarot_mp',
+    set = 'feli_fag_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
 
     pos = { x = 7, y = 0 },
-    config = { max_highlighted = 1, mod_conv = 'm_felijo_steel_t3_mp' },
+    config = { max_highlighted = 1, mod_conv = 'm_feli_fag_steel_t3_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t3_chariot"
+    misprint_original = "c_feli_fag_t3_chariot"
 }
-FELIJO.T3MP {
+FelisAG.T3MP {
     key = 't3_justice_mp',
-    set = 'felijo_tier3_tarot_mp',
+    set = 'feli_fag_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
 
     pos = { x = 8, y = 0 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_glass_t3_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_glass_t3_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t3_justice"
+    misprint_original = "c_feli_fag_t3_justice"
 }
-FELIJO.T3MP {
+FelisAG.T3MP {
     key = 't3_devil_mp',
-    set = 'felijo_tier3_tarot_mp',
+    set = 'feli_fag_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
 
     pos = { x = 5, y = 1 },
-    config = { max_highlighted = 1, mod_conv = 'm_felijo_gold_t3_mp' },
+    config = { max_highlighted = 1, mod_conv = 'm_feli_fag_gold_t3_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t3_devil"
+    misprint_original = "c_feli_fag_t3_devil"
 }
-FELIJO.T3MP {
+FelisAG.T3MP {
     key = 't3_tower_mp',
-    set = 'felijo_tier3_tarot_mp',
+    set = 'feli_fag_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
 
     pos = { x = 6, y = 1 },
-    config = { max_highlighted = 1, mod_conv = 'm_felijo_stone_t3_mp' },
+    config = { max_highlighted = 1, mod_conv = 'm_feli_fag_stone_t3_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t3_tower"
+    misprint_original = "c_feli_fag_t3_tower"
 }
 
-FELIJO.T3MP {
+FelisAG.T3MP {
     key = 't3_ascended_mp',
-    set = 'felijo_tier3_tarot_mp',
+    set = 'feli_fag_tier3_tarot_mp',
 	atlas = 't3Tarots_mp',
 
     pos = { x = 2, y = 2 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_enh_sup_t3_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_enh_sup_t3_mp' },
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
-		badges[#badges+1] = create_badge(localize('k_felijo_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t3_ascended"
+    misprint_original = "c_feli_fag_t3_ascended"
 }
 ---
 
 
-FELIJO.T4MP {
+FelisAG.T4MP {
     key = 't4_magician_mp',
-    set = 'felijo_tier4_tarot_mp',
+    set = 'feli_fag_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
 
     pos = { x = 1, y = 0 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_lucky_t4_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_lucky_t4_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t4_magician"
+    misprint_original = "c_feli_fag_t4_magician"
 }
 
-FELIJO.T4MP {
+FelisAG.T4MP {
     key = 't4_empress_mp',
-    set = 'felijo_tier4_tarot_mp',
+    set = 'feli_fag_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
 
     pos = { x = 3, y = 0 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_mult_t4_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_mult_t4_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t4_empress"
+    misprint_original = "c_feli_fag_t4_empress"
 
 }
 
-FELIJO.T4MP {
+FelisAG.T4MP {
     key = 't4_heirophant_mp',
-    set = 'felijo_tier4_tarot_mp',
+    set = 'feli_fag_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
 
     pos = { x = 5, y = 0 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_bonus_t4_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_bonus_t4_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t4_heirophant"
+    misprint_original = "c_feli_fag_t4_heirophant"
 }
-FELIJO.T4MP {
+FelisAG.T4MP {
     key = 't4_lovers_mp',
-    set = 'felijo_tier4_tarot_mp',
+    set = 'feli_fag_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
 
     pos = { x = 6, y = 0 },
-    config = { max_highlighted = 1, mod_conv = 'm_felijo_wild_t4_mp' },
+    config = { max_highlighted = 1, mod_conv = 'm_feli_fag_wild_t4_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t4_lovers"
+    misprint_original = "c_feli_fag_t4_lovers"
 }
-FELIJO.T4MP {
+FelisAG.T4MP {
     key = 't4_chariot_mp',
-    set = 'felijo_tier4_tarot_mp',
+    set = 'feli_fag_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
 
     pos = { x = 7, y = 0 },
-    config = { max_highlighted = 1, mod_conv = 'm_felijo_steel_t4_mp' },
+    config = { max_highlighted = 1, mod_conv = 'm_feli_fag_steel_t4_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t4_chariot"
+    misprint_original = "c_feli_fag_t4_chariot"
 }
-FELIJO.T4MP {
+FelisAG.T4MP {
     key = 't4_justice_mp',
-    set = 'felijo_tier4_tarot_mp',
+    set = 'feli_fag_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
 
     pos = { x = 8, y = 0 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_glass_t4_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_glass_t4_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
 
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t4_justice"
+    misprint_original = "c_feli_fag_t4_justice"
 }
-FELIJO.T4MP {
+FelisAG.T4MP {
     key = 't4_devil_mp',
-    set = 'felijo_tier4_tarot_mp',
+    set = 'feli_fag_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
 
     pos = { x = 5, y = 1 },
-    config = { max_highlighted = 1, mod_conv = 'm_felijo_gold_t4_mp' },
+    config = { max_highlighted = 1, mod_conv = 'm_feli_fag_gold_t4_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t4_devil"
+    misprint_original = "c_feli_fag_t4_devil"
 }
 
-FELIJO.T4MP {
+FelisAG.T4MP {
     key = 't4_tower_mp',
-    set = 'felijo_tier4_tarot_mp',
+    set = 'feli_fag_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
 
     pos = { x = 6, y = 1 },
-    config = { max_highlighted = 1, mod_conv = 'm_felijo_stone_t4_mp' },
+    config = { max_highlighted = 1, mod_conv = 'm_feli_fag_stone_t4_mp' },
     set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
 	end,
     
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t4_tower"
+    misprint_original = "c_feli_fag_t4_tower"
 }
 
-FELIJO.T4MP {
+FelisAG.T4MP {
     key = 't4_ascended_mp',
-    set = 'felijo_tier4_tarot_mp',
+    set = 'feli_fag_tier4_tarot_mp',
 	atlas = 't4Tarots_mp',
 
     pos = { x = 2, y = 2 },
-    config = { max_highlighted = 2, mod_conv = 'm_felijo_enh_sup_t4_mp' },
+    config = { max_highlighted = 2, mod_conv = 'm_feli_fag_enh_sup_t4_mp' },
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
-		badges[#badges+1] = create_badge(localize('k_felijo_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
 	end,
 
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-    misprint_original = "c_felijo_t4_ascended"
+    misprint_original = "c_feli_fag_t4_ascended"
 }

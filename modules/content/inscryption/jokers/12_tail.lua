@@ -8,7 +8,7 @@ SMODS.Joker { -- Common, loose tail
 	["Beast"] 		= true,
 	["Tail"] 		= true,
 	},
-    key = "felijo_ins_tail",
+    key = "feli_fag_ins_tail",
 	pronouns = "any_all",
     rarity = 1,
     cost = 2,
@@ -20,7 +20,7 @@ SMODS.Joker { -- Common, loose tail
 		return false
 	end,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
 	set_sprites = function(self, card, front)
 		if card and card.children and card.children.center and card.ability then

@@ -1,16 +1,16 @@
 return {
     descriptions = {
 		Tag = {
-			tag_felijo_tag_tribal = {
+			tag_feli_fag_tag_tribal = {
 				name = "Tribal Tag",
 				text = {
 					"Gives a free",
-					"{C:felijo_trb}Tribe Pack",
+					"{C:feli_fag_trb}Tribe Pack",
 				},
 			},
 		},
 		Enhanced = {
-			m_felijo_plt_gold = {
+			m_feli_fag_plt_gold = {
 				name = "{B:1,V:2}Gold Pelt",
 				text = {
 					{
@@ -27,7 +27,7 @@ return {
 				},
 			
 			},
-			m_felijo_plt_wlf = {
+			m_feli_fag_plt_wlf = {
 				name = "{B:1,V:2}Wolf Pelt",
 				text = {
 					{
@@ -44,7 +44,7 @@ return {
 				},
 			
 			},
-			m_felijo_plt_bny = {
+			m_feli_fag_plt_bny = {
 				name = "{B:1,V:2}Bunny Pelt",
 				text = {
 					{
@@ -61,7 +61,7 @@ return {
 				},
 			
 			},
-			m_felijo_plt_olddata = {
+			m_feli_fag_plt_olddata = {
 				name = "{B:1,V:2}OLD_DATA",
 				text = {
 					{
@@ -78,7 +78,7 @@ return {
 				},
 			
 			},
-			m_felijo_trn_goldn = {
+			m_feli_fag_trn_goldn = {
 				name = "{B:1,V:2}Gold Nugget",
 				text = {
 					{
@@ -97,51 +97,51 @@ return {
 			},
 		},
 		Voucher = {
-			v_felijo_beartrap = {
+			v_feli_fag_beartrap = {
 				name = "Bear Trap",
 				text = {
-				"{C:felijo_ins_gld}Pelt Cards{} can now appear",
+				"{C:feli_fag_ins_gld}Pelt Cards{} can now appear",
 				"as enhancements in shops",
 				"and booster packs"
 				},
 			
 			
 			},
-			v_felijo_peltmarket = {
+			v_feli_fag_peltmarket = {
 				name = "Pelt Market",
 				text = {
 					{
-					"Discarding {C:felijo_ins_gld}Pelt Cards{} now",
+					"Discarding {C:feli_fag_ins_gld}Pelt Cards{} now",
 					"counts as {C:legendary}trading{} them",
 					},
 					{
-					"{C:felijo_ins_gld}Pelt Cards{} now appear",
+					"{C:feli_fag_ins_gld}Pelt Cards{} now appear",
 					"{X:attention,C:white}X#1#{} as often",
 					}
 				},		
 			},
-			v_felijo_totemmerchant = {
+			v_feli_fag_totemmerchant = {
                 name = "Totem Merchant",
                 text = {
 					{
-                    "{C:felijo_ttm}Totem{} parts appear",
+                    "{C:feli_fag_ttm}Totem{} parts appear",
                     "in the shop",
 					},
 					{
-					"Enables {C:felijo_ttm}Totems{}"
+					"Enables {C:feli_fag_ttm}Totems{}"
 					}
                 },
             },
-            v_felijo_totemtycoon = {
+            v_feli_fag_totemtycoon = {
                 name = "Totem Tycoon",
                 text = {
 					{
-                    "{C:felijo_ttm}Totem{} parts appear",
+                    "{C:feli_fag_ttm}Totem{} parts appear",
                     "more frequently",
                     "in the shop",
 					},
 					{
-					"Enables {C:felijo_ttm}Totems{}"
+					"Enables {C:feli_fag_ttm}Totems{}"
 					}
                 },
                 unlock = {

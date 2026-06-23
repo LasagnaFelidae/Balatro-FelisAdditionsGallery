@@ -1,7 +1,7 @@
 return {
     descriptions = {
         Enhanced = {
-            m_felijo_pp_bleed = {
+            m_feli_fag_pp_bleed = {
                 name = "Bleed Card",
                 text = {
                     {
@@ -15,7 +15,7 @@ return {
                     },
                 },
             },
-            m_felijo_pp_bomb = {
+            m_feli_fag_pp_bomb = {
                 name = "Bomb Card",
                 text = {
                     {
@@ -34,7 +34,7 @@ return {
                     },
                 },
             },
-            m_felijo_pp_crit = {
+            m_feli_fag_pp_crit = {
                 name = "Crit Card",
                 text = {
                     {
@@ -43,7 +43,7 @@ return {
                     },
                 },
             },
-            m_felijo_pp_wood = {
+            m_feli_fag_pp_wood = {
                 name = "Wooden Card",
                 text = {
                     {

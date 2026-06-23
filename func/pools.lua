@@ -1,4 +1,4 @@
-FELIJO.POOLS = {}
+FelisAG.POOLS = {}
 
 SMODS.ObjectType({
 	key = "Food",
@@ -95,7 +95,7 @@ SMODS.ObjectType({
 	end,
 })
 
-FELIJO.POOLS.Feline = SMODS.ObjectType({
+FelisAG.POOLS.Feline = SMODS.ObjectType({
 	key = "Feline",
 	default = "j_joker",
 	cards = {},
@@ -104,7 +104,7 @@ FELIJO.POOLS.Feline = SMODS.ObjectType({
 		self:inject_card(G.P_CENTERS.j_lucky_cat)
 	end,
 })
-FELIJO.POOLS.Kitty = SMODS.ObjectType({
+FelisAG.POOLS.Kitty = SMODS.ObjectType({
 	key = "Kitty",
 	default = "j_joker",
 	cards = {},
@@ -113,7 +113,7 @@ FELIJO.POOLS.Kitty = SMODS.ObjectType({
 	end,
 })
 
-FELIJO.POOLS.Cat = SMODS.ObjectType({
+FelisAG.POOLS.Cat = SMODS.ObjectType({
 	key = "Cat",
 	default = "j_joker",
 	cards = {},

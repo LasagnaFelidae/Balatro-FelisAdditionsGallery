@@ -1,5 +1,5 @@
-FELIJO.Reptile = SMODS.Joker:extend{
-	atlas = 'felijo_insReptile',
+FelisAG.Reptile = SMODS.Joker:extend{
+	atlas = 'feli_fag_insReptile',
 	pools = {
 		["FelisJokeria"]=true,
 		["Inscryption"] = true, 
@@ -9,16 +9,16 @@ FELIJO.Reptile = SMODS.Joker:extend{
 	unlocked = true,
 	discovered = false,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
 }
 
 
 
 
-FELIJO.Reptile { -- Common Geck
+FelisAG.Reptile { -- Common Geck
 	pos = { x = 3, y = 0 },
-	key = "felijo_ins_geck",
+	key = "feli_fag_ins_geck",
 	rarity = 1,
 	cost = 0,
 	blueprint_compat = true,
@@ -39,9 +39,9 @@ FELIJO.Reptile { -- Common Geck
 	end,
 }
 
-FELIJO.Reptile { -- common Rattler
+FelisAG.Reptile { -- common Rattler
 	pos = { x = 4, y = 0 },
-	key = "felijo_ins_rattler",
+	key = "feli_fag_ins_rattler",
 	rarity = 1,
 	cost = 4,
 	blueprint_compat = true,
@@ -62,9 +62,9 @@ FELIJO.Reptile { -- common Rattler
 	end,
 }
 
-FELIJO.Reptile { -- Uncommon Adder
+FelisAG.Reptile { -- Uncommon Adder
 	pos = { x = 1, y = 0 },
-	key = "felijo_ins_adder",
+	key = "feli_fag_ins_adder",
 	rarity = 2,
 	cost = 6,
 	blueprint_compat = true,
@@ -104,9 +104,9 @@ FELIJO.Reptile { -- Uncommon Adder
 	end,
 }
 
-FELIJO.Reptile { -- uncommon River Snapper
+FelisAG.Reptile { -- uncommon River Snapper
 	pos = { x = 6, y = 0 },
-	key = "felijo_ins_riversnapper",
+	key = "feli_fag_ins_riversnapper",
 	rarity = 1,
 	cost = 4,
 	blueprint_compat = true,
@@ -127,9 +127,9 @@ FELIJO.Reptile { -- uncommon River Snapper
 	end,
 	}
 
-	FELIJO.Reptile { -- uncommon Skink
+	FelisAG.Reptile { -- uncommon Skink
 	pos = { x = 5, y = 0 },
-	key = "felijo_ins_skink",
+	key = "feli_fag_ins_skink",
 	rarity = 1,
 	cost = 4,
 	blueprint_compat = true,
@@ -139,14 +139,14 @@ FELIJO.Reptile { -- uncommon River Snapper
 	attributes = {"chips", "mult", "joker"},
 	config = { extra = { chips = 1, mult = 2,}},
 	loc_vars = function(self, info_queue, card)
-		info_queue[#info_queue+1] = {key = 'felijo_sgl_tail', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_sgl_tail', set = 'Other'}
 		return { vars = { card.ability.extra.chips, card.ability.extra.mult, colours = { HEX('F0C590'), HEX('351A09') } } } 
 	end,
 	calculate = function(self, card, context)
-		if ((not card.ability.felijo_copied == true and not card.ability.akyrs_self_destructs == true and not card.ability.eternal == true and not card.ability.felijo_tailed == true)
+		if ((not card.ability.feli_fag_copied == true and not card.ability.akyrs_self_destructs == true and not card.ability.eternal == true and not card.ability.feli_fag_tailed == true)
 		and	((context.joker_type_destroyed and context.card == card ))) and not context.retrigger_joker then 
 			
-			FELIJO.createTail(card)
+			FelisAG.createTail(card)
 			
 			
 			return {no_retrigger = true}
@@ -169,9 +169,9 @@ FELIJO.Reptile { -- uncommon River Snapper
 
 
 
-FELIJO.Reptile { -- Rare Ouro
+FelisAG.Reptile { -- Rare Ouro
 	pos = { x = 0, y = 0 },
-	key = "felijo_ins_ouro",
+	key = "feli_fag_ins_ouro",
 	rarity = 3,
 	cost = 8,
 	pronouns = "he_him",
@@ -196,14 +196,14 @@ FELIJO.Reptile { -- Rare Ouro
 				no_retrigger = true
 			}
 		end
-		if ((not card.ability.felijo_copied == true and not card.ability.akyrs_self_destructs == true )
+		if ((not card.ability.feli_fag_copied == true and not card.ability.akyrs_self_destructs == true )
 		and	((context.selling_self and (card.ability.sell.curr >= card.ability.sell.limit)) -- sacrifice by sale
 		or (context.joker_type_destroyed and context.card == card and #G.jokers.cards <= G.jokers.config.card_limit))) and not context.retrigger_joker then -- sacrifice by dagger
 			
 			card.ability.extra_slots_used = -1
 			local ouroboros = SMODS.add_card { 
-				key = "j_felijo_ins_ouro", 
-				key_append = "felijo_ouro", 
+				key = "j_feli_fag_ins_ouro", 
+				key_append = "feli_fag_ouro", 
 				edition = card.edition,
 				no_edition = true,
 				stickers = nil,

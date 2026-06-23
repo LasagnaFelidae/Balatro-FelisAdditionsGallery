@@ -4,14 +4,14 @@ SMODS.Tag {
 	atlas = "insTags",
     pos = { x = 0, y = 0 },
     loc_vars = function(self, info_queue, tag)
-        info_queue[#info_queue + 1] = G.P_CENTERS.p_felijo_tribe_1
+        info_queue[#info_queue + 1] = G.P_CENTERS.p_feli_fag_tribe_1
     end,
     apply = function(self, tag, context)
         if context.type == 'new_blind_choice' then
             local lock = tag.ID
             G.CONTROLLER.locks[lock] = true
             tag:yep('+', G.C.SECONDARY_SET.Planet, function()
-                local booster = SMODS.create_card { key = 'p_felijo_tribe_' .. math.random(1, 2), area = G.play }
+                local booster = SMODS.create_card { key = 'p_feli_fag_tribe_' .. math.random(1, 2), area = G.play }
                 booster.T.x = G.play.T.x + G.play.T.w / 2 - G.CARD_W * 1.27 / 2
                 booster.T.y = G.play.T.y + G.play.T.h / 2 - G.CARD_H * 1.27 / 2
                 booster.T.w = G.CARD_W * 1.27
@@ -34,14 +34,14 @@ SMODS.Tag {
 	atlas = "insTags",
     pos = { x = 1, y = 0 },
     loc_vars = function(self, info_queue, tag)
-        info_queue[#info_queue + 1] = G.P_CENTERS.p_felijo_ritual_mega_1
+        info_queue[#info_queue + 1] = G.P_CENTERS.p_feli_fag_ritual_mega_1
     end,
     apply = function(self, tag, context)
         if context.type == 'new_blind_choice' then
             local lock = tag.ID
             G.CONTROLLER.locks[lock] = true
             tag:yep('+', G.C.SECONDARY_SET.Planet, function()
-                local booster = SMODS.create_card { key = 'p_felijo_ritual_mega_' .. math.random(1, 2), area = G.play }
+                local booster = SMODS.create_card { key = 'p_feli_fag_ritual_mega_' .. math.random(1, 2), area = G.play }
                 booster.T.x = G.play.T.x + G.play.T.w / 2 - G.CARD_W * 1.27 / 2
                 booster.T.y = G.play.T.y + G.play.T.h / 2 - G.CARD_H * 1.27 / 2
                 booster.T.w = G.CARD_W * 1.27
@@ -65,7 +65,7 @@ SMODS.Tag {
     pos = { x = 3, y = 0 },
     config = { spawn_totem = 1 },
     in_pool = function(self,args)
-        return G.GAME.felijo_totems_enabled or false
+        return G.GAME.feli_fag_totems_enabled or false
     end,
     loc_vars = function(self, info_queue, tag)
         return { vars = { tag.config.spawn_totem } }
@@ -76,10 +76,10 @@ SMODS.Tag {
             G.CONTROLLER.locks[lock] = true
             tag:yep('+', G.C.PURPLE, function()
                 for _ = 1, tag.config.spawn_totem do
-                    if G.felijo_totems and #G.felijo_totems.cards < G.felijo_totems.config.card_limit then
+                    if G.feli_fag_totems and #G.feli_fag_totems.cards < G.feli_fag_totems.config.card_limit then
                         SMODS.add_card {
-                            set = "felijo_totem_parts",
-                            key_append = "felijo_totem"
+                            set = "feli_fag_totem_parts",
+                            key_append = "feli_fag_totem"
                         }
                     end
                 end
@@ -109,7 +109,7 @@ SMODS.Tag {
             local lock = tag.ID
             G.CONTROLLER.locks[lock] = true
             tag:yep('+', G.C.PURPLE, function()
-                G.felijo_totems.config.card_limit = G.felijo_totems.config.card_limit + tag.config.space
+                G.feli_fag_totems.config.card_limit = G.feli_fag_totems.config.card_limit + tag.config.space
                 G.CONTROLLER.locks[lock] = nil
                 return true
             end)
@@ -126,10 +126,10 @@ SMODS.Tag {
     pos = { x = 4, y = 0 },
     config = { spawn_totem = 1 },
     in_pool = function(self,args)
-        return G.GAME.felijo_totems_enabled or false
+        return G.GAME.feli_fag_totems_enabled or false
     end,
     loc_vars = function(self, info_queue, tag)
-		info_queue[#info_queue + 1] = G.P_CENTERS.p_felijo_ttm_box
+		info_queue[#info_queue + 1] = G.P_CENTERS.p_feli_fag_ttm_box
         return { vars = { tag.config.spawn_totem } }
     end,
     apply = function(self, tag, context)
@@ -137,7 +137,7 @@ SMODS.Tag {
             local lock = tag.ID
             G.CONTROLLER.locks[lock] = true
             tag:yep('+', G.C.SECONDARY_SET.Planet, function()
-                local booster = SMODS.create_card { key = 'p_felijo_ttm_box_normal', area = G.play }
+                local booster = SMODS.create_card { key = 'p_feli_fag_ttm_box_normal', area = G.play }
                 booster.T.x = G.play.T.x + G.play.T.w / 2 - G.CARD_W * 1.27 / 2
                 booster.T.y = G.play.T.y + G.play.T.h / 2 - G.CARD_H * 1.27 / 2
                 booster.T.w = G.CARD_W * 1.27
@@ -165,7 +165,7 @@ SMODS.Tag {
         return false
     end,
     loc_vars = function(self, info_queue, tag)
-		info_queue[#info_queue + 1] = G.P_CENTERS.p_felijo_pack_rat
+		info_queue[#info_queue + 1] = G.P_CENTERS.p_feli_fag_pack_rat
         return { vars = { tag.config.spawn_totem } }
     end,
     apply = function(self, tag, context)
@@ -173,7 +173,7 @@ SMODS.Tag {
             local lock = tag.ID
             G.CONTROLLER.locks[lock] = true
             tag:yep('+', G.C.SECONDARY_SET.Planet, function()
-                local booster = SMODS.create_card { key = 'p_felijo_pack_rat', area = G.play }
+                local booster = SMODS.create_card { key = 'p_feli_fag_pack_rat', area = G.play }
                 booster.T.x = G.play.T.x + G.play.T.w / 2 - G.CARD_W * 1.27 / 2
                 booster.T.y = G.play.T.y + G.play.T.h / 2 - G.CARD_H * 1.27 / 2
                 booster.T.w = G.CARD_W * 1.27

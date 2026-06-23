@@ -1,4 +1,4 @@
-FELIJO.PPEnhancement = SMODS.Enhancement:extend{
+FelisAG.PPEnhancement = SMODS.Enhancement:extend{
     discovered = true,
     unlocked = true,
     in_pool = function (self, args)
@@ -6,11 +6,11 @@ FELIJO.PPEnhancement = SMODS.Enhancement:extend{
     end,
     weight = 0,
     set_badges = function(self, card, badges)
-        badges[#badges+1] = create_badge(localize('k_felijo_pronounpalace'), HEX('E8C99A'), G.C.UI.TEXT_DARK,  1 )
+        badges[#badges+1] = create_badge(localize('k_feli_fag_pronounpalace'), HEX('E8C99A'), G.C.UI.TEXT_DARK,  1 )
     end,
 }
 
-FELIJO.PPEnhancement {
+FelisAG.PPEnhancement {
     atlas = 'pronounEnhancements',
     key = 'pp_wood',
     pos = { x = 3, y = 0},
@@ -30,7 +30,7 @@ FELIJO.PPEnhancement {
     
 }
 
-FELIJO.PPEnhancement {
+FelisAG.PPEnhancement {
     atlas = 'pronounEnhancements',
     key = 'pp_crit',
     pos = { x = 2, y = 0},
@@ -50,7 +50,7 @@ FELIJO.PPEnhancement {
     
 }
 
-FELIJO.PPEnhancement {
+FelisAG.PPEnhancement {
     atlas = 'pronounEnhancements',
     key = 'pp_bleed',
     pos = { x = 0, y = 0},
@@ -75,14 +75,14 @@ FELIJO.PPEnhancement {
     
 }
 
-FELIJO.PPEnhancement {
+FelisAG.PPEnhancement {
     atlas = 'pronounEnhancements',
     key = 'pp_bomb',
     pos = { x = 1, y = 0},
     config = { extra = { xscore = 0.5, xblindsize = 0.8}, timer = {hands = 2, }},
     weight = 0.9,
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue+1] = {key = "felijo_explode", set ="Other"}
+        info_queue[#info_queue+1] = {key = "feli_fag_explode", set ="Other"}
         local plural = (card.ability.timer.hands ~= 1 ) and "hands" or "hand"
         return { vars = { card.ability.extra.xscore, card.ability.extra.xblindsize, card.ability.timer.hands, plural } }
     end,
@@ -101,9 +101,9 @@ FELIJO.PPEnhancement {
                     
                     ret.xscore = card.ability.extra.xscore
                 end
-                FELIJO.add_event({
+                FelisAG.add_event({
                     func = function()
-                        FELIJO.explodeCard(card, "bomb", true)
+                        FelisAG.explodeCard(card, "bomb", true)
                         return true
                     end
                 })

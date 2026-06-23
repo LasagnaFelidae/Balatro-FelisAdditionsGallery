@@ -6,7 +6,7 @@ SMODS.PokerHand {
     l_mult = 2,
     visible = false,
     example = {
-        { 'D_K',    true, enhancement = "m_felijo_mult_t2" },
+        { 'D_K',    true, enhancement = "m_feli_fag_mult_t2" },
         { 'S_Q',    false, },
         { 'S_7',    false, },
         { 'D_8',    false,},
@@ -18,7 +18,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if #eligible_cards <= #hand and FELIJO.get_card_tier(card) >= 2 then
+            if #eligible_cards <= #hand and FelisAG.get_card_tier(card) >= 2 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -48,9 +48,9 @@ SMODS.PokerHand {
     l_mult = 2,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t2" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t2" },
         { 'S_K',    false },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t2" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t2" },
         { 'D_8',    false,},
         { 'H_3',    false },
     },
@@ -60,7 +60,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if #eligible_cards <= 2 and FELIJO.get_card_tier(card) >= 2 then
+            if #eligible_cards <= 2 and FelisAG.get_card_tier(card) >= 2 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -78,10 +78,10 @@ SMODS.PokerHand {
     l_mult = 2,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t2" },
-        { 'S_8',    true, enhancement = "m_felijo_steel_t2" },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t2" },
-        { 'D_8',    false, enhancement = "m_felijo_lucky_t2" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t2" },
+        { 'S_8',    true, enhancement = "m_feli_fag_steel_t2" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t2" },
+        { 'D_8',    false, enhancement = "m_feli_fag_lucky_t2" },
         { 'H_3',    false },
     },
 
@@ -91,7 +91,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if #eligible_cards <= 4 and FELIJO.get_card_tier(card) >= 2 then
+            if #eligible_cards <= 4 and FelisAG.get_card_tier(card) >= 2 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -107,10 +107,10 @@ SMODS.PokerHand {
     l_mult = 3,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t2" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t2" },
         { 'S_K',    false },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t2" },
-        { 'D_7',    true, enhancement = "m_felijo_lucky_t2" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t2" },
+        { 'D_7',    true, enhancement = "m_feli_fag_lucky_t2" },
         { 'H_3',    false },
     },
 
@@ -118,7 +118,7 @@ SMODS.PokerHand {
         if not next(parts._3) then return {} end
         local cards = parts._3[1]
         for i, card in ipairs(cards) do
-            if not (FELIJO.get_card_tier(card) >= 2) then return {} end
+            if not (FelisAG.get_card_tier(card) >= 2) then return {} end
         end
         return { cards }
     end,
@@ -132,18 +132,18 @@ SMODS.PokerHand {
     l_mult = 4,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t2" },
-        { 'S_6',    true, enhancement = "m_felijo_steel_t2" },
-        { 'S_5',    true, enhancement = "m_felijo_bonus_t2" },
-        { 'D_4',    true, enhancement = "m_felijo_lucky_t2" },
-        { 'H_3',    true, enhancement = "m_felijo_mult_t2" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t2" },
+        { 'S_6',    true, enhancement = "m_feli_fag_steel_t2" },
+        { 'S_5',    true, enhancement = "m_feli_fag_bonus_t2" },
+        { 'D_4',    true, enhancement = "m_feli_fag_lucky_t2" },
+        { 'H_3',    true, enhancement = "m_feli_fag_mult_t2" },
     },
     evaluate = function(parts, hand)
         if not next(parts._straight) then return {} end
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 2 then
+            if FelisAG.get_card_tier(card) >= 2 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -160,18 +160,18 @@ SMODS.PokerHand {
     l_mult = 3,
     visible = false,
     example = {
-        { 'S_7',    true, enhancement = "m_felijo_mult_t2" },
-        { 'S_7',    true, enhancement = "m_felijo_steel_t2" },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t2" },
-        { 'S_4',    true, enhancement = "m_felijo_lucky_t2" },
-        { 'S_3',    true, enhancement = "m_felijo_mult_t2" },
+        { 'S_7',    true, enhancement = "m_feli_fag_mult_t2" },
+        { 'S_7',    true, enhancement = "m_feli_fag_steel_t2" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t2" },
+        { 'S_4',    true, enhancement = "m_feli_fag_lucky_t2" },
+        { 'S_3',    true, enhancement = "m_feli_fag_mult_t2" },
     },
     evaluate = function(parts, hand)
         if not next(parts._flush) then return {} end
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 2 then
+            if FelisAG.get_card_tier(card) >= 2 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -188,18 +188,18 @@ SMODS.PokerHand {
     l_mult = 3,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t2" },
-        { 'S_7',    true, enhancement = "m_felijo_steel_t2" },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t2" },
-        { 'D_3',    true, enhancement = "m_felijo_lucky_t2" },
-        { 'H_3',    true, enhancement = "m_felijo_mult_t2" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t2" },
+        { 'S_7',    true, enhancement = "m_feli_fag_steel_t2" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t2" },
+        { 'D_3',    true, enhancement = "m_feli_fag_lucky_t2" },
+        { 'H_3',    true, enhancement = "m_feli_fag_mult_t2" },
     },
     evaluate = function(parts, hand)
         if #parts._3 < 1 or #parts._2 < 2 then return {} end
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 2 then
+            if FelisAG.get_card_tier(card) >= 2 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -216,10 +216,10 @@ SMODS.PokerHand {
     l_mult = 4,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t2" },
-        { 'S_7',    true, enhancement = "m_felijo_mult_t2" },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t2" },
-        { 'D_7',    true, enhancement = "m_felijo_lucky_t2" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t2" },
+        { 'S_7',    true, enhancement = "m_feli_fag_mult_t2" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t2" },
+        { 'D_7',    true, enhancement = "m_feli_fag_lucky_t2" },
         { 'H_3',    false },
     },
 
@@ -227,7 +227,7 @@ SMODS.PokerHand {
         if not next(parts._4) then return {} end
         local cards = parts._4[1]
         for i, card in ipairs(cards) do
-            if not (FELIJO.get_card_tier(card) >= 2) then return {} end
+            if not (FelisAG.get_card_tier(card) >= 2) then return {} end
         end
         return { cards }
     end,
@@ -241,11 +241,11 @@ SMODS.PokerHand {
     l_chips = 50,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t2" },
-        { 'D_6',    true, enhancement = "m_felijo_steel_t2" },
-        { 'D_5',    true, enhancement = "m_felijo_bonus_t2" },
-        { 'D_4',    true, enhancement = "m_felijo_lucky_t2" },
-        { 'D_3',    true, enhancement = "m_felijo_mult_t2" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t2" },
+        { 'D_6',    true, enhancement = "m_feli_fag_steel_t2" },
+        { 'D_5',    true, enhancement = "m_feli_fag_bonus_t2" },
+        { 'D_4',    true, enhancement = "m_feli_fag_lucky_t2" },
+        { 'D_3',    true, enhancement = "m_feli_fag_mult_t2" },
     },
 
     evaluate = function(parts, hand)
@@ -254,7 +254,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 2 then
+            if FelisAG.get_card_tier(card) >= 2 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -268,7 +268,7 @@ SMODS.PokerHand {
             royal = royal and (rank.key == 'Ace' or rank.key == '10' or rank.face)
         end
         if royal then
-            return 'felijo_tier2_royal'
+            return 'feli_fag_tier2_royal'
         end
     end
 }
@@ -281,18 +281,18 @@ SMODS.PokerHand {
     l_mult = 4,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t2" },
-        { 'S_7',    true, enhancement = "m_felijo_mult_t2" },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t2" },
-        { 'D_7',    true, enhancement = "m_felijo_lucky_t2" },
-        { 'H_7',    true, enhancement = "m_felijo_mult_t2" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t2" },
+        { 'S_7',    true, enhancement = "m_feli_fag_mult_t2" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t2" },
+        { 'D_7',    true, enhancement = "m_feli_fag_lucky_t2" },
+        { 'H_7',    true, enhancement = "m_feli_fag_mult_t2" },
     },
 
     evaluate = function(parts, hand)
         if not next(parts._5) then return {} end
         local cards = parts._5[1]
         for i, card in ipairs(cards) do
-            if not (FELIJO.get_card_tier(card) >= 2) then return {} end
+            if not (FelisAG.get_card_tier(card) >= 2) then return {} end
         end
         return { cards }
     end,
@@ -305,11 +305,11 @@ SMODS.PokerHand {
     l_mult = 5,
     visible = false,
     example = {
-        { 'C_7',    true, enhancement = "m_felijo_mult_t2" },
-        { 'C_7',    true, enhancement = "m_felijo_steel_t2" },
-        { 'C_7',    true, enhancement = "m_felijo_bonus_t2" },
-        { 'C_3',    true, enhancement = "m_felijo_lucky_t2" },
-        { 'C_3',    true, enhancement = "m_felijo_mult_t2" },
+        { 'C_7',    true, enhancement = "m_feli_fag_mult_t2" },
+        { 'C_7',    true, enhancement = "m_feli_fag_steel_t2" },
+        { 'C_7',    true, enhancement = "m_feli_fag_bonus_t2" },
+        { 'C_3',    true, enhancement = "m_feli_fag_lucky_t2" },
+        { 'C_3',    true, enhancement = "m_feli_fag_mult_t2" },
     },
 
     evaluate = function(parts, hand)
@@ -317,7 +317,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 2 then
+            if FelisAG.get_card_tier(card) >= 2 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -333,11 +333,11 @@ SMODS.PokerHand {
     l_mult = 5,
     visible = false,
     example = {
-        { 'C_7',    true, enhancement = "m_felijo_mult_t2" },
-        { 'C_7',    true, enhancement = "m_felijo_steel_t2" },
-        { 'C_7',    true, enhancement = "m_felijo_bonus_t2" },
-        { 'C_7',    true, enhancement = "m_felijo_lucky_t2" },
-        { 'C_7',    true, enhancement = "m_felijo_mult_t2" },
+        { 'C_7',    true, enhancement = "m_feli_fag_mult_t2" },
+        { 'C_7',    true, enhancement = "m_feli_fag_steel_t2" },
+        { 'C_7',    true, enhancement = "m_feli_fag_bonus_t2" },
+        { 'C_7',    true, enhancement = "m_feli_fag_lucky_t2" },
+        { 'C_7',    true, enhancement = "m_feli_fag_mult_t2" },
     },
 
     evaluate = function(parts, hand)
@@ -345,7 +345,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 2 then
+            if FelisAG.get_card_tier(card) >= 2 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -365,7 +365,7 @@ SMODS.PokerHand {
     l_mult = 3,
     visible = false,
     example = {
-        { 'D_K',    true, enhancement = "m_felijo_mult_t3" },
+        { 'D_K',    true, enhancement = "m_feli_fag_mult_t3" },
         { 'S_Q',    false, },
         { 'S_7',    false, },
         { 'D_8',    false,},
@@ -377,7 +377,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if #eligible_cards <= #hand and FELIJO.get_card_tier(card) >= 3 then
+            if #eligible_cards <= #hand and FelisAG.get_card_tier(card) >= 3 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -406,9 +406,9 @@ SMODS.PokerHand {
     l_mult = 3,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t3" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t3" },
         { 'S_K',    false },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t3" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t3" },
         { 'D_8',    false,},
         { 'H_3',    false },
     },
@@ -418,7 +418,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if #eligible_cards <= 2 and FELIJO.get_card_tier(card) >= 3 then
+            if #eligible_cards <= 2 and FelisAG.get_card_tier(card) >= 3 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -435,10 +435,10 @@ SMODS.PokerHand {
     l_mult = 3,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t3" },
-        { 'S_8',    true, enhancement = "m_felijo_steel_t3" },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t3" },
-        { 'D_8',    true, enhancement = "m_felijo_lucky_t3" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t3" },
+        { 'S_8',    true, enhancement = "m_feli_fag_steel_t3" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t3" },
+        { 'D_8',    true, enhancement = "m_feli_fag_lucky_t3" },
         { 'H_3',    false },
     },
 
@@ -448,7 +448,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if #eligible_cards <= 4 and FELIJO.get_card_tier(card) >= 3 then
+            if #eligible_cards <= 4 and FelisAG.get_card_tier(card) >= 3 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -464,10 +464,10 @@ SMODS.PokerHand {
     l_mult = 4,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t3" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t3" },
         { 'S_K',    false },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t3" },
-        { 'D_7',    true, enhancement = "m_felijo_lucky_t3" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t3" },
+        { 'D_7',    true, enhancement = "m_feli_fag_lucky_t3" },
         { 'H_3',    false },
     },
 
@@ -475,7 +475,7 @@ SMODS.PokerHand {
         if not next(parts._3) then return {} end
         local cards = parts._3[1]
         for i, card in ipairs(cards) do
-            if not (FELIJO.get_card_tier(card) >= 3) then return {} end
+            if not (FelisAG.get_card_tier(card) >= 3) then return {} end
         end
         return { cards }
     end,
@@ -489,18 +489,18 @@ SMODS.PokerHand {
     l_mult = 4,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t3" },
-        { 'S_6',    true, enhancement = "m_felijo_steel_t3" },
-        { 'S_5',    true, enhancement = "m_felijo_bonus_t3" },
-        { 'D_4',    true, enhancement = "m_felijo_lucky_t3" },
-        { 'H_3',    true, enhancement = "m_felijo_mult_t3" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t3" },
+        { 'S_6',    true, enhancement = "m_feli_fag_steel_t3" },
+        { 'S_5',    true, enhancement = "m_feli_fag_bonus_t3" },
+        { 'D_4',    true, enhancement = "m_feli_fag_lucky_t3" },
+        { 'H_3',    true, enhancement = "m_feli_fag_mult_t3" },
     },
     evaluate = function(parts, hand)
         if not next(parts._straight) then return {} end
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 2 then
+            if FelisAG.get_card_tier(card) >= 2 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -517,18 +517,18 @@ SMODS.PokerHand {
     l_mult = 3,
     visible = false,
     example = {
-        { 'S_7',    true, enhancement = "m_felijo_mult_t3" },
-        { 'S_6',    true, enhancement = "m_felijo_steel_t3" },
-        { 'S_5',    true, enhancement = "m_felijo_bonus_t3" },
-        { 'S_4',    true, enhancement = "m_felijo_lucky_t3" },
-        { 'S_3',    true, enhancement = "m_felijo_mult_t3" },
+        { 'S_7',    true, enhancement = "m_feli_fag_mult_t3" },
+        { 'S_6',    true, enhancement = "m_feli_fag_steel_t3" },
+        { 'S_5',    true, enhancement = "m_feli_fag_bonus_t3" },
+        { 'S_4',    true, enhancement = "m_feli_fag_lucky_t3" },
+        { 'S_3',    true, enhancement = "m_feli_fag_mult_t3" },
     },
     evaluate = function(parts, hand)
         if not next(parts._flush) then return {} end
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 3 then
+            if FelisAG.get_card_tier(card) >= 3 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -545,18 +545,18 @@ SMODS.PokerHand {
     l_mult = 4,
     visible = false,
     example = {
-        { 'D_5',    true, enhancement = "m_felijo_mult_t3" },
-        { 'S_5',    true, enhancement = "m_felijo_steel_t3" },
-        { 'S_5',    true, enhancement = "m_felijo_bonus_t3" },
-        { 'D_3',    true, enhancement = "m_felijo_lucky_t3" },
-        { 'H_3',    true, enhancement = "m_felijo_mult_t3" },
+        { 'D_5',    true, enhancement = "m_feli_fag_mult_t3" },
+        { 'S_5',    true, enhancement = "m_feli_fag_steel_t3" },
+        { 'S_5',    true, enhancement = "m_feli_fag_bonus_t3" },
+        { 'D_3',    true, enhancement = "m_feli_fag_lucky_t3" },
+        { 'H_3',    true, enhancement = "m_feli_fag_mult_t3" },
     },
     evaluate = function(parts, hand)
         if #parts._3 < 1 or #parts._2 < 2 then return {} end
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 3 then
+            if FelisAG.get_card_tier(card) >= 3 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -573,10 +573,10 @@ SMODS.PokerHand {
     l_mult = 5,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t3" },
-        { 'D_7',    true, enhancement = "m_felijo_steel_t3" },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t3" },
-        { 'D_7',    true, enhancement = "m_felijo_lucky_t3" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t3" },
+        { 'D_7',    true, enhancement = "m_feli_fag_steel_t3" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t3" },
+        { 'D_7',    true, enhancement = "m_feli_fag_lucky_t3" },
         { 'H_3',    false },
     },
 
@@ -584,7 +584,7 @@ SMODS.PokerHand {
         if not next(parts._4) then return {} end
         local cards = parts._4[1]
         for i, card in ipairs(cards) do
-            if not (FELIJO.get_card_tier(card) >= 3) then return {} end
+            if not (FelisAG.get_card_tier(card) >= 3) then return {} end
         end
         return { cards }
     end,
@@ -598,11 +598,11 @@ SMODS.PokerHand {
     l_chips = 60,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t3" },
-        { 'D_6',    true, enhancement = "m_felijo_steel_t3" },
-        { 'D_5',    true, enhancement = "m_felijo_bonus_t3" },
-        { 'D_4',    true, enhancement = "m_felijo_lucky_t3" },
-        { 'D_3',    true, enhancement = "m_felijo_mult_t3" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t3" },
+        { 'D_6',    true, enhancement = "m_feli_fag_steel_t3" },
+        { 'D_5',    true, enhancement = "m_feli_fag_bonus_t3" },
+        { 'D_4',    true, enhancement = "m_feli_fag_lucky_t3" },
+        { 'D_3',    true, enhancement = "m_feli_fag_mult_t3" },
     },
 
     evaluate = function(parts, hand)
@@ -611,7 +611,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 3 then
+            if FelisAG.get_card_tier(card) >= 3 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -625,7 +625,7 @@ SMODS.PokerHand {
             royal = royal and (rank.key == 'Ace' or rank.key == '10' or rank.face)
         end
         if royal then
-            return 'felijo_tier3_royal'
+            return 'feli_fag_tier3_royal'
         end
     end
 }
@@ -638,18 +638,18 @@ SMODS.PokerHand {
     l_mult = 5,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t3" },
-        { 'S_7',    true, enhancement = "m_felijo_steel_t3" },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t3" },
-        { 'D_7',    true, enhancement = "m_felijo_lucky_t3" },
-        { 'H_7',    true, enhancement = "m_felijo_gold_t3" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t3" },
+        { 'S_7',    true, enhancement = "m_feli_fag_steel_t3" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t3" },
+        { 'D_7',    true, enhancement = "m_feli_fag_lucky_t3" },
+        { 'H_7',    true, enhancement = "m_feli_fag_gold_t3" },
     },
 
     evaluate = function(parts, hand)
         if not next(parts._5) then return {} end
         local cards = parts._5[1]
         for i, card in ipairs(cards) do
-            if not (FELIJO.get_card_tier(card) >= 3) then return {} end
+            if not (FelisAG.get_card_tier(card) >= 3) then return {} end
         end
         return { cards }
     end,
@@ -662,11 +662,11 @@ SMODS.PokerHand {
     l_mult = 6,
     visible = false,
     example = {
-        { 'C_7',    true, enhancement = "m_felijo_mult_t3" },
-        { 'C_7',    true, enhancement = "m_felijo_steel_t3" },
-        { 'C_7',    true, enhancement = "m_felijo_bonus_t3" },
-        { 'C_3',    true, enhancement = "m_felijo_lucky_t3" },
-        { 'C_3',    true, enhancement = "m_felijo_mult_t3" },
+        { 'C_7',    true, enhancement = "m_feli_fag_mult_t3" },
+        { 'C_7',    true, enhancement = "m_feli_fag_steel_t3" },
+        { 'C_7',    true, enhancement = "m_feli_fag_bonus_t3" },
+        { 'C_3',    true, enhancement = "m_feli_fag_lucky_t3" },
+        { 'C_3',    true, enhancement = "m_feli_fag_mult_t3" },
     },
 
     evaluate = function(parts, hand)
@@ -674,7 +674,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 3 then
+            if FelisAG.get_card_tier(card) >= 3 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -690,11 +690,11 @@ SMODS.PokerHand {
     l_mult = 6,
     visible = false,
     example = {
-        { 'C_7',    true, enhancement = "m_felijo_mult_t3" },
-        { 'C_7',    true, enhancement = "m_felijo_steel_t3" },
-        { 'C_7',    true, enhancement = "m_felijo_bonus_t3" },
-        { 'C_7',    true, enhancement = "m_felijo_lucky_t3" },
-        { 'C_7',    true, enhancement = "m_felijo_mult_t3" },
+        { 'C_7',    true, enhancement = "m_feli_fag_mult_t3" },
+        { 'C_7',    true, enhancement = "m_feli_fag_steel_t3" },
+        { 'C_7',    true, enhancement = "m_feli_fag_bonus_t3" },
+        { 'C_7',    true, enhancement = "m_feli_fag_lucky_t3" },
+        { 'C_7',    true, enhancement = "m_feli_fag_mult_t3" },
     },
 
     evaluate = function(parts, hand)
@@ -702,7 +702,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 3 then
+            if FelisAG.get_card_tier(card) >= 3 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -718,7 +718,7 @@ SMODS.PokerHand {
     l_mult = 4,
     visible = false,
     example = {
-        { 'D_K',    true, enhancement = "m_felijo_mult_t4" },
+        { 'D_K',    true, enhancement = "m_feli_fag_mult_t4" },
         { 'S_Q',    false, },
         { 'S_7',    false, },
         { 'D_8',    false,},
@@ -730,7 +730,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if #eligible_cards <= #hand and FELIJO.get_card_tier(card) >= 4 then
+            if #eligible_cards <= #hand and FelisAG.get_card_tier(card) >= 4 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -759,9 +759,9 @@ SMODS.PokerHand {
     l_mult = 4,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t4" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t4" },
         { 'S_K',    false },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t4" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t4" },
         { 'D_8',    false,},
         { 'H_3',    false },
     },
@@ -771,7 +771,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if #eligible_cards <= 2 and FELIJO.get_card_tier(card) >= 4 then
+            if #eligible_cards <= 2 and FelisAG.get_card_tier(card) >= 4 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -788,10 +788,10 @@ SMODS.PokerHand {
     l_mult = 5,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t4" },
-        { 'S_8',    true, enhancement = "m_felijo_steel_t4" },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t4" },
-        { 'D_8',    true, enhancement = "m_felijo_lucky_t4" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t4" },
+        { 'S_8',    true, enhancement = "m_feli_fag_steel_t4" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t4" },
+        { 'D_8',    true, enhancement = "m_feli_fag_lucky_t4" },
         { 'H_3',    false },
     },
 
@@ -801,7 +801,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if #eligible_cards <= 4 and FELIJO.get_card_tier(card) >= 4 then
+            if #eligible_cards <= 4 and FelisAG.get_card_tier(card) >= 4 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -817,10 +817,10 @@ SMODS.PokerHand {
     l_mult = 5,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t4" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t4" },
         { 'S_K',    false },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t4" },
-        { 'D_7',    true, enhancement = "m_felijo_lucky_t4" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t4" },
+        { 'D_7',    true, enhancement = "m_feli_fag_lucky_t4" },
         { 'H_3',    false },
     },
 
@@ -828,7 +828,7 @@ SMODS.PokerHand {
         if not next(parts._3) then return {} end
         local cards = parts._3[1]
         for i, card in ipairs(cards) do
-            if not (FELIJO.get_card_tier(card) >= 4) then return {} end
+            if not (FelisAG.get_card_tier(card) >= 4) then return {} end
         end
         return { cards }
     end,
@@ -842,18 +842,18 @@ SMODS.PokerHand {
     l_mult = 4,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t4" },
-        { 'S_6',    true, enhancement = "m_felijo_steel_t4" },
-        { 'S_5',    true, enhancement = "m_felijo_bonus_t4" },
-        { 'D_4',    true, enhancement = "m_felijo_lucky_t4" },
-        { 'H_3',    true, enhancement = "m_felijo_mult_t4" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t4" },
+        { 'S_6',    true, enhancement = "m_feli_fag_steel_t4" },
+        { 'S_5',    true, enhancement = "m_feli_fag_bonus_t4" },
+        { 'D_4',    true, enhancement = "m_feli_fag_lucky_t4" },
+        { 'H_3',    true, enhancement = "m_feli_fag_mult_t4" },
     },
     evaluate = function(parts, hand)
         if not next(parts._straight) then return {} end
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 4 then
+            if FelisAG.get_card_tier(card) >= 4 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -870,18 +870,18 @@ SMODS.PokerHand {
     l_mult = 6,
     visible = false,
     example = {
-        { 'S_7',    true, enhancement = "m_felijo_mult_t4" },
-        { 'S_6',    true, enhancement = "m_felijo_steel_t4" },
-        { 'S_5',    true, enhancement = "m_felijo_bonus_t4" },
-        { 'S_4',    true, enhancement = "m_felijo_lucky_t4" },
-        { 'S_3',    true, enhancement = "m_felijo_mult_t4" },
+        { 'S_7',    true, enhancement = "m_feli_fag_mult_t4" },
+        { 'S_6',    true, enhancement = "m_feli_fag_steel_t4" },
+        { 'S_5',    true, enhancement = "m_feli_fag_bonus_t4" },
+        { 'S_4',    true, enhancement = "m_feli_fag_lucky_t4" },
+        { 'S_3',    true, enhancement = "m_feli_fag_mult_t4" },
     },
     evaluate = function(parts, hand)
         if not next(parts._flush) then return {} end
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 4 then
+            if FelisAG.get_card_tier(card) >= 4 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -898,18 +898,18 @@ SMODS.PokerHand {
     l_mult = 5,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t4" },
-        { 'S_7',    true, enhancement = "m_felijo_steel_t4" },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t4" },
-        { 'D_3',    true, enhancement = "m_felijo_lucky_t4" },
-        { 'H_3',    true, enhancement = "m_felijo_mult_t4" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t4" },
+        { 'S_7',    true, enhancement = "m_feli_fag_steel_t4" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t4" },
+        { 'D_3',    true, enhancement = "m_feli_fag_lucky_t4" },
+        { 'H_3',    true, enhancement = "m_feli_fag_mult_t4" },
     },
     evaluate = function(parts, hand)
         if #parts._3 < 1 or #parts._2 < 2 then return {} end
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 4 then
+            if FelisAG.get_card_tier(card) >= 4 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -926,10 +926,10 @@ SMODS.PokerHand {
     l_mult = 6,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t4" },
-        { 'D_7',    true, enhancement = "m_felijo_mult_t4" },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t4" },
-        { 'D_7',    true, enhancement = "m_felijo_lucky_t4" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t4" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t4" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t4" },
+        { 'D_7',    true, enhancement = "m_feli_fag_lucky_t4" },
         { 'H_3',    false },
     },
 
@@ -937,7 +937,7 @@ SMODS.PokerHand {
         if not next(parts._4) then return {} end
         local cards = parts._4[1]
         for i, card in ipairs(cards) do
-            if not (FELIJO.get_card_tier(card) >= 4) then return {} end
+            if not (FelisAG.get_card_tier(card) >= 4) then return {} end
         end
         return { cards }
     end,
@@ -951,11 +951,11 @@ SMODS.PokerHand {
     l_chips = 70,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t4" },
-        { 'D_6',    true, enhancement = "m_felijo_steel_t4" },
-        { 'D_5',    true, enhancement = "m_felijo_bonus_t4" },
-        { 'D_4',    true, enhancement = "m_felijo_lucky_t4" },
-        { 'D_3',    true, enhancement = "m_felijo_mult_t4" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t4" },
+        { 'D_6',    true, enhancement = "m_feli_fag_steel_t4" },
+        { 'D_5',    true, enhancement = "m_feli_fag_bonus_t4" },
+        { 'D_4',    true, enhancement = "m_feli_fag_lucky_t4" },
+        { 'D_3',    true, enhancement = "m_feli_fag_mult_t4" },
     },
 
     evaluate = function(parts, hand)
@@ -964,7 +964,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 4 then
+            if FelisAG.get_card_tier(card) >= 4 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -978,7 +978,7 @@ SMODS.PokerHand {
             royal = royal and (rank.key == 'Ace' or rank.key == '10' or rank.face)
         end
         if royal then
-            return 'felijo_tier4_royal'
+            return 'feli_fag_tier4_royal'
         end
     end
 }
@@ -991,18 +991,18 @@ SMODS.PokerHand {
     l_mult = 4,
     visible = false,
     example = {
-        { 'D_7',    true, enhancement = "m_felijo_mult_t4" },
-        { 'D_7',    true, enhancement = "m_felijo_lucky_t4" },
-        { 'S_7',    true, enhancement = "m_felijo_bonus_t4" },
-        { 'D_7',    true, enhancement = "m_felijo_lucky_t4" },
-        { 'D_7',    true, enhancement = "m_felijo_steel_t4" },
+        { 'D_7',    true, enhancement = "m_feli_fag_mult_t4" },
+        { 'D_7',    true, enhancement = "m_feli_fag_lucky_t4" },
+        { 'S_7',    true, enhancement = "m_feli_fag_bonus_t4" },
+        { 'D_7',    true, enhancement = "m_feli_fag_lucky_t4" },
+        { 'D_7',    true, enhancement = "m_feli_fag_steel_t4" },
     },
 
     evaluate = function(parts, hand)
         if not next(parts._5) then return {} end
         local cards = parts._5[1]
         for i, card in ipairs(cards) do
-            if not (FELIJO.get_card_tier(card) >= 4) then return {} end
+            if not (FelisAG.get_card_tier(card) >= 4) then return {} end
         end
         return { cards }
     end,
@@ -1015,11 +1015,11 @@ SMODS.PokerHand {
     l_mult = 6,
     visible = false,
     example = {
-        { 'C_7',    true, enhancement = "m_felijo_mult_t4" },
-        { 'C_7',    true, enhancement = "m_felijo_steel_t4" },
-        { 'C_7',    true, enhancement = "m_felijo_bonus_t4" },
-        { 'C_3',    true, enhancement = "m_felijo_lucky_t4" },
-        { 'C_3',    true, enhancement = "m_felijo_mult_t4" },
+        { 'C_7',    true, enhancement = "m_feli_fag_mult_t4" },
+        { 'C_7',    true, enhancement = "m_feli_fag_steel_t4" },
+        { 'C_7',    true, enhancement = "m_feli_fag_bonus_t4" },
+        { 'C_3',    true, enhancement = "m_feli_fag_lucky_t4" },
+        { 'C_3',    true, enhancement = "m_feli_fag_mult_t4" },
     },
 
     evaluate = function(parts, hand)
@@ -1027,7 +1027,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 4 then
+            if FelisAG.get_card_tier(card) >= 4 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end
@@ -1043,11 +1043,11 @@ SMODS.PokerHand {
     l_mult = 7,
     visible = false,
     example = {
-        { 'C_7',    true, enhancement = "m_felijo_mult_t4" },
-        { 'C_7',    true, enhancement = "m_felijo_steel_t4" },
-        { 'C_7',    true, enhancement = "m_felijo_bonus_t4" },
-        { 'C_7',    true, enhancement = "m_felijo_lucky_t4" },
-        { 'C_7',    true, enhancement = "m_felijo_mult_t4" },
+        { 'C_7',    true, enhancement = "m_feli_fag_mult_t4" },
+        { 'C_7',    true, enhancement = "m_feli_fag_steel_t4" },
+        { 'C_7',    true, enhancement = "m_feli_fag_bonus_t4" },
+        { 'C_7',    true, enhancement = "m_feli_fag_lucky_t4" },
+        { 'C_7',    true, enhancement = "m_feli_fag_mult_t4" },
     },
 
     evaluate = function(parts, hand)
@@ -1055,7 +1055,7 @@ SMODS.PokerHand {
         local eligible_cards = {}
 
         for i, card in ipairs(hand) do
-            if FELIJO.get_card_tier(card) >= 4 then
+            if FelisAG.get_card_tier(card) >= 4 then
                 eligible_cards[#eligible_cards + 1] = card
             end
         end

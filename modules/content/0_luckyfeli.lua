@@ -1,8 +1,8 @@
 SMODS.Joker {
-	atlas = 'luckyfeliJoker',
+	atlas = 'luckyfeli_fagker',
 	pos = { x = 0, y = 0 },
 	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
-	key = "felijo_lucky_feli",
+	key = "feli_fag_lucky_feli",
 	rarity = 2,
 	cost = 6,
 	config = {

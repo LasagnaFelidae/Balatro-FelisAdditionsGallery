@@ -1,4 +1,4 @@
-FELIJO.is_mod_loaded = function(var) -- credit aiko
+FelisAG.is_mod_loaded = function(var) -- credit aiko
     if not var then return false end
     return (SMODS.Mods[var] and SMODS.Mods[var].can_load) and true or false
 end
@@ -15,7 +15,7 @@ Returns:
   copy (table): the newly copied card. Returns nil if card is nil.
 ]]--
 
-FELIJO.copy_card = function(card, new_card, area, nodeckeffects)
+FelisAG.copy_card = function(card, new_card, area, nodeckeffects)
   if not card then return nil end
   area = area or card.area or G.jokers
   local cardwasindeck = new_card and new_card.added_to_deck
@@ -33,7 +33,7 @@ FELIJO.copy_card = function(card, new_card, area, nodeckeffects)
 end
 
 
-FELIJO.number_to_pip = function(n)
+FelisAG.number_to_pip = function(n)
     if n == 14 or n == 1 then return "A"
     elseif n == 13 then return "K"
     elseif n == 12 then return "Q"
@@ -42,14 +42,14 @@ FELIJO.number_to_pip = function(n)
     end
 end
 				
-FELIJO.rank_to_chips = function(n)
+FelisAG.rank_to_chips = function(n)
 	if n == 14 or n == 1 then return 11
     elseif n <= 13 and n >= 11 then return 10
     else return tostring(math.floor(n))
     end
 end
 
-FELIJO.getIndex = function(table, value)
+FelisAG.getIndex = function(table, value)
     for index, v in ipairs(table) do
         if v == value then
             return index
@@ -67,14 +67,14 @@ Parameters:
   	sound (string): the sound used, should be either 
 	bypass_eternal (boolean): 
 ]]--
-function FELIJO.explodeCard(card, sound, bypass_eternal)
+function FelisAG.explodeCard(card, sound, bypass_eternal)
 	if not card then return end
 	bypass_eternal = bypass_eternal or false
 	sound = (sound == "delete" or sound == "explosion" or sound == "bomb" or sound == "explode") and sound or "explosion"
 	if sound == "delete" then
-		play_sound("felijo_rbx_delete")
+		play_sound("feli_fag_rbx_delete")
 	elseif sound == "explosion" or sound == "bomb" or sound == "explode" then
-		play_sound("felijo_rbx_explosion")
+		play_sound("feli_fag_rbx_explosion")
 	end
     playEffect("explosion",card.tilt_var.mx,card.tilt_var.my)
     SMODS.destroy_cards(card, bypass_eternal)
@@ -85,36 +85,36 @@ Apply subspace explosion effects to hand, jokers, and consumables.
 
 No parameters.
 ]]--
-function FELIJO.subspaceExplode()
-	play_sound("felijo_rbx_subspace")
+function FelisAG.subspaceExplode()
+	play_sound("feli_fag_rbx_subspace")
 	Blind:change_colour(HEX('F400F0')) -- Blind box
 	ease_background_colour{new_colour = HEX('F400F0')}
 	for _, _c in ipairs(G.hand.cards) do
-		_c:set_edition("e_felijo_subspace")
+		_c:set_edition("e_feli_fag_subspace")
 	end
 	for _, _c in ipairs(G.jokers.cards) do
-		_c:set_edition("e_felijo_subspace")
+		_c:set_edition("e_feli_fag_subspace")
 	end
 	for _, _c in ipairs(G.consumeables.cards) do
-		_c:set_edition("e_felijo_subspace")
+		_c:set_edition("e_feli_fag_subspace")
 		
 	end
 end
 
 
 
-function FELIJO.createTail(card)
-	if card.ability.felijo_tailed then
+function FelisAG.createTail(card)
+	if card.ability.feli_fag_tailed then
 		return
 	end
 	local copied_joker = copy_card(card, nil, nil, nil, card.edition and card.edition.negative)
 					
-	copied_joker.ability.felijo_tailed = true
+	copied_joker.ability.feli_fag_tailed = true
 					
     if copied_joker.ability.invis_rounds then copied_joker.ability.invis_rounds = 0 end
     if type(copied_joker.ability.extra) == "table" and copied_joker.ability.extra.invis_rounds then copied_joker.ability.extra.invis_rounds = 0 end
 
-    local tribes = FELIJO.getCardTribes(card)
+    local tribes = FelisAG.getCardTribes(card)
 	local tribe = type(tribes) == "table" and tribes[1] or "Other"
 
     local pools = card and card.config and card.config.center and card.config.center.pools
@@ -160,8 +160,8 @@ function FELIJO.createTail(card)
     end
 	
 	local newtail = SMODS.add_card { 
-		key = "j_felijo_ins_tail", 
-		key_append = "felijo_tail", 
+		key = "j_feli_fag_ins_tail", 
+		key_append = "feli_fag_tail", 
 		no_edition = true,
 		stickers = nil,
 	}
@@ -170,7 +170,7 @@ function FELIJO.createTail(card)
 	if newtail and newtail.children and newtail.children.center then
         newtail.children.center:set_sprite_pos({x = tail_x, y = 0})
 		newtail.ability.key_app = keyapp
-		newtail.ability.felijo_sgl_tail = false
+		newtail.ability.feli_fag_sgl_tail = false
     end
 	
 
@@ -178,13 +178,13 @@ function FELIJO.createTail(card)
 end
 
 -- https://stackoverflow.com/questions/2353211/hsl-to-rgb-color-conversion + Aikoyori (Aikoshen), rainbow function.
-function FELIJO.hsl2rgb(h,s,l,al) 
+function FelisAG.hsl2rgb(h,s,l,al) 
     local a=s*math.min(l,1-l);
     local f = function(n, k) k = math.fmod((n+h/30),12); return l - a*math.max(math.min(k-3,9-k,1),-1) end
     return {f(0),f(8),f(4),al};
 end
 
-FELIJO.add_event = function (func, delay, queue, config)
+FelisAG.add_event = function (func, delay, queue, config)
     config = config or {}
     G.E_MANAGER:add_event(Event{
         trigger = config.trigger or 'after',
@@ -217,7 +217,7 @@ Parameters:
 Returns:
   selected key/value from pool based on weights.
 ]]--
-FELIJO.quick_pool_pick = function(pool, roll)
+FelisAG.quick_pool_pick = function(pool, roll)
 	if type(pool) == "table" then
 		roll = roll or pseudorandom(pseudoseed('cottoncandysweetiegoldletmeseethetootseeroll'))
 		local total = 0
@@ -256,7 +256,7 @@ Params:
 Returns:
   table of merged card center keys.
 ]]--
-FELIJO.pool_merge = function(pools, op, inject, inject_pool)
+FelisAG.pool_merge = function(pools, op, inject, inject_pool)
     local result = {}
     if #pools <= 1 then return result end
 	op = op or "AND"
@@ -351,7 +351,7 @@ Get the most played hand type.
 Returns:
   string: the key of the most played hand type.
 ]]--
-FELIJO.get_most_played_hand = function()
+FelisAG.get_most_played_hand = function()
 	local _handname, _played = 'High Card', -1
 	for hand_key, hand in pairs(G.GAME.hands) do
 		if hand.played > _played then
@@ -369,7 +369,7 @@ Get the least played hand type.
 Returns:
   string: the key of the least played hand type.
 ]]--
-FELIJO.get_least_played_hand = function()
+FelisAG.get_least_played_hand = function()
 	local _handname, _played = 'Flush Five', 9999999999
 	for hand_key, hand in pairs(G.GAME.hands) do
 		if hand.played < _played then
@@ -390,7 +390,7 @@ Params:
 Returns:
   string: the key of the planet card.
 ]]--
-FELIJO.get_planet_for_hand = function(hand)
+FelisAG.get_planet_for_hand = function(hand)
 	local planet
 	for _, center in pairs(G.P_CENTER_POOLS.Planet) do
 		if center.config.hand_type == hand then
@@ -411,7 +411,7 @@ Returns:
   boolean: true if card is in cardarea
 ]]--
 
-FELIJO.is_in_cardarea = function(card, area)
+FelisAG.is_in_cardarea = function(card, area)
 	local check = (area == G.playing_cards) and G.playing_cards or area.cards
 	for _, _c in ipairs(check) do
 		if _c == card then print("true") return true end
@@ -426,9 +426,9 @@ Get the current card tier
 Returns:
   return card tier
 ]]--
-FELIJO.get_card_tier = function(card)
+FelisAG.get_card_tier = function(card)
 	if not (card and card.base and card.base.name) then return nil end
-	for _, enh in ipairs(FELIJO.enhancement_tiers) do
+	for _, enh in ipairs(FelisAG.enhancement_tiers) do
 		if card.config.center.key == enh.key then
 			return enh.tier
 		end

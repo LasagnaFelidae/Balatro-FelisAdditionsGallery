@@ -1,8 +1,8 @@
 return {
     descriptions = {
 		Joker = {
-			j_felijo_ins_aiko = {
-				name = "{B:1,V:2,f:felijo_Feli5x8}Aiko",
+			j_feli_fag_ins_aiko = {
+				name = "{B:1,V:2,f:feli_fag_Feli5x8}Aiko",
 				text = {
 					{
 					"{C:chips}+#2#{} Chips, {C:mult}+#3#{} Mult",
@@ -19,8 +19,8 @@ return {
 				},
 			},
 
-			j_felijo_ins_toga = {
-				name = "{B:1,V:2,f:felijo_Feli5x8}T.O.G.A.",
+			j_feli_fag_ins_toga = {
+				name = "{B:1,V:2,f:feli_fag_Feli5x8}T.O.G.A.",
 				text = {
 					{
 					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
@@ -35,8 +35,8 @@ return {
 					},
 				},
 			},
-			j_felijo_ins_evgast = {
-				name = "{B:1,V:2,f:felijo_Feli5x8}Evgast",
+			j_feli_fag_ins_evgast = {
+				name = "{B:1,V:2,f:feli_fag_Feli5x8}Evgast",
 				text = {
 					"{C:chips}+#2#{} Chips, {C:mult}+#3#{} Mult",
 					"Each played {C:attention}Ace{} reduces",
@@ -44,8 +44,8 @@ return {
 					"{s:0.7,C:inactive}(When the Aces are flying... I think...)"
 				},
 			},
-			j_felijo_ins_luna = {
-				name = "{B:1,V:2,f:felijo_Feli5x8}Luna",
+			j_feli_fag_ins_luna = {
+				name = "{B:1,V:2,f:feli_fag_Feli5x8}Luna",
 				text = {
 					"{C:chips}+#2#{} Chips, {C:mult}+#3#{} Mult",
 					"On {C:attention}Blind{} selected",
@@ -54,8 +54,8 @@ return {
 					"{s:0.7,C:inactive}(See you in the blindside.)"
 				},
 			},
-			j_felijo_ins_myco = {
-				name = "{B:1,V:2,f:felijo_Feli5x8}The Mycologists{}",
+			j_feli_fag_ins_myco = {
+				name = "{B:1,V:2,f:feli_fag_Feli5x8}The Mycologists{}",
 				text = {
 					{
 					"If the {C:attention}first{} hand scored is a {C:attention}Pair{},",
@@ -74,8 +74,8 @@ return {
 					},
 				},
 			},
-			j_felijo_ins_lilyfelli = {
-				name = "{B:1,V:2,f:felijo_Feli5x8}Lily{}",
+			j_feli_fag_ins_lilyfelli = {
+				name = "{B:1,V:2,f:feli_fag_Feli5x8}Lily{}",
 				text = {
 					{
 					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
@@ -90,8 +90,8 @@ return {
 					}
 				},
 			},
-			j_felijo_ins_lilyfelli_nop = {
-				name = "{B:1,V:2,f:felijo_Feli5x8}Lily{}",
+			j_feli_fag_ins_lilyfelli_nop = {
+				name = "{B:1,V:2,f:feli_fag_Feli5x8}Lily{}",
 				text = {
 					{
 					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
@@ -102,8 +102,8 @@ return {
 					},
 				},
 			},
-			j_felijo_ins_nxkoo = {
-				name = "{B:1,V:2,f:felijo_Feli5x8}Nxkoo{}",
+			j_feli_fag_ins_nxkoo = {
+				name = "{B:1,V:2,f:feli_fag_Feli5x8}Nxkoo{}",
 				text = {
 					{
 					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
@@ -115,8 +115,8 @@ return {
 					},
 				},
 			},
-			j_felijo_ins_tatsu = {
-				name = "{B:1,V:2,f:felijo_Feli5x8}Tatsu{}",
+			j_feli_fag_ins_tatsu = {
+				name = "{B:1,V:2,f:feli_fag_Feli5x8}Tatsu{}",
 				text = {
 					{
 					"{C:mult}+#1#{} Mult",
@@ -130,8 +130,8 @@ return {
 				},
 			},
 			
-			j_felijo_ins_revo = {
-				name = "{B:1,V:2,f:felijo_Feli5x8}Revo{}",
+			j_feli_fag_ins_revo = {
+				name = "{B:1,V:2,f:feli_fag_Feli5x8}Revo{}",
 				text = {
 					{
 					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
@@ -142,16 +142,16 @@ return {
 					},
 					{
 					"Once {C:attention}#4#{} cards have been copied,",
-					"become {C:tarot}Superior{}",
+					"become {C:enhanced}Superior{}",
 					"{C:inactive,s:0.8}(Currently {C:attention,s:0.8}#3#{C:inactive,s:0.8}/#4#){}{}{}"
 					},
 				},
 			},
 			
-			j_felijo_ins_revo_s = {
+			j_feli_fag_ins_revo_s = {
 				name = {
 				"{X:tarot,V:2,s:0.3}SUPERIOR{}",
-				"{B:1,V:2,f:felijo_Feli5x8}Revo{}",
+				"{B:1,V:2,f:feli_fag_Feli5x8}Revo{}",
 				},
 				text = {
 					{
@@ -159,15 +159,15 @@ return {
 					},
 					{
 					"Add a randomly tiered",
-					"{C:tarot}Superior{} playing card",
+					"{C:enhanced}Superior{} playing card",
 					"to the deck.",
 					}
 				},
 			},
 
-			j_felijo_ins_soulware = {
+			j_feli_fag_ins_soulware = {
 				name = {
-				"{B:1,V:2,f:felijo_Feli5x8}Soulware{}",
+				"{B:1,V:2,f:feli_fag_Feli5x8}Soulware{}",
 				"{s:0.5}(The Man){}",
 				},
 				text = {
@@ -180,9 +180,9 @@ return {
 					}
 				},
 			},
-			j_felijo_ins_leshy = {
+			j_feli_fag_ins_leshy = {
 				name = {
-				"{B:1,V:2,f:felijo_Feli5x8}Leshy{}",
+				"{B:1,V:2,f:feli_fag_Feli5x8}Leshy{}",
 				},
 				text = {
 					{
@@ -192,13 +192,13 @@ return {
 					"Gives an additional",
 					"{C:chips}+#1#{} Chips and {X:mult,C:white}X#2#{} Mult",
 					"for every other",
-					"{C:felijo_trb}Beast{} Joker owned.",
+					"{C:feli_fag_trb}Beast{} Joker owned.",
 					}
 				},
 			},
-			j_felijo_ins_ghost = {
+			j_feli_fag_ins_ghost = {
 				name = {
-				"{B:1,V:2,f:felijo_Feli5x8}Ghost{}",
+				"{B:1,V:2,f:feli_fag_Feli5x8}Ghost{}",
 				},
 				text = {
 					{
@@ -210,9 +210,9 @@ return {
 					}
 				},
 			},
-			j_felijo_ins_gabby = {
+			j_feli_fag_ins_gabby = {
 				name = {
-				"{B:1,V:2,f:felijo_Feli5x8}Gabby{}",
+				"{B:1,V:2,f:feli_fag_Feli5x8}Gabby{}",
 				},
 				text = {
 					{
@@ -225,9 +225,9 @@ return {
 					}
 				},
 			},
-			j_felijo_ins_notmar = {
+			j_feli_fag_ins_notmar = {
 				name = {
-				"{B:1,V:2,f:felijo_Feli5x8}notmario{}",
+				"{B:1,V:2,f:feli_fag_Feli5x8}notmario{}",
 				},
 				text = {
 					{
@@ -241,9 +241,9 @@ return {
 					}
 				},
 			},
-			j_felijo_ins_missingnum = {
+			j_feli_fag_ins_missingnum = {
 				name = {
-				"{B:1,V:2,f:felijo_Feli5x8}MissingNÞ{}",
+				"{B:1,V:2,f:feli_fag_Feli5x8}MissingNÞ{}",
 				},
 				text = {
 					{
@@ -255,9 +255,9 @@ return {
 					}
 				},
 			},
-			j_felijo_ins_missingnum_alt = {
+			j_feli_fag_ins_missingnum_alt = {
 				name = {
-				"{B:1,V:2,f:felijo_Feli5x8}MissingNÞ{}",
+				"{B:1,V:2,f:feli_fag_Feli5x8}MissingNÞ{}",
 				},
 				text = {
 					{
@@ -274,9 +274,9 @@ return {
 					}
 				},
 			},
-			j_felijo_ins_ghost_gc = {
+			j_feli_fag_ins_ghost_gc = {
 				name = {
-				"{B:1,V:2,f:felijo_Feli5x8}Ghost{}",
+				"{B:1,V:2,f:feli_fag_Feli5x8}Ghost{}",
 				},
 				text = {
 					{
@@ -287,7 +287,7 @@ return {
 					"{X:mult,C:white}X#3#{} Mult",
 					},
 					{
-					"{C:felijo_pink}Haunted{} {C:attention}Jokers{} give",
+					"{C:feli_fag_pink}Haunted{} {C:attention}Jokers{} give",
 					"{X:blind,C:white}X#4#{} Blind Size",
 					}
 				},

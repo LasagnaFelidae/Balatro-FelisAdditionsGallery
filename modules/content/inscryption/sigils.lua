@@ -6,35 +6,35 @@ end
 --SIGIL FUNCTIONS
 -- CONFLICTS
 local sigil_groups = {
-	postmortem = {"felijo_sgl_brittle", "felijo_sgl_steeltrap", "felijo_sgl_tail","felijo_sgl_manylives","felijo_sgl_unkillable"},
-	cardmod = {"felijo_sgl_midas", "felijo_sgl_madeofstone"}
+	postmortem = {"feli_fag_sgl_brittle", "feli_fag_sgl_steeltrap", "feli_fag_sgl_tail","feli_fag_sgl_manylives","feli_fag_sgl_unkillable"},
+	cardmod = {"feli_fag_sgl_midas", "feli_fag_sgl_madeofstone"}
 }
 
 local sigilKeys = {
-	"felijo_sgl_bifurcated",
-	"felijo_sgl_trifurcated",
-	"felijo_sgl_brittle", 
-	"felijo_sgl_steeltrap", 
-	"felijo_sgl_tail",
-	"felijo_sgl_manylives",
-	"felijo_sgl_unkillable",
-	"felijo_sgl_midas", 
-	"felijo_sgl_madeofstone",
-	"felijo_sgl_repulsive",
-	"felijo_sgl_leader",
-	"felijo_sgl_stinky",
-	"felijo_sgl_trinketbearer",
-	"felijo_sgl_hoarder",
-	"felijo_sgl_fledgling",
-	"felijo_sgl_bloodlust",
-	"felijo_sgl_rampager",
-	"felijo_sgl_bellist",
-	"felijo_sgl_amorphous",
-	"felijo_sgl_doubledown",
-	"felijo_sgl_giftbearer",
-	"felijo_sgl_jokerbearer",
-	"felijo_sgl_swapper",
-	"felijo_sgl_omnistrike",
+	"feli_fag_sgl_bifurcated",
+	"feli_fag_sgl_trifurcated",
+	"feli_fag_sgl_brittle", 
+	"feli_fag_sgl_steeltrap", 
+	"feli_fag_sgl_tail",
+	"feli_fag_sgl_manylives",
+	"feli_fag_sgl_unkillable",
+	"feli_fag_sgl_midas", 
+	"feli_fag_sgl_madeofstone",
+	"feli_fag_sgl_repulsive",
+	"feli_fag_sgl_leader",
+	"feli_fag_sgl_stinky",
+	"feli_fag_sgl_trinketbearer",
+	"feli_fag_sgl_hoarder",
+	"feli_fag_sgl_fledgling",
+	"feli_fag_sgl_bloodlust",
+	"feli_fag_sgl_rampager",
+	"feli_fag_sgl_bellist",
+	"feli_fag_sgl_amorphous",
+	"feli_fag_sgl_doubledown",
+	"feli_fag_sgl_giftbearer",
+	"feli_fag_sgl_jokerbearer",
+	"feli_fag_sgl_swapper",
+	"feli_fag_sgl_omnistrike",
 }
 
 
@@ -178,7 +178,7 @@ SMODS.Sticker{
 	discovered = true,
 	unlocked = true,
 	default_compat = true,
-	compat_exceptions = {"j_felijo_ins_tail", "j_felijo_ins_skink"},
+	compat_exceptions = {"j_feli_fag_ins_tail", "j_feli_fag_ins_skink"},
 	loc_vars = function(self, info_queue, card)
 		return { vars = { } }
 	end,
@@ -187,10 +187,10 @@ SMODS.Sticker{
 	end,
 	
 	calculate = function(self, card, context)
-		if ((not card.ability.felijo_copied == true and not card.ability.akyrs_self_destructs == true and not card.ability.eternal == true and not card.ability.felijo_tailed == true)
+		if ((not card.ability.feli_fag_copied == true and not card.ability.akyrs_self_destructs == true and not card.ability.eternal == true and not card.ability.feli_fag_tailed == true)
 		and	((context.joker_type_destroyed and context.card == card ))) and not context.retrigger_joker then 
 			
-			FELIJO.createTail(card)
+			FelisAG.createTail(card)
 			
 			
 			return {no_retrigger = true}

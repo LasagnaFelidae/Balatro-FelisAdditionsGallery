@@ -2,7 +2,7 @@ return {
     descriptions = {
 		Joker = {
 		-- ROBLOX
-			j_felijo_rbx_pizza = {
+			j_feli_fag_rbx_pizza = {
                 name = "Pepperoni Pizza",
                 text = {
                     "{C:chips}+#1#{} Chips,",
@@ -10,7 +10,7 @@ return {
                     "every hand played",
                 },
             },
-			j_felijo_rbx_burrito = {
+			j_feli_fag_rbx_burrito = {
                 name = "RobloTim's Chavez Burrito",
                 text = {
                     "{C:mult}+#1#{} Mult,",
@@ -18,7 +18,7 @@ return {
                     "every hand played",
                 },
             },
-			j_felijo_rbx_turkey = {
+			j_feli_fag_rbx_turkey = {
                 name = "Turkey Leg",
                 text = {
                     "{X:mult,C:white}X#1#{} Mult,",
@@ -26,7 +26,7 @@ return {
                     "every round",
                 },
             },
-			j_felijo_rbx_cheezburger = {
+			j_feli_fag_rbx_cheezburger = {
                 name = "Cheezburger",
                 text = {
                     "{X:chips,C:white}X#1#{} Chips,",
@@ -34,7 +34,7 @@ return {
                     "every round",
                 },
             },
-			j_felijo_rbx_sandwich = {
+			j_feli_fag_rbx_sandwich = {
                 name = "Space Sandwich",
                 text = {
                     "{C:chips}+#1#{} Chips for each",
@@ -45,7 +45,7 @@ return {
 					"{C:inactive,s:0.8}(Space Sandwich included)",
                 },
             },
-			j_felijo_rbx_epic = {
+			j_feli_fag_rbx_epic = {
                 name = "Epic Sauce",
                 text = {
                     "Retrigger {C:attention}#1#{} time(s)",
@@ -55,7 +55,7 @@ return {
 					"{s:0.8,C:inactive}(Consumed when the score is on fire)",
                 },
             },
-			j_felijo_rbx_bloxy = {
+			j_feli_fag_rbx_bloxy = {
                 name = "Bloxy Cola",
 				text = {
                     "{C:mult}+#1#{} discards,",
@@ -64,7 +64,7 @@ return {
                 },
                 
             },
-			j_felijo_rbx_pumpkinpi = {
+			j_feli_fag_rbx_pumpkinpi = {
                 name = "Pumpkin Pi",
 				text = {
                     "{C:attention}+#1#{} hand size,",
@@ -74,7 +74,7 @@ return {
                 },
                 
             },
-			j_felijo_rbx_vendingmachine = {
+			j_feli_fag_rbx_vendingmachine = {
                 name = "Vending Machine",
                 text = {
 					{
@@ -87,12 +87,12 @@ return {
                 },
                 
             },
-			j_felijo_rbx_brew = {
+			j_feli_fag_rbx_brew = {
                 name = "Witches\' Brew",
                 text = {
 					{
                     "{C:enhanced}+#1#{} selection limit,",
-                    "reduces by {C:planet,E:felijo_pink}-#2#{}",
+                    "reduces by {C:planet,E:feli_fag_pink}-#2#{}",
 					"every round",
 					},
 					{
@@ -102,7 +102,7 @@ return {
 					},
                 },
             },
-			j_felijo_rbx_copy = {
+			j_feli_fag_rbx_copy = {
                 name = "Copy Tool",
                 text = {
                     "When entering a blind,",
@@ -110,7 +110,7 @@ return {
                     "{C:inactive}(Must have room){}",
                 },
             },
-			j_felijo_rbx_delete = {
+			j_feli_fag_rbx_delete = {
                 name = "Delete Tool",
                 text = {
                     "Delete a random amount",
@@ -122,7 +122,7 @@ return {
 					"{C:inactive,s:0.8}(Slight chance of deleting everything)",
                 },
             },
-			j_felijo_rbx_drag = {
+			j_feli_fag_rbx_drag = {
                 name = "Drag Tool",
                 text = {
                     "When dragged {C:attention}around{},",

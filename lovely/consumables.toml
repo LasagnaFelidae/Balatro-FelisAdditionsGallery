@@ -25,12 +25,12 @@ end
 '''
 position = "after"
 payload = '''
-if card.config.center.set == 'felijo_tier2_planet' or 
-card.config.center.set == 'felijo_tier3_planet' or 
-card.config.center.set == 'felijo_tier4_planet' or 
-card.config.center.set == 'felijo_tier2_tarot' or 
-card.config.center.set == 'felijo_tier3_tarot' or 
-card.config.center.set == 'felijo_tier4_tarot' then 
+if card.config.center.set == 'feli_fag_tier2_planet' or 
+card.config.center.set == 'feli_fag_tier3_planet' or 
+card.config.center.set == 'feli_fag_tier4_planet' or 
+card.config.center.set == 'feli_fag_tier2_tarot' or 
+card.config.center.set == 'feli_fag_tier3_tarot' or 
+card.config.center.set == 'feli_fag_tier4_tarot' then 
   G.E_MANAGER:add_event(Event({
     trigger = 'immediate',
     func = function()
@@ -53,7 +53,7 @@ if card.ability.consumeable then
       G.E_MANAGER:add_event(Event({
         trigger = 'immediate',
         func = function()
-          G.GAME.felijo_last_used_cons = card.config.center.key
+          G.GAME.feli_fag_last_used_cons = card.config.center.key
             return true
         end
       }))

@@ -1,10 +1,10 @@
 return {
     descriptions = {
 		Joker = {
-			j_felijo_ins_tentacle_bell = {
+			j_feli_fag_ins_tentacle_bell = {
                 name = {
-					"{B:1,V:2,f:felijo_Feli5x8,E:1}@{}",
-					"{V:1,s:0.5,f:felijo_Feli5x8}(Bell Tentacle)"
+					"{B:1,V:2,f:feli_fag_Feli5x8,E:1}@{}",
+					"{V:1,s:0.5,f:feli_fag_Feli5x8}(Bell Tentacle)"
 					},
                 text = {
 					{
@@ -19,10 +19,10 @@ return {
                 }
 		    },
 			
-			j_felijo_ins_tentacle_cons = {
+			j_feli_fag_ins_tentacle_cons = {
                 name = {
-					"{B:1,V:2,f:felijo_Feli5x8,E:1}@{}",
-					"{V:1,s:0.5,f:felijo_Feli5x8}(Consumable Tentacle)"
+					"{B:1,V:2,f:feli_fag_Feli5x8,E:1}@{}",
+					"{V:1,s:0.5,f:feli_fag_Feli5x8}(Consumable Tentacle)"
 					},
                 text = {
 					{
@@ -35,10 +35,10 @@ return {
                 }
 		    },
 			
-			j_felijo_ins_tentacle_hand = {
+			j_feli_fag_ins_tentacle_hand = {
                 name = {
-					"{B:1,V:2,f:felijo_Feli5x8,E:1}@{}",
-					"{V:1,s:0.5,f:felijo_Feli5x8}(Hand Tentacle)"
+					"{B:1,V:2,f:feli_fag_Feli5x8,E:1}@{}",
+					"{V:1,s:0.5,f:feli_fag_Feli5x8}(Hand Tentacle)"
 					},
                 text = {
 					{
@@ -51,10 +51,10 @@ return {
                 }
 		    },
 			
-			j_felijo_ins_tentacle_enh = {
+			j_feli_fag_ins_tentacle_enh = {
                 name = {
-					"{B:1,V:2,f:felijo_Feli5x8,E:1}@{}",
-					"{V:1,s:0.5,f:felijo_Feli5x8}(Enhancement Tentacle)"
+					"{B:1,V:2,f:feli_fag_Feli5x8,E:1}@{}",
+					"{V:1,s:0.5,f:feli_fag_Feli5x8}(Enhancement Tentacle)"
 					},
                 text = {
 					{
@@ -67,10 +67,10 @@ return {
 					}
                 }
 		    },
-			j_felijo_ins_tentacle_edi = {
+			j_feli_fag_ins_tentacle_edi = {
                 name = {
-					"{B:1,V:2,f:felijo_Feli5x8,E:1}@{}",
-					"{V:1,s:0.5,f:felijo_Feli5x8}(Edition Tentacle)"
+					"{B:1,V:2,f:feli_fag_Feli5x8,E:1}@{}",
+					"{V:1,s:0.5,f:feli_fag_Feli5x8}(Edition Tentacle)"
 					},
                 text = {
 					{
@@ -83,9 +83,9 @@ return {
 					}
                 }
 		    },
-			j_felijo_ins_glitched = {
+			j_feli_fag_ins_glitched = {
                 name = {
-					"{B:1,V:2,f:felijo_Feli5x8,E:1}Glitched Card{}",
+					"{B:1,V:2,f:feli_fag_Feli5x8,E:1}Glitched Card{}",
 					},
                 text = {
 					{

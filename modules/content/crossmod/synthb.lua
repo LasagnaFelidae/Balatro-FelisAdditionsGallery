@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "felijo_synthb_yokuatsu",
+    key = "feli_fag_synthb_yokuatsu",
     blueprint_compat = true,
     rarity = 3,
     cost = 8,
@@ -16,7 +16,7 @@ SMODS.Joker {
         return { vars = { math.floor(card.ability.extra.copy), math.floor(card.ability.extra.max_copies) } }
     end,
     set_badges = function(self, card, badges)
-        badges[#badges+1] = create_badge(localize('k_felijo_synthb'), HEX('D94169'), HEX('ffffff'), 1 )
+        badges[#badges+1] = create_badge(localize('k_feli_fag_synthb'), HEX('D94169'), HEX('ffffff'), 1 )
     end,
     calculate = function(self, card, context)
         if context.first_hand_drawn and not context.blueprint then
@@ -24,7 +24,7 @@ SMODS.Joker {
             juice_card_until(card, eval, true)
         end
         if context.before and G.GAME.current_round.hands_played == 0 and #context.full_hand == math.floor(card.ability.extra.copy) then
-            local roll = pseudorandom("j_felijo_synthb_yokuatsu",0, math.floor(card.ability.extra.max_copies))
+            local roll = pseudorandom("j_feli_fag_synthb_yokuatsu",0, math.floor(card.ability.extra.max_copies))
             if roll > 0 then
                 for i = 1, roll do
                     G.E_MANAGER:add_event(Event({
@@ -67,8 +67,8 @@ if SynthB and SynthB.inject_song_data then
 	SynthB.inject_song_data{
 			link = "https://www.youtube.com/watch?v=4Z1_44GUBq4",
 			key = "synthb_yokuatsu",
-			prefix = "j_felijo_",
-			atlas = "felijo_synthbAlbums",
+			prefix = "j_feli_fag_",
+			atlas = "feli_fag_synthbAlbums",
 			pos = {x = 0, y = 0},
 	}
 end

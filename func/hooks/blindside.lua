@@ -1,6 +1,6 @@
-if FELIJO.is_mod_loaded("Blindside") then
+if FelisAG.is_mod_loaded("Blindside") then
     ---@alias hue "Red" | "Green" | "Blue" | "Yellow" | "Purple" | "Faded"
-    FELIJO.BlindsideBlind = SMODS.Enhancement:extend {
+    FelisAG.BlindsideBlind = SMODS.Enhancement:extend {
         in_pool = function(self)
             if G.GAME.selected_back.effect.center.config.extra then
                 if not G.GAME.selected_back.effect.center.config.extra.blindside then return false end
@@ -38,7 +38,7 @@ if FELIJO.is_mod_loaded("Blindside") then
             else
                 badges[#badges+1] = create_badge(localize('k_bld_common'), G.C.GREEN, G.C.WHITE, 1 )
             end
-            badges[#badges+1] = create_badge(localize('k_felijo_bs'), HEX('3F6AA4'), HEX('ffffff'), 1 )
+            badges[#badges+1] = create_badge(localize('k_feli_fag_bs'), HEX('3F6AA4'), HEX('ffffff'), 1 )
         end,
         blindside_blind = true,
     }

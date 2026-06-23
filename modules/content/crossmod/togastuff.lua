@@ -1,11 +1,11 @@
-FELIJO.TOGAJoker = SMODS.Joker:extend{
+FelisAG.TOGAJoker = SMODS.Joker:extend{
 	in_pool = function (self, args)
-		return FELIJO.is_mod_loaded("TOGAPack") or false
+		return FelisAG.is_mod_loaded("TOGAPack") or false
 	end
 }
 
-FELIJO.TOGAJoker {
-	key = "felijo_bliss",
+FelisAG.TOGAJoker {
+	key = "feli_fag_bliss",
 	atlas = 'togaJokers',
 	pos = { x = 1, y = 0 },
 	unlocked = true,
@@ -14,7 +14,7 @@ FELIJO.TOGAJoker {
 	rarity = 2,
 	cost = 5,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_toga'), HEX('fd9712'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_toga'), HEX('fd9712'), HEX('ffffff'), 1 )
 	end,
 	config = { extra = { change = 25, suits = 4, chips = 25 } },
 	loc_vars = function(self, info_queue, card)
@@ -42,8 +42,8 @@ FELIJO.TOGAJoker {
 		end    
 	end
 }
-FELIJO.TOGAJoker {
-	key = "felijo_toga_loic",
+FelisAG.TOGAJoker {
+	key = "feli_fag_toga_loic",
 	atlas = 'togaJokers',
 	pos = { x = 0, y = 0 },
 	pools = {["FelisJokeria"] = true, ["TOGA"] = true,},
@@ -52,7 +52,7 @@ FELIJO.TOGAJoker {
 	rarity = 4,
 	cost = 20,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_toga'), HEX('fd9712'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_toga'), HEX('fd9712'), HEX('ffffff'), 1 )
 	end,
 	config = {
 		extra = { 
@@ -110,14 +110,14 @@ calculate = function(self, card, context)
 				if card.ability.imm.charge >= card.ability.imm.charge_m then
 					card.ability.imm.status = "Ready!"
 					return {
-						message = localize("k_felijo_loic2"), 
-						sound = "felijo_loic_ready",
+						message = localize("k_feli_fag_loic2"), 
+						sound = "feli_fag_loic_ready",
 						pitch = 1
 					}
 				end
 				return {
-					message = localize("k_felijo_loic1"), 
-					sound = "felijo_loic_charging",
+					message = localize("k_feli_fag_loic1"), 
+					sound = "feli_fag_loic_charging",
 					pitch = 1+(0.2 * card.ability.imm.charge)
 				}
 				
@@ -132,8 +132,8 @@ calculate = function(self, card, context)
 				card.ability.extra.m_mult = card.ability.extra.m_mult + card.ability.extra.m_i
 				return {
 					mult = beam,
-					message = localize("k_felijo_loic3"),
-					sound = "felijo_loic_shot",
+					message = localize("k_feli_fag_loic3"),
+					sound = "feli_fag_loic_shot",
 					pitch = 1,
 					beam = card.ability.extra.mult,
 					
@@ -144,15 +144,15 @@ calculate = function(self, card, context)
 			card.ability.imm.cooldown = card.ability.imm.cooldown - 1 
 			if card.ability.imm.cooldown == 0 then
 				card.ability.imm.status = "Charging"
-				return{message = localize("k_felijo_loic5"),}
+				return{message = localize("k_feli_fag_loic5"),}
 			end
-			return{message = localize("k_felijo_loic4"),}
+			return{message = localize("k_feli_fag_loic4"),}
 		end
 	end
 end
 }
-FELIJO.TOGAJoker {
-	key = "felijo_idiot",
+FelisAG.TOGAJoker {
+	key = "feli_fag_idiot",
 	atlas = 'togaYAAI',
 	pos = { x = 1, y = 0 },
 	unlocked = true,
@@ -161,13 +161,13 @@ FELIJO.TOGAJoker {
 	rarity = 1,
 	cost = 1,
 	set_badges = function(self, card, badges)
-		badges[#badges+1] = create_badge(localize('k_felijo_toga_malware'), HEX('000000'), HEX('ffffff'), 1 )
-		badges[#badges+1] = create_badge(localize('k_felijo_toga'), HEX('fd9712'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_toga_malware'), HEX('000000'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_toga'), HEX('fd9712'), HEX('ffffff'), 1 )
 	end,
 	config = { extra = { mult = 25 }, imm = {n1 = 1, d1= 5, d2 = 200} },
 	loc_vars = function(self, info_queue, card)
 		local key = self.key
-		info_queue[#info_queue+1] = {key = 'felijo_immutable', set = 'Other'}
+		info_queue[#info_queue+1] = {key = 'feli_fag_immutable', set = 'Other'}
 		if card.ability["eternal"] then
 			key = self.key.."_alt"
 		end
@@ -180,7 +180,7 @@ FELIJO.TOGAJoker {
 			trigger = 'after', 
 			delay = 0.15,
 			func = function()
-				play_sound("felijo_toga_idiot", 1)
+				play_sound("feli_fag_toga_idiot", 1)
 				return true
 			end
 		}))
@@ -205,8 +205,8 @@ FELIJO.TOGAJoker {
 					trigger = 'after', 
 					delay = time,
 					func = function()
-						play_sound("felijo_toga_idiot", 1)
-						FELIJO.copy_card(card,nil,nil)
+						play_sound("feli_fag_toga_idiot", 1)
+						FelisAG.copy_card(card,nil,nil)
 						return true
 					end
 				}))

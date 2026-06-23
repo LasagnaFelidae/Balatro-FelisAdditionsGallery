@@ -1,7 +1,7 @@
 
-FELIJO.states = {}
+FelisAG.states = {}
 SMODS.current_mod.custom_card_areas = function(game) -- game is the same as G
-    game.felijo_totems = CardArea( -- Should be saved in G for it to be preserved between reloads
+    game.feli_fag_totems = CardArea( -- Should be saved in G for it to be preserved between reloads
         G.jokers.T.x , -- x coordinate
         (G.jokers.T.y) - 4, -- y coordinate SET TO G.JOKERS.T.Y - 4 WHEN DONE
         G.jokers.T.w, -- width (this is the default for G.jokers)
@@ -17,19 +17,19 @@ SMODS.current_mod.custom_card_areas = function(game) -- game is the same as G
             align_buttons = true, -- aligns the buttons for cards like in the Joker/Consumable areas
         }
     )
-    FELIJO.states.slot_visible = 1
-    FELIJO.animate_areas()
+    FelisAG.states.slot_visible = 1
+    FelisAG.animate_areas()
 end
 
 G.FUNCS.toggle_totems = function(e)
-    FELIJO.states.slot_visible = FELIJO.states.slot_visible * -1
+    FelisAG.states.slot_visible = FelisAG.states.slot_visible * -1
     play_sound('paper1')
-    FELIJO.animate_areas()
+    FelisAG.animate_areas()
 end
 
-G.FUNCS.felijo_can_toggle_totem = function(e)
-    if G.STATE ~= G.STATES.HAND_PLAYED and G.STATE ~= G.STATES.DRAW_TO_HAND and G.STATE ~= G.STATES.PLAY_TAROT and not FELIJO.states.areas_moving then
-        e.config.colour = G.ARGS.LOC_COLOURS.felijo_ttm
+G.FUNCS.feli_fag_can_toggle_totem = function(e)
+    if G.STATE ~= G.STATES.HAND_PLAYED and G.STATE ~= G.STATES.DRAW_TO_HAND and G.STATE ~= G.STATES.PLAY_TAROT and not FelisAG.states.areas_moving then
+        e.config.colour = G.ARGS.LOC_COLOURS.feli_fag_ttm
         e.config.button = 'toggle_totems'
     else
         e.config.colour = G.C.UI.BACKGROUND_INACTIVE
@@ -38,18 +38,18 @@ G.FUNCS.felijo_can_toggle_totem = function(e)
 end
 
 -- Area toggle helpers
-function FELIJO.animate_areas(animate)
-    FELIJO.states.areas_moving = true
-    if FELIJO.states.slot_visible == -1 then
+function FelisAG.animate_areas(animate)
+    FelisAG.states.areas_moving = true
+    if FelisAG.states.slot_visible == -1 then
         ease_alignment('jokers', 0, -4, true, animate)
-        ease_alignment('felijo_totems', -4, 0, nil, animate)
+        ease_alignment('feli_fag_totems', -4, 0, nil, animate)
     else
-        ease_alignment('felijo_totems', 0, -4, true, animate)
+        ease_alignment('feli_fag_totems', 0, -4, true, animate)
         ease_alignment('jokers', -4, 0, nil, animate)
     end
     G.E_MANAGER:add_event(Event({
         func = function()
-            FELIJO.states.areas_moving = false
+            FelisAG.states.areas_moving = false
             return true;
         end
     }))

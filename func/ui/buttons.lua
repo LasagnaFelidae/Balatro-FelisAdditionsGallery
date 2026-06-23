@@ -1,5 +1,5 @@
 --[[ Credit: Revo]]--
-FELIJO.button_func = function(card, args) 
+FelisAG.button_func = function(card, args) 
 	if args.under then
 		if not args.bw then args.bw = -0.1 end
 		if not args.bh then args.bh = 0.8 end
@@ -236,29 +236,29 @@ local cardhighold = Card.highlight
 function Card:highlight(is_highlighted)
 	self.highlighted = is_highlighted
 	
-	if not self.highlighted and FELIJO.highlighted_head == self then
-		FELIJO.highlighted_head = nil
+	if not self.highlighted and FelisAG.highlighted_head == self then
+		FelisAG.highlighted_head = nil
 	elseif self.highlighted and self.ability and self.ability.is_totem_head then
-		FELIJO.highlighted_head = self
+		FelisAG.highlighted_head = self
 	end
 	--[[
-	if self.highlighted and (G.pack_cards and self.area == G.pack_cards and self.ability.set == "felijo_totem_parts") then
+	if self.highlighted and (G.pack_cards and self.area == G.pack_cards and self.ability.set == "feli_fag_totem_parts") then
 		if self.children.use_button then
 			self.children.use_button:remove()
 			self.children.use_button = nil
 		end
 
 		self.children.use_button = UIBox({
-			definition = FELIJO.button_func(self, {
+			definition = FelisAG.button_func(self, {
 				use = true,
 				align = "cr",
 				align_other = "bm",
 				text = "SELECT",                           
-				button = "felijo_pull",  
-				func = "felijo_can_pull",
+				button = "feli_fag_pull",  
+				func = "feli_fag_can_pull",
 				one_press = true,
 				text_colour = G.C.WHITE,
-				colour = G.ARGS.LOC_COLOURS.felijo_ttm,  
+				colour = G.ARGS.LOC_COLOURS.feli_fag_ttm,  
 				under = true,
 			}),
 			config = {
@@ -273,20 +273,20 @@ function Card:highlight(is_highlighted)
 		})
 	else
 	]]
-	if self.highlighted and self.ability and self.ability.is_totem_head and self.area and self.area == G.felijo_totems then
+	if self.highlighted and self.ability and self.ability.is_totem_head and self.area and self.area == G.feli_fag_totems then
 		if self.children.use_button then
 			self.children.use_button:remove()
 			self.children.use_button = nil
 		end
 		
 		self.children.use_button = UIBox({
-			definition = FELIJO.button_func(self, {
+			definition = FelisAG.button_func(self, {
 				sell = true,
 				use = nil,
-				ref_table_text = FELIJO,
+				ref_table_text = FelisAG,
 				ref_value_text = "totem_text",                      
 				button = nil,  
-				func = "felijo_totem_button",
+				func = "feli_fag_totem_button",
 				one_press = true,
 				text_colour = G.C.WHITE,
 				colour = G.C.UI.BACKGROUND_INACTIVE,  
@@ -304,20 +304,20 @@ function Card:highlight(is_highlighted)
 			},
 		})
 		
-	elseif self.highlighted and self.ability and self.ability.is_totem_body and self.area and self.area == G.felijo_totems then
+	elseif self.highlighted and self.ability and self.ability.is_totem_body and self.area and self.area == G.feli_fag_totems then
 		if self.children.use_button then
 			self.children.use_button:remove()
 			self.children.use_button = nil
 		end
 
 		self.children.use_button = UIBox({
-			definition = FELIJO.button_func(self, {
+			definition = FelisAG.button_func(self, {
 				sell = true,
 				use = true,
-				ref_table_text = FELIJO,
+				ref_table_text = FelisAG,
 				ref_value_text = "totem_text",                          
-				button = "felijo_combine_totem",  
-				func = "felijo_totem_button",
+				button = "feli_fag_combine_totem",  
+				func = "feli_fag_totem_button",
 				one_press = false,
 				text_colour = G.C.WHITE,
 				colour = G.C.UI.BACKGROUND_INACTIVE,  

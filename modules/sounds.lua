@@ -11,10 +11,10 @@ SMODS.Sound({key = "totem_add", path = "totem_add.ogg"})
 
 
 
-SMODS.Sound({key = "felijo_space_shuttle_cd_5", path = "shuttle/countdown-5.ogg"})
-SMODS.Sound({key = "felijo_space_shuttle_cd_4", path = "shuttle/countdown-4.ogg"})
-SMODS.Sound({key = "felijo_space_shuttle_cd_3", path = "shuttle/countdown-3.ogg"})
-SMODS.Sound({key = "felijo_space_shuttle_cd_2", path = "shuttle/countdown-2.ogg"})
-SMODS.Sound({key = "felijo_space_shuttle_cd_1", path = "shuttle/countdown-1.ogg"})
-SMODS.Sound({key = "felijo_space_shuttle_blastoff", path = "shuttle/blastoff.ogg"})
+SMODS.Sound({key = "feli_fag_space_shuttle_cd_5", path = "shuttle/countdown-5.ogg"})
+SMODS.Sound({key = "feli_fag_space_shuttle_cd_4", path = "shuttle/countdown-4.ogg"})
+SMODS.Sound({key = "feli_fag_space_shuttle_cd_3", path = "shuttle/countdown-3.ogg"})
+SMODS.Sound({key = "feli_fag_space_shuttle_cd_2", path = "shuttle/countdown-2.ogg"})
+SMODS.Sound({key = "feli_fag_space_shuttle_cd_1", path = "shuttle/countdown-1.ogg"})
+SMODS.Sound({key = "feli_fag_space_shuttle_blastoff", path = "shuttle/blastoff.ogg"})
 

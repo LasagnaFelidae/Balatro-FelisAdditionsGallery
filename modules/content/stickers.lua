@@ -25,7 +25,7 @@ SMODS.Sticker{
 	calculate = function(self, card, context)
 		if context.joker_main then
 			return {
-				felijo_xbscore = self.config.xbscore,
+				feli_fag_xbscore = self.config.xbscore,
                 mult = self.config.mult
 			}
 		end

@@ -7,10 +7,10 @@ Parameters:
 Returns:
   table|nil: tribe data if found, otherwise nil.
 ]]--
-FELIJO.indexTribe = function(tribe_key)
+FelisAG.indexTribe = function(tribe_key)
     if not tribe_key then return nil end
 
-    for _, data in ipairs(FELIJO.tribe_table) do
+    for _, data in ipairs(FelisAG.tribe_table) do
         if data.key == tribe_key then
             return data
         end
@@ -28,10 +28,10 @@ Parameters:
 Returns:
   table|nil: sigil data if found, otherwise nil.
 ]]--
-FELIJO.indexTotemSigil = function(sigil_key)
+FelisAG.indexTotemSigil = function(sigil_key)
     if not sigil_key then return nil end
 
-    for _, data in ipairs(FELIJO.totem_sigil_table) do
+    for _, data in ipairs(FelisAG.totem_sigil_table) do
         if data.key == sigil_key then
             return data
         end
@@ -49,10 +49,10 @@ Parameters:
 Returns:
   string|nil: the matching tribe key or nil if not found.
 ]]--
-FELIJO.getTribefromTotem = function(totem_key)
+FelisAG.getTribefromTotem = function(totem_key)
     if not totem_key then return nil end
 
-    for _, data in ipairs(FELIJO.tribe_table) do
+    for _, data in ipairs(FelisAG.tribe_table) do
         if data.totem_key == totem_key then
             return data.key
         end
@@ -70,10 +70,10 @@ Parameters:
 Returns:
   string|nil: the matching sigil key or nil if not found.
 ]]--
-FELIJO.getSigilfromTotem = function(totem_key)
+FelisAG.getSigilfromTotem = function(totem_key)
     if not totem_key then return nil end
 
-    for _, data in ipairs(FELIJO.totem_sigil_table) do
+    for _, data in ipairs(FelisAG.totem_sigil_table) do
         if data.totem_key == totem_key then
             return data.key
         end
@@ -87,11 +87,11 @@ Remove all totem sigils from all jokers.
 
 No parameters.
 ]]--
-FELIJO.removeTotemSigils = function()
+FelisAG.removeTotemSigils = function()
     if not G.jokers or not G.jokers.cards then return end
     for _, card in ipairs(G.jokers.cards) do
         if card.ability then
-            for _, sigil_data in ipairs(FELIJO.totem_sigil_table) do
+            for _, sigil_data in ipairs(FelisAG.totem_sigil_table) do
                 local sticker_key = sigil_data.key
                 if card.ability[sticker_key] then
                     card:remove_sticker(sticker_key)
@@ -112,8 +112,8 @@ Parameters:
   totem_body (table): required totem body card containing ability.totem_sigil.
   tribe (string): required tribe to apply.
 ]]--
-FELIJO.applyTotemSigils = function(totem_body, tribe)
-    totem_body = totem_body or FELIJO.active_totem
+FelisAG.applyTotemSigils = function(totem_body, tribe)
+    totem_body = totem_body or FelisAG.active_totem
     tribe = tribe or (totem_body and totem_body.ability.totem_tribe)
     
     if not totem_body or not tribe or not totem_body.ability.totem_sigil then
@@ -131,7 +131,7 @@ FELIJO.applyTotemSigils = function(totem_body, tribe)
             goto continue
         end
 
-        local tribes = FELIJO.getCardTribes(card)
+        local tribes = FelisAG.getCardTribes(card)
 
         if tribes and type(tribes) ~= "table" then
             tribes = {tribes}
@@ -157,7 +157,7 @@ FELIJO.applyTotemSigils = function(totem_body, tribe)
     end
 
     if applied then
-        play_sound("felijo_totem_activate", 1)
+        play_sound("feli_fag_totem_activate", 1)
     end
 end
 
@@ -174,7 +174,7 @@ Parameters:
 Returns:
     table: list of tribe keys that apply to the card, or {"Other"} if none found.
 ]]--
-FELIJO.getCardTribes = function(card)
+FelisAG.getCardTribes = function(card)
     if not card or not card.config or not card.config.center then
         return nil
     end
@@ -202,7 +202,7 @@ FELIJO.getCardTribes = function(card)
     end
 
     -- Revo XMOD
-    if FELIJO.is_mod_loaded("RevosVault") then
+    if FelisAG.is_mod_loaded("RevosVault") then
         if card.config.center.pools and card.config.center.pools["BananaPool"] then
             table.insert(tribes, "Banana")
             table.insert(tribes, "Food")
@@ -218,8 +218,8 @@ FELIJO.getCardTribes = function(card)
         local js = card.ability.extra.joyous_spring
         if js.is_all_types then
             table.insert(tribes, "All")
-        elseif FELIJO.JoyousTribes then
-            for tribe_name, type_table in pairs(FELIJO.JoyousTribes) do
+        elseif FelisAG.JoyousTribes then
+            for tribe_name, type_table in pairs(FelisAG.JoyousTribes) do
                 if type_table[js.monster_type] then
                     table.insert(tribes, tribe_name)
                 end
@@ -229,8 +229,8 @@ FELIJO.getCardTribes = function(card)
 
     -- XMOD Pool Aliases
     local pools = card.config.center.pools
-    if pools and FELIJO.PoolTribes then
-        for tribe_name, pool_list in pairs(FELIJO.PoolTribes) do
+    if pools and FelisAG.PoolTribes then
+        for tribe_name, pool_list in pairs(FelisAG.PoolTribes) do
             for _, pool_name in ipairs(pool_list) do
                 if pools[pool_name] then
                     table.insert(tribes, tribe_name)
@@ -240,9 +240,9 @@ FELIJO.getCardTribes = function(card)
         end
     end
 
-    -- Base Felijo Tribes
+    -- Base Feli_fag Tribes
     if pools then
-        for tribe_name, _ in pairs(FELIJO.PoolTribes or {}) do
+        for tribe_name, _ in pairs(FelisAG.PoolTribes or {}) do
             if pools[tribe_name] then
                 table.insert(tribes, tribe_name)
             end
