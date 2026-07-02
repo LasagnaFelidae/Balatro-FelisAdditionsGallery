@@ -1,7 +1,7 @@
 FelisAG.Reptile = SMODS.Joker:extend{
 	atlas = 'feli_fag_insReptile',
 	pools = {
-		["FelisJokeria"]=true,
+		["FelisAdditions"]=true,
 		["Inscryption"] = true, 
 		["Beast"] = true,
 		["Reptile"] = true, 

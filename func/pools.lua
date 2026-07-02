@@ -18,7 +18,7 @@ SMODS.ObjectType({
 	end,
 })
 SMODS.ObjectType({
-	key = "FelisJokeria",
+	key = "FelisAdditions",
 	default = "j_joker",
 	cards = {},
 	inject = function(self)

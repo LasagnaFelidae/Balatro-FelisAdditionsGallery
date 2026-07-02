@@ -280,7 +280,7 @@ end
 SMODS.Joker {
     atlas = 'otherJokers',
     pos = { x = 0, y = 0 },
-    pools = {["FelisJokeria"] = true, ["Money"] = true },
+    pools = {["FelisAdditions"] = true, ["Money"] = true },
     key = "feli_fag_stock_exchange",
     rarity = 2,
     cost = 6,

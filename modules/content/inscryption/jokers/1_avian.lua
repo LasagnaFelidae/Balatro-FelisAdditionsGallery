@@ -2,7 +2,7 @@ SMODS.Joker { -- Uncommon, Magpie
     atlas = 'insAvian',
     pos = { x = 0, y = 0 },
     pools = {
-		["FelisJokeria"]= true, 
+		["FelisAdditions"]= true, 
 		["Steam"] = true, 
 		["Inscryption"]=true,
 		["Beast"] = true,		

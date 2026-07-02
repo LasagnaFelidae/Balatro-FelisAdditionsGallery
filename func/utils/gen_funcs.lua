@@ -248,7 +248,7 @@ end
 Merge multiple pools by set logic.
 
 Params:
-  pools (table): required list of pool names (strings). Example: {'FelisJokeria', 'Inscryption'}.
+  pools (table): required list of pool names (strings). Example: {'FelisAdditions', 'Inscryption'}.
   op (string|nil): optional operation: "AND", "OR", or "NOT". Defaults to "AND".
   inject (boolean|nil): optional. If true and inject_pool provided, new cards are injected for results.
   inject_pool (table|nil): optional UI pool object with .cards used for injection.

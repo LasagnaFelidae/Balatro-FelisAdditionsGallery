@@ -2,7 +2,7 @@ SMODS.Joker{  --rare Mycologists, The
 	atlas = 'insDeathcard',
 	pos = { x = 3, y = 0 },
 	pools = {
-		["FelisJokeria"]=true,
+		["FelisAdditions"]=true,
 		["Beast"] = true,	
 		["Inscryption"] = true, 
 		["Human"] = true 

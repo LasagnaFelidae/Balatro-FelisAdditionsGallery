@@ -35,7 +35,7 @@ FelisAG.LoverJoker = SMODS.Joker:extend {
 FelisAG.LoverJoker { --2, 0, biting the bolster
 	atlas = 'bodyandblood',
 	pos = { x = 2, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
+	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
 	key = "feli_fag_unlovable",
 	rarity = 2,
 	cost = 6,
@@ -83,7 +83,7 @@ FelisAG.LoverJoker { --2, 0, biting the bolster
 FelisAG.LoverJoker { --4, 0, do not come near
 	atlas = 'bodyandblood',
 	pos = { x = 4, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
+	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
 	key = "feli_fag_desperatemeasures",
 	rarity = 2,
 	cost = 6,
@@ -142,7 +142,7 @@ blueprint_compat = true,
 FelisAG.LoverJoker { --3, 0, true religion
 	atlas = 'bodyandblood',
 	pos = { x = 3, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
+	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
 	key = "feli_fag_truereligion",
 	rarity = 2,
 	cost = 6,
@@ -197,7 +197,7 @@ FelisAG.LoverJoker { --3, 0, true religion
 FelisAG.LoverJoker { --0, 0, product of fear
 	atlas = 'bodyandblood',
 	pos = { x = 0, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
+	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
 	key = "feli_fag_productoffear",
 	rarity = 2,
 	cost = 6,
@@ -228,7 +228,7 @@ FelisAG.LoverJoker { --0, 0, product of fear
 FelisAG.LoverJoker { -- 1, 0 Redcap, arm cut
 	atlas = 'bodyandblood',
 	pos = { x = 1, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
+	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
 	key = "feli_fag_redcap",
 	rarity = 2,
 	cost = 6,
@@ -287,7 +287,7 @@ blueprint_compat = true,
 FelisAG.LoverJoker { -- 7, 0 Spear Flowers
 	atlas = 'bodyandblood',
 	pos = { x = 7, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
+	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
 	key = "feli_fag_spearflowers",
 	rarity = 2,
 	cost = 6,
@@ -349,7 +349,7 @@ FelisAG.LoverJoker { -- 7, 0 Spear Flowers
 FelisAG.LoverJoker { -- 6, 0 Grazing On Fear
 	atlas = 'bodyandblood',
 	pos = { x = 6, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
+	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
 	key = "feli_fag_grazingonfear",
 	rarity = 2,
 	cost = 6,
@@ -398,7 +398,7 @@ FelisAG.LoverJoker { -- 6, 0 Grazing On Fear
 FelisAG.LoverJoker { -- 5, 0 hole in the heart
 	atlas = 'bodyandblood',
 	pos = { x = 5, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
+	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
 	key = "feli_fag_holeintheheart",
 	rarity = 2,
 	cost = 6,

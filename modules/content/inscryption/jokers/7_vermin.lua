@@ -1,7 +1,7 @@
 FelisAG.Vermin = SMODS.Joker:extend{
     atlas = 'feli_fag_insVermin',
 	pools = {
-		["FelisJokeria"]=true,
+		["FelisAdditions"]=true,
 		["Inscryption"] = true, 
 		["Beast"] = true,
 		["Vermin"] = true, 

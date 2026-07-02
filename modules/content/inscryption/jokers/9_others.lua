@@ -3,7 +3,7 @@ SMODS.Joker {  --Bell Tentacle
     atlas = 'insOther',
     pos = { x = 2, y = 0 },
     pools = {
-		["FelisJokeria"]= true,  
+		["FelisAdditions"]= true,  
 		["Inscryption"]=true,
 		["Beast"] = true,		
 		["Other"] = true,  
@@ -68,7 +68,7 @@ SMODS.Joker {  --Hand Tentacle
     atlas = 'insOther',
     pos = { x = 3, y = 0 },
     pools = {
-		["FelisJokeria"]= true,  
+		["FelisAdditions"]= true,  
 		["Inscryption"]=true,
 		["Beast"] = true,		
 		["Other"] = true,  
@@ -103,7 +103,7 @@ SMODS.Joker {  --Consumable Tentacle
     atlas = 'insOther',
     pos = { x = 1, y = 0 },
     pools = {
-		["FelisJokeria"]= true,  
+		["FelisAdditions"]= true,  
 		["Inscryption"]=true,
 		["Beast"] = true,		
 		["Other"] = true,  
@@ -139,7 +139,7 @@ SMODS.Joker { --Edition Tentacle
     atlas = 'insOther',
     pos = { x = 4, y = 0 },
     pools = {
-		["FelisJokeria"]= true,  
+		["FelisAdditions"]= true,  
 		["Inscryption"]=true,
 		["Beast"] = true,		
 		["Other"] = true,  
@@ -188,7 +188,7 @@ SMODS.Joker {  --Enhancement Tentacle
     atlas = 'insOther',
     pos = { x = 0, y = 0 },
     pools = {
-		["FelisJokeria"]= true,  
+		["FelisAdditions"]= true,  
 		["Inscryption"]=true,
 		["Beast"] = true,		
 		["Other"] = true,  
@@ -238,7 +238,7 @@ SMODS.Joker {  --Glitched Card
     atlas = 'insGlitched',
     pos = { x = 0, y = 0 },
     pools = {
-		["FelisJokeria"]= true,  
+		["FelisAdditions"]= true,  
 		["Inscryption"]=true,
 		["Beast"] = true,		
 		["Other"] = true,  

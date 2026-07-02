@@ -3,7 +3,7 @@ SMODS.Joker { -- Common, loose tail
     atlas = 'insTail',
     pos = { x = 0, y = 0 },
     pools = {
-	["FelisJokeria"]= true,
+	["FelisAdditions"]= true,
 	["Inscryption"] = true,
 	["Beast"] 		= true,
 	["Tail"] 		= true,

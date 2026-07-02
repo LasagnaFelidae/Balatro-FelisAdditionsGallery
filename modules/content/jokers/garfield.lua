@@ -31,7 +31,7 @@ FelisAG.tower_list =
 
 FelisAG.GarfieldJoker { --2, 0, biting the bolster
 	pos = { x = 0, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
+	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
 	key = "feli_fag_grf_defenestration",
 	rarity = 2,
 	cost = 6,
@@ -94,7 +94,7 @@ FelisAG.GarfieldJoker { --2, 0, biting the bolster
 }
 --[[FelisAG.GarfieldJoker { -- Pipe Strip
 pos = { x = 1, y = 0 },
-pools = {["FelisJokeria"] = true, ["Feline"] = true, },
+pools = {["FelisAdditions"] = true, ["Feline"] = true, },
 key = "feli_fag_grf_pipe",
 rarity = 2,
 cost = 6,
@@ -140,7 +140,7 @@ blueprint_compat = true,
 ]]
 FelisAG.GarfieldJoker { -- Busy Boy
 	pos = { x = 2, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
+	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
 	key = "feli_fag_grf_busyboy",
 	rarity = 2,
 	cost = 6,
@@ -182,7 +182,7 @@ FelisAG.GarfieldJoker { -- Busy Boy
 
 FelisAG.GarfieldJoker { -- Recipe for Success - Oven of out hot eat the food
 	pos = { x = 3, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
+	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
 	key = "feli_fag_grf_lasagnarecipe",
 	rarity = 2,
 	cost = 6,

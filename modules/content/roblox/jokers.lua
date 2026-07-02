@@ -7,7 +7,7 @@ SMODS.Joker {
     atlas = 'rbxJokers',
     pos = { x = 5, y = 0 },
     pools = {
-		["FelisJokeria"] = true, 
+		["FelisAdditions"] = true, 
 		["Roblox"] = true, 
 		["Food"] = true, 
 		["Gear"] = true,
@@ -63,7 +63,7 @@ SMODS.Joker {
     atlas = 'rbxJokers',
     pos = { x = 2, y = 0 },
     pools = {
-		["FelisJokeria"] = true, 
+		["FelisAdditions"] = true, 
 		["Roblox"] = true, 
 		["Food"] = true, 
 		["Gear"] = true,
@@ -119,7 +119,7 @@ SMODS.Joker {
     atlas = 'rbxJokers',
     pos = { x = 8, y = 0 },
     pools = {
-		["FelisJokeria"] = true, 
+		["FelisAdditions"] = true, 
 		["Roblox"] = true, 
 		["Food"] = true, 
 		["Gear"] = true,
@@ -175,7 +175,7 @@ SMODS.Joker {
     atlas = 'rbxJokers',
     pos = { x = 3, y = 0 },
     pools = {
-		["FelisJokeria"] = true, 
+		["FelisAdditions"] = true, 
 		["Roblox"] = true, 
 		["Food"] = true, 
 		["Gear"] = true,
@@ -231,7 +231,7 @@ SMODS.Joker {
     atlas = 'rbxJokers',
     pos = { x = 4, y = 0 },
     pools = {
-		["FelisJokeria"] = true, 
+		["FelisAdditions"] = true, 
 		["Roblox"] = true, 
 		["Food"] = true, 
 		["Gear"] = true,
@@ -294,7 +294,7 @@ SMODS.Joker {
     atlas = 'rbxJokers',
     pos = { x = 7, y = 0 },
     pools = {
-		["FelisJokeria"] = true, 
+		["FelisAdditions"] = true, 
 		["Roblox"] = true, 
 		["Food"] = true, 
 		["Gear"] = true,
@@ -362,7 +362,7 @@ SMODS.Joker {
     atlas = 'rbxJokers',
     pos = { x = 6, y = 0 },
     pools = {
-		["FelisJokeria"] = true, 
+		["FelisAdditions"] = true, 
 		["Roblox"] = true, 
 		["Food"] = true, 
 		["Gear"] = true,
@@ -427,7 +427,7 @@ SMODS.Joker {
     atlas = 'rbxJokers',
     pos = { x = 0, y = 0 },
     pools = {
-		["FelisJokeria"] = true, 
+		["FelisAdditions"] = true, 
 		["Roblox"] = true, 
 		["Food"] = true,
 		["Gear"] = true,		
@@ -492,7 +492,7 @@ SMODS.Joker {
     atlas = 'rbxJokers',
     pos = { x = 1, y = 0 },
     pools = {
-		["FelisJokeria"] = true, 
+		["FelisAdditions"] = true, 
 		["Roblox"] = true, 
 		["Food"] = true,
 		["Gear"] = true,
@@ -563,7 +563,7 @@ SMODS.Joker {
     atlas = 'rbxJokers',
     pos = { x = 9, y = 0 },
     pools = {
-		["FelisJokeria"] = true, 
+		["FelisAdditions"] = true, 
 		["Roblox"] = true,
 	},
     key = "feli_fag_rbx_vendingmachine",
@@ -625,7 +625,7 @@ SMODS.Joker {
     atlas = 'rbxJokers',
     pos = { x = 0, y = 2 },
     pools = {
-		["FelisJokeria"] = true, 
+		["FelisAdditions"] = true, 
 		["Roblox"] = true, 
 		["Building Tool"] = true, 
 	},
@@ -697,7 +697,7 @@ SMODS.Joker {
     atlas = 'rbxJokers',
     pos = { x = 1, y = 2 },
     pools = {
-		["FelisJokeria"] = true, 
+		["FelisAdditions"] = true, 
 		["Roblox"] = true, 
 		["Building Tool"] = true, 
 	},
@@ -770,7 +770,7 @@ SMODS.Joker {
     atlas = 'rbxJokers',
     pos = { x = 2, y = 2 },
     pools = {
-		["FelisJokeria"] = true, 
+		["FelisAdditions"] = true, 
 		["Roblox"] = true, 
 		["Building Tool"] = true, 
 	},
@@ -833,7 +833,7 @@ SMODS.Joker {
     atlas = 'rbxJokers',
     pos = { x = 5, y = 0 },
     pools = {
-		["FelisJokeria"] = true, 
+		["FelisAdditions"] = true, 
 		["Roblox"] = true, 
 		["Food"] = true, 
 		["Gear"] = true,

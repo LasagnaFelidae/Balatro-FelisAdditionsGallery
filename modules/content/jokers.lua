@@ -74,7 +74,7 @@ SMODS.Joker {
 	soul_pos = {
 		x = 0, y = 1,
 	},
-	pools = {["FelisJokeria"] = true,},
+	pools = {["FelisAdditions"] = true,},
 	key = "feli_fag_rocket",
 	rarity = 1,
 	cost = 8,
@@ -163,7 +163,7 @@ SMODS.Joker {
 	soul_pos = {
 		x = 0, y = 1,
 	},
-	pools = {["FelisJokeria"] = true,},
+	pools = {["FelisAdditions"] = true,},
 	key = "feli_fag_mypenis",
 	rarity = 1,
 	cost = 8,

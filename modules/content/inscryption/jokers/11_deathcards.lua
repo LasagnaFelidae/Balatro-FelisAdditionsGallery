@@ -5,7 +5,7 @@ SMODS.Joker { -- Uncommon Aiko
 	atlas = 'insDeathcard',
 	pos = { x = 1, y = 0},
 	pools = {
-		["FelisJokeria"]=true,
+		["FelisAdditions"]=true,
 		["Inscryption"] = true, 
 		["Beast"] = true,
 		["Human"] = true, 
@@ -69,7 +69,7 @@ SMODS.Joker { -- Uncommon Ghost
 	atlas = 'insDeathcard',
 	pos = { x = 4, y = 1 },
 	pools = {
-		["FelisJokeria"]=true,
+		["FelisAdditions"]=true,
 		["Inscryption"] = true, 
 		["Beast"] = true,
 		["Other"] = true, 
@@ -140,7 +140,7 @@ SMODS.Joker { -- Uncommon Lily
 	atlas = 'insDeathcard',
 	pos = { x = 4, y = 0},
 	pools = {
-		["FelisJokeria"]=true, 
+		["FelisAdditions"]=true, 
 		["Inscryption"] = true, 
 		["Beast"] = true,
 		["Feline"] = true, 
@@ -238,7 +238,7 @@ SMODS.Joker { -- Uncommon Luna
 atlas = 'insDeathcard',
 pos = { x = 2, y = 0 },
 pools = {
-	["FelisJokeria"]=true,
+	["FelisAdditions"]=true,
 	["Inscryption"] = true,
 	["Beast"] = true,
 	["Object"] = true,
@@ -294,7 +294,7 @@ SMODS.Joker { -- Uncommon MissingNum
 	atlas = 'insDeathcard',
 	pos = { x = 3, y = 1},
 	pools = {
-		["FelisJokeria"]=true, 
+		["FelisAdditions"]=true, 
 		["Inscryption"] = true, 
 		["Beast"] = true,
 		["Feline"] = true, 
@@ -361,7 +361,7 @@ SMODS.Joker { -- Uncommon Notmario
 	atlas = 'insDeathcard',
 	pos = { x = 2, y = 1},
 	pools = {
-		["FelisJokeria"]=true, 
+		["FelisAdditions"]=true, 
 		["Inscryption"] = true, 
 		["Beast"] = true,
 		["Human"] = true, 
@@ -418,7 +418,7 @@ SMODS.Joker { -- Uncommon Tatsu
 atlas = 'insDeathcard',
 pos = { x = 1, y = 1},
 pools = {
-	["FelisJokeria"]=true, 
+	["FelisAdditions"]=true, 
 	["Inscryption"] = true, 
 	["Beast"] = true,
 	["Human"] = true, 
@@ -483,7 +483,7 @@ SMODS.Joker{  -- Uncommon Toga
 atlas = 'insDeathcard',
 pos = { x = 6, y = 0 },
 pools = {
-	["FelisJokeria"]=true,
+	["FelisAdditions"]=true,
 	["Inscryption"] = true,
 	["Beast"] = true,		
 	["Human"] = true, 
@@ -544,7 +544,7 @@ SMODS.Joker { -- Rare Evgast
 atlas = 'insDeathcard',
 pos = { x = 7, y = 0 },
 pools = {
-	["FelisJokeria"]=true,
+	["FelisAdditions"]=true,
 	["Inscryption"] = true, 
 	["Beast"] = true,
 	["Human"] = true, 
@@ -585,7 +585,7 @@ SMODS.Joker { -- Rare Gabby
 atlas = 'insDeathcard',
 pos = { x = 5, y = 1 },
 pools = {
-	["FelisJokeria"]=true,
+	["FelisAdditions"]=true,
 	["Inscryption"] = true, 
 	["Beast"] = true,
 	["Vermin"] = true, 
@@ -654,7 +654,7 @@ SMODS.Joker{  -- Rare nxkoo
 atlas = 'insDeathcard',
 pos = { x = 5, y = 0 },
 pools = {
-	["FelisJokeria"]= true, 
+	["FelisAdditions"]= true, 
 	["Inscryption"] = true, 
 	["Beast"] = true,
 	["Human"] = true, 
@@ -704,7 +704,7 @@ SMODS.Joker { -- Rare Revo
 atlas = 'insDeathcard',
 pos = { x = 4, y = 2 },
 pools = {
-	["FelisJokeria"]=true,
+	["FelisAdditions"]=true,
 	["Inscryption"] = true, 
 	["Beast"] = true,
 	["Human"] = true, 
@@ -804,7 +804,7 @@ SMODS.Joker { -- Rare Soul
 atlas = 'insDeathcard',
 pos = { x = 0, y = 1 },
 pools = {
-	["FelisJokeria"]=true,
+	["FelisAdditions"]=true,
 	["Inscryption"] = true, 
 	["Beast"] = true,
 	["Human"] = true, 
@@ -864,7 +864,7 @@ SMODS.Joker { -- Rare Leshy
 atlas = 'insDeathcard',
 pos = { x = 10, y = 0 },
 pools = {
-	["FelisJokeria"]=true,
+	["FelisAdditions"]=true,
 	["Inscryption"] = true, 
 	["Beast"] = true,
 	["Human"] = true, 
