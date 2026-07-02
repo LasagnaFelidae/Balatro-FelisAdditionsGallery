@@ -9,3 +9,4 @@ SMODS.Back{
     loc_vars = function (self, info_queue, card)
     end,
 }
+
