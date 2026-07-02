@@ -123,6 +123,7 @@ if FelisAG.is_mod_loaded("RevosVault") then
     assert(SMODS.load_file("./modules/content/crossmod/revo.lua"))()
 end
 if FelisAG.is_mod_loaded("aikoyorisshenanigans") then
+    --assert(SMODS.load_file("./modules/content/crossmod/clearances.aikoshen.lua"))()
     assert(SMODS.load_file("./modules/content/crossmod/achievements.aikoshen.lua"))()
     assert(SMODS.load_file("./modules/content/crossmod/aikoshen.lua"))()
 end

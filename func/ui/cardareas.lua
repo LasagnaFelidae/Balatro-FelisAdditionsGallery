@@ -17,9 +17,23 @@ SMODS.current_mod.custom_card_areas = function(game) -- game is the same as G
             align_buttons = true, -- aligns the buttons for cards like in the Joker/Consumable areas
         }
     )
+    game.feli_fag_clearances_area = CardArea(
+		game.consumeables.T.x + game.consumeables.T.w + 0.1, game.consumeables.T.y,
+		w, h,
+		{
+			card_limit = 5,
+			type = "clearances",
+			card_count = true,
+			highlight_limit = 1,
+			highlighted_limit = 1,
+			align_buttons = true,
+		}
+	)
     FelisAG.states.slot_visible = 1
     FelisAG.animate_areas()
 end
+
+
 
 G.FUNCS.toggle_totems = function(e)
     FelisAG.states.slot_visible = FelisAG.states.slot_visible * -1

@@ -10,21 +10,29 @@ local old_check_word = AKYRS.check_word
 
 AKYRS.check_word = function(str_arr_in)
     local AKYRS_WORDS_REF = AKYRS_WORDS
+    local result = old_check_word(str_arr_in)
 
-    result = old_check_word(str_arr_in)
-
-    if (next(SMODS.find_card("j_feli_fag_akyrs_lexicographer")) or next(SMODS.find_card("j_feli_fag_akyrs_fisher"))) then
-        AKYRS_WORDS = LEXICOGRAPHER_DICT
-        result = old_check_word(str_arr_in)
+    
+    if (result and result.valid == false) or result == nil then
+        if (next(SMODS.find_card("j_feli_fag_akyrs_lexicographer")) or 
+            next(SMODS.find_card("j_feli_fag_akyrs_fisher"))) then
+            AKYRS_WORDS = LEXICOGRAPHER_DICT
+            result = old_check_word(str_arr_in)
+        end
     end
 
     AKYRS_WORDS = AKYRS_WORDS_REF
-    if result == nil then
+    if (result and result.valid == false) or result == nil then
         result = old_check_word(str_arr_in)
     end
-
-
     --[[
+    if result and result.valid and result.word and G.GAME.aiko_words_played[result.word] then
+        if (next(SMODS.find_card("clearance_feli_fag_cerulean"))) then
+            result.valid = false
+        end
+    end
+    
+    
     if temp_french_check then
         AKYRS_WORDS = FRENCH_DICT
         if result == nil then
@@ -56,7 +64,7 @@ FelisAG.LetterJoker {
     key = "feli_fag_akyrs_lexicographer",
     atlas = 'pronounJokers',
     pos = { x = 0, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Letter"] = true, ["Scrabble"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
+	pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
 	pronouns = "she_her",
     blueprint_compat = true,
     rarity = 1,
@@ -114,7 +122,7 @@ FelisAG.LetterJoker {
     key = "feli_fag_akyrs_fisher",
     atlas = 'pronounJokers',
     pos = { x = 1, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Letter"] = true, ["Scrabble"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
+	pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
 	pronouns = "she_the",
     blueprint_compat = true,
     rarity = 1,
@@ -184,7 +192,7 @@ FelisAG.LetterJoker {
     key = "feli_fag_ltr_cleanslate",
     atlas = 'aikoJokers',
     pos = { x = 8, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Letter"] = true, ["Scrabble"] = true  },
+	pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true  },
     blueprint_compat = true,
     rarity = 1,
     cost = 6,
