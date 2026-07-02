@@ -1,12 +1,12 @@
 SMODS.Joker {
 	atlas = 'luckyfeli_fagker',
 	pos = { x = 0, y = 0 },
-	pools = {["FelisJokeria"] = true, ["Feline"] = true, },
+	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
 	key = "feli_fag_lucky_feli",
 	rarity = 2,
 	cost = 6,
 	config = {
-		extra = { xmult = 0.01, money = 266.00,},
+		extra = { xmult = 0.01, money = 301.00,},
 	},	
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.xmult, 1+(card.ability.extra.xmult*card.ability.extra.money), card.ability.extra.money} }
