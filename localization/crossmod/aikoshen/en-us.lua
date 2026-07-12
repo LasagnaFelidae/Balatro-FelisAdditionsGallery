@@ -51,6 +51,28 @@ return {
 
                 }
             },
+
+            j_feli_fag_akyrs_accountant = {
+                name = {
+                    "The Accountant",
+                    "{C:feli_fag_inactive,s:0.5}Augustine Anderson"
+                },
+                text = { 
+                    {
+                    "Enables the {C:purple}Pronoun Palace",
+                    "word dictionary"
+                    },
+                    {
+                    "Once per ante, when used,",
+                    "adds {C:attention}#1# {C:green,E:2}#2#{}",
+                    "{C:attention}Bigrams{} or {C:attention}Trigrams{}",
+                    },
+                    {
+                    "{C:inactive}(Uses left: {V:1}#3#{C:inactive})"
+                    },
+
+                }
+            },
 			j_feli_fag_ltr_dbl = {
                 name = "Double Letter Tile",
                 text = { 

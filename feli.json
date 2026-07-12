@@ -8,8 +8,8 @@
 	"priority": 800,
 	"badge_colour": "FFAA66",
 	"badge_text_colour": "374042",
-	"display_name": "Feli's A.G.",
-	"version": "0.10.1",
+	"display_name": "Feli's Additions",
+	"version": "0.10.2",
 	"dependencies": [
 		"Steamodded (>=1.0.0~BETA-1814a)", 
 		"Lovely (>=0.8.0)", 

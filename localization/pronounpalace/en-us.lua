@@ -43,6 +43,17 @@ return {
                     },
                 },
             },
+            m_feli_fag_pp_money = {
+                name = "Money Card",
+                text = {
+                    {
+                    "No tile value",
+                    "{C:gold}$#1#{} if this",
+                    "card is held in hand",
+                    "at end of the round"
+                    },
+                },
+            },
             m_feli_fag_pp_wood = {
                 name = "Wooden Card",
                 text = {

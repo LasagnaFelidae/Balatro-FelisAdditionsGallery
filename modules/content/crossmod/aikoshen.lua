@@ -15,7 +15,8 @@ AKYRS.check_word = function(str_arr_in)
     
     if (result and result.valid == false) or result == nil then
         if (next(SMODS.find_card("j_feli_fag_akyrs_lexicographer")) or 
-            next(SMODS.find_card("j_feli_fag_akyrs_fisher"))) then
+            next(SMODS.find_card("j_feli_fag_akyrs_fisher"))or 
+            next(SMODS.find_card("j_feli_fag_akyrs_accountant"))) then
             AKYRS_WORDS = LEXICOGRAPHER_DICT
             result = old_check_word(str_arr_in)
         end
@@ -43,6 +44,13 @@ AKYRS.check_word = function(str_arr_in)
 
     return result
 end
+
+
+local tiles = {
+   {key = "m_feli_fag_pp_wood", weight = 10},
+   {key = "m_feli_fag_pp_crit", weight = 4},
+   {key = "m_feli_fag_pp_bleed", weight = 2},
+}
 
 FelisAG.LetterJoker = SMODS.Joker:extend{
     akyrs_is_letter = true,
@@ -144,11 +152,7 @@ FelisAG.LetterJoker {
                     function ()
                         local crd = Card(11.5,15,G.CARD_W,G.CARD_H,pseudorandom_element(G.P_CARDS,pseudoseed("fisher")),G.P_CENTERS['c_base'],{playing_card = G.playing_card})
                         crd.is_null = true
-                        local tiles = {
-                            {key = "m_feli_fag_pp_wood", weight = 10},
-                            {key = "m_feli_fag_pp_crit", weight = 4},
-                            {key = "m_feli_fag_pp_bleed", weight = 2},
-                        }
+                        
                         crd:set_ability(FelisAG.quick_pool_pick(tiles))
                         G.playing_cards[#G.playing_cards+1] = crd
                         G.hand:emplace(crd)
@@ -177,6 +181,81 @@ FelisAG.LetterJoker {
             card.ability.fishing_rod.uses = card.ability.fishing_rod.max_uses
 			if card.ability.fishing_rod.used == true then 
 				card.ability.fishing_rod.used = false 
+				return {
+					message = localize("k_reset")
+				}
+			end
+		end
+    end
+}
+
+FelisAG.LetterJoker {
+    key = "feli_fag_akyrs_accountant",
+    atlas = 'pronounJokers',
+    pos = { x = 2, y = 0 },
+	pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
+	pronouns = "she_her",
+    blueprint_compat = true,
+    rarity = 1,
+    cost = 4,
+	config = { extra = {}, letter_opener = {used = false, max_cards= 2, min_length = 2, max_length = 3} },
+	can_use = function(self, card)
+        return not card.ability.letter_opener.used and G.GAME.blind.in_blind
+    end,
+	set_badges = function(self, card, badges)
+		badges[#badges+1] = create_badge(localize('k_feli_fag_pronounpalace'), HEX('E8C99A'), G.C.UI.TEXT_DARK,  1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_aikoshen'), HEX('A4CA5A'), HEX('753F8E'),  1 )
+	end,
+
+	use = function(self, card, area, copier)
+        AKYRS.simple_event_add(
+            function ()
+                AKYRS.fill_hand()
+                for i = 1, card.ability.letter_opener.max_cards+1 do
+                    AKYRS.simple_event_add(
+                        function ()
+                            local moneycrd = Card(11.5,15,G.CARD_W,G.CARD_H,pseudorandom_element(G.P_CARDS,pseudoseed("accountant")),G.P_CENTERS['m_feli_fag_pp_money'],{playing_card = G.playing_card})
+                            moneycrd.is_null = true
+                            AKYRS.simple_event_add(
+                                function ()
+                                    local ante = Talisman and to_number(G.GAME.round_resets.ante) or G.GAME.round_resets.ante
+                                    local fct = 2 * (i - 1) - 1
+                                    local max_freq = (70000/(fct))/ante^1.5 / (AKYRS.config.full_dictionary and 1 or 10)
+                                    local min_freq = (15000/(fct))/ante^1.03 / (AKYRS.config.full_dictionary and 1 or 10)
+                                    local prompt, freq = AKYRS.get_bomb_prompt(
+                                    {
+                                        min_freq = min_freq, 
+                                        max_freq = max_freq, 
+                                        min_length = card.ability.letter_opener.min_length, 
+                                        max_length = card.ability.letter_opener.max_length, 
+                                        seed = "accountingisfun"
+                                    })
+                                    if prompt then
+                                        AKYRS.change_letter_to(moneycrd,prompt)
+                                        G.hand:emplace(moneycrd)
+                                        table.insert(G.playing_cards, moneycrd)
+                                    end
+                                    return true
+                                end, 0)
+                            return true
+                        end, 0.2
+                    )
+                end
+                card.ability.letter_opener.used = true
+                return true
+            end, 0
+        )
+    end,
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = G.P_CENTERS["m_feli_fag_pp_money"]
+		local is_used = card.ability.letter_opener.used == true and "Used" or "Active"
+		local is_used_clr = card.ability.letter_opener.used == true and G.C.RED or G.C.GREEN
+        return { vars = { card.ability.letter_opener.max_cards, localize{type = 'name_text', key = "m_feli_fag_pp_money", set = 'Enhanced'}, is_used, colours = {is_used_clr}}, } 
+    end,
+    calculate = function(self, card, context)
+		if context.ante_change and context.ante_end then
+			if card.ability.letter_opener.used == true then 
+				card.ability.letter_opener.used = false 
 				return {
 					message = localize("k_reset")
 				}

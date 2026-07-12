@@ -52,6 +52,19 @@ FelisAG.PPEnhancement {
 
 FelisAG.PPEnhancement {
     atlas = 'pronounEnhancements',
+    key = 'pp_money',
+    replace_base_card = true,
+    pos = { x = 4, y = 0},
+    config = { h_dollars = 1},
+    weight = 0.8,
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.h_dollars} }
+    end,
+    
+}
+
+FelisAG.PPEnhancement {
+    atlas = 'pronounEnhancements',
     key = 'pp_bleed',
     pos = { x = 0, y = 0},
     config = { extra = { xscore = 0.9, mult = 5},},
@@ -79,7 +92,7 @@ FelisAG.PPEnhancement {
     atlas = 'pronounEnhancements',
     key = 'pp_bomb',
     pos = { x = 1, y = 0},
-    config = { extra = { xscore = 0.5, xblindsize = 0.8}, timer = {hands = 2, }},
+    config = { extra = { xscore = 0.5, xblindsize = 0.8}, timer = {hands = 2, }, },
     weight = 0.9,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = {key = "feli_fag_explode", set ="Other"}
