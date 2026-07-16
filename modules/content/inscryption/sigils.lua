@@ -242,40 +242,38 @@ SMODS.Sticker{
 		return { vars = {mult_v} }
 	end,
 	apply = function(self, card, val)
-		card.ability.stk_goobert_mult = (pseudorandom("stk_goobert", 90, 250)/100)
+		if val == true then
+			card.ability.stk_goobert_mult = (pseudorandom("stk_goobert", 90, 250)/100)
+		end
 		card.ability[self.key] = val
 		if card.ability.extra and type(card.ability.extra) == "table" then
 			for _, v in pairs(card.ability.extra) do
 				if type(v) == "number" and v ~= 0 then
-					card.ability.extra[_] = card.ability.extra[_] * card.ability.stk_goobert_mult
+					if val == true then 
+						card.ability.extra[_] = card.ability.extra[_] * card.ability.stk_goobert_mult
+					else
+						card.ability.extra[_] = card.ability.extra[_] / card.ability.stk_goobert_mult
+					end
 				end
 			end
 		end
 		if card.ability and type(card.ability) == "table" then
 			for _, v in pairs(card.ability) do
 				if type(v) == "number" and _ ~= "stk_goobert_mult" and v ~= 0 and v ~= 1 then
-					card.ability[_] = card.ability[_] * card.ability.stk_goobert_mult
+					if val == true then 
+						card.ability[_] = card.ability[_] * card.ability.stk_goobert_mult
+					else
+						card.ability[_] = card.ability[_] / card.ability.stk_goobert_mult
+					end
 				end
 			end
 		end
-	end,
-	
-	remove = function(self, card)
-		if card.ability.extra and type(card.ability.extra) == "table" then
-			for _, v in pairs(card.ability.extra) do
-				if type(v) == "number" and _ ~= "stk_goobert_mult" and v ~= 0 and v ~= 1 then
-					card.ability.extra[_] = card.ability.extra[_] / card.ability.stk_goobert_mult
-				end
-			end
+		if val == true then 
+			card.sell_cost = card.sell_cost * card.ability.stk_goobert_mult
+		else
+			card.sell_cost = card.sell_cost / card.ability.stk_goobert_mult
+			card.ability.stk_goobert_mult = nil
 		end
-		if card.ability and type(card.ability) == "table" then
-			for _, v in pairs(card.ability) do
-				if type(v) == "number" and _ ~= "stk_goobert_mult" and v ~= 0 and v ~= 1 then
-					card.ability[_] = card.ability[_] / card.ability.stk_goobert_mult
-				end
-			end
-		end
-		card.ability.stk_goobert_mult = nil
 	end,
 	
 }

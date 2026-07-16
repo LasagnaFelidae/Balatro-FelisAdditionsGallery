@@ -106,7 +106,7 @@ return {
                 name = "Copy Tool",
                 text = {
                     "When entering a blind,",
-                    "copy a random {C:attention}Joker.",
+                    "{C:blue}copy{} a random {C:attention}Joker.",
                     "{C:inactive}(Must have room){}",
                 },
             },

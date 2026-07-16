@@ -18,7 +18,7 @@ SMODS.current_mod.custom_card_areas = function(game) -- game is the same as G
         }
     )
     game.feli_fag_clearances_area = CardArea(
-		game.consumeables.T.x + game.consumeables.T.w + 0.1, game.consumeables.T.y,
+		game.consumeables.T.x + game.consumeables.T.w + 0.1, game.consumeables.T.y - 9,
 		w, h,
 		{
 			card_limit = 5,

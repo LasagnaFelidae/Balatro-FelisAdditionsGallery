@@ -644,6 +644,7 @@ SMODS.Joker {
 	end,
 	
     loc_vars = function(self, info_queue, card)
+		info_queue[#info_queue+1] = {key = 'feli_fag_copied', set = 'Other',}
 		return { vars = { card.ability.extra.chips, card.ability.extra.chips_mod} }
 	end,
 	

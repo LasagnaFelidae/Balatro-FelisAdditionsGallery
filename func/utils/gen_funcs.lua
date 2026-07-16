@@ -1,3 +1,7 @@
+--[[
+Put the mod id in quotes like "feli_fag" or "BadDirector"
+]]--
+
 FelisAG.is_mod_loaded = function(var) -- credit aiko
     if not var then return false end
     return (SMODS.Mods[var] and SMODS.Mods[var].can_load) and true or false

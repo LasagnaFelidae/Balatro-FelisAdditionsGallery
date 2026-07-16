@@ -198,7 +198,7 @@ FelisAG.LetterJoker {
     blueprint_compat = true,
     rarity = 1,
     cost = 4,
-	config = { extra = {}, letter_opener = {used = false, max_cards= 2, min_length = 2, max_length = 3} },
+	config = { extra = {}, letter_opener = {used = false, max_cards= 1, min_length = 2, max_length = 3} },
 	can_use = function(self, card)
         return not card.ability.letter_opener.used and G.GAME.blind.in_blind
     end,
@@ -211,11 +211,13 @@ FelisAG.LetterJoker {
         AKYRS.simple_event_add(
             function ()
                 AKYRS.fill_hand()
-                for i = 1, card.ability.letter_opener.max_cards+1 do
+                for i = 1, card.ability.letter_opener.max_cards do
                     AKYRS.simple_event_add(
                         function ()
                             local moneycrd = Card(11.5,15,G.CARD_W,G.CARD_H,pseudorandom_element(G.P_CARDS,pseudoseed("accountant")),G.P_CENTERS['m_feli_fag_pp_money'],{playing_card = G.playing_card})
                             moneycrd.is_null = true
+                            moneycrd.ability.akyrs_self_destructs = true
+                            --[[
                             AKYRS.simple_event_add(
                                 function ()
                                     local ante = Talisman and to_number(G.GAME.round_resets.ante) or G.GAME.round_resets.ante
@@ -237,6 +239,16 @@ FelisAG.LetterJoker {
                                     end
                                     return true
                                 end, 0)
+                            ]]--
+                            AKYRS.change_letter_to(moneycrd,
+                                (
+                                    pseudorandom("accountant",1,6) == 1 
+                                    and "###" 
+                                    or "##"
+                                ) 
+                            )
+                            G.hand:emplace(moneycrd)
+                            table.insert(G.playing_cards, moneycrd)
                             return true
                         end, 0.2
                     )
@@ -248,9 +260,12 @@ FelisAG.LetterJoker {
     end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = G.P_CENTERS["m_feli_fag_pp_money"]
+        info_queue[#info_queue+1] = { key = "akyrs_self_destructs", set = "Other",}
+        info_queue[#info_queue+1] = { key = "feli_fag_akyrs_wildcard", set = "Other",}
+        info_queue[#info_queue+1] = { key = "feli_fag_akyrs_ngrams", set = "Other",}
 		local is_used = card.ability.letter_opener.used == true and "Used" or "Active"
 		local is_used_clr = card.ability.letter_opener.used == true and G.C.RED or G.C.GREEN
-        return { vars = { card.ability.letter_opener.max_cards, localize{type = 'name_text', key = "m_feli_fag_pp_money", set = 'Enhanced'}, is_used, colours = {is_used_clr}}, } 
+        return { vars = { card.ability.letter_opener.max_cards, localize{type = 'name_text', key = "akyrs_self_destructs", set = 'Other'}, localize{type = 'name_text', key = "m_feli_fag_pp_money", set = 'Enhanced'}, is_used, colours = {is_used_clr}}, } 
     end,
     calculate = function(self, card, context)
 		if context.ante_change and context.ante_end then

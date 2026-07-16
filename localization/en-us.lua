@@ -605,7 +605,7 @@ return {
 			feli_fag_explode	= {
 				name = "Explode",
 				text= {
-					"Card is removed",
+					"Card is {C:red}removed",
 					"permanently from deck",
 				}
 			},
@@ -620,7 +620,14 @@ return {
 			feli_fag_delete	= {
 				name = "Delete",
 				text= {
-					"Card is removed",
+					"Card is {C:red}removed",
+					"permanently from deck",
+				}
+			},
+            feli_fag_bld_explode	= {
+				name = "Explode",
+				text= {
+					"Blind is {C:red}removed",
 					"permanently from deck",
 				}
 			},
@@ -661,11 +668,20 @@ return {
 				}
 			},
             feli_fag_bd_nxkoo_crossmod	= {
-				name = "BadDirector Ability",
+				name = "Bad Director Ability",
 				text= {
 						"An additional {X:red,C:white}X1{} Mult",
                         "is granted if a joker is {C:attention}Misprint",
                         "or has the {C:dark_edition}Misprinted{} edition"
+				}
+			},
+            feli_fag_tngt_nxkoo_crossmod	= {
+				name = "Tangents Ability",
+				text= {
+						"An additional {X:red,C:white}X1{} Mult",
+                        "is granted if a joker is",
+                        "from {C:feli_fag_pink}Tangents or ",
+                        "has the {C:dark_edition}Weed{} edition"
 				}
 			},
             feli_fag_phanta_crossmod	= {
@@ -696,13 +712,7 @@ return {
                         "{C:enhanced}Wild Cards",
 				}
 			},
-			feli_fag_bld_explode	= {
-				name = "Explode",
-				text= {
-					"Blind is removed",
-					"permanently from deck",
-				}
-			},
+			
 			
 			p_feli_fag_tribe = {
                 name = "Tribe Pack",
@@ -766,9 +776,9 @@ return {
 				},
 			},
 			feli_fag_copied = {
-				name = "Copied Card",
+				name = "Copy",
 				text = {
-				"Disappears at the end of the round."
+				"Disappears at round end."
 				},
 			},
 			-- Other Stickers
@@ -1510,6 +1520,7 @@ return {
 			k_feli_fag_bs = "Blindside",
 			k_feli_fag_synthb = "SynthB",
             k_feli_fag_bd = "Bad Director",
+            k_feli_fag_tngt = "Tangents",
             k_feli_fag_ghostcards = "GhostCards",
             k_feli_fag_phanta = "Phanta",
             k_feli_fag_aikoshen = "Aikoyori's Shenanigans",
@@ -1641,6 +1652,7 @@ return {
 			feli_fag_stk_blunder = "Blunder",
 			feli_fag_stk_goobert = "Painted",
             feli_fag_stk_glitched = "Glitched Card",
+            feli_fag_copied = "Copy",
 			-------------
 			-------------
 			feli_fag_plt_gold = "Gold Pelt",

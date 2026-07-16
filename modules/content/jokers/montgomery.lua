@@ -23,7 +23,7 @@ SMODS.Joker {
 	remove_from_deck = function(self, card, from_debuff)
 		G.E_MANAGER:add_event(Event({
 			func = function()
-				change_shop_size(card.ability.extra.shop_size)
+				change_shop_size(-card.ability.extra.shop_size)
 				return true
 			end
 		}))

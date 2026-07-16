@@ -64,11 +64,12 @@ return {
                     },
                     {
                     "Once per ante, when used,",
-                    "adds {C:attention}#1# {C:green,E:2}#2#{}",
+                    "adds {C:attention}#1# {C:red,E:2}#2#{}",
+                    "{C:green,E:2}#3#{} {C:feli_fag_pink}Wildcard{}",
                     "{C:attention}Bigrams{} or {C:attention}Trigrams{}",
                     },
                     {
-                    "{C:inactive}(Uses left: {V:1}#3#{C:inactive})"
+                    "{C:inactive}(Uses left: {V:1}#4#{C:inactive})"
                     },
 
                 }
@@ -153,6 +154,14 @@ return {
 					"A {C:feli_fag_pink}Wildcard",
                     "is a {C:blue}letter{} that can be used",
                     "as {C:attention}any character"
+				}
+			},
+            feli_fag_akyrs_ngrams	= {
+				name = "n-grams (Aikoyori's Shenanigans)",
+				text= {
+					"An {C:attention}n-gram{} is a sequence",
+                    "of two or more {C:blue}letters{}",
+                    "that can be used to form {C:attention}words",
 				}
 			},
         },
