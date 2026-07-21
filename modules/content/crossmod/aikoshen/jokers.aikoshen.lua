@@ -15,8 +15,9 @@ AKYRS.check_word = function(str_arr_in)
     
     if (result and result.valid == false) or result == nil then
         if (next(SMODS.find_card("j_feli_fag_akyrs_lexicographer")) or 
-            next(SMODS.find_card("j_feli_fag_akyrs_fisher"))or 
-            next(SMODS.find_card("j_feli_fag_akyrs_accountant"))) then
+            next(SMODS.find_card("j_feli_fag_akyrs_fisher")) or 
+            next(SMODS.find_card("j_feli_fag_akyrs_accountant"))) or 
+            next(SMODS.find_card("j_feli_fag_akyrs_clerk")) then
             AKYRS_WORDS = LEXICOGRAPHER_DICT
             result = old_check_word(str_arr_in)
         end
@@ -75,8 +76,8 @@ FelisAG.LetterJoker {
 	pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
 	pronouns = "she_her",
     blueprint_compat = true,
-    rarity = 1,
-    cost = 4,
+    rarity = 2,
+    cost = 6,
 	config = { extra = {}, letter_opener = {used = false, max_wilds= 2} },
 	can_use = function(self, card)
         return not card.ability.letter_opener.used and G.GAME.blind.in_blind
@@ -131,10 +132,10 @@ FelisAG.LetterJoker {
     atlas = 'pronounJokers',
     pos = { x = 1, y = 0 },
 	pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
-	pronouns = "she_the",
+	pronouns = "she_they",
     blueprint_compat = true,
-    rarity = 1,
-    cost = 4,
+    rarity = 2,
+    cost = 6,
 	config = { extra = {}, fishing_rod = {used = false, uses = 4, max_uses= 4} },
 	can_use = function(self, card)
         return not card.ability.fishing_rod.used and G.GAME.blind.in_blind
@@ -196,8 +197,8 @@ FelisAG.LetterJoker {
 	pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
 	pronouns = "she_her",
     blueprint_compat = true,
-    rarity = 1,
-    cost = 4,
+    rarity = 2,
+    cost = 6,
 	config = { extra = {}, letter_opener = {used = false, max_cards= 1, min_length = 2, max_length = 3} },
 	can_use = function(self, card)
         return not card.ability.letter_opener.used and G.GAME.blind.in_blind
@@ -240,11 +241,12 @@ FelisAG.LetterJoker {
                                     return true
                                 end, 0)
                             ]]--
+                            local roll = pseudorandom("accountant",1,10)
                             AKYRS.change_letter_to(moneycrd,
                                 (
-                                    pseudorandom("accountant",1,6) == 1 
+                                    roll <= 3 
                                     and "###" 
-                                    or "##"
+                                    or (roll == 4 and "####" or "##")
                                 ) 
                             )
                             G.hand:emplace(moneycrd)
@@ -277,6 +279,142 @@ FelisAG.LetterJoker {
 			end
 		end
     end
+}
+
+FelisAG.LetterJoker {
+    key = "feli_fag_akyrs_clerk",
+    atlas = 'pronounJokers',
+    pos = { x = 3, y = 0 },
+	pools = {
+        ["FelisAdditions"] = true, 
+        ["Letter"] = true, 
+        ["Scrabble"] = true, 
+        ["Human"] = true, 
+        ["Pronoun Palace"] = true, 
+        ["Nxkoo"] = true, 
+    },
+	pronouns = "they_them",
+    blueprint_compat = true,
+    rarity = 2,
+    cost = 6,
+	config = { extra = {crit_mod = 0.10, card_amount = 3}, letter_opener = {used = false} },
+	set_badges = function(self, card, badges)
+		badges[#badges+1] = create_badge(localize('k_feli_fag_pronounpalace'), HEX('E8C99A'), G.C.UI.TEXT_DARK,  1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_aikoshen'), HEX('A4CA5A'), HEX('753F8E'),  1 )
+	end,
+
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = G.P_CENTERS["m_feli_fag_pp_crit"]
+		local is_used = card.ability.letter_opener.used == true and "Used" or "Active"
+		local is_used_clr = card.ability.letter_opener.used == true and G.C.RED or G.C.GREEN
+        return { vars = { card.ability.extra.card_amount, localize{type = 'name_text', key = "m_feli_fag_pp_crit", set = "Enhanced"}, card.ability.extra.crit_mod, G.GAME.feli_fag_crit_boost or 0,  is_used, colours = {is_used_clr}}, } 
+    end,
+    calculate = function(self, card, context)
+		if context.end_of_round and context.main_eval and not context.game_over then
+			if card.ability.letter_opener.used == true then
+                for i = 1, card.ability.extra.card_amount, 1 do
+                    local selected_c = pseudorandom_element(G.playing_cards, 'feli_fag_akyrs_clerk')
+                    local it = 1
+                    while (selected_c.config.center.key ~= "m_feli_fag_pp_crit") and it <= 5 do
+                        it = it + 1
+                        selected_c = pseudorandom_element(G.playing_cards, 'feli_fag_akyrs_clerk'..it)
+                    end
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            selected_c:juice_up(0.3, 0.5)
+                            selected_c:set_ability("m_feli_fag_pp_crit")
+                            return true
+                        end
+                    }))
+                end
+				card.ability.letter_opener.used = false 
+			end
+		end
+        if context.after then
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    G.GAME.feli_fag_crit_boost = ((G.GAME.feli_fag_crit_boost or 0) + card.ability.extra.crit_mod)
+                    return true
+                end
+            }))
+
+            return {
+                message = localize { type = 'variable', key = 'a_xmult', vars = { card.ability.extra.crit_mod } }
+            }
+        end
+    end,
+
+    use = function(self, card, area, copier)
+        card.ability.letter_opener.used = true
+        G.GAME.feli_fag_crit_boost = 0
+        
+			
+        return {
+		    message = localize("k_reset")
+		}
+    end,
+    can_use = function(self, card)
+        return not card.ability.letter_opener.used and G.GAME.blind.in_blind and G.GAME.feli_fag_crit_boost > 0
+    end,
+}
+
+local note_cards = {
+    "m_akyrs_semibreve_card",
+    "m_akyrs_minim_card",
+    "m_akyrs_crotchet_card"
+
+}
+
+FelisAG.note_table = {
+    ["e_base"]                 = { next = "m_akyrs_semibreve_card",},
+    ["m_akyrs_semibreve_card"] = { next = "m_akyrs_minim_card",},
+    ["m_akyrs_minim_card"]     = { next = "m_akyrs_crotchet_card",}, 
+    ["m_akyrs_crotchet_card"]  = { next = "m_feli_fag_pp_wood",},
+    ["m_feli_fag_pp_wood"]     = { next = "m_akyrs_semibreve_card",},
+}
+
+FelisAG.LetterJoker {
+    key = "feli_fag_akyrs_distributor",
+    atlas = 'pronounJokers',
+    pos = { x = 4, y = 0 },
+	pools = {
+        ["FelisAdditions"] = true, 
+        ["Letter"] = true, 
+        ["Scrabble"] = true, 
+        ["Human"] = true, 
+        ["Pronoun Palace"] = true, 
+        ["Nxkoo"] = true, 
+    },
+	pronouns = "she_they",
+    blueprint_compat = false,
+    rarity = 2,
+    cost = 6,
+	config = {},
+	set_badges = function(self, card, badges)
+		badges[#badges+1] = create_badge(localize('k_feli_fag_pronounpalace'), HEX('E8C99A'), G.C.UI.TEXT_DARK,  1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_aikoshen'), HEX('A4CA5A'), HEX('753F8E'),  1 )
+	end,
+
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = G.P_CENTERS["m_akyrs_semibreve_card"]
+        info_queue[#info_queue+1] = G.P_CENTERS["m_akyrs_minim_card"]
+        info_queue[#info_queue+1] = G.P_CENTERS["m_akyrs_crotchet_card"]
+        info_queue[#info_queue+1] = G.P_CENTERS["m_feli_fag_pp_wood"]
+        return {}
+    end,
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play then
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    local current_tier = context.other_card.config.center.key or ""
+		            local upgrade = FelisAG.campfire_table[current_tier]
+                    context.other_card:set_ability(upgrade.next)
+                    context.other_card:juice_up()
+                    return true
+                end
+            }))
+        end
+    end,
 }
 
 --- FELI LEGENDARY

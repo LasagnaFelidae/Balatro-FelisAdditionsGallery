@@ -8,6 +8,7 @@
 
 
 -- this is where the daily deck is
+--[[
 SMODS.Back{
     key = "letter_deck_",
     name = "Letter Deck",
@@ -34,5 +35,5 @@ SMODS.Back{
         vouchers = {'v_akyrs_alphabet_soup','v_akyrs_crossing_field'}
     },
 }       
-
+]]
 -- ask gabby here how to do the joker selection thingy

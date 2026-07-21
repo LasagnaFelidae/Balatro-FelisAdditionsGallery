@@ -9,6 +9,7 @@
 	"badge_colour": "FFAA66",
 	"badge_text_colour": "374042",
 	"display_name": "Feli's Additions",
+	"no_marquee": true,
 	"version": "0.10.3",
 	"dependencies": [
 		"Steamodded (>=1.0.0~BETA-1814a)", 

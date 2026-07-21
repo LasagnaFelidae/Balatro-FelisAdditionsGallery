@@ -66,10 +66,66 @@ return {
                     "Once per ante, when used,",
                     "adds {C:attention}#1# {C:red,E:2}#2#{}",
                     "{C:green,E:2}#3#{} {C:feli_fag_pink}Wildcard{}",
-                    "{C:attention}Bigrams{} or {C:attention}Trigrams{}",
+                    "{C:attention}n-grams{}",
                     },
                     {
                     "{C:inactive}(Uses left: {V:1}#4#{C:inactive})"
+                    },
+
+                }
+            },
+            j_feli_fag_akyrs_clerk = {
+                name = {
+                    "The Clerk",
+                    "{C:feli_fag_inactive,s:0.5}Niko Tzortzina"
+                },
+                text = { 
+                    {
+                        "Enables the {C:purple}Pronoun Palace",
+                        "word dictionary"
+                    },
+                    {
+                        "Every {C:attention}hand{} played,",
+                        "temporarily {C:tarot}upgrade{}",
+                        "{C:feli_fag_pink}#2#s{} by {X:red,C:white}X#3#{} Mult",
+                        "{C:inactive}(Currently {X:red,C:white}X#4#{C:inactive} Mult)"
+                    },
+                    {
+                        "Once per round, when used,",
+                        "randomly {C:enhanced}enhance {C:attention}#1#{} cards",
+                        "to {C:feli_fag_pink}#2#s{} and reset the",
+                        "{C:tarot}crit boost{} to {X:red,C:white}X0{} Mult",
+                        "{s:0.4} {}",
+                        "{C:inactive}(Uses left: {V:1}#5#{C:inactive})"
+                    },
+
+                }
+            },
+            j_feli_fag_akyrs_distributor = {
+                name = {
+                    "The Distributor",
+                    "{C:feli_fag_inactive,s:0.5}Lizzel Laneda"
+                },
+                text = { 
+                    {
+                        "Enables the {C:purple}Pronoun Palace",
+                        "word dictionary"
+                    },
+                    {
+                        "{C:attention}Base{} and {C:feli_fag_ttm}Wooden Cards{}",
+                        "get enhanced to",
+                        "{C:enhanced}Semibreve Cards{}",
+                        "when scored",
+                    },
+                    {
+                        "{C:enhanced}Note Cards{} get upgraded",
+                        "to their next {C:attention}tier{}",
+                        "when scored",
+                    },
+                    {
+                        "{C:enhanced}Crotchet Cards{} get enhanced",
+                        "back to {C:feli_fag_ttm}Wooden Cards{}",
+                        "when scored",
                     },
 
                 }
@@ -160,7 +216,7 @@ return {
 				name = "n-grams (Aikoyori's Shenanigans)",
 				text= {
 					"An {C:attention}n-gram{} is a sequence",
-                    "of two or more {C:blue}letters{}",
+                    "of 2, 3 or 4 {C:blue}letters{}",
                     "that can be used to form {C:attention}words",
 				}
 			},

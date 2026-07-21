@@ -50,6 +50,8 @@ end
 
 assert(SMODS.load_file("./func/pools.lua"))()
 
+assert(SMODS.load_file("./modules/content/crossmod/mydreamjournal.lua"))()
+
 
 ----------------------------
 -----┏━┓┏━┓┏━┓┏━╸╺┳╸┏━┓-----
@@ -114,30 +116,38 @@ assert(SMODS.load_file("./modules/content/tarots.lua"))()
 --┃  ┣┳┛┃ ┃┗━┓┗━┓┃┃┃┃ ┃ ┃┃--
 --┗━╸╹┗╸┗━┛┗━┛┗━┛╹ ╹┗━┛╺┻┛--
 ----------------------------
-assert(SMODS.load_file("./modules/content/crossmod/mydreamjournal.lua"))()
+
 if FelisAG.is_mod_loaded("TOGAPack") then
-    assert(SMODS.load_file("./modules/content/crossmod/sounds.togastuff.lua"))()
-    assert(SMODS.load_file("./modules/content/crossmod/togastuff.lua"))()
+    local ts_jkr = SMODS.NFS.getDirectoryItems(SMODS.current_mod.path .. "modules/content/crossmod/togastuff")
+    for _, file in ipairs(ts_jkr) do
+        assert(SMODS.load_file("modules/content/crossmod/togastuff/" .. file))()
+    end
 end
+
 if FelisAG.is_mod_loaded("RevosVault") then
     assert(SMODS.load_file("./modules/content/crossmod/revo.lua"))()
 end
+
 if FelisAG.is_mod_loaded("aikoyorisshenanigans") then
-    --assert(SMODS.load_file("./modules/content/crossmod/clearances.aikoshen.lua"))()
-    assert(SMODS.load_file("./modules/content/crossmod/achievements.aikoshen.lua"))()
-    assert(SMODS.load_file("./modules/content/crossmod/aikoshen.lua"))()
+    local as_jkr = SMODS.NFS.getDirectoryItems(SMODS.current_mod.path .. "modules/content/crossmod/aikoshen")
+    for _, file in ipairs(as_jkr) do
+        assert(SMODS.load_file("modules/content/crossmod/aikoshen/" .. file))()
+    end
 end
+
 if FelisAG.is_mod_loaded("Blindside") then
     assert(SMODS.load_file("./modules/content/crossmod/blindside.lua"))()
 end
+
 if FelisAG.is_mod_loaded("synthb") then
     assert(SMODS.load_file("./modules/content/crossmod/synthb.lua"))()
 end
 
 if FelisAG.is_mod_loaded("baddirector") then
-    assert(SMODS.load_file("./modules/content/crossmod/loverboy/enh.nxkoo.lua"))()
-    assert(SMODS.load_file("./modules/content/crossmod/loverboy/rit.nxkoo.lua"))()
-    assert(SMODS.load_file("./modules/content/crossmod/loverboy/tarots.nxkoo.lua"))()
+    local bd_jkr = SMODS.NFS.getDirectoryItems(SMODS.current_mod.path .. "modules/content/crossmod/baddir")
+    for _, file in ipairs(bd_jkr) do
+        assert(SMODS.load_file("modules/content/crossmod/baddir/" .. file))()
+    end
 end
 --[[
 ▄▄▄▄  ▄▄▄▄▄ ▄▄▄▄  ▄▄    ▄▄▄▄▄ ▄▄ ▄▄ 

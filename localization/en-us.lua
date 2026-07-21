@@ -328,7 +328,7 @@ return {
             e_feli_fag_subspace = {
                 name = "Subspaced",
                 text = {
-                    "{X:blind,C:white}-#1#%{} Blind Size when Held",
+                    "{X:blind,C:white}X#1#{} Blind Size when Held",
                 },
             },
 		},
@@ -1483,11 +1483,17 @@ return {
             ach_feli_fag_j_o_permit = "J/O Permit",
             ach_feli_fag_red_letter = "Red Letter",
             ach_feli_fag_corkline = "Corkline",
+            ach_feli_fag_counterfeit_money = "Counterfeit Money",
+            ach_feli_fag_correction_fluid = "Correction Fluid",
+            ach_feli_fag_persimmon = "Persimmon",
         },
         achievement_descriptions={
             ach_feli_fag_j_o_permit = {"Spell a slur of your choice", "(Pronoun Palace dictionary must be enabled)"},
             ach_feli_fag_red_letter = {"Win a run with The Lexicographer", "(Letters must be enabled)"},
             ach_feli_fag_corkline = {"Win a run with The Fisher", "(Letters must be enabled)"},
+            ach_feli_fag_counterfeit_money = {"Win a run with The Accountant", "(Letters must be enabled)"},
+            ach_feli_fag_correction_fluid = {"Win a run with The Clerk", "(Letters must be enabled)"},
+            ach_feli_fag_persimmon = {"Win a run with The Distributor", "(Letters must be enabled)"},
         },
 		dictionary={
             --------------

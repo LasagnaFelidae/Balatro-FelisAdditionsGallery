@@ -37,13 +37,15 @@ FelisAG.PPEnhancement {
     config = { extra = { xmult= 1.5},},
     weight = 0.4,
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.xmult} }
+        local boost = G.GAME.feli_fag_crit_boost or 0
+        return { vars = { card.ability.extra.xmult + boost} }
     end,
 
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play then
             local ret = {}
-            ret.xmult = card.ability.extra.xmult
+            local boost = G.GAME.feli_fag_crit_boost or 0
+            ret.xmult = card.ability.extra.xmult + boost 
             return ret
         end
     end,
@@ -79,7 +81,7 @@ FelisAG.PPEnhancement {
             ret.mult = card.ability.extra.mult
             return ret
         end
-        if context.final_scoring_step then
+        if context.final_scoring_step and context.cardarea == G.hand then
             local ret = {}
             ret.xscore = card.ability.extra.xscore
             return ret
@@ -97,7 +99,8 @@ FelisAG.PPEnhancement {
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = {key = "feli_fag_explode", set ="Other"}
         local plural = (card.ability.timer.hands ~= 1 ) and "hands" or "hand"
-        return { vars = { card.ability.extra.xscore, card.ability.extra.xblindsize, card.ability.timer.hands, plural } }
+        local counter = (card.ability.timer.hands ~= 1 ) and card.ability.timer.hands or "this"
+        return { vars = { card.ability.extra.xscore, card.ability.extra.xblindsize, counter, plural } }
     end,
 
     calculate = function(self, card, context)
@@ -106,7 +109,7 @@ FelisAG.PPEnhancement {
             ret.xblindsize = card.ability.extra.xblindsize
             return ret
         end
-        if context.final_scoring_step and (context.cardarea == G.hand or context.cardarea == G.play) then
+        if context.final_scoring_step and (context.cardarea == G.hand or context.cardarea == G.play or context.cardarea == "unscored") then
             local ret = {}
             card.ability.timer.hands = card.ability.timer.hands - 1
             if card.ability.timer.hands <= 0 then
@@ -114,12 +117,16 @@ FelisAG.PPEnhancement {
                     
                     ret.xscore = card.ability.extra.xscore
                 end
-                FelisAG.add_event({
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.9,
                     func = function()
                         FelisAG.explodeCard(card, "bomb", true)
                         return true
                     end
-                })
+                }))
+                    
+                    
             end
             return ret
         end

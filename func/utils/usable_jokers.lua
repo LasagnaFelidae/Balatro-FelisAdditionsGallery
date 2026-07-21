@@ -1,5 +1,5 @@
 ---@diagnostic disable: duplicate-set-field
--- Taken from feli_fag
+-- Taken from synthb
 
 G.FUNCS.feli_fag_can_use_joker = function(e)
     local center = e.config.ref_table.config.center
@@ -31,30 +31,6 @@ end
 local G_UIDEF_use_and_sell_buttons_ref = G.UIDEF.use_and_sell_buttons
 function G.UIDEF.use_and_sell_buttons(card)
 	local abc = G_UIDEF_use_and_sell_buttons_ref(card)
-	if card.area == G.feli_fag_character_area then
-		return {
-			-- TODO: make this smaller
-			n=G.UIT.ROOT, config = {padding = 0, colour = G.C.CLEAR}, nodes={
-			{n=G.UIT.C, config={padding = 0.15, align = 'cl'}, nodes={
-				{n=G.UIT.R, config={align = 'cl'}, nodes={
-					{n=G.UIT.C, config={align = "cr"}, nodes={
-						{n=G.UIT.C, config={ref_table = card, align = "cr",padding = 0.1, r=0.08, minw = 1.25, hover = true, shadow = true, colour = G.C.UI.BACKGROUND_INACTIVE, one_press = true, button = 'sell_card', func = 'can_sell_card', handy_insta_action = 'sell'}, nodes={
-							{n=G.UIT.B, config = {w=0.1,h=0.6}},
-							{n=G.UIT.C, config={align = "tm"}, nodes={
-								{n=G.UIT.R, config={align = "cm", maxw = 1.25}, nodes={
-									{n=G.UIT.T, config={text = localize('b_sell'),colour = G.C.UI.TEXT_LIGHT, scale = 0.4, shadow = true}}
-								}},
-								{n=G.UIT.R, config={align = "cm"}, nodes={
-									{n=G.UIT.T, config={text = localize('$'),colour = G.C.WHITE, scale = 0.4, shadow = true}},
-									{n=G.UIT.T, config={ref_table = card, ref_value = 'sell_cost_label',colour = G.C.WHITE, scale = 0.55, shadow = true}}
-								}}
-							}}
-						}},
-					}}
-				}},
-			}},
-		}}
-	end
 	if (card.area == G.jokers and G.jokers and card.config.center.use) and not card.debuff and card.config.center.set == "Joker" and (not card.config.center.needs_use_button or card.config.center:needs_use_button(card)) then
 		local sell = {n=G.UIT.C, config={align = "cr"}, nodes={
 				{n=G.UIT.C, config={ref_table = card, align = "cr",padding = 0.1, r=0.08, minw = 1.25, hover = true, shadow = true, colour = G.C.UI.BACKGROUND_INACTIVE, one_press = true, button = 'sell_card', func = 'can_sell_card', handy_insta_action = 'sell'}, nodes={

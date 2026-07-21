@@ -81,7 +81,7 @@ function FelisAG.explodeCard(card, sound, bypass_eternal)
 		play_sound("feli_fag_rbx_explosion")
 	end
     playEffect("explosion",card.tilt_var.mx,card.tilt_var.my)
-    SMODS.destroy_cards(card, bypass_eternal)
+    SMODS.destroy_cards(card, {bypass_eternal=bypass_eternal})
 end
 
 --[[
