@@ -15,10 +15,8 @@ return {
                     "Once per ante, when used,",
                     "adds {C:attention}#1# {C:red,E:2}#2#{}",
                     "{C:feli_fag_pink}Wildcards{}",
-                    },
-                    {
+                    "{s:0.4} {}",
                     "{C:inactive}(Uses left: {V:1}#3#{C:inactive})"
-
                     },
 
                 }
@@ -38,15 +36,13 @@ return {
                     "Up to {C:attention}#1#{} times per ante,",
                     "when used, {C:attention}fish",
                     "for a random {C:enhanced}Enhanced",
-                    "blank {C:blue}Letter card"
+                    "blank {C:blue}Letter card",
+                    "{s:0.4} {}",
+                    "{C:inactive}(Uses left: {V:1}#2#{C:inactive})"
                     },
                     {
                     "Card can be {C:feli_fag_ttm}Wooden{},",
                     "{C:feli_fag_pink}Crit{} or {C:red}Bleed"
-                    },
-                    {
-                    "{C:inactive}(Uses left: {V:1}#2#{C:inactive})"
-
                     },
 
                 }
@@ -67,8 +63,7 @@ return {
                     "adds {C:attention}#1# {C:red,E:2}#2#{}",
                     "{C:green,E:2}#3#{} {C:feli_fag_pink}Wildcard{}",
                     "{C:attention}n-grams{}",
-                    },
-                    {
+                    "{s:0.4} {}",
                     "{C:inactive}(Uses left: {V:1}#4#{C:inactive})"
                     },
 
