@@ -1,0 +1,533 @@
+FelisAG.ConsumableMP = SMODS.Consumable:extend{
+    in_pool = function (self, args)
+       return true
+    end,
+	set_badges = function(self, card, badges)
+        badges[#badges+1] = create_badge(localize('k_feli_fag_bd'), HEX('01c1e6'), HEX('ffffff'), 1 )
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	end,
+
+}
+
+SMODS.ConsumableType {
+    key = 'feli_fag_ritual_mp',
+    default = 'c_feli_fag_ins_campfire',
+    primary_colour = HEX('ffffff'),
+    secondary_colour = SMODS.Gradients.feli_fag_rit_mp,
+    collection_rows = { 5, 6 },
+    shop_rate = 0.2,
+    hidden = true,
+	soul_set = 'feli_fag_ritual',
+	soul_rate = 1,
+    can_repeat_soul = true,
+    discovered = false,
+	unlocked = true,
+    loc_txt = {
+        undiscovered = {
+			name = "Not Discovered",
+			text = {
+				"Purchase or use",
+                "this card in an",
+                "unseeded run to",
+                "learn what it does"
+			},
+		},
+    },
+}
+
+SMODS.UndiscoveredSprite{
+    key = 'feli_fag_ritual_mp',
+    atlas = "insRitual_mp",
+    pos = {x=13, y=1}
+}
+
+
+
+
+FelisAG.ConsumableMP { -- 0 Campfire
+    key = 'rit_campfire_mp',
+    set = 'feli_fag_ritual_mp',
+	atlas= 'insRitual_mp',
+    pos = { x = 0, y = 0 },
+    config = { max_highlighted = 1},
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {key = 'bd_enhanced_info', set = 'Other'}
+		local v = {card.ability.max_highlighted or 1}
+		local next_name = nil
+		local break_pct = nil
+
+		if G.hand and #G.hand.highlighted == 1 then
+			local current_key = G.hand.highlighted[1].config.center.key
+			
+			if current_key and FelisAG.campfire_table[current_key] then
+				local info = FelisAG.campfire_table[current_key]
+				if info.next then
+					info_queue[#info_queue + 1] = G.P_CENTERS[info.next]
+					
+					next_name = localize { type = 'name_text', set = 'Enhanced', key = info.next }
+					
+					break_pct = math.floor(info.break_chance * 100 + 0.5)
+				end
+			end
+		end
+		local display = next_name or localize('k_none')
+		local colour = (next_name == nil) and G.C.UI.TEXT_INACTIVE or HEX('757CDC')
+		local main_end = {
+            {
+                n = G.UIT.C,
+                config = { align = "bm", padding = 0.02 },
+                nodes = {
+                    {
+                        n = G.UIT.C,
+                        config = { align = "m", colour = colour, r = 0.05, padding = 0.05 },
+                        nodes = {
+                            { n = G.UIT.T, config = { text = ' ' .. display .. ' ', colour = G.C.UI.TEXT_LIGHT, scale = 0.3, shadow = true } },
+                        }
+                    }
+                }
+            }
+        }
+		
+		if next_name and break_pct then
+			return {vars = { v[1], display, break_pct}, main_end = main_end  }
+		else
+			return { vars = { v[1], "???", "??" }, main_end = main_end  }
+		end
+	end,
+
+    use = function(self, card, area, copier)
+
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.4,
+            func = function()
+                play_sound('tarot1')
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+        for i = 1, #G.hand.highlighted do
+            local percent = 1.15 - (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.15,
+                func = function()
+                    G.hand.highlighted[i]:flip()
+                    play_sound('card1', percent)
+                    G.hand.highlighted[i]:juice_up(0.3, 0.3)
+                    return true
+                end
+            }))
+        end
+        delay(0.2)
+		for i = 1, #G.hand.highlighted do
+			local percent = 0.85 + (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+			G.E_MANAGER:add_event(Event({
+				trigger = 'after', 
+				delay = 0.35,
+				func = function()
+					local current_tier = G.hand.highlighted[i].config.center.key or ""
+		            local upgrade = FelisAG.campfire_table[current_tier]
+						
+					if upgrade then
+						if pseudorandom('campfire') < (upgrade.break_chance) then
+							SMODS.destroy_cards(G.hand.highlighted[i])
+                            play_sound('timpani', percent, 0.6)
+                            G.hand.highlighted[i]:juice_up(0.4, 0.4)
+						else
+							play_sound('tarot2', percent, 0.6)
+							G.hand.highlighted[i]:set_ability(upgrade.next)
+							G.hand.highlighted[i]:juice_up(0.4, 0.4)
+                            if (BadDirector.MisprintsEnh[G.hand.highlighted[i].config.center.key]) and (pseudorandom('campfire',1,3) == 1) then
+                                G.hand.highlighted[i]:set_ability(BadDirector.MisprintsEnh[G.hand.highlighted[i].config.center.key])
+                            end
+						end
+					end
+					return true
+				end
+			}))
+        end
+		delay(0.2)
+        for i = 1, #G.hand.highlighted do
+            local percent = 0.85 + (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.15,
+                func = function()
+                    G.hand.highlighted[i]:flip()
+                    play_sound('tarot2', percent, 0.6)
+                    G.hand.highlighted[i]:juice_up(0.3, 0.3)
+                    return true
+                end
+            }))
+        end
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.2,
+            func = function()
+                G.hand:unhighlight_all()
+                return true
+            end
+        }))
+        delay(0.5)
+    end,
+    can_use = function(self, card)
+        if not (G.hand and #G.hand.highlighted > 0 and #G.hand.highlighted <= card.ability.max_highlighted) then
+			return false
+		end
+
+		for i = 1, #G.hand.highlighted do
+			if FelisAG.campfire_table[G.hand.highlighted[i].config.center.key] then
+				return true
+			end
+		end
+		
+		return false
+    end
+}
+
+FelisAG.ConsumableMP { -- 2 The Trader
+    key = 'rit_trader_mp',
+    set = 'feli_fag_ritual_mp',
+	atlas= 'insRitual_mp',
+    pos = { x = 2, y = 0 },
+    config = { max_highlighted = 2, extra = { odds = 5, min = 1.5, max = 2.2}},
+    loc_vars = function(self, info_queue, card)
+		local numerator, denumerator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'feli_fag_rit_trader')
+		return { vars = { card.ability.max_highlighted, numerator, denumerator, card.ability.extra.min, card.ability.extra.max } }
+	end,
+
+    use = function(self, card, area, copier)
+		for i = 1, #G.hand.highlighted do
+			local percent = 0.85 + (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+			local _c = G.hand.highlighted[i].config.center.key or ""
+			for _, _pelt in ipairs(FelisAG.trapperTable) do
+				if _pelt.key == _c then
+					local pelt = _pelt
+					SMODS.destroy_cards(G.hand.highlighted[i])
+                    local rate = pseudorandom(pseudoseed("feli_fag_rit_trader_mp"), card.ability.extra.min, card.ability.extra.max)
+					if SMODS.pseudorandom_probability(card, 'feli_fag_rit_trader', 1, card.ability.extra.odds) then
+						ease_dollars(_pelt.price*2*rate)
+                        play_sound('timpani', percent, 0.6)
+					else
+						ease_dollars(_pelt.price*rate)
+					end
+				end					
+			end
+        end
+    end,
+    can_use = function(self, card)
+        if not (G.hand and #G.hand.highlighted > 0 and #G.hand.highlighted <= card.ability.max_highlighted) then
+			return false
+		end
+
+		for i = 1, #G.hand.highlighted do
+			if not(SMODS.has_enhancement(G.hand.highlighted[i], "m_feli_fag_plt_bny") 
+			or SMODS.has_enhancement(G.hand.highlighted[i], "m_feli_fag_plt_wlf") 
+			or SMODS.has_enhancement(G.hand.highlighted[i], "m_feli_fag_plt_gold") 
+			or SMODS.has_enhancement(G.hand.highlighted[i], "m_feli_fag_plt_olddata")
+			or SMODS.has_enhancement(G.hand.highlighted[i], "m_feli_fag_trn_goldn")) then
+				return false
+			end
+		end
+		
+		return true
+    end
+}
+
+FelisAG.ConsumableMP { -- 3 The Prospector
+    key = 'rit_prospector_mp',
+    set = 'feli_fag_ritual_mp',
+	atlas= 'insRitual_mp',
+    pos = { x = 3, y = 0 },
+    config = { max_highlighted = 2 },
+    loc_vars = function(self, info_queue, card)
+		info_queue[#info_queue + 1] = G.P_CENTERS["m_bd_misprintgold"]
+		info_queue[#info_queue + 1] = G.P_CENTERS["m_feli_fag_gold_t2_mp"]
+		info_queue[#info_queue + 1] = G.P_CENTERS["m_feli_fag_gold_t3_mp"]
+		info_queue[#info_queue + 1] = G.P_CENTERS["m_feli_fag_gold_t4_mp"]
+		info_queue[#info_queue + 1] = G.P_CENTERS["m_feli_fag_trn_goldn"]
+        info_queue[#info_queue + 1] = G.P_CENTERS["e_bd_misprinted"]
+		return { vars = { card.ability.max_highlighted } }
+	end,
+	use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.4,
+            func = function()
+                play_sound('tarot1')
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+        for i = 1, #G.hand.highlighted do
+            local percent = 1.15 - (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.15,
+                func = function()
+                    G.hand.highlighted[i]:flip()
+                    play_sound('card1', percent)
+                    G.hand.highlighted[i]:juice_up(0.3, 0.3)
+                    return true
+                end
+            }))
+        end
+        delay(0.2)
+		for i = 1, #G.hand.highlighted do
+			local percent = 0.85 + (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+			G.E_MANAGER:add_event(Event({
+				trigger = 'after', 
+				delay = 0.15,
+				func = function()
+					local upgrade = pseudorandom('prospect', 1, 3)
+					if upgrade == 3 then
+						play_sound('tarot2', percent, 0.6)
+						G.hand.highlighted[i]:set_ability("m_feli_fag_trn_goldn")
+                        G.hand.highlighted[i]:set_edition("e_bd_misprinted")
+						G.hand.highlighted[i]:juice_up(0.4, 0.4)
+					else
+						play_sound('tarot2', percent, 0.6)
+                        gold_c = FelisAG.quick_pool_pick(FelisAG.prospectorTableMP)
+						G.hand.highlighted[i]:set_ability(gold_c)
+						G.hand.highlighted[i]:juice_up(0.4, 0.4)
+					end
+					return true
+				end
+			}))
+        end
+		delay(0.3)
+        for i = 1, #G.hand.highlighted do
+            local percent = 0.85 + (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.15,
+                func = function()
+                    G.hand.highlighted[i]:flip()
+                    play_sound('tarot2', percent, 0.6)
+                    G.hand.highlighted[i]:juice_up(0.3, 0.3)
+                    return true
+                end
+            }))
+        end
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.2,
+            func = function()
+                G.hand:unhighlight_all()
+                return true
+            end
+        }))
+        delay(0.5)
+    end,
+    can_use = function(self, card)
+        if not (G.hand and #G.hand.highlighted > 0 and #G.hand.highlighted <= card.ability.max_highlighted) then
+			return false
+		end
+
+		for i = 1, #G.hand.highlighted do
+			return true
+		end
+		
+		return false
+    end
+}
+--[[
+FelisAG.ConsumableMP { -- 4 The Tribes
+    key = 'rit_tribes_mp',
+    set = 'feli_fag_ritual_mp',
+	atlas= 'insRitual_mp',
+    pos = { x = 4, y = 0 },
+    config = {},
+    loc_vars = function(self, info_queue, card)
+		info_queue[#info_queue + 1] = G.P_TAGS["tag_feli_fag_tag_tribal"]
+	end,
+
+    use = function(self, card, area, copier)
+		add_tag(Tag("tag_feli_fag_tag_tribal", false, 'Small')) 
+    end,
+    can_use = function(self, card)
+		return G.jokers and #G.jokers.cards < G.jokers.config.card_limit
+	end,
+}
+]]
+FelisAG.ConsumableMP { -- 6 Goobert
+    key = 'rit_goobert_mp',
+    set = 'feli_fag_ritual_mp',
+	atlas= 'insRitual_mp',
+    pos = { x = 6, y = 0 },
+    config = { max_highlighted = 1 },
+    hidden = true, 
+    soul_set = 'feli_fag_ritual_mp',
+    soul_rate = 0.03,
+
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS["e_bd_misprinted"]
+		info_queue[#info_queue + 1] = {key = 'feli_fag_stk_goobert', set = 'Other', vars = {"???"}}
+		return { vars = { card.ability.max_highlighted } }
+	end,
+	use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.4,
+            func = function()
+                play_sound('tarot1')
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+		for i = 1, #G.jokers.highlighted do
+			local percent = 0.85 + (i - 0.999) / (#G.jokers.highlighted - 0.998) * 0.3
+			G.E_MANAGER:add_event(Event({
+				trigger = 'after', 
+				delay = 0.15,
+				func = function()
+					play_sound('tarot2', percent, 0.6)
+                    local new_card = FelisAG.copy_card(G.jokers.highlighted[i], nil, G.jokers)
+                    new_card:set_edition("e_bd_misprinted")
+					new_card:add_sticker("feli_fag_stk_goobert", true)
+                    play_sound('card1', percent)
+					G.jokers.highlighted[i]:juice_up(0.4, 0.4)
+					return true
+				end
+			}))
+        end
+		delay(0.4)
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.2,
+            func = function()
+                G.jokers:unhighlight_all()
+                return true
+            end
+        }))
+        delay(0.5)
+    end,
+    can_use = function(self, card)
+        if not (G.jokers and #G.jokers.highlighted > 0 and #G.jokers.highlighted <= card.ability.max_highlighted) then
+			return false
+		end
+
+        
+        if #G.jokers.cards < G.jokers.config.card_limit then
+            for i = 1, #G.jokers.highlighted do
+                if G.jokers.highlighted[i].ability.stk_goobert_mult then
+                    return false
+                end
+                return true
+            end
+        end
+		
+		return false
+    end
+}
+
+FelisAG.ConsumableMP { -- 7 The Trapper
+    key = 'rit_trapper_mp',
+    set = 'feli_fag_ritual_mp',
+	atlas= 'insRitual_mp',
+    pos = { x = 7, y = 0 },
+    config = { max_highlighted = 3 },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS["e_bd_misprinted"]
+		info_queue[#info_queue + 1] = G.P_CENTERS["m_feli_fag_plt_bny"]
+		info_queue[#info_queue + 1] = G.P_CENTERS["m_feli_fag_plt_wlf"]
+		info_queue[#info_queue + 1] = G.P_CENTERS["m_feli_fag_plt_gold"]
+		return { vars = { card.ability.max_highlighted } }
+	end,
+	use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.4,
+            func = function()
+                play_sound('tarot1')
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+        for i = 1, #G.hand.highlighted do
+            local percent = 1.15 - (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.15,
+                func = function()
+                    G.hand.highlighted[i]:flip()
+					G.hand.highlighted[i]:juice_up(0.3, 0.3)
+                    return true
+                end
+            }))
+        end
+        delay(0.2)
+		for i = 1, #G.hand.highlighted do
+			local percent = 0.85 + (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+			G.E_MANAGER:add_event(Event({
+				trigger = 'after', 
+				delay = 0.15,
+				func = function()
+					play_sound('tarot2', percent, 0.6)
+                    pelt_c = FelisAG.quick_pool_pick(FelisAG.trapperTable)
+                    G.hand.highlighted[i]:set_edition("e_bd_misprinted")
+					G.hand.highlighted[i]:set_ability(pelt_c)
+                    play_sound('card1', percent)
+					G.hand.highlighted[i]:juice_up(0.4, 0.4)
+					return true
+				end
+			}))
+        end
+		delay(0.4)
+        for i = 1, #G.hand.highlighted do
+            local percent = 0.85 + (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.35,
+                func = function()
+                    G.hand.highlighted[i]:flip()
+                    play_sound('tarot2', percent, 0.6)
+                    G.hand.highlighted[i]:juice_up(0.3, 0.3)
+                    return true
+                end
+            }))
+        end
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.2,
+            func = function()
+                G.hand:unhighlight_all()
+                return true
+            end
+        }))
+        delay(0.5)
+    end,
+    can_use = function(self, card)
+        if not (G.hand and #G.hand.highlighted > 0 and #G.hand.highlighted <= card.ability.max_highlighted) then
+			return false
+		end
+
+		for i = 1, #G.hand.highlighted do
+			return true
+		end
+		
+		return false
+    end
+}
+--[[
+FelisAG.ConsumableMP { -- 8 Lost & Found
+    key = 'rit_lostandfound_mp',
+    set = 'feli_fag_ritual_mp',
+	atlas= 'insRitual_mp',
+    pos = { x = 8, y = 0 },
+    config = {},
+    in_pool = function(self, args)
+		return G.GAME.feli_fag_totems_enabled
+	end,
+    loc_vars = function(self, info_queue, card)
+		info_queue[#info_queue + 1] = G.P_TAGS["tag_feli_fag_tag_totem_box"]
+	end,
+    can_use = function(self,card)
+        return G.feli_fag_totems and #G.feli_fag_totems.cards < G.feli_fag_totems.config.card_limit
+    end,
+    use = function(self, card, area, copier)
+		add_tag(Tag("tag_feli_fag_tag_totem_box", false, 'Small')) 
+    end,
+}
+    ]]

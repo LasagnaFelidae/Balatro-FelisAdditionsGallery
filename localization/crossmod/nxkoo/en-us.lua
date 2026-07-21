@@ -110,8 +110,9 @@ return {
                 text = {
                     "{X:mult,C:white}X#1#{} Mult",
                     "{C:green}#2# in #3#{} chance to",
-                    "destroy card",
-                    "multiplied by {X:planet,C:white}X#4# ~ X#5#{}",
+                    "shatter this card",
+                    "and adjacent cards",
+                    "{C:inactive}(Probabilities rolled for each card){}"
                 },
             },
 			m_feli_fag_glass_t3_mp = {
@@ -119,8 +120,9 @@ return {
                 text = {
                     "{X:mult,C:white} X#1# {} Mult",
                     "{C:green}#2# in #3#{} chance to",
-                    "destroy card",
-                    "multiplied by {X:planet,C:white}X#4# ~ X#5#{}",
+                    "shatter this card",
+                    "and adjacent cards",
+                    "{C:inactive}(Probabilities rolled for each card){}"
                 },
             },
 			m_feli_fag_glass_t4_mp = {
@@ -128,39 +130,37 @@ return {
                 text = {
                     "{X:mult,C:white} X#1# {} Mult",
                     "{C:green}#2# in #3#{} chance to",
-                    "destroy card",
-                    "multiplied by {X:planet,C:white}X#4# ~ X#5#{}",
+                    "shatter this card",
+                    "and adjacent cards",
+                    "{C:inactive}(Probabilities rolled for each card){}"
                 },
             },
             m_feli_fag_gold_t2_mp = {
                 name = "old CardG [II]",
                 text = {
 					{
-						"{C:money}$#1#{} if this",
+						"Gives {X:money,C:white}x0.5 - x3{} the total",
+                        "sell value of all current",
+                        "{C:attention}Jokers{} + {C:money}$2{} if this",
 						"card is held in hand",
 						"at end of round",
 					},
-					{
-						"Earn {C:money}$#2#{} when this",
-						"card is played",
-						"and scores",
-                        "{s:0.8,C:inactive}(All multiplied by {s:0.8,X:planet,C:white}X#3# ~ X#4#{C:inactive,s:0.8})",
-					}
 				}
             },
 			m_feli_fag_gold_t3_mp = {
                 name = "old CardG [III]",
                 text = {
 					{
-						"{C:money}$#1#{} if this",
+						"Gives {X:money,C:white}x0.6 - x3.5{} the total",
+                        "sell value of all current",
+                        "{C:attention}Jokers{} + {C:money}$3{} if this",
 						"card is held in hand",
 						"at end of round",
 					},
 					{
-						"Earn {C:money}$#2#{} when this",
+						"Earn {C:money}$2{} when this",
 						"card is played",
 						"and scores",
-                        "{s:0.8,C:inactive}(All multiplied by {s:0.8,X:planet,C:white}X#3# ~ X#4#{C:inactive,s:0.8})",
 					}
 				}
             },
@@ -168,15 +168,16 @@ return {
                 name = "old CardG [IV]",
                 text = {
 					{
-						"{C:money}$#1#{} if this",
+						"Gives {X:money,C:white}x0.7 - x5{} the total",
+                        "sell value of all current",
+                        "{C:attention}Jokers{} + {C:money}$4{} if this",
 						"card is held in hand",
 						"at end of round",
 					},
 					{
-						"Earn {C:money}$#2#{} when this",
+						"Earn {C:money}$4{} when this",
 						"card is played",
 						"and scores",
-                        "{s:0.8,C:inactive}(All multiplied by {s:0.8,X:planet,C:white}X#3# ~ X#4#{C:inactive,s:0.8})",
 					}
 				}
             },
@@ -189,7 +190,7 @@ return {
                     "for {C:chips}+#9#{} Chips",
                     "{C:green}#2# in #6#{} chance",
                     "to win {C:money}$#5#",
-                    "multiplied by {X:planet,C:white}X#10# ~ X#11#{}",
+                    "{s:0.8,C:inactive}(All multiplied by {s:0.8,X:planet,C:white}X#10# ~ X#11#{C:inactive,s:0.8})",
                 },
             },
 			m_feli_fag_lucky_t3_mp = {
@@ -201,7 +202,7 @@ return {
                     "for {C:chips}+#9#{} Chips",
                     "{C:green}#2# in #6#{} chance",
                     "to win {C:money}$#5#",
-                    "multiplied by {X:planet,C:white}X#10# ~ X#11#{}",
+                    "{s:0.8,C:inactive}(All multiplied by {s:0.8,X:planet,C:white}X#10# ~ X#11#{C:inactive,s:0.8})",
                 },
             },
 			m_feli_fag_lucky_t4_mp = {
@@ -213,7 +214,7 @@ return {
                     "for {C:chips}+#9#{} Chips",
                     "{C:green}#2# in #6#{} chance",
                     "to win {C:money}$#5#",
-                    "multiplied by {X:planet,C:white}X#10# ~ X#11#{}",
+                    "{s:0.8,C:inactive}(All multiplied by {s:0.8,X:planet,C:white}X#10# ~ X#11#{C:inactive,s:0.8})",
                 },
             },
             m_feli_fag_mult_t2_mp = {
@@ -240,54 +241,52 @@ return {
             m_feli_fag_steel_t2_mp = {
                 name = "eel CardSt [II]",
                 text = {
-                    "{X:mult,C:white} X#1# {} Mult",
-                    "while this card",
-                    "stays in hand",
-                    "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
+                    "While {C:attention}held in hand{},",
+                    "each {C:attention}played{} card",
+                    "gives {X:chips,C:white}X#1#{} Chips",
                 },
             },
 			m_feli_fag_steel_t3_mp = {
                 name = "eel CardSt [III]",
                 text = {
-                    "{X:mult,C:white} X#1# {} Mult,",
-                    "while this card",
-                    "stays in hand",
-                    "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
+                    "While {C:attention}held in hand{},",
+                    "each {C:attention}played{} card",
+                    "gives {X:chips,C:white}X#1#{} Chips",
                 },
             },
 			m_feli_fag_steel_t4_mp = {
                 name = "eel CardSt [IV]",
                 text = {
-                    "{X:mult,C:white} X#1# {} Mult,",
-                    "while this card",
-                    "stays in hand",
-                    "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
+                    "While {C:attention}held in hand{},",
+                    "each {C:attention}played{} card",
+                    "gives {X:chips,C:white}X#1#{} Chips",
                 },
             },
             m_feli_fag_stone_t2_mp = {
                 name = "tone CardS [II]",
                 text = {
-                    "{C:chips}+#1#{} Chips",
-                    "no rank or suit",
-                    "multiplied by {X:planet,C:white}X#2# ~ X#3#{}",
+                    "{C:blue}+#1#{} Chips",
+                    "Gains(?) {E:bd_glitching,C:blue}+#2#{} Chips",
+                    "when scored",
+                    "no rank or suit" -- desc could maybe be changed but
                 },
             },
 			m_feli_fag_stone_t3_mp = {
                 name = "tone CardS [III]",
                 text = {
-                    "{C:chips}+#1#{} Chips,",
-					"{C:mult}+#2#{} Mult,",
-                    "no rank or suit",
-                    "{s:0.8,C:inactive}(All multiplied by {s:0.8,X:planet,C:white}X#3# ~ X#4#{C:inactive,s:0.8})",
+                    "{C:blue}+#1#{} Chips",
+                    "Gains(?) {E:bd_glitching,C:blue}+#2#{} Chips",
+                    "when scored",
+                    "no rank or suit" -- desc could maybe be changed but
                 },
             },
 			m_feli_fag_stone_t4_mp = {
                 name = "tone CardS [IV]",
                 text = {
-                    "{C:chips}+#1#{} Chips,",
-					"{C:mult}+#2#{} Mult,",
-                    "no rank or suit",
-                    "{s:0.8,C:inactive}(All multiplied by {s:0.8,X:planet,C:white}X#3# ~ X#4#{C:inactive,s:0.8})",
+                    "{C:blue}+#1#{} Chips",
+                    "Gains(?) {E:bd_glitching,C:blue}+#2#{} Chips",
+                    "when scored",
+                    "no rank or suit" -- desc could maybe be changed but
                 },
             },
 			m_feli_fag_enh_sup_mp = {
