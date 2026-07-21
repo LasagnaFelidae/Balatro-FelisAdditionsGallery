@@ -50,14 +50,14 @@ FelisAG.Vermin { -- common Squirrel Ball
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS["j_feli_fag_ins_squirrel"]
         if G.jokers and G.jokers.cards then
-            card.ability.immutable.squirrels = 0
+            card.ability.immutable.squirrels = 1
             for i, v in ipairs(G.jokers.cards) do
                 if v.config.center.key == "j_feli_fag_ins_squirrel" then
                     card.ability.immutable.squirrels = card.ability.immutable.squirrels + 1
                 end
             end
         end
-		return { vars = { card.ability.extra.mult, card.ability.immutable.squirrels, math.floor(card.ability.extra.max), G.jokers and G.jokers.config.card_limit*2 or 0,  colours = { HEX('F0C590'), HEX('351A09') } } } 
+		return { vars = { card.ability.extra.mult, card.ability.immutable.squirrels, math.floor(card.ability.extra.max), G.jokers and G.jokers.config.card_limit*2 or 10,  colours = { HEX('F0C590'), HEX('351A09') } } } 
     end,
     add_to_deck = function (self, card, from_debuff)
         if card.area and card.area.cards then
@@ -69,7 +69,7 @@ FelisAG.Vermin { -- common Squirrel Ball
         if context.before then
             card.ability.immutable.squirrels = 0
             for i, v in ipairs(G.jokers.cards) do
-                if v.config.center.key == "j_feli_fag_ins_squirrel" then
+                if v.config.center.key == "j_feli_fag_ins_squirrel" or v.config.center.key == "j_feli_fag_ins_squirrelball"  then
                     card.ability.immutable.squirrels = card.ability.immutable.squirrels + 1
                 end
             end
@@ -129,7 +129,13 @@ FelisAG.Vermin { -- Rare Pack Rat
     calculate = function(self, card, context)
 
         if context.modify_ante and context.ante_end then
-            SMODS.add_card{ set = "Consumeables", edition = "e_negative" }
+            local roll = pseudorandom("ihaveagiftforyou"..G.GAME.round..G.GAME.pseudorandom.seed)
+			local cons = FelisAG.quick_pool_pick(FelisAG.consumeables_table, roll)
+			local _key = pseudorandom_element(SMODS.get_clean_pool(cons), pseudoseed("feli_fag_ttm_sgl_giftbearer"))
+			
+			G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+			SMODS.add_card{ key = _key, no_edition = true }
+			G.GAME.consumeable_buffer = 0
         end
 		if context.joker_main then
 			return {
