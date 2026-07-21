@@ -62,7 +62,7 @@ return {
                     "Once per ante, when used,",
                     "adds {C:attention}#1# {C:red,E:2}#2#{}",
                     "{C:green,E:2}#3#{} {C:feli_fag_pink}Wildcard{}",
-                    "{C:attention}n-grams{}",
+                    "{C:attention}N-gram{}",
                     "{s:0.4} {}",
                     "{C:inactive}(Uses left: {V:1}#4#{C:inactive})"
                     },
