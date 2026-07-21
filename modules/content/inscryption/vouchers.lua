@@ -72,7 +72,7 @@ SMODS.Voucher {
     end,
     requires = { 'v_feli_fag_totemmerchant' },
     check_for_unlock = function(self, args)
-        return args.type == 'win_deck' and get_deck_win_stake('b_feli_fag_ttm_deck') and true
+        return args.type == 'win_deck' and get_deck_win_stake('b_feli_fag_ttm_deck') == true
     end,
     redeem = function(self)
 		G.E_MANAGER:add_event(Event({
