@@ -1,0 +1,6 @@
+SMODS.Sound({key = "aiko_note1", path = "aikoshen/note.ogg"})
+SMODS.Sound({key = "aiko_note2", path = "aikoshen/note2.ogg"})
+SMODS.Sound({key = "aiko_note3", path = "aikoshen/note3.ogg"})
+SMODS.Sound({key = "aiko_note4", path = "aikoshen/note4.ogg"})
+SMODS.Sound({key = "aiko_note5", path = "aikoshen/note5.ogg"})
+SMODS.Sound({key = "aiko_note6", path = "aikoshen/note6.ogg"})

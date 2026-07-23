@@ -7,9 +7,9 @@ else
 end
 
 local old_check_word = AKYRS.check_word
-
+AKYRS.dict_ref = AKYRS_WORDS
 AKYRS.check_word = function(str_arr_in)
-    local AKYRS_WORDS_REF = AKYRS_WORDS
+    local AKYRS_WORDS_REF = AKYRS.dict_ref
     local result = old_check_word(str_arr_in)
     
     
@@ -17,7 +17,8 @@ AKYRS.check_word = function(str_arr_in)
         if (next(SMODS.find_card("j_feli_fag_akyrs_lexicographer")) or 
         next(SMODS.find_card("j_feli_fag_akyrs_fisher")) or 
         next(SMODS.find_card("j_feli_fag_akyrs_accountant"))) or 
-        next(SMODS.find_card("j_feli_fag_akyrs_clerk")) then
+        next(SMODS.find_card("j_feli_fag_akyrs_clerk")) or 
+        next(SMODS.find_card("j_feli_fag_akyrs_mycologists")) then
             AKYRS_WORDS = LEXICOGRAPHER_DICT
             result = old_check_word(str_arr_in)
         end
@@ -314,21 +315,7 @@ FelisAG.LetterJoker {
     calculate = function(self, card, context)
         if context.end_of_round and context.main_eval and not context.game_over then
             if card.ability.letter_opener.used == true then
-                for i = 1, card.ability.extra.card_amount, 1 do
-                    local selected_c = pseudorandom_element(G.playing_cards, 'feli_fag_akyrs_clerk')
-                    local it = 1
-                    while (selected_c.config.center.key ~= "m_feli_fag_pp_crit") and it <= 5 do
-                        it = it + 1
-                        selected_c = pseudorandom_element(G.playing_cards, 'feli_fag_akyrs_clerk'..it)
-                    end
-                    G.E_MANAGER:add_event(Event({
-                        func = function()
-                            selected_c:juice_up(0.3, 0.5)
-                            selected_c:set_ability("m_feli_fag_pp_crit")
-                            return true
-                        end
-                    }))
-                end
+                
                 card.ability.letter_opener.used = false 
             end
         end
@@ -349,10 +336,24 @@ FelisAG.LetterJoker {
     use = function(self, card, area, copier)
         card.ability.letter_opener.used = true
         G.GAME.feli_fag_crit_boost = 0
-        
+        for i = 1, card.ability.extra.card_amount, 1 do
+            local selected_c = pseudorandom_element(G.playing_cards, 'feli_fag_akyrs_clerk')
+            local it = 1
+            while (selected_c.config.center.key ~= "m_feli_fag_pp_crit") and it <= 5 do
+                it = it + 1
+                selected_c = pseudorandom_element(G.playing_cards, 'feli_fag_akyrs_clerk'..it)
+            end
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    selected_c:juice_up(0.3, 0.5)
+                    selected_c:set_ability("m_feli_fag_pp_crit")
+                    return true
+                end
+            }))
+        end
         
         return {
-            message = localize("k_reset")
+            message = localize("k_reset"), card = card
         }
     end,
     can_use = function(self, card)
@@ -363,7 +364,7 @@ FelisAG.LetterJoker {
 
 
 FelisAG.note_table = {
-    ["e_base"]                 = { next = "m_akyrs_semibreve_card",},
+    ["c_base"]                 = { next = "m_akyrs_semibreve_card",},
     ["m_akyrs_semibreve_card"] = { next = "m_akyrs_minim_card",},
     ["m_akyrs_minim_card"]     = { next = "m_akyrs_crotchet_card",}, 
     ["m_akyrs_crotchet_card"]  = { next = "m_feli_fag_pp_wood",},
@@ -400,16 +401,26 @@ FelisAG.LetterJoker {
         return {}
     end,
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play then
-            G.E_MANAGER:add_event(Event({
-                func = function()
-                    local current_tier = context.other_card.config.center.key or ""
-                    local upgrade = FelisAG.campfire_table[current_tier]
-                    context.other_card:set_ability(upgrade.next)
-                    context.other_card:juice_up()
-                    return true
-                end
-            }))
+        if context.after then
+            for i = 1, #context.scoring_hand do
+                local percent = 0.85 + (i - 0.999) / (#context.scoring_hand - 0.998) * 0.5
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after', 
+                    delay = 0.35,
+                    func = function()
+                        local current_tier = context.scoring_hand[i].config.center.key or ""
+                        local upgrade = FelisAG.note_table[current_tier]
+                            
+                        if upgrade then
+                        
+                            play_sound('feli_fag_aiko_note'..pseudorandom(percent,1,6), percent, 0.6)
+                            context.scoring_hand[i]:set_ability(upgrade.next)
+                            context.scoring_hand[i]:juice_up(0.4, 0.4)
+                        end
+                        return true
+                    end
+                }))
+            end
         end
     end,
 }
@@ -424,7 +435,7 @@ FelisAG.LetterJoker {
         ["Scrabble"] = true, 
         ["Pronoun Palace"] = true,
         ["Inscryption"] = true, 
-		["Human"] = true 
+        ["Human"] = true 
     },
     pronouns = "they_them",
     blueprint_compat = false,
@@ -458,64 +469,64 @@ FelisAG.LetterJoker {
         local c1, c2 = G.hand.highlighted[1], G.hand.highlighted[2]
         local l1, l2 = c1.ability.aikoyori_letters_stickers, c2.ability.aikoyori_letters_stickers
         SMODS.destroy_cards(c1)
-		SMODS.destroy_cards(c2)
+        SMODS.destroy_cards(c2)
         AKYRS.simple_event_add(
+        function ()
+            AKYRS.fill_hand()
+            AKYRS.simple_event_add(
             function ()
-                AKYRS.fill_hand()
-                    AKYRS.simple_event_add(
-                    function ()
-                        local moneycrd = Card(11.5,15,G.CARD_W,G.CARD_H,pseudorandom_element(G.P_CARDS,pseudoseed("accountant")),G.P_CENTERS['m_feli_fag_pp_bleed'],{playing_card = G.playing_card})
-                        moneycrd.is_null = true
-                        --[[
-                        AKYRS.simple_event_add(
-                        function ()
-                            local ante = Talisman and to_number(G.GAME.round_resets.ante) or G.GAME.round_resets.ante
-                            local fct = 2 * (i - 1) - 1
-                            local max_freq = (70000/(fct))/ante^1.5 / (AKYRS.config.full_dictionary and 1 or 10)
-                            local min_freq = (15000/(fct))/ante^1.03 / (AKYRS.config.full_dictionary and 1 or 10)
-                            local prompt, freq = AKYRS.get_bomb_prompt(
-                            {
-                            min_freq = min_freq, 
-                            max_freq = max_freq, 
-                            min_length = card.ability.letter_opener.min_length, 
-                            max_length = card.ability.letter_opener.max_length, 
-                            seed = "accountingisfun"
-                            })
-                            if prompt then
-                                AKYRS.change_letter_to(moneycrd,prompt)
-                                G.hand:emplace(moneycrd)
-                                table.insert(G.playing_cards, moneycrd)
-                            end
-                            return true
-                        end, 0)
-                        ]]--
-                        AKYRS.change_letter_to(moneycrd,
-                        (
-                        l1..l2
-                        ) 
-                    )
-                    G.hand:emplace(moneycrd)
-                    table.insert(G.playing_cards, moneycrd)
+                local moneycrd = Card(11.5,15,G.CARD_W,G.CARD_H,pseudorandom_element(G.P_CARDS,pseudoseed("accountant")),G.P_CENTERS['m_feli_fag_pp_bleed'],{playing_card = G.playing_card})
+                moneycrd.is_null = true
+                --[[
+                AKYRS.simple_event_add(
+                function ()
+                    local ante = Talisman and to_number(G.GAME.round_resets.ante) or G.GAME.round_resets.ante
+                    local fct = 2 * (i - 1) - 1
+                    local max_freq = (70000/(fct))/ante^1.5 / (AKYRS.config.full_dictionary and 1 or 10)
+                    local min_freq = (15000/(fct))/ante^1.03 / (AKYRS.config.full_dictionary and 1 or 10)
+                    local prompt, freq = AKYRS.get_bomb_prompt(
+                    {
+                    min_freq = min_freq, 
+                    max_freq = max_freq, 
+                    min_length = card.ability.letter_opener.min_length, 
+                    max_length = card.ability.letter_opener.max_length, 
+                    seed = "accountingisfun"
+                    })
+                    if prompt then
+                        AKYRS.change_letter_to(moneycrd,prompt)
+                        G.hand:emplace(moneycrd)
+                        table.insert(G.playing_cards, moneycrd)
+                    end
                     return true
-                end, 0.2
-            )
-            card.ability.letter_opener.used = true
-            return true
-            end, 0
+                end, 0)
+                ]]--
+                AKYRS.change_letter_to(moneycrd,
+                (
+                l1..l2
+            ) 
         )
-    end,
-    can_use = function(self, card)
-        if (not card.ability.letter_opener.used) and G.GAME.blind.in_blind then
-            if G.hand and #G.hand.highlighted == 2 then
-                local c1, c2 = G.hand.highlighted[1], G.hand.highlighted[2]
-                local l1, l2 = c1.ability.aikoyori_letters_stickers, c2.ability.aikoyori_letters_stickers
-                if string.lower(l1) == string.lower(l2) then
-                    return true
-                end
+        G.hand:emplace(moneycrd)
+        table.insert(G.playing_cards, moneycrd)
+        return true
+    end, 0.2
+)
+card.ability.letter_opener.used = true
+return true
+end, 0
+)
+end,
+can_use = function(self, card)
+    if (not card.ability.letter_opener.used) and G.GAME.blind.in_blind then
+        if G.hand and #G.hand.highlighted == 2 then
+            local c1, c2 = G.hand.highlighted[1], G.hand.highlighted[2]
+            local l1, l2 = c1.ability.aikoyori_letters_stickers, c2.ability.aikoyori_letters_stickers
+            if string.lower(l1) == string.lower(l2) then
+                return true
             end
         end
-        return false
-    end,
+    end
+    return false
+end,
 }
 
 --- FELI LEGENDARY

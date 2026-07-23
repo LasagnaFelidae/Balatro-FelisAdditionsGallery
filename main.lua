@@ -1,5 +1,8 @@
 FelisAG = SMODS.current_mod
-FelisAG.optional_features = {post_trigger = true,quantum_enhancements = true,}
+FelisAG.optional_features = {
+    post_trigger = true,
+
+}
 G.GAME = G.GAME and G.GAME or {}
 
 FelisAG.config_tab = function()
