@@ -46,13 +46,13 @@ FelisAG.Vermin { -- common Squirrel Ball
 	eternal_compat = true,
 	pronouns = "they_them",
 	attributes = {"mult","position","generation"},
-	config = { extra = { mult = 1, max = 3}, immutable = { index = 0, squirrels = 0, squirreled = false}},
+	config = { extra = { mult = 1, max = 3}, immutable = { index = 0, squirrels = 1, squirreled = false}},
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS["j_feli_fag_ins_squirrel"]
         if G.jokers and G.jokers.cards then
-            card.ability.immutable.squirrels = 1
+            card.ability.immutable.squirrels = 0
             for i, v in ipairs(G.jokers.cards) do
-                if v.config.center.key == "j_feli_fag_ins_squirrel" then
+                if v.config.center.key == "j_feli_fag_ins_squirrel" or v.config.center.key == "j_feli_fag_ins_squirrelball" then
                     card.ability.immutable.squirrels = card.ability.immutable.squirrels + 1
                 end
             end
@@ -131,10 +131,16 @@ FelisAG.Vermin { -- Rare Pack Rat
         if context.modify_ante and context.ante_end then
             local roll = pseudorandom("ihaveagiftforyou"..G.GAME.round..G.GAME.pseudorandom.seed)
 			local cons = FelisAG.quick_pool_pick(FelisAG.consumeables_table, roll)
-			local _key = pseudorandom_element(SMODS.get_clean_pool(cons), pseudoseed("feli_fag_ttm_sgl_giftbearer"))
+            local _key = pseudorandom_element(cons, 'feli_fag_ins_packrat')
+            local it = 1
+            while _key == 'UNAVAILABLE' do
+                it = it + 1
+                _key = pseudorandom_element(cons, 'feli_fag_ins_packrat'..it)
+            end
+			
 			
 			G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
-			SMODS.add_card{ key = _key, no_edition = true }
+			SMODS.add_card{ key = _key, no_edition = true , area = G.consumeables}
 			G.GAME.consumeable_buffer = 0
         end
 		if context.joker_main then

@@ -248,6 +248,17 @@ SMODS.ObjectType({
 		SMODS.ObjectType.inject(self)
 	end,
 })
+
+SMODS.ObjectType({
+	key = "All",
+	default = "j_joker",
+	cards = {},
+	inject = function(self)
+		SMODS.ObjectType.inject(self)
+		self:inject_card(G.P_CENTERS.j_joker)
+	end,
+})
+
 SMODS.ObjectType({
 	key = "Other",
 	default = "j_joker",

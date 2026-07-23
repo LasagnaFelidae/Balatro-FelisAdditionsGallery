@@ -55,16 +55,16 @@ return {
                 },
                 text = { 
                     {
-                    "Enables the {C:purple}Pronoun Palace",
-                    "word dictionary"
+                        "Enables the {C:purple}Pronoun Palace",
+                        "word dictionary"
                     },
                     {
-                    "Once per ante, when used,",
-                    "adds {C:attention}#1# {C:red,E:2}#2#{}",
-                    "{C:green,E:2}#3#{} {C:feli_fag_pink}Wildcard{}",
-                    "{C:attention}N-gram{}",
-                    "{s:0.4} {}",
-                    "{C:inactive}(Uses left: {V:1}#4#{C:inactive})"
+                        "Once per ante, when used,",
+                        "adds {C:attention}#1# {C:red,E:2}#2#{}",
+                        "{C:green,E:2}#3#{} {C:feli_fag_pink}Wildcard{}",
+                        "{C:attention}N-gram{}",
+                        "{s:0.4} {}",
+                        "{C:inactive}(Uses left: {V:1}#4#{C:inactive})"
                     },
 
                 }
@@ -121,6 +121,25 @@ return {
                         "{C:enhanced}Crotchet Cards{} get enhanced",
                         "back to {C:feli_fag_ttm}Wooden Cards{}",
                         "when scored",
+                    },
+
+                }
+            },
+            j_feli_fag_akyrs_mycologists = {
+                name = {
+                    "The Mycologists",
+                    "{C:feli_fag_inactive,s:0.5}Josef & Pilz Karnoffel"
+                },
+                text = { 
+                    {
+                        "Enables the {C:purple}Pronoun Palace",
+                        "word dictionary"
+                    },
+                    {
+                        "Once per round, if the",
+                        "{C:blue}letters{} are {C:dark_edition}identical{},",
+                        "{C:attention}stitch{} two cards into a",
+                        "Blank {C:red}Bleed Card{} {C:attention}Bi-gram{}",
                     },
 
                 }

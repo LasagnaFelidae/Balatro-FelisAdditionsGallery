@@ -63,6 +63,37 @@ return {
                     },
                 },
             },
+            m_feli_fag_pp_plastic = {
+                name = "Plastic Card",
+                text = {
+                    {
+                    "{X:blind,C:white}X#1#{} Blind Req.",
+                    "when scored"
+                    },
+                },
+            },
+            m_feli_fag_pp_ash = {
+                name = "Ash Card",
+                text = {
+                    {
+                    "After playing a hand,",
+                    "Turn into a {C:feli_fag_ttm}Wooden Card",
+                    "or a {C:feli_fag_inactive}Plastic Card",
+                    "if played, is removed otherwise"
+                    },
+
+                },
+            },
+            m_feli_fag_pp_candy = {
+                name = "Candy Card",
+                text = {
+                    {
+                    "{X:purple,C:white}X#1#{} Score",
+                    "when scored"
+                    },
+
+                },
+            },
 
         },
         feli_fag_clearances = {

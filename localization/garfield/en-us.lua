@@ -75,6 +75,24 @@ return {
 					},
 				},
 			},
+			j_feli_fag_grf_wherespizza = {
+				name = {
+					"{f:feli_fag_CooperBlack}Where\'s Pizza?",
+					"{C:feli_fag_inactive,s:0.6}April 4th, 2001",
+				},
+				text = {
+					{
+                    "When the score {C:red,E:2}catches fire{},",
+					"each {C:attention}Food{} Joker has a",
+					"{C:green}#1# in #2# chance{} to reset"
+					},
+					{
+					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}\"Why do they call it oven when",
+					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}\"you of in the cold food of out\"",
+					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}\"hot eat the food?\"",
+					},
+				},
+			},
         },
     },
 }

@@ -32,6 +32,27 @@ FelisAG.PPEnhancement {
 
 FelisAG.PPEnhancement {
     atlas = 'pronounEnhancements',
+    key = 'pp_plastic',
+    pos = { x = 3, y = 1},
+    config = { extra = { xblind = 0.9},},
+    weight = 0.8,
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.xblind} }
+    end,
+
+    calculate = function(self, card, context)
+        if context.main_scoring and context.cardarea == G.play then
+            local ret = {}
+            ret.xblind = card.ability.extra.xblind
+            return ret
+        end
+    end,
+    
+}
+
+
+FelisAG.PPEnhancement {
+    atlas = 'pronounEnhancements',
     key = 'pp_crit',
     pos = { x = 2, y = 0},
     config = { extra = { xmult= 1.5},},
@@ -46,6 +67,28 @@ FelisAG.PPEnhancement {
             local ret = {}
             local boost = G.GAME.feli_fag_crit_boost or 0
             ret.xmult = card.ability.extra.xmult + boost 
+            return ret
+        end
+    end,
+    
+}
+
+
+
+FelisAG.PPEnhancement {
+    atlas = 'pronounEnhancements',
+    key = 'pp_candy',
+    pos = { x = 2, y = 1},
+    config = { extra = { xscore = 1.1},},
+    weight = 0.8,
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.xscore} }
+    end,
+
+    calculate = function(self, card, context)
+        if context.main_scoring and context.cardarea == G.play then
+            local ret = {}
+            ret.xscore = card.ability.extra.xscore
             return ret
         end
     end,
@@ -133,6 +176,59 @@ FelisAG.PPEnhancement {
     end,
     
 }
+local tiles = {
+    {key = "m_feli_fag_pp_wood", weight = 10},
+    {key = "m_feli_fag_pp_plastic", weight = 10},
+    {key = "m_feli_fag_pp_crit", weight = 4},
+}
 
+FelisAG.PPEnhancement {
+    atlas = 'pronounEnhancements',
+    key = 'pp_ash',
+    pos = { x = 0, y = 0},
+    config = {},
+    weight = 1,
+    loc_vars = function(self, info_queue, card)
+        return {}
+    end,
+
+    calculate = function(self, card, context)
+		if context.after then
+            if context.cardarea == G.hand or context.cardarea == G.deck or context.cardarea == G.discard then
+			    SMODS.destroy_cards(card)
+            end
+            if context.cardarea == G.play then
+                card:set_ability(FelisAG.quick_pool_pick(tiles))
+            end
+		end
+    end,
+    
+}
+
+FelisAG.PPEnhancement {
+    atlas = 'pronounEnhancements',
+    key = 'pp_frozen',
+    pos = { x = 0, y = 0},
+    config = { extra = {mult = 2, xblind = 0.9}},
+    weight = 1,
+    loc_vars = function(self, info_queue, card)
+        return {}
+    end,
+
+    calculate = function(self, card, context)
+		if context.after then
+            if context.cardarea == G.hand or context.cardarea == G.deck or context.cardarea == G.discard then
+			    card:set_ability("m_feli_fag_pp_wood")
+            end
+		end
+        if context.main_scoring and context.cardarea == G.play then
+            local ret = {}
+            ret.mult = card.ability.extra.mult
+            ret.xblind = card.ability.extra.xblind
+            return ret
+        end
+    end,
+    
+}
 
 

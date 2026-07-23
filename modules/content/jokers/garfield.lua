@@ -31,7 +31,11 @@ FelisAG.tower_list =
 
 FelisAG.GarfieldJoker { --2, 0, biting the bolster
 	pos = { x = 0, y = 0 },
-	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
+	pools = {
+		["FelisAdditions"] = true, 
+		["Feline"] = true, 
+		["Garfield"] = true,
+	},
 	key = "feli_fag_grf_defenestration",
 	rarity = 2,
 	cost = 6,
@@ -140,7 +144,11 @@ blueprint_compat = true,
 ]]
 FelisAG.GarfieldJoker { -- Busy Boy
 	pos = { x = 2, y = 0 },
-	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
+	pools = {
+		["FelisAdditions"] = true, 
+		["Feline"] = true, 
+		["Garfield"] = true,
+	},
 	key = "feli_fag_grf_busyboy",
 	rarity = 2,
 	cost = 6,
@@ -182,7 +190,11 @@ FelisAG.GarfieldJoker { -- Busy Boy
 
 FelisAG.GarfieldJoker { -- Recipe for Success - Oven of out hot eat the food
 	pos = { x = 3, y = 0 },
-	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
+	pools = {
+		["FelisAdditions"] = true, 
+		["Feline"] = true, 
+		["Garfield"] = true,
+	},
 	key = "feli_fag_grf_lasagnarecipe",
 	rarity = 2,
 	cost = 6,
@@ -225,6 +237,57 @@ FelisAG.GarfieldJoker { -- Recipe for Success - Oven of out hot eat the food
 		return false
 	end,
 }
+--[[
+FelisAG.GarfieldJoker { -- Where's Pizza?
+	pos = { x = 4, y = 0 },
+	pools = {
+		["FelisAdditions"] = true, 
+		["Feline"] = true, 
+		["Garfield"] = true,
+	},
+	key = "feli_fag_grf_wherespizza",
+	rarity = 2,
+	cost = 6,
+	config = {
+		extra = {n1 = 1, d1 = 8},
+	},	
+	loc_vars = function(self, info_queue, card)
+		local numerator, denominator = SMODS.get_probability_vars(card, card.ability.extra.n1, card.ability.extra.d1, 'feli_fag_grf_lasagnarecipe')
+		return { vars = { numerator, denominator}, }
+	end,
+	calculate = function(self, card, context)
+		if context.after then
+			if SMODS.last_hand_oneshot then
+				for i, joker in ipairs(G.jokers.cards) do
+					if (joker.config.center.pools or {}).Food or joker:has_attribute('food') then
+						if SMODS.pseudorandom_probability(card, "feli_fag_grf_lasagnarecipe", card.ability.extra.n1, card.ability.extra.d1, "feli_fag_grf_lasagnarecipe") then
+							joker:set_ability(joker.config.center.key)
+							SMODS.calculate_effect(
+							{message = localize("k_reset"), juice_card = v, message_card = v},
+							card
+						)
+						else
+							SMODS.calculate_effect(
+							{message = localize("k_nope_ex"), juice_card = v, message_card = v},
+							card
+						)
+						end
+					end
+				end
+			end
+		end
+	end,
+	blueprint_compat = true,
+	in_pool = function(self,args)
+		for i, jkr in ipairs(G.jokers.cards) do
+			if (jkr.config.center.pools or {}).Food or jkr:has_attribute('food') then
+				return true
+			end
+		end
+		return false
+	end,
+}
+]]
 
 
 

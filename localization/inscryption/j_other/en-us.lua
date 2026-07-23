@@ -11,7 +11,7 @@ return {
 					"{X:chips,C:white}X#3#{} Chips, {C:mult}+#2#{} Mult",
 					},
 					{
-                    "Gives {C:chips}XChips relative to",
+                    "Gives {C:chips}XChips{} relative to",
 					"how leftmost it is",
 					"in the {C:attention}Joker{} area and",
 					"how many {C:attention}Jokers{} there are"
