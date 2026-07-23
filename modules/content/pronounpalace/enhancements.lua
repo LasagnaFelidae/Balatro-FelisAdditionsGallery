@@ -212,7 +212,7 @@ FelisAG.PPEnhancement {
     config = { extra = {mult = 2, xblind = 0.9}},
     weight = 1,
     loc_vars = function(self, info_queue, card)
-        return {}
+        return { vars = { card.ability.extra.mult, card.ability.extra.xblind, } }
     end,
 
     calculate = function(self, card, context)
