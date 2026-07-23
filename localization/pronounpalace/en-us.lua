@@ -84,6 +84,18 @@ return {
 
                 },
             },
+            m_feli_fag_pp_frozen = {
+                name = "Frozen Card",
+                text = {
+                    {
+                    "{C:red}+#1#{} Mult",
+                    "{X:blind,C:white}X#2#{} Blind Req.",
+                    "Turn into a {C:feli_fag_ttm}Wooden Card",
+                    "after playing",
+                    },
+
+                },
+            },
             m_feli_fag_pp_candy = {
                 name = "Candy Card",
                 text = {
@@ -91,7 +103,6 @@ return {
                     "{X:purple,C:white}X#1#{} Score",
                     "when scored"
                     },
-
                 },
             },
 

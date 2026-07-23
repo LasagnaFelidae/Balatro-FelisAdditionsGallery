@@ -185,7 +185,7 @@ local tiles = {
 FelisAG.PPEnhancement {
     atlas = 'pronounEnhancements',
     key = 'pp_ash',
-    pos = { x = 0, y = 0},
+    pos = { x = 1, y = 1},
     config = {},
     weight = 1,
     loc_vars = function(self, info_queue, card)
@@ -208,7 +208,7 @@ FelisAG.PPEnhancement {
 FelisAG.PPEnhancement {
     atlas = 'pronounEnhancements',
     key = 'pp_frozen',
-    pos = { x = 0, y = 0},
+    pos = { x = 5, y = 0},
     config = { extra = {mult = 2, xblind = 0.9}},
     weight = 1,
     loc_vars = function(self, info_queue, card)
@@ -217,9 +217,8 @@ FelisAG.PPEnhancement {
 
     calculate = function(self, card, context)
 		if context.after then
-            if context.cardarea == G.hand or context.cardarea == G.deck or context.cardarea == G.discard then
-			    card:set_ability("m_feli_fag_pp_wood")
-            end
+			card:set_ability("m_feli_fag_pp_wood")
+
 		end
         if context.main_scoring and context.cardarea == G.play then
             local ret = {}
