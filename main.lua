@@ -5,16 +5,29 @@ FelisAG.optional_features = {
 }
 G.GAME = G.GAME and G.GAME or {}
 
+
 FelisAG.config_tab = function()
-    return {n = G.UIT.ROOT, config = {r = 0.1, minw = 8, minh = 6, align = "tl", padding = 0.2, colour = G.C.BLACK}, nodes = {
+    return {n = G.UIT.ROOT, config = {r = 0.1, minw = 8, minh = 6, align = "cm", padding = 0.2, colour = G.C.BLACK}, nodes = {
         create_toggle({
             label = localize("cfg_feli_fag_directors_cut"),
             ref_table = FelisAG.config,
             ref_value = 'directors_cut',
+            info = localize('cfg_feli_fag_directors_cut_desc'),
         }),
-        {n = G.UIT.C, config = { align = "cl", padding = 0 }, nodes = {
-				{n = G.UIT.T, config = { text = localize('cfg_feli_fag_directors_cut_desc'), scale = 0.25, colour = G.C.UI.TEXT_LIGHT }},
-			}},
+        create_toggle({
+            label = localize("cfg_feli_fag_verbose_mode"),
+            ref_table = FelisAG.config,
+            ref_value = 'verbose_mode',
+            info = localize('cfg_feli_fag_verbose_mode_desc'),
+        }),
+        --[[
+        create_toggle({
+            label = localize("cfg_feli_fag_tribe_info"),
+            ref_table = FelisAG.config,
+            ref_value = 'tribe_info',
+            info = localize('cfg_feli_fag_tribe_info_desc'),
+        }),
+        ]]
     }}
 end
 

@@ -240,7 +240,7 @@ FelisAG.getCardTribes = function(card)
         end
     end
 
-    -- Base Feli_fag Tribes
+    -- Base FelisAG Tribes
     if pools then
         for tribe_name, _ in pairs(FelisAG.PoolTribes or {}) do
             if pools[tribe_name] then
