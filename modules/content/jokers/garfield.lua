@@ -150,10 +150,10 @@ FelisAG.GarfieldJoker { -- Busy Boy
 		["Garfield"] = true,
 	},
 	key = "feli_fag_grf_busyboy",
-	rarity = 2,
+	rarity = 1,
 	cost = 6,
 	config = {
-		extra = {chips = 40},
+		extra = {chips = 50},
 	},	
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue+1] = {key = 'feli_fag_tiered', set = 'Other'}
@@ -237,7 +237,7 @@ FelisAG.GarfieldJoker { -- Recipe for Success - Oven of out hot eat the food
 		return false
 	end,
 }
---[[
+
 FelisAG.GarfieldJoker { -- Where's Pizza?
 	pos = { x = 4, y = 0 },
 	pools = {
@@ -249,32 +249,22 @@ FelisAG.GarfieldJoker { -- Where's Pizza?
 	rarity = 2,
 	cost = 6,
 	config = {
-		extra = {n1 = 1, d1 = 8},
+		extra = {xchips_mod = 0.5, xchips_mod_pizza = 1, xchips = 1},
 	},	
 	loc_vars = function(self, info_queue, card)
-		local numerator, denominator = SMODS.get_probability_vars(card, card.ability.extra.n1, card.ability.extra.d1, 'feli_fag_grf_lasagnarecipe')
-		return { vars = { numerator, denominator}, }
+		info_queue[#info_queue+1] = G.P_CENTERS.j_feli_fag_rbx_pizza
+		return { vars = { card.ability.extra.xchips_mod, card.ability.extra.xchips_mod_pizza,localize { type = 'name_text', set = 'Joker', key = "j_feli_fag_rbx_pizza" }, card.ability.extra.xchips}, }
 	end,
 	calculate = function(self, card, context)
-		if context.after then
-			if SMODS.last_hand_oneshot then
-				for i, joker in ipairs(G.jokers.cards) do
-					if (joker.config.center.pools or {}).Food or joker:has_attribute('food') then
-						if SMODS.pseudorandom_probability(card, "feli_fag_grf_lasagnarecipe", card.ability.extra.n1, card.ability.extra.d1, "feli_fag_grf_lasagnarecipe") then
-							joker:set_ability(joker.config.center.key)
-							SMODS.calculate_effect(
-							{message = localize("k_reset"), juice_card = v, message_card = v},
-							card
-						)
-						else
-							SMODS.calculate_effect(
-							{message = localize("k_nope_ex"), juice_card = v, message_card = v},
-							card
-						)
-						end
-					end
-				end
-			end
+		if context.joker_type_destroyed and ((context.card.config.center.pools or {}).Food or context.card:has_attribute('food')) then
+			SMODS.scale_card(card, {
+				ref_table = card.ability.extra, -- the table that has the value you are changing in
+				ref_value = "xchips", -- the key to the value in the ref_table
+				scalar_value = context.card.config.center.key == "j_feli_fag_rbx_pizza" and "xchips_mod_pizza" or "xchips_mod",
+			})
+		end
+		if context.joker_main then
+			return { xchips = card.ability.extra.xchips}
 		end
 	end,
 	blueprint_compat = true,
@@ -287,7 +277,7 @@ FelisAG.GarfieldJoker { -- Where's Pizza?
 		return false
 	end,
 }
-]]
+
 
 
 

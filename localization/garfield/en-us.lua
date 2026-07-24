@@ -70,8 +70,8 @@ return {
 					},
 					{
 					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}\"Why do they call it oven when",
-					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}\"you of in the cold food of out\"",
-					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}\"hot eat the food?\"",
+					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}you of in the cold food of out",
+					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}hot eat the food?\"",
 					},
 				},
 			},
@@ -82,14 +82,19 @@ return {
 				},
 				text = {
 					{
-                    "When the score {C:red,E:2}catches fire{},",
-					"each {C:attention}Food{} Joker has a",
-					"{C:green}#1# in #2# chance{} to reset"
+                    "Gains {X:blue,C:white}X#1#{} Chips every time",
+					"a {C:attention}Food{} Joker is destroyed,",
 					},
 					{
-					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}\"Why do they call it oven when",
-					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}\"you of in the cold food of out\"",
-					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}\"hot eat the food?\"",
+					"Gains {X:blue,C:white}X#2#{} Chips if the joker is",
+					"{C:attention}#3#{}",
+					"{C:inactive}(Currently {X:blue,C:white}X#4#{C:inactive} Chips)",
+					},
+					{
+					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}\"Garfield, this is a diagram",
+					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}of the Food Chain.\"",
+					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}\"You\'re here, and that\'s a mouse down",
+					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}there... Any questions?\"",
 					},
 				},
 			},
