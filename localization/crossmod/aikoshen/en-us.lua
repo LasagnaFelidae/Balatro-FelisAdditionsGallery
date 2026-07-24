@@ -144,6 +144,29 @@ return {
 
                 }
             },
+            j_feli_fag_akyrs_martyr = {
+                name = {
+                    "The Martyr",
+                    "{C:feli_fag_inactive,s:0.5}Felicio Lasenberger"
+                },
+                text = { 
+                    {
+                        "Enables the {C:purple}Pronoun Palace",
+                        "and the {C:blue}French",
+                        "word dictionaries"
+                    },
+                    {
+                        "When entering a Blind,",
+                        "{X:blind,C:white}X#1#{} Blind Req. and",
+                        "adds {C:attention}#2# {C:red}#3#{}",
+                        "{C:enhanced,E:2}#4#{} {C:attention}N-grams{}",
+                        "{s:0.4} {}",
+                        "{C:inactive}(Blind reduction scales with Ante)",
+                        "{C:inactive}(Uses left: {V:1}#5#{C:inactive})"
+                    },
+
+                }
+            },
 			j_feli_fag_ltr_dbl = {
                 name = "Double Letter Tile",
                 text = { 

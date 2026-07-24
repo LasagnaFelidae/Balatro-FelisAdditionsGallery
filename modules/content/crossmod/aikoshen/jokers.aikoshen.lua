@@ -7,27 +7,35 @@ else
 end
 
 local old_check_word = AKYRS.check_word
-AKYRS.dict_ref = AKYRS_WORDS
+FelisAG.dict_ref = AKYRS_WORDS
 AKYRS.check_word = function(str_arr_in)
     local AKYRS_WORDS_REF = AKYRS.dict_ref
+    
+    AKYRS.get_dictionary = function() return "AKYRS_WORDS" end
     local result = old_check_word(str_arr_in)
     
     
-    if (result and result.valid == false) or result == nil then
+    if (result and (result.valid == false or result.valid == nil)) or result == nil then
         if (next(SMODS.find_card("j_feli_fag_akyrs_lexicographer")) or 
         next(SMODS.find_card("j_feli_fag_akyrs_fisher")) or 
-        next(SMODS.find_card("j_feli_fag_akyrs_accountant"))) or 
+        next(SMODS.find_card("j_feli_fag_akyrs_accountant")) or 
         next(SMODS.find_card("j_feli_fag_akyrs_clerk")) or 
-        next(SMODS.find_card("j_feli_fag_akyrs_mycologists")) then
-            AKYRS_WORDS = LEXICOGRAPHER_DICT
+        next(SMODS.find_card("j_feli_fag_akyrs_mycologists")) or
+        next(SMODS.find_card("j_feli_fag_akyrs_martyr"))
+        )then
+            if AKYRS.get_dictionary then AKYRS.get_dictionary = function() return "LEXICOGRAPHER_DICT" end else AKYRS_WORDS = LEXICOGRAPHER_DICT end 
+            result = old_check_word(str_arr_in)
+        end
+    end
+
+    if (result and (result.valid == false or result.valid == nil)) or result == nil then
+        if (next(SMODS.find_card("j_feli_fag_akyrs_martyr"))) then
+            if AKYRS.get_dictionary then AKYRS.get_dictionary = function() return "FRENCH_DICT" end else AKYRS_WORDS = FRENCH_DICT end
             result = old_check_word(str_arr_in)
         end
     end
     
-    AKYRS_WORDS = AKYRS_WORDS_REF
-    if (result and result.valid == false) or result == nil then
-        result = old_check_word(str_arr_in)
-    end
+    if AKYRS.get_dictionary then AKYRS.get_dictionary = function() return "AKYRS_WORDS" end else AKYRS_WORDS = AKYRS_WORDS_REF end
     --[[
     if result and result.valid and result.word and G.GAME.aiko_words_played[result.word] then
         if (next(SMODS.find_card("clearance_feli_fag_cerulean"))) then
@@ -267,7 +275,7 @@ loc_vars = function(self, info_queue, card)
     info_queue[#info_queue+1] = G.P_CENTERS["m_feli_fag_pp_money"]
     info_queue[#info_queue+1] = { key = "akyrs_self_destructs", set = "Other",}
     info_queue[#info_queue+1] = { key = "feli_fag_akyrs_wildcard", set = "Other",}
-    info_queue[#info_queue+1] = { key = "feli_fag_akyrs_ngrams", set = "Other",}
+    
     local is_used = card.ability.letter_opener.used == true and "Used" or "Active"
     local is_used_clr = card.ability.letter_opener.used == true and G.C.RED or G.C.GREEN
     return { vars = { card.ability.letter_opener.max_cards, localize{type = 'name_text', key = "akyrs_self_destructs", set = 'Other'}, localize{type = 'name_text', key = "m_feli_fag_pp_money", set = 'Enhanced'}, is_used, colours = {is_used_clr}}, } 
@@ -449,8 +457,8 @@ FelisAG.LetterJoker {
     end,
     
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue+1] = G.P_CENTERS["m_feli_fag_pp_money"]
-        info_queue[#info_queue+1] = { key = "feli_fag_akyrs_ngrams", set = "Other",}
+        info_queue[#info_queue+1] = G.P_CENTERS["m_feli_fag_pp_bleed"]
+        
         return {}
     end,
     calculate = function(self, card, context)
@@ -527,6 +535,95 @@ can_use = function(self, card)
     end
     return false
 end,
+}
+
+FelisAG.LetterJoker {
+    key = "feli_fag_akyrs_martyr",
+    atlas = 'pronounJokers',
+    pos = { x = 6, y = 0 },
+    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
+    pronouns = "he_him",
+    blueprint_compat = true,
+    rarity = 2,
+    cost = 6,
+    config = { extra = {xblind = 0.05}, letter_opener = {used = false, max_cards= 3, min_length = 2, max_length = 4} },
+    set_badges = function(self, card, badges)
+        badges[#badges+1] = create_badge(localize('k_feli_fag_pronounpalace'), HEX('E8C99A'), G.C.UI.TEXT_DARK,  1 )
+        badges[#badges+1] = create_badge(localize('k_feli_fag_aikoshen'), HEX('A4CA5A'), HEX('753F8E'),  1 )
+    end,
+
+    add_to_deck = function(self, card, from_debuff)
+        AKYRS.scrabble_scores["-"] = 2
+    end,
+
+
+    
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = G.P_CENTERS["m_feli_fag_pp_bomb"]
+        info_queue[#info_queue+1] = { key = "akyrs_attention", set = "Other",}
+        
+        local ante = 1-math.abs(Talisman and to_number(G.GAME.round_resets.ante) or G.GAME.round_resets.ante)*card.ability.extra.xblind
+        local is_used = card.ability.letter_opener.used == true and "Used" or "Active"
+        local is_used_clr = card.ability.letter_opener.used == true and G.C.RED or G.C.GREEN
+        return { vars = { ante, card.ability.letter_opener.max_cards, localize{type = 'name_text', key = "akyrs_attention", set = 'Other'}, localize{type = 'name_text', key = "m_feli_fag_pp_bomb", set = 'Enhanced'}, is_used, colours = {is_used_clr}}, } 
+    end,
+    calculate = function(self, card, context)
+        if context.first_hand_drawn and context.hand_drawn then
+            AKYRS.simple_event_add(
+                function ()
+                    AKYRS.fill_hand()
+                    for i = 1, card.ability.letter_opener.max_cards + 1 do
+                        AKYRS.simple_event_add(
+                        function ()
+                            local caca = 'm_feli_fag_pp_bomb'
+                            local moneycrd = Card(
+                            11.5,
+                            15,
+                            G.CARD_W,
+                            G.CARD_H,
+                            pseudorandom_element(G.P_CARDS,pseudoseed("accountant")),
+                            G.P_CENTERS[caca],
+                            {playing_card = G.playing_card})
+                            moneycrd.is_null = true
+                            moneycrd.ability.akyrs_attention = true
+                            moneycrd.ability.extra_slots_used = -1
+                            AKYRS.simple_event_add(
+                                function ()
+                                    local ante = Talisman and to_number(G.GAME.round_resets.ante) or G.GAME.round_resets.ante
+                                    local fct = 2 * (i - 1) - 1
+                                    local max_freq = (70000/(fct))/ante^1.5 / (AKYRS.config.full_dictionary and 1 or 10)
+                                    local min_freq = (15000/(fct))/ante^1.03 / (AKYRS.config.full_dictionary and 1 or 10)
+                                    local prompt, freq = AKYRS.get_bomb_prompt(
+                                    {
+                                    min_freq = min_freq, 
+                                    max_freq = max_freq, 
+                                    min_length = card.ability.letter_opener.min_length, 
+                                    max_length = card.ability.letter_opener.max_length, 
+                                    seed = "accountingisfun"
+                                    })
+                                    if prompt then
+                                        AKYRS.change_letter_to(moneycrd,prompt)
+                                        
+                                        G.hand:emplace(moneycrd)
+                                        table.insert(G.playing_cards, moneycrd)
+                                    end
+                                    return true
+                                end, 0
+                            )
+                        return true
+                        end, 0.2
+                    )
+                end
+                card.ability.letter_opener.used = true
+                return true
+                end, 0
+            )
+            local ante = math.abs(Talisman and to_number(G.GAME.round_resets.ante) or G.GAME.round_resets.ante)
+            return {
+                xblind = 1 - ante*card.ability.extra.xblind
+            }
+        end
+    end
 }
 
 --- FELI LEGENDARY

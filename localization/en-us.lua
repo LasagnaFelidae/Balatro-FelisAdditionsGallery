@@ -1500,7 +1500,11 @@ return {
             ---CONFIG-----
             --------------
             cfg_feli_fag_directors_cut = "Director\'s Cut",
-            cfg_feli_fag_directors_cut_desc = "View the mod as Feli intended. [TW: SH, Gore, Blood]",
+            cfg_feli_fag_directors_cut_desc = {"View the mod as Feli intended.","{C:red}[TW: SH, Gore, Blood]{}"},
+            cfg_feli_fag_verbose_mode = "Verbose Mode",
+            cfg_feli_fag_verbose_mode_desc = {"View all extra explanations","(Tiers, Vocabulary)"},
+            cfg_feli_fag_tribe_info = "Tribe Info",
+            cfg_feli_fag_tribe_info_desc = {"Show what Tribes a card is part of","(Feline, etc.."},
             --------------
             ---QUESTS-----
             --------------

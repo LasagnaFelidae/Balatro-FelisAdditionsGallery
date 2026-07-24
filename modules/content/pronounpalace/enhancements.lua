@@ -137,24 +137,40 @@ FelisAG.PPEnhancement {
     atlas = 'pronounEnhancements',
     key = 'pp_bomb',
     pos = { x = 1, y = 0},
-    config = { extra = { xscore = 0.5, xblindsize = 0.8}, timer = {hands = 2, }, },
+    config = { extra = { xscore = 0.5, xblindsize = 0.8}, timer = {hands = 2, set = false, min = 1, max = 3}, },
     weight = 0.9,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = {key = "feli_fag_explode", set ="Other"}
         local plural = (card.ability.timer.hands ~= 1 ) and "hands" or "hand"
-        local counter = (card.ability.timer.hands ~= 1 ) and card.ability.timer.hands or "this"
+        local counter = (card.ability.timer.set == false and card.ability.timer.min.." to "..card.ability.timer.max or (card.ability.timer.hands ~= 1 ) and card.ability.timer.hands or "this")
         return { vars = { card.ability.extra.xscore, card.ability.extra.xblindsize, counter, plural } }
     end,
 
+    set_ability = function(self, card, initial, delay_sprites)
+        if G.deck then
+            card.ability.timer.set = true
+            card.ability.timer.hands = pseudorandom("pp_bomb",card.ability.timer.min, card.ability.timer.max)
+            if card.ability.timer.hands == 1 then
+                local eval = function(card) return not card.REMOVED end
+                juice_card_until(card, eval, true)
+            end
+        end
+    end,
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play then
             local ret = {}
-            ret.xblindsize = card.ability.extra.xblindsize
+            if card.ability.timer.hands <= 1 then
+                ret.xblindsize = card.ability.extra.xblindsize
+            end
             return ret
         end
         if context.final_scoring_step and (context.cardarea == G.hand or context.cardarea == G.play or context.cardarea == "unscored") then
             local ret = {}
             card.ability.timer.hands = card.ability.timer.hands - 1
+            if card.ability.timer.hands == 1 then
+                local eval = function(card) return not card.REMOVED end
+                juice_card_until(card, eval, true)
+            end
             if card.ability.timer.hands <= 0 then
                 if context.cardarea == G.hand then
                     

@@ -48,6 +48,8 @@ if not FelisAG.is_mod_loaded("RevosVault") then
         no_rank = false,
         no_suit = false,
         always_scores = false,
+        discovered = true,
+        unlocked = true,
         weight = 0,
         set_badges = function(self, card, badges)
             badges[#badges+1] = create_badge(localize('k_feli_fag_revo'), HEX('7E7AFF'), HEX('40093A'), 1 )
