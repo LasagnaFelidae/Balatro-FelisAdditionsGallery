@@ -43,6 +43,22 @@ return {
                     },
                 },
             },
+            j_feli_fag_ins_stoat_bloated = {
+				name = {
+				"{B:1,V:2,f:feli_fag_Feli5x8}Bloated Stoat{}",
+				},
+				text = {
+					{
+					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
+					},
+					{
+					"Playing a {C:attention}Three of a Kind",
+					"grants {X:mult,C:white}X#4#{} Mult and",
+					"retriggers scored cards",
+					"#3# more times.",
+					}
+				},
+			},
         },
     }
 }

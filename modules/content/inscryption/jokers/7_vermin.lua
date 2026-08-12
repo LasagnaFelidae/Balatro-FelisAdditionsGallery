@@ -131,11 +131,11 @@ FelisAG.Vermin { -- Rare Pack Rat
         if context.modify_ante and context.ante_end then
             local roll = pseudorandom("ihaveagiftforyou"..G.GAME.round..G.GAME.pseudorandom.seed)
 			local cons = FelisAG.quick_pool_pick(FelisAG.consumeables_table, roll)
-            local _key = pseudorandom_element(cons, 'feli_fag_ins_packrat')
+            local _key = pseudorandom_element(cons.key, 'feli_fag_ins_packrat')
             local it = 1
             while _key == 'UNAVAILABLE' do
                 it = it + 1
-                _key = pseudorandom_element(cons, 'feli_fag_ins_packrat'..it)
+                _key = pseudorandom_element(cons.key, 'feli_fag_ins_packrat'..it)
             end
 			
 			
@@ -149,4 +149,42 @@ FelisAG.Vermin { -- Rare Pack Rat
 			}
         end
 	end,
+}
+FelisAG.Vermin { -- Bloated Stoat
+    pos = { x = 7, y = 0 },
+    key = "feli_fag_ins_stoat_bloated",
+	eternal_compat = true,
+	pronouns = "she_her",
+    unlocked = true,
+	discovered = false,
+	rarity = 2,
+	cost = 7,
+	attributes = {"chips","mult","xmult","repetition","poker_hand"},
+	config = { extra = {chips = 3,mult = 3, xmult = 3, retriggers = 2,} },
+	set_badges = function(self, card, badges)
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	end,
+	loc_vars = function(self, info_queue, card)
+		return { vars = { card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.retriggers, card.ability.extra.xmult, colours = { HEX('F0C590'), HEX('351A09') } } }
+	end,
+	calculate = function(self, card, context)
+		if context.repetition and context.cardarea == G.play and context.scoring_name == "Three of a Kind" then
+			
+			return {
+				message = localize('k_again_ex'),
+				repetitions = card.ability.extra.retriggers,
+				card = card
+			}
+
+		end
+
+		if context.joker_main then
+			local ret = {}
+			ret.mult = card.ability.extra.mult
+			ret.chips = card.ability.extra.chips
+			ret.xmult = context.scoring_name == "Three of a Kind" and card.ability.extra.xmult or 1
+			return ret
+		end
+	end,
+	blueprint_compat = false,
 }

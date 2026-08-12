@@ -74,34 +74,7 @@ return {
 					},
 				},
 			},
-			j_feli_fag_ins_lilyfelli = {
-				name = "{B:1,V:2,f:feli_fag_Feli5x8}Lily{}",
-				text = {
-					{
-					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
-					},
-					{
-					"Retriggers {C:attention}#3#{} times each played card",
-					"that matches the current {C:attention}pronoun{},",
-					"pronouns change every round",
-					},
-					{
-					"{C:inactive}[Currently{} {B:3,C:white}#4#{}{C:inactive}]{}"
-					}
-				},
-			},
-			j_feli_fag_ins_lilyfelli_nop = {
-				name = "{B:1,V:2,f:feli_fag_Feli5x8}Lily{}",
-				text = {
-					{
-					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
-					},
-					{
-					"Fixed individual {C:green}1 in 3{} chance to ",
-					"retrigger {C:attention}#3#{} times each played card",
-					},
-				},
-			},
+			
 			j_feli_fag_ins_nxkoo = {
 				name = "{B:1,V:2,f:feli_fag_Feli5x8}Nxkoo{}",
 				text = {
@@ -210,37 +183,8 @@ return {
 					}
 				},
 			},
-			j_feli_fag_ins_gabby = {
-				name = {
-				"{B:1,V:2,f:feli_fag_Feli5x8}Gabby{}",
-				},
-				text = {
-					{
-					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
-					},
-					{
-					"{C:dark_edition}Negative{} {C:attention}Jokers{}",
-					"and {C:attention}Consumables{}",
-					"give {X:mult,C:white}X#3#{} Mult",
-					}
-				},
-			},
-			j_feli_fag_ins_notmar = {
-				name = {
-				"{B:1,V:2,f:feli_fag_Feli5x8}notmario{}",
-				},
-				text = {
-					{
-					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
-					},
-					{
-					"Playing a {C:attention}Three of a Kind",
-					"grants {X:mult,C:white}X#4#{} Mult and",
-					"retriggers scored cards",
-					"#3# more times.",
-					}
-				},
-			},
+			
+			
 			j_feli_fag_ins_missingnum = {
 				name = {
 				"{B:1,V:2,f:feli_fag_Feli5x8}MissingNÞ{}",

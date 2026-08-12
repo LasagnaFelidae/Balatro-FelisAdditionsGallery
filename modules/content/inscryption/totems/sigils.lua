@@ -178,11 +178,11 @@ FelisAG.TotemSigil {
 		then
 			local roll = pseudorandom("ihaveagiftforyou"..G.GAME.round..G.GAME.pseudorandom.seed)
 			local cons = FelisAG.quick_pool_pick(FelisAG.consumeables_table, roll)
-			local _key = pseudorandom_element(cons, pseudoseed("feli_fag_ttm_sgl_giftbearer"))
+			local _key = pseudorandom_element(cons.key, pseudoseed("feli_fag_ttm_sgl_giftbearer"))
             local it = 1
             while _key == 'UNAVAILABLE' do
                 it = it + 1
-                _key = pseudorandom_element(cons, pseudoseed("feli_fag_ttm_sgl_giftbearer")..it)
+                _key = pseudorandom_element(cons.key, pseudoseed("feli_fag_ttm_sgl_giftbearer")..it)
             end
 			G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
 			SMODS.add_card{ key = _key, no_edition = true }

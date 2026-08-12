@@ -235,61 +235,62 @@ SMODS.Joker { -- Uncommon Lily
 
 
 SMODS.Joker { -- Uncommon Luna
-atlas = 'insDeathcard',
-pos = { x = 2, y = 0 },
-pools = {
-	["FelisAdditions"]=true,
-	["Inscryption"] = true,
-	["Beast"] = true,
-	["Object"] = true,
-	["Deathcard"] = true,
-},
-key = "feli_fag_ins_luna",
-attributes = {"chips", "mult", "joker"},
-pronouns = "she_her",
-unlocked = true,
-discovered = false,
-rarity = 2,
-cost = 8,
-config = { extra = { creates = 1 , chips = 5, mult = 10} },
-set_badges = function(self, card, badges)
-	badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
-end,
-loc_vars = function(self, info_queue, card)
-	return { vars = { card.ability.extra.debuff, card.ability.extra.chips, card.ability.extra.mult, colours = { HEX('F0C590'), HEX('351A09') } } }
-end,
-calculate = function(self, card, context)
-	if context.setting_blind and #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-		local jokers_to_create = math.min(card.ability.extra.creates,
-		G.jokers.config.card_limit - (#G.jokers.cards + G.GAME.joker_buffer))
-		G.GAME.joker_buffer = G.GAME.joker_buffer + jokers_to_create
-		G.E_MANAGER:add_event(Event({
-			func = function()
-				for _ = 1, jokers_to_create do
-					SMODS.add_card {
-						set = 'Joker',
-						rarity = 'Common',
-						no_edition = false,
-					}
-					G.GAME.joker_buffer = 0
+	atlas = 'insDeathcard',
+	pos = { x = 2, y = 0 },
+	pools = {
+		["FelisAdditions"]=true,
+		["Inscryption"] = true,
+		["Beast"] = true,
+		["Object"] = true,
+		["Deathcard"] = true,
+	},
+	key = "feli_fag_ins_luna",
+	attributes = {"chips", "mult", "joker"},
+	pronouns = "she_her",
+	unlocked = true,
+	discovered = false,
+	rarity = 2,
+	cost = 8,
+	config = { extra = { creates = 1 , chips = 5, mult = 10} },
+	set_badges = function(self, card, badges)
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	end,
+	loc_vars = function(self, info_queue, card)
+		return { vars = { card.ability.extra.debuff, card.ability.extra.chips, card.ability.extra.mult, colours = { HEX('F0C590'), HEX('351A09') } } }
+	end,
+	calculate = function(self, card, context)
+		if context.setting_blind and #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
+			local jokers_to_create = math.min(card.ability.extra.creates,
+			G.jokers.config.card_limit - (#G.jokers.cards + G.GAME.joker_buffer))
+			G.GAME.joker_buffer = G.GAME.joker_buffer + jokers_to_create
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					for _ = 1, jokers_to_create do
+						SMODS.add_card {
+							set = 'Joker',
+							rarity = 'Common',
+							no_edition = false,
+						}
+						G.GAME.joker_buffer = 0
+					end
+					return true
 				end
-				return true
-			end
-		}))
-		return {
-			message = localize('k_plus_joker'),
-			colour = G.C.BLUE
-		}
-	end
-	if context.joker_main then
-		return {
-			chips = card.ability.extra.chips,
-			mult = card.ability.extra.mult
-		}
-	end
-end,
-blueprint_compat = true,
+			}))
+			return {
+				message = localize('k_plus_joker'),
+				colour = G.C.BLUE
+			}
+		end
+		if context.joker_main then
+			return {
+				chips = card.ability.extra.chips,
+				mult = card.ability.extra.mult
+			}
+		end
+	end,
+	blueprint_compat = true,
 }
+
 SMODS.Joker { -- Uncommon MissingNum
 	atlas = 'insDeathcard',
 	pos = { x = 3, y = 1},
@@ -356,299 +357,172 @@ SMODS.Joker { -- Uncommon MissingNum
 	blueprint_compat = false,
 }
 
-
-SMODS.Joker { -- Uncommon Notmario
+SMODS.Joker { -- Uncommon Tatsu
 	atlas = 'insDeathcard',
-	pos = { x = 2, y = 1},
+	pos = { x = 1, y = 1},
 	pools = {
 		["FelisAdditions"]=true, 
 		["Inscryption"] = true, 
 		["Beast"] = true,
 		["Human"] = true, 
-		["Object"] = true, 
 		["Deathcard"] = true 
 	},
-	key = "feli_fag_ins_notmar",
-	pronouns = "she_they",
+	key = "feli_fag_ins_tatsu",
+	pronouns = "any_all",
 	unlocked = true,
 	discovered = false,
 	rarity = 2,
 	cost = 7,
-	attributes = {"chips","mult","xmult","chance","enhancements","ace"},
-	config = { extra = {chips = 3,mult = 3, xmult = 3, retriggers = 2,} },
+	attributes = {"mult","xmult","chance","enhancements","ace"},
+	config = { extra = {mult = 20, xmult = 3,} },
 	set_badges = function(self, card, badges)
 		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
 	loc_vars = function(self, info_queue, card)
-		if FelisAG.is_mod_loaded("MoreFluff") then
-			info_queue[#info_queue+1] = {key = 'feli_fag_morefluff_crossmod', set = 'Other'}
-		end
-		return { vars = { card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.retriggers, card.ability.extra.xmult, colours = { HEX('F0C590'), HEX('351A09') } } }
+		info_queue[#info_queue+1] = {key = 'feli_fag_tiered', set = 'Other'}
+		info_queue[#info_queue+1] = G.P_CENTERS.m_wild
+		info_queue[#info_queue+1] = G.P_CENTERS.m_feli_fag_wild_t2
+		info_queue[#info_queue+1] = G.P_CENTERS.m_feli_fag_wild_t3
+		info_queue[#info_queue+1] = G.P_CENTERS.m_feli_fag_wild_t4
+		return { vars = { card.ability.extra.mult, card.ability.extra.xmult, colours = { HEX('F0C590'), HEX('351A09') } } }
 	end,
 	calculate = function(self, card, context)
-		if context.repetition and context.cardarea == G.play and context.scoring_name == "Three of a Kind" then
-			
-			return {
-				message = localize('k_again_ex'),
-				repetitions = card.ability.extra.retriggers,
-				card = card
-			}
-
+		if context.individual and context.cardarea == G.play and not context.blueprint then
+			if context.other_card and context.other_card:is_suit("Spades") then
+				local roll = pseudorandom(G.GAME.round_resets.ante.."garfieldsthanksgiving", 1, 3)
+				if roll == 1 then
+					SMODS.destroy_cards(context.other_card)
+					return {
+						xmult = card.ability.extra.xmult,
+					}
+				elseif roll == 2 then
+					context.other_card:set_ability("c_base")
+					SMODS.change_base(context.other_card,nil ,"Ace")
+				else
+					local wild = FelisAG.quick_pool_pick(
+					{
+						{"m_wild", 1},
+						{"m_feli_fag_wild_t2",0.2},
+						{"m_feli_fag_wild_t3",0.05},
+						{"m_feli_fag_wild_t4",0.001}
+					}
+				)
+					context.other_card:set_ability(wild)
+				end
+			end
 		end
 
 		if context.joker_main then
-			if FelisAG.is_mod_loaded("MoreFluff") and (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit) then
-				SMODS.add_card({set="Colour"})
-				G.GAME.consumeable_buffer = 0
-			end
-			local ret = {}
-			ret.mult = card.ability.extra.mult
-			ret.chips = card.ability.extra.chips
-			ret.xmult = context.scoring_name == "Three of a Kind" and card.ability.extra.xmult or 1
-
-			return ret
+			return {
+				mult = card.ability.extra.mult,
+				
+			}
 		end
 	end,
 	blueprint_compat = false,
 }
 
-
-
-SMODS.Joker { -- Uncommon Tatsu
-atlas = 'insDeathcard',
-pos = { x = 1, y = 1},
-pools = {
-	["FelisAdditions"]=true, 
-	["Inscryption"] = true, 
-	["Beast"] = true,
-	["Human"] = true, 
-	["Deathcard"] = true 
-},
-key = "feli_fag_ins_tatsu",
-pronouns = "any_all",
-unlocked = true,
-discovered = false,
-rarity = 2,
-cost = 7,
-attributes = {"mult","xmult","chance","enhancements","ace"},
-config = { extra = {mult = 20, xmult = 3,} },
-set_badges = function(self, card, badges)
-	badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
-end,
-loc_vars = function(self, info_queue, card)
-	info_queue[#info_queue+1] = {key = 'feli_fag_tiered', set = 'Other'}
-	info_queue[#info_queue+1] = G.P_CENTERS.m_wild
-	info_queue[#info_queue+1] = G.P_CENTERS.m_feli_fag_wild_t2
-	info_queue[#info_queue+1] = G.P_CENTERS.m_feli_fag_wild_t3
-	info_queue[#info_queue+1] = G.P_CENTERS.m_feli_fag_wild_t4
-	return { vars = { card.ability.extra.mult, card.ability.extra.xmult, colours = { HEX('F0C590'), HEX('351A09') } } }
-end,
-calculate = function(self, card, context)
-	if context.individual and context.cardarea == G.play and not context.blueprint then
-		if context.other_card and context.other_card:is_suit("Spades") then
-			local roll = pseudorandom(G.GAME.round_resets.ante.."garfieldsthanksgiving", 1, 3)
-			if roll == 1 then
-				SMODS.destroy_cards(context.other_card)
-				return {
-					xmult = card.ability.extra.xmult,
-				}
-			elseif roll == 2 then
-				context.other_card:set_ability("c_base")
-				SMODS.change_base(context.other_card,nil ,"Ace")
-			else
-				local wild = FelisAG.quick_pool_pick(
-				{
-					{"m_wild", 1},
-					{"m_feli_fag_wild_t2",0.2},
-					{"m_feli_fag_wild_t3",0.05},
-					{"m_feli_fag_wild_t4",0.001}
-				}
-			)
-			context.other_card:set_ability(wild)
-		end
-	end
-end
-
-if context.joker_main then
-	return {
-		mult = card.ability.extra.mult,
-		
-	}
-end
-end,
-blueprint_compat = false,
-}
-
 SMODS.Joker{  -- Uncommon Toga
-atlas = 'insDeathcard',
-pos = { x = 6, y = 0 },
-pools = {
-	["FelisAdditions"]=true,
-	["Inscryption"] = true,
-	["Beast"] = true,		
-	["Human"] = true, 
-	["Deathcard"] = true 
-},
-key = "feli_fag_ins_toga",
-pronouns = "he_him",
-attributes = {"chips", "mult", "tarot", "planet", "spectral", "generation"},
-rarity = 2,
-cost = 6,
-blueprint_compat = false,
-eternal_compat = true,
-perishable_compat = true,
-unlocked = true,
-discovered = false,
-config = { extra = {chips = 20, mult = 2.6}, stage = { i = 0, max_i = 2} },
-set_badges = function(self, card, badges)
-	badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
-end,
-loc_vars = function(self, info_queue, card)
-	return { vars = {card.ability.extra.chips, card.ability.extra.mult, card.ability.stage.i, card.ability.stage.max_i, colours = { HEX('F0C590'), HEX('351A09')} } }
-end,
-calculate = function(self, card, context)
-	if context.press_play then
-		card.ability.stage.i = card.ability.stage.i + 1 
-	end
-	if context.joker_main then
-		if card.ability.stage.i >= card.ability.stage.max_i then
-			card.ability.stage.max_i = card.ability.stage.max_i + 1
-			card.ability.stage.i = 0
-			local negative = pseudorandom("feli_fag_ins_toga2"..G.GAME.round..G.GAME.pseudorandom.seed,1,6)
-			if negative == 6 then
-				SMODS.add_card{ set = "Consumeables", edition = "e_negative" }
-			elseif #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
-				G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
-				SMODS.add_card{ set = "Consumeables", no_edition = true }
-				G.GAME.consumeable_buffer = 0
-			else
-				card.ability.stage.max_i = card.ability.stage.max_i - 1
-				return {
-					message = localize('k_feli_fag_nope_succ'),
-					colour = G.C.FILTER,
-					chips = card.ability.extra.chips,
-					mult = card.ability.extra.mult
-				}
-			end
+	atlas = 'insDeathcard',
+	pos = { x = 6, y = 0 },
+	pools = {
+		["FelisAdditions"]=true,
+		["Inscryption"] = true,
+		["Beast"] = true,		
+		["Human"] = true, 
+		["Deathcard"] = true 
+	},
+	key = "feli_fag_ins_toga",
+	pronouns = "he_him",
+	attributes = {"chips", "mult", "tarot", "planet", "spectral", "generation"},
+	rarity = 2,
+	cost = 6,
+	blueprint_compat = false,
+	eternal_compat = true,
+	perishable_compat = true,
+	unlocked = true,
+	discovered = false,
+	config = { extra = {chips = 20, mult = 2.6}, stage = { i = 0, max_i = 2} },
+	set_badges = function(self, card, badges)
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	end,
+	loc_vars = function(self, info_queue, card)
+		return { vars = {card.ability.extra.chips, card.ability.extra.mult, card.ability.stage.i, card.ability.stage.max_i, colours = { HEX('F0C590'), HEX('351A09')} } }
+	end,
+	calculate = function(self, card, context)
+		if context.press_play then
+			card.ability.stage.i = card.ability.stage.i + 1 
 		end
-		return {
-			chips = card.ability.extra.chips,
-			mult = card.ability.extra.mult
-		}
+		if context.joker_main then
+			if card.ability.stage.i >= card.ability.stage.max_i then
+				card.ability.stage.max_i = card.ability.stage.max_i + 1
+				card.ability.stage.i = 0
+				local negative = pseudorandom("feli_fag_ins_toga2"..G.GAME.round..G.GAME.pseudorandom.seed,1,6)
+				if negative == 6 then
+					SMODS.add_card{ set = "Consumeables", edition = "e_negative" }
+				elseif #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+					G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+					SMODS.add_card{ set = "Consumeables", no_edition = true }
+					G.GAME.consumeable_buffer = 0
+				else
+					card.ability.stage.max_i = card.ability.stage.max_i - 1
+					return {
+						message = localize('k_feli_fag_nope_succ'),
+						colour = G.C.FILTER,
+						chips = card.ability.extra.chips,
+						mult = card.ability.extra.mult
+					}
+				end
+			end
+			return {
+				chips = card.ability.extra.chips,
+				mult = card.ability.extra.mult
+			}
+		end
 	end
-end
 }
 
 
 SMODS.Joker { -- Rare Evgast
-atlas = 'insDeathcard',
-pos = { x = 7, y = 0 },
-pools = {
-	["FelisAdditions"]=true,
-	["Inscryption"] = true, 
-	["Beast"] = true,
-	["Human"] = true, 
-	["Deathcard"] = true 
-},
-key = "feli_fag_ins_evgast",
-pronouns = "they_them",
-unlocked = true,
-discovered = false,
-attributes = {"chips", "mult", "xblindsize"},
-rarity = 3,
-cost = 8,
-config = { extra = { debuff = 0.10 , chips = 1, mult = 1} },
-set_badges = function(self, card, badges)
-	badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
-end,
-loc_vars = function(self, info_queue, card)
-	return { vars = { (card.ability.extra.debuff)*100, card.ability.extra.chips, card.ability.extra.mult, colours = { HEX('F0C590'), HEX('351A09') } } }
-end,
-calculate = function(self, card, context)
-	if context.individual and context.cardarea == G.play then
-		if context.other_card:get_id() == 14 then
-			return{x_blindsize = (1 - card.ability.extra.debuff)}
+	atlas = 'insDeathcard',
+	pos = { x = 7, y = 0 },
+	pools = {
+		["FelisAdditions"]=true,
+		["Inscryption"] = true, 
+		["Beast"] = true,
+		["Human"] = true, 
+		["Deathcard"] = true 
+	},
+	key = "feli_fag_ins_evgast",
+	pronouns = "they_them",
+	unlocked = true,
+	discovered = false,
+	attributes = {"chips", "mult", "xblindsize"},
+	rarity = 3,
+	cost = 8,
+	config = { extra = { debuff = 0.10 , chips = 1, mult = 1} },
+	set_badges = function(self, card, badges)
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	end,
+	loc_vars = function(self, info_queue, card)
+		return { vars = { (card.ability.extra.debuff)*100, card.ability.extra.chips, card.ability.extra.mult, colours = { HEX('F0C590'), HEX('351A09') } } }
+	end,
+	calculate = function(self, card, context)
+		if context.individual and context.cardarea == G.play then
+			if context.other_card:get_id() == 14 then
+				return{x_blindsize = (1 - card.ability.extra.debuff)}
+			end
 		end
-	end
-	if context.joker_main then
-		
-		return {
-			chips = card.ability.extra.chips,
-			mult = card.ability.extra.mult
-		}
-	end
-end,
-blueprint_compat = true,
+		if context.joker_main then
+			
+			return {
+				chips = card.ability.extra.chips,
+				mult = card.ability.extra.mult
+			}
+		end
+	end,
+	blueprint_compat = true,
 }
-
-SMODS.Joker { -- Rare Gabby
-atlas = 'insDeathcard',
-pos = { x = 5, y = 1 },
-pools = {
-	["FelisAdditions"]=true,
-	["Inscryption"] = true, 
-	["Beast"] = true,
-	["Vermin"] = true, 
-	["Object"] = true, 
-	["Deathcard"] = true 
-	
-},
-key = "feli_fag_ins_gabby",
-pronouns = "she_her",
-unlocked = true,
-discovered = false,
-attributes = {"chips", "mult", "xmult", "edition",},
-rarity = 3,
-cost = 8,
-config = { extra = { chips = 5, mult = 5, xmult = 1.5}},
-set_badges = function(self, card, badges)
-	badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
-end,
-
-loc_vars = function(self, info_queue, card)
-	if washmashine then
-		info_queue[#info_queue+1] = {key = 'feli_fag_washmashine_crossmod', set = 'Other'}
-	end
-	return { vars = { card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.xmult, colours = { HEX('F0C590'), HEX('351A09') } } }
-end,
-
-
-
-calculate = function(self, card, context)
-	if context.joker_main then
-		for _, j in ipairs(G.jokers.cards) do
-			if j.edition and j.edition.key == "e_negative" then
-				SMODS.calculate_effect(
-				{xmult = card.ability.extra.xmult, juice_card = j, message_card = j},
-				card
-			)
-			end
-		end
-	
-		for _, t in ipairs(G.consumeables.cards) do
-			if t.ability.set == "wsh_fla" then
-				SMODS.calculate_effect(
-				{xmult = card.ability.extra.xmult, juice_card = t, message_card = t},
-				card
-			)
-			end
-			if (t.edition and t.edition.key == "e_negative") then
-				SMODS.calculate_effect(
-				{xmult = card.ability.extra.xmult, juice_card = t, message_card = t},
-				card
-			)
-			end
-		end
-		return {
-			chips = card.ability.extra.chips,
-			mult = card.ability.extra.mult,
-		}
-	end
-end,
-
-blueprint_compat = true,
-}
-
 
 SMODS.Joker{  -- Rare nxkoo
 	atlas = 'insDeathcard',

@@ -67,6 +67,21 @@ return {
                     }
                 },
             },
+            j_feli_fag_ins_mud_turtle = {
+				name = {
+				"{B:1,V:2,f:feli_fag_Feli5x8}Mud Turtle{}",
+				},
+				text = {
+					{
+					"{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult",
+					},
+					{
+					"{C:dark_edition}Negative{} {C:attention}Jokers{}",
+					"and {C:attention}Consumables{}",
+					"give {X:mult,C:white}X#3#{} Mult",
+					}
+				},
+			},
 
         }
 

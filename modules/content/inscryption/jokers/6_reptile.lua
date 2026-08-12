@@ -238,3 +238,52 @@ FelisAG.Reptile { -- Rare Ouro
 	blueprint_compat = true,
 	eternal_compat = false,
 }
+
+
+
+FelisAG.Reptile { -- Mud Turtle
+	pos = { x = 7, y = 0 },
+	key = "feli_fag_ins_mud_turtle",
+	pronouns = "she_her",
+	unlocked = true,
+	discovered = false,
+	attributes = {"chips", "mult", "xmult", "edition",},
+	rarity = 2,
+	cost = 8,
+	config = { extra = { chips = 2, mult = 2, xmult = 1.5}},
+	set_badges = function(self, card, badges)
+		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
+	end,
+
+	loc_vars = function(self, info_queue, card)
+		return { vars = { card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.xmult, colours = { HEX('F0C590'), HEX('351A09') } } }
+	end,
+
+	calculate = function(self, card, context)
+		if context.joker_main then
+			for _, j in ipairs(G.jokers.cards) do
+				if j.edition and j.edition.key == "e_negative" then
+					SMODS.calculate_effect(
+					{xmult = card.ability.extra.xmult, juice_card = j, message_card = j},
+					card
+				)
+				end
+			end
+		
+			for _, t in ipairs(G.consumeables.cards) do
+				if (t.edition and t.edition.key == "e_negative") then
+					SMODS.calculate_effect(
+					{xmult = card.ability.extra.xmult, juice_card = t, message_card = t},
+					card
+				)
+				end
+			end
+			return {
+				chips = card.ability.extra.chips,
+				mult = card.ability.extra.mult,
+			}
+		end
+	end,
+
+	blueprint_compat = true,
+}
