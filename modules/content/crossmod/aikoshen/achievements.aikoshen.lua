@@ -36,9 +36,23 @@ SMODS.Achievement{
         end
     end
 }
-
+--[[
 SMODS.Achievement{
-    key = "counterfeit_money",
+    key = "clown_cache",
+    hidden_name = false,
+    hidden_text = false,
+    bypass_all_unlocked = true,
+    unlock_condition = function (self, args)
+        if args and (args.type == "win") then
+            if next(SMODS.find_card("j_feli_fag_akyrs_jubilist")) then
+                return true
+            end
+        end
+    end
+}
+]]
+SMODS.Achievement{
+    key = "sealed_packet",
     hidden_name = false,
     hidden_text = false,
     bypass_all_unlocked = true,
@@ -73,6 +87,48 @@ SMODS.Achievement{
     unlock_condition = function (self, args)
         if args and (args.type == "win") then
             if next(SMODS.find_card("j_feli_fag_akyrs_distributor")) then
+                return true
+            end
+        end
+    end
+}
+
+SMODS.Achievement{
+    key = "rusty_razor_blade",
+    hidden_name = false,
+    hidden_text = false,
+    bypass_all_unlocked = true,
+    unlock_condition = function (self, args)
+        if args and (args.type == "win") then
+            if next(SMODS.find_card("j_feli_fag_akyrs_mycologists")) then
+                return true
+            end
+        end
+    end
+}
+
+SMODS.Achievement{
+    key = "icbm",
+    hidden_name = false,
+    hidden_text = false,
+    bypass_all_unlocked = true,
+    unlock_condition = function (self, args)
+        if args and (args.type == "win") then
+            if next(SMODS.find_card("j_feli_fag_akyrs_martyr")) then
+                return true
+            end
+        end
+    end
+}
+
+SMODS.Achievement{
+    key = "Sockpuppet",
+    hidden_name = false,
+    hidden_text = false,
+    bypass_all_unlocked = true,
+    unlock_condition = function (self, args)
+        if args and (args.type == "win") then
+            if next(SMODS.find_card("j_feli_fag_akyrs_public_broadcast")) then
                 return true
             end
         end

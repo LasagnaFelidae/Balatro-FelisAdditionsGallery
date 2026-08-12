@@ -36,12 +36,13 @@ return {
                     "Up to {C:attention}#1#{} times per ante,",
                     "when used, {C:attention}fish",
                     "for a random {C:enhanced}Enhanced",
-                    "blank {C:blue}Letter card",
+                    "Blank Card",
                     "{s:0.4} {}",
                     "{C:inactive}(Uses left: {V:1}#2#{C:inactive})"
                     },
                     {
                     "Card can be {C:feli_fag_ttm}Wooden{},",
+                    "{C:feli_fag_inactive}Plastic{}, {C:feli_fag_institutional_black}Bomb",
                     "{C:feli_fag_pink}Crit{} or {C:red}Bleed"
                     },
 
@@ -139,80 +140,68 @@ return {
                         "Once per round, if the",
                         "{C:blue}letters{} are {C:dark_edition}identical{},",
                         "{C:attention}stitch{} two cards into a",
-                        "Blank {C:red}Bleed Card{} {C:attention}Bi-gram{}",
+                        "Blank {C:feli_fag_pink}Crit Card{} {C:attention}Bi-gram{}",
                     },
 
                 }
             },
-            j_feli_fag_akyrs_martyr = {
+            j_feli_fag_akyrs_paradigm = {
                 name = {
-                    "The Martyr",
-                    "{C:feli_fag_inactive,s:0.5}Felicio Lasenberger"
+                    "Paradigm",
+                    "{C:feli_fag_inactive,s:0.5}Rubicon \"Poppy\" Makara"
                 },
                 text = { 
                     {
                         "Enables the {C:purple}Pronoun Palace",
-                        "and the {C:blue}French",
-                        "word dictionaries"
+                        "word dictionary"
                     },
                     {
                         "When entering a Blind,",
                         "{X:blind,C:white}X#1#{} Blind Req. and",
                         "adds {C:attention}#2# {C:red}#3#{}",
-                        "{C:enhanced,E:2}#4#{} {C:attention}N-grams{}",
+                        "{C:feli_fag_institutional_black,E:2}#4#{} {C:attention}Suffixes{}",
                         "{s:0.4} {}",
                         "{C:inactive}(Blind reduction scales with Ante)",
-                        "{C:inactive}(Uses left: {V:1}#5#{C:inactive})"
                     },
 
                 }
             },
-			j_feli_fag_ltr_dbl = {
-                name = "Double Letter Tile",
+            j_feli_fag_akyrs_public_broadcast = {
+                name = {
+                    "Public Broadcast",
+                    "{C:feli_fag_inactive,s:0.5}Elmer"
+                },
                 text = { 
-                    "{C:green}#3# in #4#{} chance to retrigger",
-                     "a scored card {C:attention}+#1#{} times",
-                    "{s:0.7,C:inactive}(Caps at #2# sets of retriggers){}"
+                    {
+                        "Enables the {C:purple}Pronoun Palace",
+                        "word dictionary and sets",
+                        "{C:blue}play{}/{C:red}discard{} limit to {C:attention}#1#"
+                    },
+                    {
+                        "Retrigger cards {C:attention}n{} times",
+                        "based on {C:attention}hand position",
+                        "and the {C:dark_edition}sequence{} below:",
+                        "{s:0.2} ",
+                        "{f:feli_fag_tile}0{V:1,f:feli_fag_tile}#2#{V:2,f:feli_fag_tile}#3#{V:3,f:feli_fag_tile}#4#{V:4,f:feli_fag_tile}#5#{V:5,f:feli_fag_tile}#6#{V:6,f:feli_fag_tile}#7#{V:7,f:feli_fag_tile}#8#",
+                        "{s:0.2} ",
+                        "{C:inactive,s:0.7}(Sequence changes every hand played)"
+                    },
+
                 }
             },
-			j_feli_fag_ltr_tpl = {
-                name = "Triple Letter Tile",
-                text = { 
-                    "{C:green}#3# in #4#{} chance to retrigger",
-                    "a scored card {C:attention}+#1#{} times",
-                    "{s:0.7,C:inactive}(Caps at #2# sets of retriggers){}"
-                }
-            },
-			j_feli_fag_ltr_qdl = {
-                name = "Quad Letter Tile",
-                text = { 
-                    "{C:green}#3# in #4#{} chance to retrigger",
-                     "a scored card {C:attention}+#1#{} times",
-                    "{s:0.7,C:inactive}(Caps at #2# sets of retriggers){}"
-                }
-            },
-			j_feli_fag_ltr_dbw = {
-                name = "Double Word Tile",
-                text = { 
-                    "{C:green}#3# in #4#{} chance to",
-                    "Gain {X:chips,C:white}X#1#{} Chips and {X:mult,C:white}X#2#{} Mult",
-                    "{s:0.7,C:inactive}(Hand needs to be 4 cards or more){}"
-                }
-            },
-			j_feli_fag_ltr_tpw = {
-                name = "Triple Word Tile",
-                text = { 
-                    "{C:green}#3# in #4#{} chance to",
-                    "Gain {X:chips,C:white}X#1#{} Chips and {X:mult,C:white}X#2#{} Mult",
-                    "{s:0.7,C:inactive}(Hand needs to be 6 cards or more){}"
-                }
-            },
-			j_feli_fag_ltr_qdw = {
-                name = "Quad Word Tile",
-                text = { 
-                    "{C:green}#3# in #4#{} chance to",
-                    "Gain {X:chips,C:white}X#1#{} Chips and {X:mult,C:white}X#2#{} Mult",
-                    "{s:0.7,C:inactive}(Hand needs to be 8 cards or more){}"
+			j_feli_fag_akyrs_mba = {
+                name = "MBA",
+                text = {
+                    { 
+                        "Gain {C:blue}+#1#{} Chips whenever",
+                        "a {C:attention}#2#{} is played",
+                        "{C:inactive}(Currently {C:blue}+#4#{C:inactive} Chips)",
+                    },
+                    {
+                        "Once per round, whenever",
+                        "a {C:attention}#2#{} is played",
+                        "get {C:blue}+#3#{} hand",
+                    },
                 }
             },
 			j_feli_fag_ltr_cleanslate = {
@@ -257,6 +246,16 @@ return {
                     "that can be used to form {C:attention}words",
 				}
 			},
+            feli_fag_akyrs_fixes = {
+                name = "n-fixes (Aikoyori's Shenanigans)",
+				text= {
+					"A {C:attention}n-fix{} is a sequence",
+                    "of 2, 3 or 4 {C:blue}letters{}",
+                    "that is pinned to the",
+                    "leftmost or rightmost spot"
+
+				}
+            },
         },
 	},
 }

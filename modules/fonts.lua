@@ -19,6 +19,16 @@ SMODS.Font{
     DESCSCALE = 1
 }
 SMODS.Font{
+    key = "tile",
+    path = "Feli-Tiles.ttf",
+    render_scale = G.TILESIZE*80.5,
+    TEXT_HEIGHT_SCALE = 0.8,
+    TEXT_OFFSET = {x=10,y=-30},
+    FONTSCALE = 0.012,
+    squish = 1,
+    DESCSCALE = 1
+}
+SMODS.Font{
     key = "GarfieldSans",
     path = "GarfieldSans-Regular.ttf",
     render_scale = 150,

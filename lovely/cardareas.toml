@@ -38,3 +38,18 @@ if self.children.feli_fag_totem_toggle_uibox and G.GAME.feli_fag_totem_obtained_
     self.children.feli_fag_totem_toggle_uibox:draw()
 end
 '''
+
+# thank you revo
+[[patches]]
+[patches.pattern]
+target = 'game.lua'
+pattern = 'G.blind_select.alignment.offset.y = 0.8-(G.hand.T.y - G.jokers.T.y) + G.blind_select.T.h'
+position = "at"
+payload = '''
+if G.feli_fag_totems and G.feli_fag_totems.T.y > -4 then
+    G.blind_select.alignment.offset.y = 0.8-(G.hand.T.y - G.feli_fag_totems.T.y) + G.blind_select.T.h
+else
+    G.blind_select.alignment.offset.y = 0.8-(G.hand.T.y - G.jokers.T.y) + G.blind_select.T.h
+end
+'''
+match_indent = true

@@ -1483,24 +1483,31 @@ return {
             ach_feli_fag_j_o_permit = "J/O Permit",
             ach_feli_fag_red_letter = "Red Letter",
             ach_feli_fag_corkline = "Corkline",
-            ach_feli_fag_counterfeit_money = "Counterfeit Money",
+            ach_feli_fag_clown_cache = "Clown Cache",
+            ach_feli_fag_sealed_packet = "Sealed Packet",
             ach_feli_fag_correction_fluid = "Correction Fluid",
+            ach_feli_fag_rusty_razor_blade = "Rusty Razor Blade",
             ach_feli_fag_persimmon = "Persimmon",
+            ach_feli_fag_icbm = "ICBM",
+            
         },
         achievement_descriptions={
             ach_feli_fag_j_o_permit = {"Spell a slur of your choice", "(Pronoun Palace dictionary must be enabled)"},
             ach_feli_fag_red_letter = {"Win a run with The Lexicographer", "(Letters must be enabled)"},
             ach_feli_fag_corkline = {"Win a run with The Fisher", "(Letters must be enabled)"},
-            ach_feli_fag_counterfeit_money = {"Win a run with The Accountant", "(Letters must be enabled)"},
+            ach_feli_fag_clown_cache = {"Win a run with The Jubilist", "(Letters must be enabled)"},
+            ach_feli_fag_sealed_packet = {"Win a run with The Accountant", "(Letters must be enabled)"},
             ach_feli_fag_correction_fluid = {"Win a run with The Clerk", "(Letters must be enabled)"},
+            ach_feli_fag_rusty_razor_blade = {"Win a run with The Mycologists (PP)", "(Letters must be enabled)"},
             ach_feli_fag_persimmon = {"Win a run with The Distributor", "(Letters must be enabled)"},
+            ach_feli_fag_icbm = {"Win a run with The Martyr", "(Letters must be enabled)"},
         },
 		dictionary={
             --------------
             ---CONFIG-----
             --------------
             cfg_feli_fag_directors_cut = "Director\'s Cut",
-            cfg_feli_fag_directors_cut_desc = {"View the mod as Feli intended.","{C:red}[TW: SH, Gore, Blood]{}"},
+            cfg_feli_fag_directors_cut_desc = {"View the mod as Feli intended.","[TW: SH, Gore, Blood]"},
             cfg_feli_fag_verbose_mode = "Verbose Mode",
             cfg_feli_fag_verbose_mode_desc = {"View all extra explanations","(Tiers, Vocabulary)"},
             cfg_feli_fag_tribe_info = "Tribe Info",

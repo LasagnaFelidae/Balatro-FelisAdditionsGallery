@@ -26,6 +26,7 @@ G.ARGS.LOC_COLOURS.feli_fag_ins_gld = HEX('F8A84F')
 G.ARGS.LOC_COLOURS.feli_fag_goobert = HEX('218812')
 G.ARGS.LOC_COLOURS.feli_fag_garf_bg = HEX('FFAE52')
 G.ARGS.LOC_COLOURS.feli_fag_balatro_black = HEX('4F6367')
+G.ARGS.LOC_COLOURS.feli_fag_institutional_black = HEX('000000')
 G.ARGS.LOC_COLOURS.feli_fag_tiered = HEX('8E3600')
 G.ARGS.LOC_COLOURS.feli_fag_inactive = HEX("B7B7B7")
 

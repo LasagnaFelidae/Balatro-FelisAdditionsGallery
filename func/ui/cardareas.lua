@@ -10,7 +10,7 @@ SMODS.current_mod.custom_card_areas = function(game) -- game is the same as G
             -- optional, but recommended configs:
             card_limit = 6, -- card limit, doesn't actually affect the area unless checked manually
             type = 'joker', -- area type, doesn't affect what type of cards can be in it, only how they're displayed and act
-            -- values can be `title`, `title_2`, `joker`, `shop`, `deck`, `hand`, `consumeable`, `voucher`, `play`, `discard`
+
             highlight_limit = 2,
             -- optional:
             no_card_count = false, -- removes the card count ui for the area types that have it by default
@@ -81,7 +81,7 @@ function ease_alignment(area, value_o, value_t, hide, instant, type)
             func = function()
                 G[area].T[type] = value_t
                 G[area].VT[type] = value_t
-                G[area].config.type = hide and 'totems_hide' or 'joker'
+                --G[area].config.type = hide and 'totems_hide' or 'joker'
                 return true;
             end
         }))
@@ -116,7 +116,7 @@ function ease_alignment(area, value_o, value_t, hide, instant, type)
                 blocking = true,
                 blockable = false,
                 func = function()
-                    G[area].config.type = 'totems_hide'
+                    --G[area].config.type = 'totems_hide'
                     G[area].T[type] = value_t
                     return true
                 end

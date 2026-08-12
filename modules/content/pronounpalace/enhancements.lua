@@ -140,9 +140,10 @@ FelisAG.PPEnhancement {
     config = { extra = { xscore = 0.5, xblindsize = 0.8}, timer = {hands = 2, set = false, min = 1, max = 3}, },
     weight = 0.9,
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue+1] = {key = "feli_fag_explode", set ="Other"}
         local plural = (card.ability.timer.hands ~= 1 ) and "hands" or "hand"
-        local counter = (card.ability.timer.set == false and card.ability.timer.min.." to "..card.ability.timer.max or (card.ability.timer.hands ~= 1 ) and card.ability.timer.hands or "this")
+        local counter = (card.ability.timer.set == false and card.ability.timer.min.." to "..card.ability.timer.max 
+            or (card.ability.timer.hands ~= 1 ) and card.ability.timer.hands 
+            or "this")
         return { vars = { card.ability.extra.xscore, card.ability.extra.xblindsize, counter, plural } }
     end,
 

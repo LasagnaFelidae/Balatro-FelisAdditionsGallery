@@ -198,8 +198,30 @@ FelisAG.add_event = function (func, delay, queue, config)
         blockable = config.blockable,
     }, queue, config.front)
 end
+--[[
+Table shuffle using Fisher-Yates.
+https://gist.github.com/Uradamus/10323382
+Uses X-Raym's code to never have same table
+Parameters:
+  t (table): required.
 
-
+Returns:
+  shuffled table
+]]--
+FelisAG.table_shuffle = function(t)
+	local tbl = {}
+	for i = 1, #t do
+		tbl[i] = t[i]
+	end
+	for i = #tbl, 2, -1 do
+		local j = math.random(i)
+		tbl[i], tbl[j] = tbl[j], tbl[i]
+	end
+	if  table.concat(t) == table.concat(tbl) then
+		tbl = table_shuffle(t)
+	end
+	return tbl
+end
 --[[
 Quick weighted pool pick.
 
@@ -212,18 +234,18 @@ Parameters:
         {'j_bar', 1},
       }
 
-  roll (number|nil): optional. If provided, should be a [0,1) random float.
+  roll (number|nil): optional. If provided, should be a [0,1] random float.
     You can pass either:
       pseudorandom(pseudoseed('myseed'))
     or a local variable storing that value.
-    If omitted, it defaults to pseudorandom(pseudoseed('poolroll')).
+    if you dont pass anything there is a backup pseudorandom roll
 
 Returns:
   selected key/value from pool based on weights.
 ]]--
 FelisAG.quick_pool_pick = function(pool, roll)
 	if type(pool) == "table" then
-		roll = roll or pseudorandom(pseudoseed('cottoncandysweetiegoldletmeseethetootseeroll'))
+		roll = roll or pseudorandom(pseudoseed('poolroll'))
 		local total = 0
 		
 		for _, v in ipairs(pool) do
