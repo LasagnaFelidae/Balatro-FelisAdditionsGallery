@@ -16,7 +16,7 @@ AKYRS.check_word = function(str_arr_in)
     
     
     if (result and (result.valid == false or result.valid == nil)) or result == nil then
-        for i, joker in ipair(G.jokers.cards) do
+        for i, joker in ipairs(G.jokers.cards) do
             if joker:has_attribute("pp_dict") or next(SMODS.find_card("v_feli_fag_akyrs_dict_lexi")) then
                 if AKYRS.get_dictionary then AKYRS.get_dictionary = function() return "LEXICOGRAPHER_DICT" end else AKYRS_WORDS = LEXICOGRAPHER_DICT end 
                 result = old_check_word(str_arr_in)
@@ -27,7 +27,7 @@ AKYRS.check_word = function(str_arr_in)
 
 
     if (result and (result.valid == false or result.valid == nil)) or result == nil then
-        for i, joker in ipair(G.jokers.cards) do
+        for i, joker in ipairs(G.jokers.cards) do
             if joker:has_attribute("fr_dict") or next(SMODS.find_card("v_feli_fag_akyrs_dict_fr")) then
                 if AKYRS.get_dictionary then AKYRS.get_dictionary = function() return "FRENCH_DICT" end else AKYRS_WORDS = FRENCH_DICT end 
                 result = old_check_word(str_arr_in)
@@ -84,7 +84,7 @@ FelisAG.LetterJoker {
     key = "feli_fag_akyrs_lexicographer",
     atlas = 'pronounJokers',
     pos = { x = 0, y = 0 },
-    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
+    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
     pronouns = "she_her",
     blueprint_compat = true,
     rarity = 2,
@@ -143,7 +143,7 @@ FelisAG.LetterJoker {
     key = "feli_fag_akyrs_fisher",
     atlas = 'pronounJokers',
     pos = { x = 1, y = 0 },
-    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
+    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
     pronouns = "she_they",
     blueprint_compat = true,
     rarity = 2,
@@ -207,7 +207,7 @@ FelisAG.LetterJoker {
     key = "feli_fag_akyrs_accountant",
     atlas = 'pronounJokers',
     pos = { x = 2, y = 0 },
-    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
+    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
     pronouns = "she_her",
     blueprint_compat = true,
     rarity = 2,
@@ -302,7 +302,6 @@ FelisAG.LetterJoker {
     pools = {
         ["FelisAdditions"] = true, 
         ["Letter"] = true, 
-        ["Scrabble"] = true, 
         ["Human"] = true, 
         ["Pronoun Palace"] = true, 
         ["Nxkoo"] = true, 
@@ -390,7 +389,6 @@ FelisAG.LetterJoker {
     pools = {
         ["FelisAdditions"] = true, 
         ["Letter"] = true, 
-        ["Scrabble"] = true, 
         ["Human"] = true, 
         ["Pronoun Palace"] = true, 
         ["Nxkoo"] = true, 
@@ -445,7 +443,6 @@ FelisAG.LetterJoker {
     pools = {
         ["FelisAdditions"] = true, 
         ["Letter"] = true, 
-        ["Scrabble"] = true, 
         ["Pronoun Palace"] = true,
         ["Inscryption"] = true, 
         ["Human"] = true 
@@ -585,7 +582,7 @@ FelisAG.LetterJoker {
     key = "feli_fag_akyrs_paradigm",
     atlas = 'pronounJokers',
     pos = { x = 6, y = 0 },
-    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
+    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
     pronouns = "he_him",
     blueprint_compat = true,
     rarity = 2,
@@ -605,13 +602,13 @@ FelisAG.LetterJoker {
     
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = G.P_CENTERS["m_feli_fag_pp_bomb"]
-        info_queue[#info_queue+1] = { key = "akyrs_attention", set = "Other",}
+        info_queue[#info_queue+1] = { key = "akyrs_self_destructs", set = "Other",}
         info_queue[#info_queue+1] = { key = "feli_fag_akyrs_fixes", set = "Other",}
         local cards = math.min((G.GAME and G.GAME.current_round and G.GAME.current_round.hands or 1), 2)
         local ante = 1-math.abs(Talisman and to_number(G.GAME.round_resets.ante) or G.GAME.round_resets.ante)*card.ability.extra.xblind
         local is_used = card.ability.letter_opener.used == true and "Used" or "Active"
         local is_used_clr = card.ability.letter_opener.used == true and G.C.RED or G.C.GREEN
-        return { vars = { ante, cards, localize{type = 'name_text', key = "akyrs_attention", set = 'Other'}, localize{type = 'name_text', key = "m_feli_fag_pp_bomb", set = 'Enhanced'}, colours = {is_used_clr}}, } 
+        return { vars = { ante, cards, localize{type = 'name_text', key = "akyrs_self_destructs", set = 'Other'}, localize{type = 'name_text', key = "m_feli_fag_pp_bomb", set = 'Enhanced'}, colours = {is_used_clr}}, } 
     end,
     calculate = function(self, card, context)
         if context.first_hand_drawn and context.hand_drawn then
@@ -632,7 +629,6 @@ FelisAG.LetterJoker {
                         G.P_CENTERS[caca],
                         {playing_card = G.playing_card})
                         moneycrd.is_null = true
-                        moneycrd.ability.akyrs_attention = true
                         moneycrd.ability.akyrs_self_destructs = true
                         moneycrd.ability.akyrs_pinned_right = true
                         moneycrd.ability.extra_slots_used = -1
@@ -672,8 +668,9 @@ FelisAG.LetterJoker {
     key = "feli_fag_akyrs_public_broadcast",
     atlas = 'pronounJokers',
     pos = { x = 8, y = 0 },
-    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true, ["Human"] = true, ["Pronoun Palace"] = true,  },
+    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Object"] = true, ["Other"] = true, ["Pronoun Palace"] = true,  },
     pronouns = "he_him",
+    attributes = {"pp_dict", "passive", "poker_hands", "retrigger",},
     blueprint_compat = false,
     rarity = 2,
     cost = 6,
@@ -829,13 +826,13 @@ FelisAG.LetterJoker {
 }
 FelisAG.LetterJoker {
     key = "feli_fag_akyrs_mba",
-    atlas = 'aikoJokers',
-    pos = { x = 8, y = 0 },
-    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true  },
+    atlas = 'pronounJokers',
+    pos = { x = 9, y = 1 },
+    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Object"] = true, ["Pronoun Palace"] = true,  },
     blueprint_compat = true,
-    rarity = 2,
+    rarity = 1,
     cost = 6,
-    config = { extra = {h_size = 1, chips_m = 30, chips = 0}, word = { length = 3, mba = true} },
+    config = { extra = {h_size = 1, chips_m = 3, chips = 0}, word = { length = 3, mba = true} },
     attributes = {"hands", "chips", "scaling",},
     loc_vars = function(self, info_queue, card)
         local hand = AKYRS.prefix.."_"..card.ability.word.length.."-letter Word"
@@ -872,24 +869,24 @@ FelisAG.LetterJoker {
 --- OTHERS
 
 FelisAG.LetterJoker {
-    key = "feli_fag_ltr_cleanslate",
-    atlas = 'aikoJokers',
-    pos = { x = 8, y = 0 },
-    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Scrabble"] = true  },
+    key = "feli_fag_ltr_akyrs_paper_shredder",
+    atlas = 'pronounJokers',
+    pos = { x = 8, y = 1 },
+    pools = {["FelisAdditions"] = true, ["Letter"] = true, ["Object"] = true, ["Pronoun Palace"] = true,  },
     blueprint_compat = true,
     rarity = 1,
     cost = 6,
-    config = { extra = { chips = 50, dollars = 5} },
+    config = { extra = { chips = 10, dollars = 1} },
     attributes = {"hands", "chips", "economy",},
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.chips, card.ability.extra.dollars} }
     end,
     calculate = function(self, card, context)
         if context.joker_main then
-            if  G.hand.config.card_limit - #context.scoring_hand == 0 then
+            if (G.hand.config.card_limit - #context.scoring_hand <= 0) and #G.hand.cards == 0 then
                 return{
-                    chips = card.ability.extra.chips,
-                    dollars = card.ability.extra.dollars
+                    chips = card.ability.extra.chips * #context.scoring_hand,
+                    dollars = card.ability.extra.dollars * #context.scoring_hand
                 }	
             end
         end	

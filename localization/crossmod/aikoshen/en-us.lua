@@ -204,12 +204,13 @@ return {
                     },
                 }
             },
-			j_feli_fag_ltr_cleanslate = {
-                name = "Clean Slate",
+			j_feli_fag_ltr_akyrs_paper_shredder = {
+                name = "Paper Shredder",
                 text = { 
                     "{C:chips}+#1#{} Chips and {C:money}$#2#{}",
+                    "per scored card",
                     "if the {C:attention}entire hand{} is",
-					"{C:attention}played{} and {C:attention}scored"
+					"{C:chips}played{} and {C:attention}scored"
                 }
             },
 			j_feli_fag_lgd_feli = {
