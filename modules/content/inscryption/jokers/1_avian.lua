@@ -18,8 +18,8 @@ SMODS.Joker { -- Uncommon, Magpie
 	set_badges = function(self, card, badges)
 		badges[#badges+1] = create_badge(localize('k_feli_fag_ins'), HEX('7f1232'), HEX('f2a655'), 1 )
 	end,
-    loc_vars = function(self, info_queue, center)
-        return {vars = { center.ability.extra.chips, center.ability.extra.mult, center.ability.extra.xchips, (1 + center.ability.extra.xchips * center.ability.steam.badges), colours = { HEX('F0C590'), HEX('351A09')} }}
+    loc_vars = function(self, info_queue, card)
+        return {vars = { card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.xchips, (1 + card.ability.extra.xchips * card.ability.steam.badges), colours = { HEX('F0C590'), HEX('351A09')} }}
     end,
 	badgeCalc = function (self,card)
 		local level = math.max((G.STEAM and G.STEAM.user.getPlayerSteamLevel() or 10), 10)
