@@ -118,7 +118,7 @@ FelisAG.Vermin { -- Rare Pack Rat
 	eternal_compat = true,
 	pronouns = "she_her",
 	attributes = {"mult","chips","generation"},
-	config = { extra = { mult = 2, chips = 2}},
+	config = { extra = { mult = 4, chips = 1}},
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS["p_feli_fag_pack_rat"]
 		return { vars = { card.ability.extra.chips, card.ability.extra.mult,  colours = { HEX('F0C590'), HEX('351A09') } } } 

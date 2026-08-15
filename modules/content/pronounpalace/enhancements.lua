@@ -43,7 +43,7 @@ FelisAG.PPEnhancement {
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play then
             local ret = {}
-            ret.xblind = card.ability.extra.xblind
+            ret.xblindsize = card.ability.extra.xblind
             return ret
         end
     end,
