@@ -199,12 +199,11 @@ FelisAG.enhancement_tiers = {
 
 FelisAG.consumeables_table = {
     {key = "Tarot",                 weight = 1.00},
-	{key = "feli_fag_tier2_tarot",    weight = 0.30},
-	{key = "feli_fag_tier3_tarot",    weight = 0.10},
-	{key = "feli_fag_tier4_tarot",    weight = 0.03},
+	{key = "feli_fag_tier2_tarot",    weight = 0.50},
+	{key = "feli_fag_tier3_tarot",    weight = 0.20},
+	{key = "feli_fag_tier4_tarot",    weight = 0.1},
     {key = "Planet",                weight = 1.00},
     {key = "Spectral",              weight = 0.20},
-    {key = "feli_fag_ritual",         weight = 0.80},
 }
 FelisAG.JoyousTribes = {
     Insect  = { Insect = true },

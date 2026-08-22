@@ -131,16 +131,8 @@ FelisAG.Vermin { -- Rare Pack Rat
         if context.modify_ante and context.ante_end then
             local roll = pseudorandom("ihaveagiftforyou"..G.GAME.round..G.GAME.pseudorandom.seed)
 			local cons = FelisAG.quick_pool_pick(FelisAG.consumeables_table, roll)
-            local _key = pseudorandom_element(cons.key, 'feli_fag_ins_packrat')
-            local it = 1
-            while _key == 'UNAVAILABLE' do
-                it = it + 1
-                _key = pseudorandom_element(cons.key, 'feli_fag_ins_packrat'..it)
-            end
-			
-			
 			G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
-			SMODS.add_card{ key = _key, no_edition = true , area = G.consumeables}
+			SMODS.add_card{ set = cons, no_edition = true , area = G.consumeables}
 			G.GAME.consumeable_buffer = 0
         end
 		if context.joker_main then
