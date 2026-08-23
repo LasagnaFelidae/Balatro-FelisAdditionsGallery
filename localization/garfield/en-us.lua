@@ -29,13 +29,14 @@ return {
 				},
 				text = {
 					{
-                    "Gain {X:red,C:white}X#1#{} Mult when any",
-                    "{C:gold}Tiered {C:enhanced}Glass Card{} scores",
-					"{C:inactive}(Currently {X:red,C:white}X#2#{C:inactive} Mult)",
+                    "Gain {C:red}+#1#{} Mult when any",
+                    "{C:enhanced}#2#{} scores",
+					"{C:inactive}(Currently {C:red}+#3#{C:inactive} Mult)",
 					},
 					{
-					"Resets when any {C:gold}Tiered",
-					"{C:enhanced}Glass Card{} shatters",
+					"{C:green}#4# in #5#{} individual chance ",
+					"to enhance a played card",
+					"to {C:enhanced}#2#{}"
 					},
 					{
 					"{C:inactive,s:0.9,f:feli_fag_GarfieldSans}\"Now where could my pipe be?\"",

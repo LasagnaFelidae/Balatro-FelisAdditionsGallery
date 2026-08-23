@@ -96,52 +96,41 @@ FelisAG.GarfieldJoker { --2, 0, biting the bolster
 		return false
 	end,
 }
---[[FelisAG.GarfieldJoker { -- Pipe Strip
-pos = { x = 1, y = 0 },
-pools = {["FelisAdditions"] = true, ["Feline"] = true, },
-key = "feli_fag_grf_pipe",
-rarity = 2,
-cost = 6,
-config = {
-extra = {chips = 40},
-},	
-loc_vars = function(self, info_queue, card)
-info_queue[#info_queue+1] = {key = 'feli_fag_tiered', set = 'Other'}
-info_queue[#info_queue+1] = G.P_CENTERS.c_tower
-return { vars = { card.ability.extra.chips,localize { type = 'name_text', set = 'Tarot', key = "c_tower" }}, }
-end,
-calculate = function(self, card, context)
-if context.joker_main then
-	local triggered = false
-	local towers =
-	{
-	"c_tower",
-	"c_feli_fag_t2_tower",
-	"c_feli_fag_t2_tower_mp",
-	"c_feli_fag_t3_tower",
-	"c_feli_fag_t3_tower_mp",
-	"c_feli_fag_t4_tower",
-	"c_feli_fag_t4_tower_mp",
-	"c_bd_towprint",
-	}
-	for _, v in ipairs(G.consumeables.cards) do
-		for _, key in ipairs(towers) do
-			if v.config.center.key == key then
-				triggered = true
-				SMODS.calculate_effect(
-				{chips = card.ability.extra.chips, juice_card = v, message_card = v},
-				card
-				)
-				break
+FelisAG.GarfieldJoker { -- Pipe Strip
+	pos = { x = 1, y = 0 },
+	pools = {["FelisAdditions"] = true, ["Feline"] = true, },
+	key = "feli_fag_grf_pipe",
+	rarity = 2,
+	cost = 6,
+	config = {
+	extra = {mult = 0, mult_mod = 2, n = 1, d = 4, enh = "m_feli_fag_pp_ash"},
+	},	
+	loc_vars = function(self, info_queue, card)
+		local n, d = SMODS.get_probability_vars(card, card.ability.extra.n, card.ability.extra.d, "j_feli_fag_grf_pipe")
+		info_queue[#info_queue+1] = G.P_CENTERS[card.ability.extra.enh]
+		return { vars = { card.ability.extra.mult_mod, localize { type = 'name_text', set = 'Enhanced', key = card.ability.extra.enh }, card.ability.extra.mult, n, d,}, }
+	end,
+	calculate = function(self, card, context)
+		if context.individual and context.cardarea == G.play then
+			if context.other_card 
+			and next(SMODS.get_enhancements(context.other_card)) == card.ability.extra.enh then
+				SMODS.scale_card(card,{
+					ref_table = card.ability.extra, -- the table that has the value you are changing in
+    				ref_value = "mult", -- the key to the value in the ref_table
+ 					scalar_value = "mult_mod", -- the key to the value to scale by, in the ref_table by default
+			})
 			end
+			if context.other_card 
+			and next(SMODS.get_enhancements(context.other_card)) == nil 
+			and SMODS.pseudorandom_probability(card, "j_feli_fag_grf_pipe", card.ability.extra.n, card.ability.extra.d, "j_feli_fag_grf_pipe") then
+				card:set_ability(card.ability.extra.enh)
+			end
+			
 		end
-	end
-	if triggered then return nil, true end
-end
-end,
-blueprint_compat = true,
+	end,
+	blueprint_compat = true,
 }
-]]
+
 FelisAG.GarfieldJoker { -- Busy Boy
 	pos = { x = 2, y = 0 },
 	pools = {
