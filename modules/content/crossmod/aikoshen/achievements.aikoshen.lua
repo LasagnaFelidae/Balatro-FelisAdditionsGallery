@@ -4,7 +4,7 @@ SMODS.Achievement{
     hidden_text = false,
     bypass_all_unlocked = true,
     unlock_condition = function (self, args)
-        if args and (args.type == "akyrs_spell_word" and FelisAG.lexicographer_slurs[args.lowercase_word]) then
+        if args and (args.type == "akyrs_spell_word" and FelisAG.insults_and_slurs_table[args.lowercase_word]) then
             return true
         end
     end

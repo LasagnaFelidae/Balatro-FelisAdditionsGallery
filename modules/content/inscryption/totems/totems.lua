@@ -203,7 +203,6 @@ SMODS.UndiscoveredSprite{
     pos = {x=0, y=1}
 }
 
-
 for _, data in ipairs(FelisAG.totem_sigil_table) do
     FelisAG.Consumable {
         key = "feli_fag_" .. data.totem_key,
