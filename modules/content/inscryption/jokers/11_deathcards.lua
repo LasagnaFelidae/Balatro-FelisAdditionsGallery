@@ -700,7 +700,7 @@ SMODS.Joker { -- Rare Leshy
 	end,
 	calculate = function(self, card, context)
 		if context.joker_main then
-			local count = 0
+			local count = 1
 			local deathcard_redeem = G.GAME.crv_deathcard_allowed and 2 or 0
 			for _, j in ipairs(G.jokers.cards) do
 				if j ~= card and j.config.center.pools and j.config.center.pools['Beast'] and j.config.center.pools['Inscryption'] then
